@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on WANcatServer</title>
+    <link>https://www.wancat.cc/tags/linux/</link>
+    <description>Recent content in Linux on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 06 Jul 2019 20:12:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wancat.cc/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何在 Linux 使用 Caps Lock 切換輸入法</title>
+      <link>https://www.wancat.cc/post/capslock/</link>
+      <pubDate>Sat, 06 Jul 2019 20:12:00 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/capslock/</guid>
+      <description>Caps Lock 是一個我們很少用的鍵，偏偏它擺在鍵盤的黃金位置，實在是大大的浪費，在 Mac 上可以使用 Caps Lock 來作為中英切換鍵，我認為是很好的設計，以下教學將介紹</description>
+    </item>
+    
+  </channel>
+</rss>

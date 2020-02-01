@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="WANcatServer">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="妳該使用密碼管理工具嗎？" />
+    <meta property="og:title" content="妳該使用密碼管理工具嗎？" />
+    <meta property="twitter:title" content="妳該使用密碼管理工具嗎？" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>妳該使用密碼管理工具嗎？-WANcatServer 網貓伺服器</title>
+
+    <link rel="canonical" href="/post/should-you-use-password-manager/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+    
+<script type="text/javascript">
+    var _paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.wancat.cc/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">WANcatServer</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/linux">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/bitwarden" title="Bitwarden">
+                            Bitwarden
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8" title="資訊安全">
+                            資訊安全
+                        </a>
+                        
+                    </div>
+                    <h1>妳該使用密碼管理工具嗎？</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                WANcatServer
+                         
+                        on 
+                        Thursday, February 21, 2019
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>目錄</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">現代人的密碼危機</a>
+      <ul>
+        <li><a href="#heading1">重複密碼</a></li>
+        <li><a href="#heading2">使用不安全工具紀錄</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading3">密碼管理工具，安全嗎？</a>
+      <ul>
+        <li><a href="#heading4">我主密碼被破解了不就完了？</a></li>
+        <li><a href="#heading5">它會偷我的密碼嗎？</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading6">妳不該完全信賴它</a></li>
+  </ul>
+</nav>
+                
+                <p><img src="/photo/hacker-2300772_1920.jpg" alt=""></p>
+<h2 id="heading">現代人的密碼危機</h2>
+<p>如果妳是一位<strong>有正常使用網路</strong>的現代人，基本上在網路上會有許多的帳號。我算是用量比較高的用戶，我稍微統計了一下：<strong>光是記得的我就有 72 個帳號</strong>，還有很多早就忘掉的黑數呢！</p>
+<p>過去，帳號被盜或許是件小事，當然如果 LOL 或玩遊戲的帳號被盜會很心痛，但不至於會影響生活。隨著現代我們將生活越來越多部份放入網路，網路身份的重要性已經足以影響生活，因此我們勢必要用一些方法好好管理自己的網路身份。</p>
+<h3 id="heading1">重複密碼</h3>
+<p>密碼的大原則就是<strong>不要重複</strong>，但哪有辦法呢？我們有那麼多的帳號，如果每個都要背一個密碼哪辦得到？每次在「Sign up」頁面停了很久，最後還是用了以前的密碼。</p>
+<p>重複密碼的危險性在於：只要妳其中一個帳戶被破解，其他帳戶都會遭殃，尤其是一些安全性不高的小網站，或是居心不良的惡意網站，如果跟重要的帳號設了相同的密碼，那就危險了。</p>
+<h3 id="heading2">使用不安全工具紀錄</h3>
+<p>第二個危險的情形就是<strong>使用不安全的工具紀錄密碼</strong>，像是我以前也會用 Evernote 紀錄密碼，相信不只我，很多人都會用一些筆記本軟體來紀錄密碼，<strong>這非常危險！</strong> 以下用 Evernote 舉例：一方面我們無法確定 Evernote 公司會不會讀妳的筆記，而且內容沒有經過加密，要是 Evernote 的伺服器被攻擊，資料外洩，妳的密碼就等於是明文獻給了駭客。何況妳怎麼知道 Evernote 不會授權某些極權政府讀妳的資料？（這裡就不點名了）</p>
+<p>有些人認為將檔案存在本機，不要上傳到網路就安全了，但其實不然：在妳的手機上有非常多的應用程式都有權限存取妳的檔案，若是其中有惡意程式發現妳的密碼文件，大可直接上傳到它的網路資料庫。</p>
+<p>因此紀錄密碼的工具以及儲存的資料必須要被加密，也就是要有所謂的<strong>主控密碼</strong>。</p>
+<hr>
+<h2 id="heading3">密碼管理工具，安全嗎？</h2>
+<p>許多人，包括我，一開始聽到「密碼管理工具」時，都會覺得不可思議：這種東西真的能信任嗎？但其實一個做得好的密碼管理工具，是很安全的，以下我將回應常見的疑慮。</p>
+<h3 id="heading4">我主密碼被破解了不就完了？</h3>
+<p>有些人覺得，使用密碼管理工具，就是將所有密碼的命運寄放在一組密碼上，這樣風險太大了！</p>
+<p>其實沒錯，如果妳今天能夠記得自己每個帳號的每個密碼，妳壓根不需要密碼管理工具，但問題是<strong>我們辦不到</strong>。</p>
+<p>就是因為我們記不得密碼，我們才會用相同的密碼，才會有上述所說的安全問題。而事實上也沒錯，使用密碼管理工具<strong>就是將所有密碼寄放在一組密碼上</strong>。但我們可以透過<strong>兩步驟驗證</strong>來避免主密碼被破解就被盜用。</p>
+<p>兩步驟驗證，顧名思義，就是在妳輸入密碼後還要經過另一道手續才可以登入。例如 簡訊驗證碼、Email 確認信都是常見的形式，這樣可以避免密碼被破解就導致帳號被盜，駭客必須同時掌握妳的密碼和手機才有辦法登入，這個難度實在蠻高的，所以現在幾乎所有研究都指出<strong>兩步驟驗證能確實提高安全性</strong>。</p>
+<h3 id="heading5">它會偷我的密碼嗎？</h3>
+<p>另一個考量就是<strong>這個程式是否值得信任？</strong>，畢竟我在上面舉 Evernote 例子時也提到：<strong>我們很難確定程式有沒有在背後搞鬼！</strong> 而這就見仁見智了，有些人可能是信任大公司的軟體，而我是信任<strong>良好的加密演算法和開源軟體</strong>。</p>
+<blockquote>
+<p>一個安全的加密演算法，就是妳就算知道它的原理還是無法破解它</p>
+</blockquote>
+<p>舉我所使用的 <a href="https://bitwarden.com">Bitwarden</a> 為例，在官網 FAQ 就寫了 <a href="https://help.bitwarden.com/article/why-should-i-trust-bitwarden/">為什麼妳要信任 Bitwarden</a>。</p>
+<blockquote>
+<ol>
+<li>
+<p>Bitwarden is <strong>100% open source</strong> software. All of our source code is hosted on GitHub and is free for anyone to review. Thousands of software developers follow Bitwarden’s source code projects (and you can too!).</p>
+</li>
+<li>
+<p>Bitwarden is audited by reputable third-party security auditing firms as well as independent security researchers.</p>
+</li>
+<li>
+<p>Bitwarden <strong>does not store your passwords</strong>. Bitwarden stores encrypted versions of your passwords that <strong>only you can unlock</strong>. Your sensitive information is encrypted locally on your personal device before ever being sent to our cloud servers.</p>
+</li>
+<li>
+<p>Bitwarden has a reputation. Bitwarden is used by hundreds of thousands of individuals and businesses. If we did anything questionable or risky we would be out of business.</p>
+</li>
+</ol>
+</blockquote>
+<p>Bitwarden 在同步時，會將妳的資料先用主控密碼加密，再上傳到伺服器，如此一來，就算駭客取得妳伺服器中的檔案，仍無法破解妳的資料。相同的，就算 Bitwarden 居心不軌，想要偷看妳的密碼，它也做不到，因為唯一能解開的，就只有知道主控密碼的 ——<strong>妳</strong>。</p>
+<p>怎麼知道它沒有偷偷上傳原始的資料？別擔心，Bitwarden 是開源軟體，開源軟體或許不一定安全，但<strong>它不能騙妳</strong>，因為所有的程式碼都放在 GitHub 上，等著妳去檢查。就算它騙的了妳，也騙不過成千上萬個工程師。</p>
+<p>如果還是不放心，Bitwarden 也提供「自架選項」，妳可以將 Bitwarden 放在自己的伺服器上，所有的資料都在自己手裡。</p>
+<h2 id="heading6">妳不該完全信賴它</h2>
+<p>事實上，妳也不該完全信賴它。雖然我剛才提出了許多證據說明它可以信任，但它終究只是個「工具」，仍然有著風險，而且<strong>它不能為妳負責</strong>。<strong>我們確實不該完全信賴任何事物</strong>，也許我們信賴 Google、Apple、Facebook（現在不了），但<strong>它們真的值得信賴嗎？</strong> 值得妳將足以影響生活的權力交給它們嗎？</p>
+<p>因此，<strong>我們也不該完全信賴密碼管理工具</strong>，折衷的辦法是：<strong>將不重要的帳號使用隨機密碼，透過密碼管理工具儲存；重要的帳號密碼自己記得</strong>。一方面減少記憶的負擔、不會因不重要帳號被破解影響到重要的帳號、再來也<strong>對自己的生活有主控權</strong>。</p>
+<p>將工具視為輔助自己的方法，而不是完全依賴工具，才是對自己負責的作法。</p>
+
+                
+                <div class="alert alert-warning part" data-startline="5" data-endline="12">
+<p><strong>👉【幫我們一個忙！】👈</strong></p>
+<p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
+❤您的支持是我們最大的動力！</p>
+<p>您只要登入帳號（Facebook、Google），在下方按5個Like，我們就會收到來自 LikeCoin 基金會的贊助。<br>
+您只需要支持我們，完全不會花到錢！</p>
+</div>
+
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fshould-you-use-password-manager%2f" width="100%" frameborder=0></iframe>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/my-website-building-log/" data-toggle="tooltip" data-placement="top" title="網站建置紀錄">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/the-programming-future-is-donate/" data-toggle="tooltip" data-placement="top" title="SITCON 演講：軟體開發的未來，是大斗內時代？">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/jsp" title="jsp">
+                            jsp
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/life" title="life">
+                            life
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/minecraft" title="minecraft">
+                            minecraft
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ourliveworld" title="ourliveworld">
+                            ourliveworld
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
+                            教育
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
+                            自由軟體
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
+                        
+                        <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="WANcatServer" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:wancat@wancat.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://facebook.com/wancatserver">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lancatlin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://liker.social/@wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    <li>
+                        <a target="_blank" href="https://keybase.io/wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; WANcatServer 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

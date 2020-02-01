@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="WANcatServer">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="當老師對我們說：「可悲台灣小孩」" />
+    <meta property="og:title" content="當老師對我們說：「可悲台灣小孩」" />
+    <meta property="twitter:title" content="當老師對我們說：「可悲台灣小孩」" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>當老師對我們說：「可悲台灣小孩」-WANcatServer 網貓伺服器</title>
+
+    <link rel="canonical" href="/post/poor-taiwanese-kid/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+    
+<script type="text/javascript">
+    var _paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.wancat.cc/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">WANcatServer</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/linux">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/life" title="life">
+                            life
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E6%95%99%E8%82%B2" title="教育">
+                            教育
+                        </a>
+                        
+                    </div>
+                    <h1>當老師對我們說：「可悲台灣小孩」</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                WANcatServer
+                         
+                        on 
+                        Sunday, October 14, 2018
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>目錄</h2>
+                </header>
+                <nav id="TableOfContents"></nav>
+                
+                <blockquote>
+<p>「這句話真是說到心坎裡」，我笑著說
+「就只怕過幾年後，他就變『可悲台灣老師』」</p>
+</blockquote>
+<h1 id="heading">一則笑話</h1>
+<p>我的朋友有次跟我聊起他的家政老師。</p>
+<p>他的家政老師是一位年輕的新老師，充滿著熱情，似乎希望能在家政課做一些「有意義」的課程。所以他出了很多報告作業，上很多課程，而且從不借課考試，因為他覺得，台灣小孩的綜合、藝文課程被拿去考試，真的很可憐。</p>
+<p>但同學們並沒有認真的去做報告，反而覺得很煩，都只想躺分，丟給組員做。上課也沒什麼在聽，反倒是很多同學在訂正考卷、寫講義等等，根本沒在上課。</p>
+<p>我朋友說，他的老師就很生氣，有次就對他們班同學說：</p>
+<blockquote>
+<p>「你們這群可悲台灣小孩」。</p>
+</blockquote>
+<p>聽到這裡，我已經笑到不行，</p>
+<blockquote>
+<p>「這句話真是說進心坎裡」，我笑著說
+「就只怕過幾年後，他就變『可悲台灣老師』」</p>
+</blockquote>
+<h1 id="heading1">可悲台灣小孩與老師</h1>
+<p>這則笑話之所以好笑，就是因為我們的確可悲。</p>
+<p>我們的學生生活被考試佔滿，漸漸的讓學生也變得考試導向、勢利，只在乎「會不會考」，再也不在乎學習的本質是理解、是應用。</p>
+<p>有時，當老師充滿熱血，希望做些什麼，帶些不一樣的課程來改變時，反而會受到學生的反彈，反而覺得老師很煩，還不如拿來考試、自習。</p>
+<p>這樣子的反應，往往是毀了一位教師熱忱最可怕的殺手。</p>
+<h1 id="heading2">我如何成為一位可悲的國中生？</h1>
+<p>一個學生，是如何變得漠不關心？</p>
+<p>從升上國中開始說起，在國一時，我對於綜合、藝文課是高度參與的，一方面老師懂的帶學生，而且國一的課業還沒有那麼重，所以在上考試科目之餘，能夠做一些不一樣的事，我想大部分學生都是喜歡的。</p>
+<p>到了二年級，我開始有自己課餘的活動，也就是寫程式。我在家需要大量的時間來維持我的興趣，我甚至一度考慮不參加第八節，但後來考慮怕不能跟上進度與造成別人麻煩，仍然是參加了。</p>
+<p>從此在學校，我的目標就是「將所有學習相關的事情在學校完成」，什麼意思呢？就是將作業在學校寫完，要考的科目在上課讀完，讓回家時間百分之百都是屬於自己的。</p>
+<p>漸漸的，我開始將一些「我認為學不到東西」的課用來寫作業、自習；漸漸的，當老師出報告作業時，心中只有反感，與麻煩；漸漸的，我開始變成自己瞧不起的那種「可悲台灣小孩」。</p>
+<h1 id="heading3">夢中的教室</h1>
+<p>我有一個夢，是一間教室，中間一個大桌，老師不站在講台上，跟同學一塊坐在桌旁。老師上課，但強調的不是如何解題目，而是為什麼我們要學這個？如何理解這門學問。學生可以自由的討論，如果願意，學生能向大家發表自己的看法，甚至自己準備內容向大家發表。</p>
+<p>沒有正解，沒有標準答案，沒有考試技巧，沒有「這題目有瑕疵，但你還是得這樣寫」，只有學習本身。</p>
+<blockquote>
+<p>「這樣的教室，真希望不只是出現在夢裡。」</p>
+</blockquote>
+
+                
+                <div class="alert alert-warning part" data-startline="5" data-endline="12">
+<p><strong>👉【幫我們一個忙！】👈</strong></p>
+<p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
+❤您的支持是我們最大的動力！</p>
+<p>您只要登入帳號（Facebook、Google），在下方按5個Like，我們就會收到來自 LikeCoin 基金會的贊助。<br>
+您只需要支持我們，完全不會花到錢！</p>
+</div>
+
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fpoor-taiwanese-kid%2f" width="100%" frameborder=0></iframe>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/yacy-install/" data-toggle="tooltip" data-placement="top" title="YaCy安裝教學">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/progression/" data-toggle="tooltip" data-placement="top" title="十五歲的生涯選擇，我為何拒讀高中？">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/jsp" title="jsp">
+                            jsp
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/life" title="life">
+                            life
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/minecraft" title="minecraft">
+                            minecraft
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ourliveworld" title="ourliveworld">
+                            ourliveworld
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
+                            教育
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
+                            自由軟體
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
+                        
+                        <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="WANcatServer" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:wancat@wancat.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://facebook.com/wancatserver">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lancatlin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://liker.social/@wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    <li>
+                        <a target="_blank" href="https://keybase.io/wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; WANcatServer 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

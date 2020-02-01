@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>資訊安全 on WANcatServer</title>
+    <link>https://www.wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</link>
+    <description>Recent content in 資訊安全 on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 Feb 2019 20:07:35 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>妳該使用密碼管理工具嗎？</title>
+      <link>https://www.wancat.cc/post/should-you-use-password-manager/</link>
+      <pubDate>Thu, 21 Feb 2019 20:07:35 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/should-you-use-password-manager/</guid>
+      <description>現代人的密碼危機 如果妳是一位有正常使用網路的現代人，基本上在網路上會有許多的帳號。我算是用量比較高的用戶，我稍微統計了一下：光是記得的我就有</description>
+    </item>
+    
+  </channel>
+</rss>

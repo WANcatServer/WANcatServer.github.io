@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="WANcatServer">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="2018 JSP 紀錄與心得 (一)" />
+    <meta property="og:title" content="2018 JSP 紀錄與心得 (一)" />
+    <meta property="twitter:title" content="2018 JSP 紀錄與心得 (一)" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>2018 JSP 紀錄與心得 (一)-WANcatServer 網貓伺服器</title>
+
+    <link rel="canonical" href="/post/jsp8/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+    
+<script type="text/javascript">
+    var _paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.wancat.cc/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">WANcatServer</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/linux">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/jsp" title="JSP">
+                            JSP
+                        </a>
+                        
+                    </div>
+                    <h1>2018 JSP 紀錄與心得 (一)</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                WANcatServer
+                         
+                        on 
+                        Monday, August 6, 2018
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>目錄</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#jsp-">JSP 簡介</a></li>
+    <li><a href="#heading">事前準備</a></li>
+    <li><a href="#heading1">同為天涯程式人</a></li>
+    <li><a href="#heading2">專題演講</a>
+      <ul>
+        <li><a href="#heading3">科研社ㄉ特別訓練</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <blockquote>
+<p>參加 <strong>JSP 國中科學探究聯合發表會</strong> 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。
+本次主題的<a href="/2018/08/01/FireWheel0/">系列文章</a>, <a href="https://www.youtube.com/embed/j0jkjbXKWTg">演講影片</a></p>
+</blockquote>
+<h2 id="jsp-">JSP 簡介</h2>
+<p>今年很高興又參加了JSP，自從去年在我的學校 &mdash;福科國中舉辦後，就深深愛上了這個活動。
+JSP的全名為 <a href="https://sites.google.com/site/juniorscientistparty/guan-yu-wo-men/home"><strong>國中科學探究聯合發表會</strong></a> ， <em>Junior Scientist Party</em> ，是一個非比賽導向，純粹讓學生進行交流與交朋友的科學派對。<br>
+每一位參加的學生，都必須準備一點功課，可能是將你的研究成果做成一張海報，與觀眾們互動；抑或是準備一項科學課程，帶著學員們一起做；或者是在大會議廳中向所有人發表你的研究成果。
+不管是哪一種都不簡單，所以參與的學生個個是有行動力、勇敢且努力的人，花了很多時間準備，才能來到這裡的。
+而來到了JSP，也並非是跟同校的在一起，所有的學生會被打散到各個小組中，能因此認識不同的人，建立新的人脈。</p>
+<p>去年我曾經參加，深受感動，因此今年，我仍在這裡。</p>
+<h2 id="heading">事前準備</h2>
+<p>如前面所說，需要準備一個發表的項目。去年我是做海報分享，介紹我自製的Arduino紅外線遙控車。那今年我要挑戰更大的項目，就是在百人會議廳前進行專題發表。</p>
+<p>題材呢？我在今年參加台中市的科展，是製作單感測器循線車，可能是科展講到會怕了，不太想要講這個題材。另外一個就是在比科展的同時，自己在製作的遊戲專案 &mdash; <strong>FireWheel火輪手槍</strong>，一方面較有趣、新鮮，二來老師也認為資訊領域是JSP較少見的題材。從暑假的第二周開始，我就在準備這場演講。
+<a href="/2018/08/01/FireWheel0/">講稿連結</a>
+我寫了非常多的內容，雖然要講的只有遊戲中的「碰撞檢測」與「三角函數」，這兩個有點偏數學的項目，但是一寫不得了，每天都寫了超越千字（打字太快了），結果到所有內容寫畢，才發現已經14000字元了，根本不可能在10分鐘的報告中講完。</p>
+<p>這時老師也給了一個方向大轉彎，突然要我放多一點的<strong>歷程</strong>，像是怎麼學習程式的，途中遇到的困難等等，但隔天就要在學校進行試講，實在來不及，也不知該怎麼改。到了星期一在學校對著老師同學試講時，整整講了<strong>37分鐘</strong>，是限定時間的<strong>將近4倍</strong>。在最前面找同學上來試玩的地方，讓場面變得很歡樂，老師也說我臉上出現了「興奮」的神情，但在後面講的越來越久時，興奮的表情開始慢慢的黯淡。</p>
+<p>在星期一的試講結束後，老師給了很多建議，最多還是要「刪」，刪是很正常的，在做科展的報告時我就了解，反正我還有部落格，沒法在口說講完的內容，就放在部落格給有興趣的看就好。最後一路刪刪刪，刪到只剩遊戲簡介、試玩、架構以及圓形對圓形的碰撞檢測。
+星期二時我帶著麥克風、筆電，一個人到教室開始練習口說，一次一次試，逐漸可以把時間控制在15分鐘內，且慢慢可以不用看稿，對於我的投影片也更加熟悉，知道該在什麼時候翻頁、什麼時候用手去指。花了一個多小時練了四次，偶爾加強班下課還會有人路過來看。
+在星期三的驗收，老師表示我已經足夠熟練，剩下的就是要看臨場反應，以及<strong>一定要找人試玩</strong>，我自己也發現試玩對於整個報告會有不同於我自己玩的「笑果」，讓報告變得活潑，讓觀眾產生興趣。</p>
+<p>這次的所有圖片，包括投影片底圖都是我自己設計的，一開始要畫碰撞檢測的示意圖，調出了非常可愛的粉紅色以及粉綠色，就決定以此作為這次報告的主題色彩。</p>
+<h2 id="heading1">同為天涯程式人</h2>
+<p>當JSP開始，我們在一個禮堂要進行分組，分組基本上是隨便亂分啦！唯一的規則就是不要跟同校的一組。(我也沒有同校的)</p>
+<p>特別的是，我們的組裡有一位組員也會寫程式，竟然也玩Linux作業系統，是我人生中第一次遇到同年齡也會玩Linux的(我也是他第一次遇到有人用Linux的，可見Linux的市占率&hellip;)。</p>
+<p>我們一下就聊起來了，我發現他懂的非常多。關於我很缺乏的電腦底層知識，資訊領域的各種知識，還有科學，他幾乎都知道。有時候還會知道一些很奇怪的冷知識，像是Unicode裡面的編碼，令人會心一笑。</p>
+<p>我們也彼此分享了所做的專案，像我的 圖書管理系統、<a href="https://github.com/lancatlin/FireWheel">火輪手槍</a>，他做了一個<a href="https://github.com/TNPLR/OHCS">加密系統</a>、現在正在做作業系統。</p>
+<h2 id="heading2">專題演講</h2>
+<p>在第二天的早上，就是專題演講的時候。<br>
+記得從小學六年級的時候，我就常常成為團隊中的發表者，對於「上台」這件事，從一開始的害怕、忐忑，到後來可以面無懼色的在台上講話，甚至對於表現開始有種興奮，開始期待，並且恨不得自己第一個上場。</p>
+<h3 id="heading3">科研社ㄉ特別訓練</h3>
+<p>我的「台風」，絕不是什麼演講比賽、即席演說所訓練的，而是科研社。
+在科研社的兩年給了我很多時間去學習「如何發表」。我想我們學校的科研社應該跟其他學校有很大的不同，我們不常做實驗，相對的，我們不停的<strong>交流</strong>。我們常常分享彼此的想法，常常上台發表，常常把報告拖到最後一天才做。</p>
+<p>對我而言，在科研社學到的不是科學知識，而是<strong>做研究的方法</strong>。或許你不會因此變得對某個領域非常的精熟，但你會知道如何讓自己成為那樣的人。</p>
+<hr>
+<p>在經過了前面的四組後，終於輪到了我。</p>
+<p>我早已把筆電準備在前面，這次很堅持的使用了自己的筆電，自己設計簡報，自己設計底圖，一人團隊有些辛苦，但我的成果讓我很滿意。</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/j0jkjbXKWTg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>這次的演講算是出奇的成功。首先我很擅長問答，因此我往往更擅長應變實際的情況，還有就是事前的準備，這次我的指導老師很精準的預期了觀眾的反應，因此採用最低強度的演講，成功的讓所有人都感到興趣且聽的懂。</p>
+<p>很開心的是觀眾反應非常熱烈，在報告的一開始，有安排找觀眾試玩的橋段，
+原本還有些擔心會不會沒人願意上來，還好在 <del>我事先的布局</del> 觀眾熱烈的反應下，這個擔心不成問題，事實上還有三位觀眾願意上台呢！</p>
+<p>最後有些時間不足，因此在程式解說之處稍微草率，但還好有時間讓我好好講結論。</p>
+<p>在這邊我想謝謝每一位聽我演講的觀眾，我相信，一個好的演講，是需要講者與觀眾一同參與的，謝謝你們作了一個稱職的觀眾，讓我有一個好的舞台。也謝謝願意鼓起勇氣上台試玩的朋友，讓我們能一起完成一場好的演講。
+<em><strong>請大家一定要去看影片喔！</strong></em></p>
+
+                
+                <div class="alert alert-warning part" data-startline="5" data-endline="12">
+<p><strong>👉【幫我們一個忙！】👈</strong></p>
+<p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
+❤您的支持是我們最大的動力！</p>
+<p>您只要登入帳號（Facebook、Google），在下方按5個Like，我們就會收到來自 LikeCoin 基金會的贊助。<br>
+您只需要支持我們，完全不會花到錢！</p>
+</div>
+
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fjsp8%2f" width="100%" frameborder=0></iframe>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/21earlyday/" data-toggle="tooltip" data-placement="top" title="二十一天的連續早起">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/jsp8-2/" data-toggle="tooltip" data-placement="top" title="2018 JSP 紀錄與心得 (二)">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/jsp" title="jsp">
+                            jsp
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/life" title="life">
+                            life
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/minecraft" title="minecraft">
+                            minecraft
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ourliveworld" title="ourliveworld">
+                            ourliveworld
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
+                            教育
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
+                            自由軟體
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
+                        
+                        <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="WANcatServer" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:wancat@wancat.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://facebook.com/wancatserver">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lancatlin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://liker.social/@wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    <li>
+                        <a target="_blank" href="https://keybase.io/wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; WANcatServer 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

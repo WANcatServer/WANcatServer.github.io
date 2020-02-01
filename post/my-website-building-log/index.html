@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="WANcatServer">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="網站建置紀錄" />
+    <meta property="og:title" content="網站建置紀錄" />
+    <meta property="twitter:title" content="網站建置紀錄" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>網站建置紀錄-WANcatServer 網貓伺服器</title>
+
+    <link rel="canonical" href="/post/my-website-building-log/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+    
+<script type="text/javascript">
+    var _paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.wancat.cc/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">WANcatServer</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/linux">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/server" title="Server">
+                            Server
+                        </a>
+                        
+                        <a class="tag" href="/tags/website" title="Website">
+                            Website
+                        </a>
+                        
+                    </div>
+                    <h1>網站建置紀錄</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                WANcatServer
+                         
+                        on 
+                        Sunday, January 20, 2019
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>目錄</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hexo">Hexo</a>
+      <ul>
+        <li><a href="#heading1">版本控制</a></li>
+      </ul>
+    </li>
+    <li><a href="#heading2">硬體</a></li>
+    <li><a href="#-dns">域名與 DNS</a></li>
+  </ul>
+</nav>
+                
+                <h1 id="heading">網站建置紀錄</h1>
+<p>我的網站從 2017 年六月第一次上 GitHub Page，到現在 <a href="http://www.wancat.cc">www.wancat.cc</a> ，也已經半年了，寫下這篇文章紀錄一下架站的方法。</p>
+<h2 id="hexo">Hexo</h2>
+<p>我的部落格是用 <a href="https://hexo.io">Hexo</a> 將 Markdown 轉成一個靜態網站的，所以可以部屬到 GitHub Page 或是任何伺服器，我自己現在還留著 <a href="https://wancatserver.github.io">https://wancatserver.github.io</a> 避免哪天伺服器發生不測&hellip;&hellip;。那 Hexo 可以多重部屬，我的設定檔大概長這樣。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># _config.yml</span>
+deploy:
+- type: git
+  repo: git@github.com:WANcatServer/WANcatServer.github.io.git
+- type: rsync
+  host: 我的伺服器 ip
+  user: lancat
+  root: /volume2/WANcatServer/www
+
+</code></pre></div><p>那我的佈景是使用 <a href="https://github.com/fi3ework/hexo-theme-archer">Archer</a>，非常好看的一個佈景，那我有做一些小調整：把簡體中文換成繁體，然後將授權地方放上 CC 授權。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd path/to/blog
+vim /theme/archer/layout/post.ejs
+</code></pre></div><p>即可修改模板內容，<a href="https://ejs.co">EJS</a> 也是我之前用過的模板引擎，所以挺快就弄好了。</p>
+<p>到 <a href="https://creativecommons.org/">創用 CC 官網</a> 上找你要的授權，就可以複製 HTML 嵌入到網站裡了。可以直接加在 Archer 裡面的 _config.yml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># theme/archer/_config.yml</span>
+<span style="color:#75715e"># 將 license 改成以下</span>
+license: &lt;a rel=<span style="color:#e6db74">&#34;license&#34;</span> href=<span style="color:#e6db74">&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34;</span>&gt;&lt;img alt=<span style="color:#e6db74">&#34;創用 CC 授權條款&#34;</span> style=<span style="color:#e6db74">&#34;border-width:0&#34;</span> src=<span style="color:#e6db74">&#34;https://i.creativecommons.org/l/by-sa/4.0/88x31.png&#34;</span> /&gt;&lt;/a&gt;&lt;br /&gt;本著作係採用&lt;a rel=<span style="color:#e6db74">&#34;license&#34;</span> href=<span style="color:#e6db74">&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34;</span>&gt;創用 CC 姓名標示-相同方式分享 <span style="color:#ae81ff">4.0</span> 國際 授權條款&lt;/a&gt;授權.
+
+</code></pre></div><p>RSS feed 須安裝 <code>hexo-generator-feed</code> 包，然後在 Archer 裡配置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># theme/archer/_config.yml</span>
+rss: /atom.xml
+</code></pre></div><p>Disqus 也很簡單，只要將 Disqus ID 丟到網站的 _config （不是佈景的）裡就好</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># _config.yml</span>
+disqus_shortname: //你的 ID
+</code></pre></div><p>可以裝 Google Analytics 看流量，設定 Archer _config：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># theme/archer/_config.yml</span>
+google_analytics: //你的 ID
+</code></pre></div><p>一開始流量不會進去的那麼快，我是隔天才看到流量進去的，所以不用緊張（也可能是我當初時間沒設到當天）。</p>
+<h3 id="heading1">版本控制</h3>
+<p>用 Hexo 的好處就是可以版控，所有文章都是好讀的 Markdown，我有做 Git 版控並同步到我自己架的 <a href="https://gitea.io/zh-tw/">Gitea</a> 上（沒有公開）。比較麻煩的是佈景，佈景裝的時候是用 <code>git clone</code> 下來，所以在 Git 裡頭就會變成 <strong>子模組 Submodules</strong> ，那因為佈景基本上不用更新，而且我不太會用子模組，所以不如整個一起做版控（會把自己微調的內容紀錄進去），所以就把 Archer 底下的 .git 刪掉，整個 add 進去就好。Archer 的更新比較麻煩些，要自己把有更動過的檔案抓出來，然後下載新版本再移進去，所以我只更新過一次。</p>
+<p>接下來有空也有打算自己寫一個佈景，不過現在我的前端很廢，慢慢來。</p>
+<h2 id="heading2">硬體</h2>
+<p>由於現在幫<a href="https://taiwan1forestrestoration.blogspot.com/">山林復育協會</a>管理主機，所以我有一台 <a href="https://www.synology.com/zh-tw/products/DS918+">Synology DS918+</a> 可以用。這台主機有還夠用的硬體，主打軟體，不過是面向非技術使用者，有自己的軟體商店，但內容有點缺乏，而且不能使用 apt（雖然它是 debian 系的），ssh 不能用公鑰登入（我有去設定過了！），shell 超難打，網頁界面很卡又容易跑掉，如果你有技術背景，不是特別在乎它附的軟體，還是自己裝 Ubuntu Server 輕鬆些。</p>
+<p>但它的檔案系統的確蠻方便的，也有出手機應用程式，所以可以像 Google Drive 一樣從手機讀檔案，Web 管理界面也是讓我不需要一個一個查指令，有著還算清楚的說明。只不過用到現在還是比較喜歡自己裝 Ubuntu。</p>
+<hr>
+<p>在 DS918+ 上架網站基本上就跟一般主機一樣，它的網頁伺服器是 Nginx，剛好也是我習慣的。</p>
+<p>我的 Nginx 設定檔長這樣：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#66d9ef">server</span> {
+    <span style="color:#f92672">listen</span> <span style="color:#ae81ff">80</span>;
+    <span style="color:#f92672">server_name</span> <span style="color:#e6db74">www.wancat.cc</span>;
+    <span style="color:#f92672">root</span> <span style="color:#e6db74">/volume2/WANcatServer/www</span>;
+    <span style="color:#f92672">index</span> <span style="color:#e6db74">index.html</span>;
+    <span style="color:#f92672">access_log</span> <span style="color:#e6db74">/var/log/nginx/access_log</span> <span style="color:#e6db74">combined</span>;
+}
+
+</code></pre></div><p>不要笑</p>
+<p>上面做一個重新導向到 www.@，那由於 DS918+ 設定 HTTPS 實在很複雜，我就把這偉大的任務交給 CloudFlare 了。</p>
+<h2 id="-dns">域名與 DNS</h2>
+<p>域名目前是在 <a href="https://porkbun.com">Porkbun</a> 上註冊 wancat.cc。本來想買 wan.cat （真的有），但是 .cat 實在太貴，打算用 .cc 。 .tw 域名在台灣基本上都是 800 TWD / year ，除了第一年特價外，實在有點貴，所以不考慮。.cc 每年大約 10 鎂，還算便宜，而且也挺好看的。</p>
+<p>註冊完後 DNS 用 CloudFlare 代管，雖然 DS918+ 可以裝 DNS Server，但我懶的用，CloudFlare 免費方案就很夠用了。</p>
+<p>CloudFlare 我設定了 @, www 兩個 DNS，www CNAME 到 @，都有開雲朵（會經過 CloudFlare），所以可以隱藏真實 IP。我用 Page Rules 做轉址，設定舊網域以及 wancat.cc 會轉址到 <a href="http://www.wancat.cc">www.wancat.cc</a>，用 www 的理由是為了避免 Cookie 在不同 subdomain 被重用。詳細理由參考：<a href="https://bjornjohansen.no/www-or-not?utm_source=wanqu.co&amp;utm_campaign=Wanqu+Daily&amp;utm_medium=email">bjornjohansen.no</a></p>
+<p>本來我是自己用 Nginx 轉址，但速度有點慢，今天改用 CloudFlare 就幾乎是瞬間完成了，我現在對它依賴度越來越高了。</p>
+<p>如果要讓 ssh 連，可以直接連 ip 或是開一個 ssh.@，然後雲朵不要開（不會經過 CloudFlare，直接回應 IP），就可以連了。好像有更安全的作法，但我也懶的用了（茶）</p>
+<h1 id="heading3">筆記</h1>
+<p>自己架網站也半年了，從痞客邦到 Medium 到 Hexo，不過弄了這麼多還是不會寫網頁。買了五年的網域，希望自己的網站可以再撐五年（茶）。</p>
+
+                
+                <div class="alert alert-warning part" data-startline="5" data-endline="12">
+<p><strong>👉【幫我們一個忙！】👈</strong></p>
+<p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
+❤您的支持是我們最大的動力！</p>
+<p>您只要登入帳號（Facebook、Google），在下方按5個Like，我們就會收到來自 LikeCoin 基金會的贊助。<br>
+您只需要支持我們，完全不會花到錢！</p>
+</div>
+
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fmy-website-building-log%2f" width="100%" frameborder=0></iframe>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/king-in-the-mud/" data-toggle="tooltip" data-placement="top" title="理想王與潰爛王的一天">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/should-you-use-password-manager/" data-toggle="tooltip" data-placement="top" title="妳該使用密碼管理工具嗎？">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/jsp" title="jsp">
+                            jsp
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/life" title="life">
+                            life
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/minecraft" title="minecraft">
+                            minecraft
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ourliveworld" title="ourliveworld">
+                            ourliveworld
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
+                            教育
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
+                            自由軟體
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
+                        
+                        <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="WANcatServer" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:wancat@wancat.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://facebook.com/wancatserver">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lancatlin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://liker.social/@wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    <li>
+                        <a target="_blank" href="https://keybase.io/wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; WANcatServer 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

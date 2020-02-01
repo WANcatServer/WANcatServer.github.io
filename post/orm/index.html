@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="WANcatServer">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="ORM 入門：如何區分 ORM 中的關聯" />
+    <meta property="og:title" content="ORM 入門：如何區分 ORM 中的關聯" />
+    <meta property="twitter:title" content="ORM 入門：如何區分 ORM 中的關聯" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>ORM 入門：如何區分 ORM 中的關聯-WANcatServer 網貓伺服器</title>
+
+    <link rel="canonical" href="/post/orm/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+    
+<script type="text/javascript">
+    var _paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.wancat.cc/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">WANcatServer</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/linux">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/orm" title="ORM">
+                            ORM
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E7%A8%8B%E5%BC%8F" title="程式">
+                            程式
+                        </a>
+                        
+                        <a class="tag" href="/tags/golang" title="Golang">
+                            Golang
+                        </a>
+                        
+                    </div>
+                    <h1>ORM 入門：如何區分 ORM 中的關聯</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                WANcatServer
+                         
+                        on 
+                        Friday, July 26, 2019
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>目錄</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-relation">什麼時候會用到 Relation？</a></li>
+    <li><a href="#has-one">Has One</a></li>
+    <li><a href="#belongs-to">Belongs to</a></li>
+    <li><a href="#has-many">Has many</a></li>
+    <li><a href="#many-to-many">Many To Many</a></li>
+    <li><a href="#heading">總結</a></li>
+  </ul>
+</nav>
+                
+                <p>最近初次接觸 ORM——Object-relational mapping——這個強大的工具，但是為其中的<strong>關聯</strong>而苦惱不已。在仔細研究後終於了解其差異，本篇文章透過一個圖書館專案的實例，使用 Golang + GORM 來實做，並輔以 SQL 做說明，讓已經學會 SQL 而想要了解 ORM 的人真的「懂」如何設計 Relation。</p>
+<h2 id="-relation">什麼時候會用到 Relation？</h2>
+<p>ORM 中的 Relation 就是相當於 SQL 中的各種 Join，用來將不同表格中的資料串起。由於 ORM 是用物件，所以如果未來有關聯到其他表格的需求，必須在物件設計時就包含進來。</p>
+<p>來定義需求吧！我們今天假設情境是要定義一個圖書館的資料庫，那我們會有編目資料 <code>Book</code>（書的資料）、館藏資料 <code>Item</code>（書的實體），作者資料 <code>Author</code>，出版社資料 <code>Publisher</code>。書名、ISBN 等等跟關聯沒有關係的就不放入。</p>
+<p>我們先不要討論 gorm 要怎麼寫，先把要取得的資料擺出來。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Book</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">Items</span> []<span style="color:#a6e22e">Item</span>
+    <span style="color:#a6e22e">Authors</span> []<span style="color:#a6e22e">Author</span>
+    <span style="color:#a6e22e">Publisher</span> <span style="color:#a6e22e">Publisher</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Item</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">Book</span> <span style="color:#a6e22e">Book</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Author</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">Works</span> []<span style="color:#a6e22e">Book</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Publisher</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">Publication</span> []<span style="color:#a6e22e">Book</span>
+}
+</code></pre></div><p>我們要讓所有的 structure 都能夠參考到依賴自己的對象：作者必須參考到作品集、出版社要能參考出版品、分類要能找出其中的所有書籍。</p>
+<p>接下來我們一個一個釐清物件之間的關聯關係，來設計 ORM 吧！</p>
+<h2 id="has-one">Has One</h2>
+<p>一本書會有多個實體，一個實體一定是某一本書，也就是說 Book -&gt; Item 是一對多，而 Item -&gt; Book 則是一對一。</p>
+<p>從 Book -&gt; Item 是一對多來看，應該要使用 Has many，但是 Item -&gt; Book 應該使用 Has one 還是 Belongs to 呢？</p>
+<p>今天如果分別使用 Belongs to 以及 Has one 所做出來的資料結構，會有什麼差異呢？</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 如果使用 Item &#39;Has one&#39; Book
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Book</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">int</span>
+    <span style="color:#a6e22e">Items</span> []<span style="color:#a6e22e">Item</span>
+    <span style="color:#75715e">// 根據 Has One 的規則，被參考的物件必須要儲存參考者的 Primary Key
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">ItemID</span> <span style="color:#66d9ef">int</span>
+    <span style="color:#75715e">// 可是 Book 有許多 Item 啊...
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Item</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">Book</span> <span style="color:#a6e22e">Book</span>
+}
+</code></pre></div><p>Has One 的參考關係是<strong>來回都為一對一</strong>，以剛才錯誤的資料結構為例，我們可以將其 SQL 資料結構設計如下：</p>
+<pre><code>CREATE TABLE items {
+	id int
+}
+CREATE TABLE books {
+	item_id int
+	FOREIGN KEY (item_id) REFERENCES TO items (id)
+}
+</code></pre><p>顯然這跟我們的需求不符，那我們來看看 Belongs to</p>
+<h2 id="belongs-to">Belongs to</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 使用 Item &#34;Belongs to&#34; Book
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Book</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">int</span>
+    <span style="color:#a6e22e">Items</span> []<span style="color:#a6e22e">Item</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Item</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">Book</span>  <span style="color:#a6e22e">Book</span>
+    <span style="color:#75715e">// Belongs to 規定要儲存被參考者的 primary key
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">BookID</span> <span style="color:#66d9ef">int</span>
+}
+</code></pre></div><p>轉換成 SQL 表格</p>
+<pre><code>CREATE TABLE books {
+	id int
+}
+
+CREATE TABLE items {
+	id int
+	book_id int
+	FOREIGN KEY (book_id) REFERENCES TO books (id)
+}
+
+SELECT books.*
+FROM items INNER JOIN books
+ON items.book_id = books.id
+WHERE items.id = ?;
+</code></pre><p>這樣子我們就能讓 Item 關聯到 Book 啦！</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">gorm</span>.<span style="color:#a6e22e">Model</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">item</span>).<span style="color:#a6e22e">Related</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">book</span>)
+</code></pre></div><h2 id="has-many">Has many</h2>
+<p>剛才還沒細講 Book 要怎麼關聯到多個 Item 呢！但其實我們<strong>已經做出來囉！</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 使用 Book &#34;Has Many&#34; Item
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Book</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">int</span>
+    <span style="color:#75715e">// 有著多個 item 資料
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Items</span> []<span style="color:#a6e22e">Item</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Item</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#75715e">// 這一項是 Item belongs to 所使用的，在 Has Many 中不一定需要
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Book</span>  <span style="color:#a6e22e">Book</span>
+    <span style="color:#75715e">// Has Many 規定要儲存參考者的 primary key
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">BookID</span> <span style="color:#66d9ef">int</span>
+}
+</code></pre></div><p>眼尖的你會發現，這根本和前一個一模一樣啊！沒錯，因為 Has many 的參考方不需要儲存任何資料，而是由被參考方來儲存參考方的主鍵，這是資料庫正規化的第一條鐵則：<strong>不能有重複群</strong></p>
+<p>SQL 實做：</p>
+<pre><code>CREATE TABLE books {
+	id int PRIMARY KEY
+}
+
+CREATE TABLE items {
+	id int PRIMARY KEY
+	book_id int
+	FOREIGN KEY (book_id) REFERENCES TO books (id)
+}
+
+SELECT items.*
+FROM books INNER JOIN items
+ON books.id = items.book_id
+WHERE books.id = ?;
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">gorm</span>.<span style="color:#a6e22e">Model</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">book</span>).<span style="color:#a6e22e">Related</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">items</span>)
+</code></pre></div><h2 id="many-to-many">Many To Many</h2>
+<p>接下來我們來處理書本與作者的關聯，一個書本會對應到多個作者，一個作者也會對應到多個書本，那這就是所謂的 Many To Many 關聯啦！</p>
+<p>要理解 Many To Many，我們要先了解在 SQL 中我們通常是怎麼實做的：由於雙方都會關聯到多個值，我們必須創建第三個表格來儲存它們的對應關係</p>
+<pre><code>CREATE TABLE books {
+	id int PRIMARY KEY
+};
+
+CREATE TABLE authors {
+	id int PRIMARY KEY
+};
+
+CREATE TABLE book_authors {
+	book_id int
+	author_id int
+	FOREIGN KEY (book_id) REFERENCES TO books (id)
+	FOREIGN KEY (author_id) REFERENCES TO authors (id)
+};
+
+# 找尋某 book 的所有 author
+SELECT authors.*
+FROM book_authors INNER JOIN authors
+ON book_authors.author_id = authors.id
+WHERE book_authors.book_id = ?;
+
+# 找尋某 author 的所有 book
+SELECT books.*
+FROM book_authors INNER JOIN books
+ON book_authors.book_id = books.id
+WHERE book_authors.author_id = ?;
+</code></pre><p>那 ORM 就可以簡化這個複雜的實做過程，今天有 Many To Many 的對應關係，可以簡單的在各自的物件宣告被參考者的 slice，然後透過 struct tag 來設定「第三個表格」的名稱即可。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Book</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">Authors</span> []<span style="color:#a6e22e">Author</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">gorm:&#34;many2many:book_authors&#34;</span><span style="color:#e6db74">`</span> <span style="color:#75715e">// struct tag 設定第三個表格的名稱
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Author</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">Works</span> []<span style="color:#a6e22e">Book</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">gorm:&#34;many2many:book_authors&#34;</span><span style="color:#e6db74">`</span> <span style="color:#75715e">// struct tag 設定第三個表格的名稱
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>這樣 ORM 就會自動幫你建立 <code>book_authors</code> 這個表格並完成他們的依賴關係囉！</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 找尋某 book 的所有作者
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">gorm</span>.<span style="color:#a6e22e">Model</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">book</span>).<span style="color:#a6e22e">Related</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">authors</span>)
+
+<span style="color:#75715e">// 找尋某 author 的所有作品
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">gorm</span>.<span style="color:#a6e22e">Model</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">author</span>).<span style="color:#a6e22e">Related</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">books</span>)
+</code></pre></div><p>注意！Many To Many 指的是「彼此皆為一對多」，不是說你在查詢的時候要拿「多個」去找「多個」喔！查詢時還是拿一個找多個。</p>
+<h2 id="heading">總結</h2>
+<p>所以我們最後來回顧一下 Belongs To、Has One、Has Many、Many To Many 的差別吧！</p>
+<p>所謂 Has something 的，就是將「自己的主鍵」儲存在「對方的欄位」，也就是說被 Has 的那一方，就是 Belongs To，沒錯！Has something 的 back-reference 就是 Belongs To，差別在於 Has One 的對象是單數，Has Many 的對象是複數，但其實兩者的 SQL 表格實做起來會是一樣的！</p>
+<p>反過來說，Belongs To 就是將「對方的主鍵」保存在「自己的欄位」，那根據資料庫正規化的第一條原則：不能有群集，所以 Belongs To 一定只能保存一個對方的主鍵，因此被參考方一定是單數喔！</p>
+<p>Many To Many 則是將「雙方的主鍵」保存在「第三個表格」，所以雙方都能夠關聯到多個對方。</p>
+<p>最後我們再來實做 Book 跟 Publisher 的對應關係，因為一本書對應到一個出版社，而一個出版社對應到多本書，因此我們採用 Publisher &ldquo;Has Many&rdquo; Book 的方式，那當然也就會是 Book &ldquo;Belongs To&rdquo; Publisher。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Book</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">Publisher</span> <span style="color:#a6e22e">Publisher</span>
+    <span style="color:#a6e22e">PublisherID</span> <span style="color:#66d9ef">int</span>
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Publisher</span> <span style="color:#66d9ef">struct</span> {
+    <span style="color:#a6e22e">ID</span> <span style="color:#66d9ef">int</span>
+    <span style="color:#a6e22e">Publication</span> []<span style="color:#a6e22e">Book</span>
+}
+
+<span style="color:#75715e">// 從某書取得出版社
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">gorm</span>.<span style="color:#a6e22e">Model</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">book</span>).<span style="color:#a6e22e">Related</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">publisher</span>)
+
+<span style="color:#75715e">// 從某出版社取得所有書籍
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">gorm</span>.<span style="color:#a6e22e">Model</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">publisher</span>).<span style="color:#a6e22e">Related</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">books</span>)
+</code></pre></div>
+                
+                <div class="alert alert-warning part" data-startline="5" data-endline="12">
+<p><strong>👉【幫我們一個忙！】👈</strong></p>
+<p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
+❤您的支持是我們最大的動力！</p>
+<p>您只要登入帳號（Facebook、Google），在下方按5個Like，我們就會收到來自 LikeCoin 基金會的贊助。<br>
+您只需要支持我們，完全不會花到錢！</p>
+</div>
+
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2form%2f" width="100%" frameborder=0></iframe>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/capslock/" data-toggle="tooltip" data-placement="top" title="如何在 Linux 使用 Caps Lock 切換輸入法">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/jsp-9/" data-toggle="tooltip" data-placement="top" title="JSP 第九屆參加心得">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/jsp" title="jsp">
+                            jsp
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/life" title="life">
+                            life
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/minecraft" title="minecraft">
+                            minecraft
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ourliveworld" title="ourliveworld">
+                            ourliveworld
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
+                            教育
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
+                            自由軟體
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
+                        
+                        <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="WANcatServer" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:wancat@wancat.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://facebook.com/wancatserver">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lancatlin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://liker.social/@wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    <li>
+                        <a target="_blank" href="https://keybase.io/wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; WANcatServer 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

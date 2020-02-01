@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>自由軟體 on WANcatServer</title>
+    <link>https://www.wancat.cc/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94/</link>
+    <description>Recent content in 自由軟體 on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Sep 2018 20:26:23 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wancat.cc/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>YaCy安裝教學</title>
+      <link>https://www.wancat.cc/post/yacy-install/</link>
+      <pubDate>Sat, 22 Sep 2018 20:26:23 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/yacy-install/</guid>
+      <description>YaCy是一個開源的點對點搜尋引擎 本文將講解如何在 Ubuntu Server 上安裝 YaCy 搜尋引擎，並用Nginx做反向代理，將網址改成像是 yacy.example.com 的形式。 YaCy 架好的範例可以來</description>
+    </item>
+    
+    <item>
+      <title>從今天起，不要使用 .docx</title>
+      <link>https://www.wancat.cc/post/dont-use-docx/</link>
+      <pubDate>Sun, 16 Sep 2018 05:50:26 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/dont-use-docx/</guid>
+      <description>妳使用什麼文書軟體？相信大部分的答案會是 Word, Powerpoint, Excel ，微軟Office的產品。那是否可以麻煩妳做一件事？在 存檔的時候選擇用ODF 。 檔案格式的霸主 &amp;mdash;OOXML</description>
+    </item>
+    
+  </channel>
+</rss>

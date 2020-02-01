@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on WANcatServer</title>
+    <link>https://www.wancat.cc/categories/</link>
+    <description>Recent content in Categories on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Jan 2020 12:36:14 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wancat.cc/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>評論</title>
+      <link>https://www.wancat.cc/categories/%E8%A9%95%E8%AB%96/</link>
+      <pubDate>Mon, 06 Jan 2020 12:36:14 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/categories/%E8%A9%95%E8%AB%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>生活</title>
+      <link>https://www.wancat.cc/categories/%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Sun, 22 Dec 2019 14:34:42 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/categories/%E7%94%9F%E6%B4%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>活動紀錄</title>
+      <link>https://www.wancat.cc/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/</link>
+      <pubDate>Sat, 16 Nov 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>教學</title>
+      <link>https://www.wancat.cc/categories/%E6%95%99%E5%AD%B8/</link>
+      <pubDate>Fri, 26 Jul 2019 10:49:46 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/categories/%E6%95%99%E5%AD%B8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://www.wancat.cc/categories/linux/</link>
+      <pubDate>Sat, 06 Jul 2019 20:12:00 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>創作</title>
+      <link>https://www.wancat.cc/categories/%E5%89%B5%E4%BD%9C/</link>
+      <pubDate>Sun, 26 May 2019 11:56:57 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/categories/%E5%89%B5%E4%BD%9C/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

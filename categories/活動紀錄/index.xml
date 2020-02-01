@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>活動紀錄 on WANcatServer</title>
+    <link>https://www.wancat.cc/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/</link>
+    <description>Recent content in 活動紀錄 on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 16 Nov 2019 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wancat.cc/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CTF 參加初體驗</title>
+      <link>https://www.wancat.cc/post/first-ctf/</link>
+      <pubDate>Sat, 16 Nov 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/first-ctf/</guid>
+      <description>CTF 參加初體驗 承蒙朋友邀請，我人生首度參加資訊安全競賽——政府舉辦的資安金盾獎，本來就預期會很難，但沒想到會這麼難，深深感受到有一個世界等著去</description>
+    </item>
+    
+    <item>
+      <title>JSP 第九屆參加心得</title>
+      <link>https://www.wancat.cc/post/jsp-9/</link>
+      <pubDate>Tue, 20 Aug 2019 10:38:52 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/jsp-9/</guid>
+      <description>JSP——國中科學探究聯合發表會——是一個給學生的派對，讓愛好科學的學生聚在一起互相交流，從 2017 年 JSP７時開始，我已經參加了三屆的 JSP，每</description>
+    </item>
+    
+    <item>
+      <title>網站建置紀錄</title>
+      <link>https://www.wancat.cc/post/my-website-building-log/</link>
+      <pubDate>Sun, 20 Jan 2019 13:15:09 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/my-website-building-log/</guid>
+      <description>網站建置紀錄 我的網站從 2017 年六月第一次上 GitHub Page，到現在 www.wancat.cc ，也已經半年了，寫下這篇文章紀錄一下架站的方法。 Hexo 我的部落格是用 Hexo 將 Markdown 轉成一個靜態</description>
+    </item>
+    
+    <item>
+      <title>2018 JSP 紀錄與心得 (二)</title>
+      <link>https://www.wancat.cc/post/jsp8-2/</link>
+      <pubDate>Thu, 23 Aug 2018 17:43:06 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/jsp8-2/</guid>
+      <description>參加 JSP 國中科學探究聯合發表會 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。 本次主題的系列文章, 演講影片 老街解謎 在看了海報</description>
+    </item>
+    
+    <item>
+      <title>2018 JSP 紀錄與心得 (一)</title>
+      <link>https://www.wancat.cc/post/jsp8/</link>
+      <pubDate>Mon, 06 Aug 2018 20:00:00 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/jsp8/</guid>
+      <description>參加 JSP 國中科學探究聯合發表會 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。 本次主題的系列文章, 演講影片 JSP 簡介 今年很高興又</description>
+    </item>
+    
+  </channel>
+</rss>

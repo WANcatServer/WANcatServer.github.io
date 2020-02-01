@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="WANcatServer">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="YaCy安裝教學" />
+    <meta property="og:title" content="YaCy安裝教學" />
+    <meta property="twitter:title" content="YaCy安裝教學" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>YaCy安裝教學-WANcatServer 網貓伺服器</title>
+
+    <link rel="canonical" href="/post/yacy-install/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+    
+<script type="text/javascript">
+    var _paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.wancat.cc/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">WANcatServer</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/linux">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
+                            自由軟體
+                        </a>
+                        
+                    </div>
+                    <h1>YaCy安裝教學</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                WANcatServer
+                         
+                        on 
+                        Saturday, September 22, 2018
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>目錄</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">環境說明</a></li>
+    <li><a href="#-java-8">伺服器安裝 Java 8</a></li>
+    <li><a href="#-yacy">安裝 YaCy</a></li>
+    <li><a href="#yacy-">YaCy 設定</a></li>
+    <li><a href="#yacy">YaCy自啟動設定</a></li>
+    <li><a href="#-nginx-">設定 Nginx 反向代理</a></li>
+  </ul>
+</nav>
+                
+                <blockquote>
+<p><a href="https://yacy.net/en/index.html">YaCy</a>是一個開源的點對點搜尋引擎
+本文將講解如何在 Ubuntu Server 上安裝 YaCy 搜尋引擎，並用Nginx做反向代理，將網址改成像是 yacy.example.com 的形式。</p>
+</blockquote>
+<p>YaCy 架好的範例可以來我架設的伺服器使用看看https://yacy.wancatserver.tk</p>
+<h2 id="heading">環境說明</h2>
+<p>本文假設有一台無圖形界面的伺服器以及有圖形界面的Desktop。Desktop必須要能夠使用瀏覽器。
+<strong>假設伺服器網域</strong>： example.com，<strong>請將本文所有example.com改成你的網域名稱</strong>
+假設使用者名稱：user ，請換成自己的使用者名稱</p>
+<blockquote>
+<p>如果沒有網域名稱仍然可以安裝 YaCy ，只是需要用 ip:8090 的形式來連上它。
+如果沒有真實 ip 就只能在內網使用</p>
+</blockquote>
+<h2 id="-java-8">伺服器安裝 Java 8</h2>
+<p>YaCy可以使用 OpenJDK，也可以使用Oracle官方的JRE。
+OpenJDK使用apt安裝</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt install openjdk-8-jre
+</code></pre></div><p>官方的JRE比較麻煩，可參考<a href="https://dotblogs.com.tw/jhsiao/archive/2013/09/03/116186.aspx">此文章</a></p>
+<h2 id="-yacy">安裝 YaCy</h2>
+<p>至<a href="https://yacy.net/en/index.html">官網</a>下載程式。</p>
+<p>{% asset_img slug download.png %}</p>
+<p>將程式上傳至伺服器，請將/path/to/yacy.tar.gz替換成你下載的路徑</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ scp /path/to/yacy.tar.gz user@example.com:/home/user/
+</code></pre></div><p>接下來以ssh登入伺服器</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ ssh user@example.com
+</code></pre></div><p>解壓縮，將yacy.tar.gz替換成你下載的路徑</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ tar -zxvf yacy.tar.gz
+</code></pre></div><p>解壓縮完可以看到家目錄下多了一個目錄yacy，裡面有 startYACY.sh, stopYACY.sh, killYACY.sh, reconfigureYACY.sh, updateYACY.sh等執行檔，以及許多資料夾。</p>
+<p>我們先去打開防火牆，YaCy使用的是 8090 port (HTTP)，以及8443 (HTTPS)。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ufw allow <span style="color:#ae81ff">8090</span>
+</code></pre></div><p>執行 startYACY.sh</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ./startYACY.sh
+</code></pre></div><p>接著等一下，瀏覽器連 example.com:8090。</p>
+<blockquote>
+<p>啟動時可能需要等個一分鐘才能載入網頁，是正常的</p>
+</blockquote>
+<p>如果看到這個畫面，就代表執行成功
+{% asset_img slug page.png %}
+可以試著用YaCy搜尋一些東西看看</p>
+<blockquote>
+<p>跑得慢是正常的，出來結果很少也是正常的</p>
+</blockquote>
+<p>{% asset_img slug search_page.png %}
+停止 YaCy</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ./stopYACY.sh
+</code></pre></div><p>這個指令需要等一下YaCy才會停止，可以用top來確認YaCy停止了沒。
+等到YaCy停止後，使用reconfigure來進行設定</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ./reconfigureYACY.sh
+
+*** YaCy commandline configuration tool ***
+
+Make your choice:
+<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> change memory settings
+<span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> change admin password
+<span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> change HTTP port
+<span style="color:#f92672">[</span>4<span style="color:#f92672">]</span> change HTTPS port
+<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> quit
+</code></pre></div><p>選項分別是 設定YaCy可用記憶體大小(重要)、設定管理員密碼(重要)、設定HTTP埠口、設定HTTPS埠口，前面兩項要記得設定，後面看個人情況調整，如果沒有特殊需求，保留預設值即可。</p>
+<h2 id="yacy-">YaCy 設定</h2>
+<p>啟動YaCy ，打開 example.com:8090，點擊右上方的&quot;Administration&rdquo;
+{% asset_img slug yacy_welcome.png %}
+會進到設定畫面
+{% asset_img slug yacy_status.png %}</p>
+<p>YaCy 的進階設定會在日後別篇文章作說明。</p>
+<h2 id="yacy">YaCy自啟動設定</h2>
+<p>現在已經可以使用YaCy了，但是得要手動開啟，不免覺得麻煩，所以接下來將會把YaCy加入service中，讓系統自動開啟，並且以yacy使用者執行，避免被攻擊後危害系統。
+建立系統使用者 yacy</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo useradd --system yacy
+</code></pre></div><p>把剛才在user底下的yacy資料夾搬移到yacy家目錄，並將擁有者改為yacy，這樣子YaCy資料夾就會在 /home/yacy/yacy 中。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo mv ~/yacy /home/yacy/
+$ sudo chown -R yacy:yacy /home/yacy/yacy
+</code></pre></div><p>接下來要將YaCy加入系統服務中，新增/usr/lib/systemd/system/yacy.service，寫入以下內容。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo vim /usr/lib/systemd/system/yacy.service
+
+<span style="color:#f92672">[</span>Unit<span style="color:#f92672">]</span>
+Description<span style="color:#f92672">=</span>YaCy search server
+After<span style="color:#f92672">=</span>network.target
+
+<span style="color:#f92672">[</span>Service<span style="color:#f92672">]</span>
+Type<span style="color:#f92672">=</span>forking
+User<span style="color:#f92672">=</span>yacy
+ExecStart<span style="color:#f92672">=</span>/home/yacy/yacy/startYACY.sh
+ExecStop<span style="color:#f92672">=</span>/home/yacy/yacy/stopYACY.sh
+
+<span style="color:#f92672">[</span>Install<span style="color:#f92672">]</span>
+WantedBy<span style="color:#f92672">=</span>multi-user.target
+</code></pre></div><p>接著可以啟動YaCy</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl enable yacy
+</code></pre></div><p>這樣子YaCy就會隨著開機啟動了
+可以用top指令觀察yacy狀態</p>
+<p>如果之後中途需要手動關閉或啟動YaCy，使用以下指令</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl start yacy.service
+$ sudo systemctl stop yacy.service
+</code></pre></div><p>//如果你按tab只跳出yacy，那就是了</p>
+<h2 id="-nginx-">設定 Nginx 反向代理</h2>
+<p>在做這一步之前，<strong>請先確定 yacy.example.com 可以指向你的伺服器。</strong></p>
+<p>Nginx 安裝，使用apt</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt install nginx
+</code></pre></div><p>打開80埠口</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo ufw allow <span style="color:#ae81ff">80</span>
+</code></pre></div><p>瀏覽器開啟example.com，如果有以下畫面代表正確
+{% asset_img slug nginx_welcome.png %}
+編輯/etc/nginx/sites-available/default</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo vim /etc/nginx/sites-available/default
+</code></pre></div><p>會看到裡面已經有許多設定檔，無視它們，寫一個新的server。
+<strong>注意：不要寫在原本的server內</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">server <span style="color:#f92672">{</span>
+    listen 80;
+    server_name yacy.example.com;
+    location / <span style="color:#f92672">{</span>
+        proxy_pass http://127.0.0.1:8090 ;
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>接下來讓Nginx讀取設定檔</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo nginx -s reload
+</code></pre></div><p><strong>這個過程可能會發生錯誤，須按照個人情況調整</strong>
+接下來瀏覽器連到yacy.example.com，如果可以看到YaCy，則代表成功了。</p>
+<blockquote>
+<p>Nginx可以調整的選項很多，我只會最簡單的設定，如果了解，可以自己進行優化</p>
+</blockquote>
+<h1 id="heading1">結語</h1>
+<p>YaCy是一個高度個人化的搜尋引擎，現在的節點數量仍嫌不足，沒有辦法查到如一般搜尋引擎一樣好的資料，速度也較慢，但可以讓小型網站有個「被搜尋」的機會。
+日後將會在別篇文章對於「如何讓自己的網頁被搜尋」，以及「建立自己的資料查詢庫」做說明。</p>
+
+                
+                <div class="alert alert-warning part" data-startline="5" data-endline="12">
+<p><strong>👉【幫我們一個忙！】👈</strong></p>
+<p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
+❤您的支持是我們最大的動力！</p>
+<p>您只要登入帳號（Facebook、Google），在下方按5個Like，我們就會收到來自 LikeCoin 基金會的贊助。<br>
+您只需要支持我們，完全不會花到錢！</p>
+</div>
+
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fyacy-install%2f" width="100%" frameborder=0></iframe>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/dont-use-docx/" data-toggle="tooltip" data-placement="top" title="從今天起，不要使用 .docx">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/poor-taiwanese-kid/" data-toggle="tooltip" data-placement="top" title="當老師對我們說：「可悲台灣小孩」">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/jsp" title="jsp">
+                            jsp
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/life" title="life">
+                            life
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/minecraft" title="minecraft">
+                            minecraft
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ourliveworld" title="ourliveworld">
+                            ourliveworld
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
+                            教育
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
+                            自由軟體
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
+                        
+                        <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="WANcatServer" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:wancat@wancat.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://facebook.com/wancatserver">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lancatlin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://liker.social/@wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    <li>
+                        <a target="_blank" href="https://keybase.io/wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; WANcatServer 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

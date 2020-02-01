@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Website on WANcatServer</title>
+    <link>https://www.wancat.cc/tags/website/</link>
+    <description>Recent content in Website on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Jan 2019 13:15:09 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wancat.cc/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>網站建置紀錄</title>
+      <link>https://www.wancat.cc/post/my-website-building-log/</link>
+      <pubDate>Sun, 20 Jan 2019 13:15:09 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/my-website-building-log/</guid>
+      <description>網站建置紀錄 我的網站從 2017 年六月第一次上 GitHub Page，到現在 www.wancat.cc ，也已經半年了，寫下這篇文章紀錄一下架站的方法。 Hexo 我的部落格是用 Hexo 將 Markdown 轉成一個靜態</description>
+    </item>
+    
+  </channel>
+</rss>

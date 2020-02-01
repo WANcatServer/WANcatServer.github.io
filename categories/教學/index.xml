@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>教學 on WANcatServer</title>
+    <link>https://www.wancat.cc/categories/%E6%95%99%E5%AD%B8/</link>
+    <description>Recent content in 教學 on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Jul 2019 10:49:46 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wancat.cc/categories/%E6%95%99%E5%AD%B8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ORM 入門：如何區分 ORM 中的關聯</title>
+      <link>https://www.wancat.cc/post/orm/</link>
+      <pubDate>Fri, 26 Jul 2019 10:49:46 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/orm/</guid>
+      <description>最近初次接觸 ORM——Object-relational mapping——這個強大的工具，但是為其中的關聯而苦惱不已。在仔細研究後終於了解其</description>
+    </item>
+    
+    <item>
+      <title>YaCy安裝教學</title>
+      <link>https://www.wancat.cc/post/yacy-install/</link>
+      <pubDate>Sat, 22 Sep 2018 20:26:23 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/yacy-install/</guid>
+      <description>YaCy是一個開源的點對點搜尋引擎 本文將講解如何在 Ubuntu Server 上安裝 YaCy 搜尋引擎，並用Nginx做反向代理，將網址改成像是 yacy.example.com 的形式。 YaCy 架好的範例可以來</description>
+    </item>
+    
+  </channel>
+</rss>

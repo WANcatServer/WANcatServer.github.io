@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="WANcatServer">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="SITCON 演講：軟體開發的未來，是大斗內時代？" />
+    <meta property="og:title" content="SITCON 演講：軟體開發的未來，是大斗內時代？" />
+    <meta property="twitter:title" content="SITCON 演講：軟體開發的未來，是大斗內時代？" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>SITCON 演講：軟體開發的未來，是大斗內時代？-WANcatServer 網貓伺服器</title>
+
+    <link rel="canonical" href="/post/the-programming-future-is-donate/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+    
+<script type="text/javascript">
+    var _paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.wancat.cc/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">WANcatServer</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/linux">linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F" title="商業模式">
+                            商業模式
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E8%AE%9A%E8%B3%9E%E7%B6%93%E6%BF%9F" title="讚賞經濟">
+                            讚賞經濟
+                        </a>
+                        
+                    </div>
+                    <h1>SITCON 演講：軟體開發的未來，是大斗內時代？</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                WANcatServer
+                         
+                        on 
+                        Monday, March 25, 2019
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>目錄</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">前言</a></li>
+    <li><a href="#heading1">講者介紹</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#heading3">拷貝發大財</a></li>
+    <li><a href="#heading4">邊際成本</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#heading6">消費者轉為生產者？</a></li>
+    <li><a href="#heading7">流量至上主義</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#heading9">多虧了線上支付</a></li>
+    <li><a href="#heading10">現行的付費方案</a></li>
+    <li><a href="#heading11">大斗內時代</a>
+      <ul>
+        <li><a href="#twitch">案例研究：Twitch</a></li>
+        <li><a href="#heading12">斗內收益模式的真正價值</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h1 id="2019-sitcon-">2019 SITCON 演講：軟體開發的未來，是大斗內時代？</h1>
+<h2 id="heading">前言</h2>
+<p>我參加了 2019 在中研院舉行的 <a href="https://sitcon.org">SITCON</a> 學生計算機年會，並投稿了一篇 Espresso 短講，以下是我的演講稿：</p>
+<h2 id="heading1">講者介紹</h2>
+<p>大家好，我是林宏信，現在是國中三年級。我從小六開始接觸 Scratch，國二開始學習 Python，目前正在學習 Go Web 開發。我的興趣是寫程式、寫音樂、寫文章，經營部落格 <strong>WANcatServer 網貓伺服器</strong> ，歡迎大家去看看喔！。</p>
+<p>今天要跟大家分享的是 <strong>我們如何靠軟體賺錢</strong>，相信在台下的大多數人，包括我，都喜歡寫程式，那你是否思考過，我們該如何靠軟體賺錢呢？畢竟這攸關生計，是個很重要的問題。</p>
+<h1 id="heading2">軟體難以賺錢</h1>
+<p>雖然軟體工程可說是現代社會最熱門的行業之一，但事實上「純靠軟體賺錢」是一件很難的事。當然，今天如果你受雇於公司，公司付薪水請你寫軟體，那沒什麼困難。但如果今天你要將手頭上的軟體換成錢，可不是那麼容易的事。</p>
+<h2 id="heading3">拷貝發大財</h2>
+<p>也許今天你寫了一個很好玩的遊戲，你想要賣給別人玩，你將它打包成 binary，找到買家，收了錢將軟體寄給他，但也許他就直接將你的軟體發布在網路上免費供人下載，你後面的生意都不用賺了。</p>
+<p>憑什麼？根本原因在於<strong>軟體是一項「0 邊際成本」的產品</strong>。</p>
+<h2 id="heading4">邊際成本</h2>
+<p>邊際成本是經濟學的名詞，意思是 <strong>「增加一單位產品所需要的成本」</strong>，生產一台汽車的成本高昂，但生產第 10000 台汽車的成本就低的多。</p>
+<p>軟體開發絕不是無本生意，從設計、開發到產品做出來都需要大量的時間、金錢、人力成本。0 邊際成本，一方面可以將產品賣給更多人，但另一方面所有拿到軟體的人都有「拷貝的能力」，隨時可以破壞你的生意。</p>
+<p>不只是軟體，現在所有的創作媒介：文字、影片、音樂，幾乎都是 0 邊際成本的產品，各式各樣的創作也無法逃離「被拷貝」的命運。為了擋住這波拷貝攻勢，政府定了許多著作權法規、DRM 來規範。但事實上，Who cares? 大家還不是複製得很爽？</p>
+<p>那該怎麼辦？與其讓心血被別人拿去散佈，不如 <strong>我們自己將它「免費」</strong>。</p>
+<h1 id="heading5">免費時代崛起</h1>
+<p>如果我們要完美結合軟體 0 邊際成本的特質，最有效方式就是「免費」，並另找方式獲利。明顯的例子就是廣告業的崛起。</p>
+<h2 id="heading6">消費者轉為生產者？</h2>
+<p>記得我小時候剛開始用電腦，Windows 要錢，Office 也要錢，買遊戲也要錢，花錢好像理所當然。但當我開始上網後，發現 Google 是免費的、Facebook 是免費的、YouTube 也是免費的。我相信做 Facebook 絕不會比 Windows 簡單，那為什麼 Windows 要收錢，而 Facebook 不用呢？</p>
+<p>原因在於使用者對公司的價值。</p>
+<p>在網際網路尚未普及前，使用者與軟體公司就是單純的消費供給關係，使用者花了錢買到軟體就拍拍屁股走了，不會帶給軟體公司任何附加價值，所以軟體公司必須收費。（除了用 Word 檔征服全世界）</p>
+<p>而當網際網路開始蓬勃發展後，事情就不同了。一個使用者對 Facebook 而言，是賺錢的工具！他不只能提供自身的資料，還能鼓勵周圍的親朋好友一起使用。因為使用者對 Facebook 有價值，所以採免費的商業模式來拉更多的使用者，是最有效率且最賺錢的方式。</p>
+<h2 id="heading7">流量至上主義</h2>
+<p>但廣告收益模式卻引發了一波隱私危機：越了解消費者，就代表能投放越精準的廣告。於是使用者的資料開始增值，Google、Facebook 等公司開始搜刮用戶資料，突然間，這些大公司已經比你的家人更了解你。</p>
+<p>而廣告收益模式，通常也意謂著：消費者不需要喜歡它，只要把它們吸引過來就好。因此聳動的、有爭議的，反而能引起比較大的討論度，從而創造更大的收益。媒體業開始不重視質量，只追求三量大：<strong>產量大、流量大、討論量大</strong>。</p>
+<p>漸漸的，創作者與消費者也開始厭惡這樣的「免費」商業模式，試圖從「付費」找到新的方向。</p>
+<hr>
+<h1 id="heading8">新付費方案</h1>
+<p>隨著對廣告商業模式的不滿日積月累，許多新的專案在<strong>線上支付</strong>的幫助下，開始出現新的商業模式。</p>
+<h2 id="heading9">多虧了線上支付</h2>
+<p>想像今天你不能用任何形式的線上付款：信用卡、PayPal、加密貨幣，所有在網路上的消費都必須到超商付款，那你可能會盡量減少網路上的消費，畢竟真的挺麻煩的。</p>
+<p>如果沒有方便的線上付款，我們可能根本不會在網路上買電影、買音樂、買遊戲，因為付款的時間成本太大，讓我們覺得不划算。</p>
+<p>就是因為有線上支付，現今網路上各種付費方案才能成功，一旦付款的成本大於尋找盜版的成本，使用者很可能就會轉而使用盜版。</p>
+<p>有個例子就是我捐款支持一個開源遊戲 0 A. D. 的經驗，我很喜歡它，有天玩完後覺得很感動，就點了遊戲主頁的「贊助」，然後呢？我花了半個小時還是捐不出半毛錢，我的電腦被 PayPal Access Denied，我爸的信用卡因此被封鎖，結果花了半個小時仍捐不出去，我就不想捐了。</p>
+<p>由此可知方便的線上付款有多重要。</p>
+<p>{% asset_img photo paypal-access-denied.png %}</p>
+<h2 id="heading10">現行的付費方案</h2>
+<p>現在最普遍的方案就是 Web + 帳號制，分成免費帳號和付費帳號，像是 GitHub、Medium、Pocket。較為常見就不多做說明。</p>
+<p>而現在也有個看似不可能的商業模式正在崛起，就是我們今天的主角 —— <strong>大斗內時代</strong>。</p>
+<h2 id="heading11">大斗內時代</h2>
+<p>「斗內」一詞源自於英文的 Donate，意思是捐款。從蠻久以前，就有很多網站上面會放 Donate 或是 Buy me a coffee 連結，讓看了網頁覺得感動或是喜歡的人，有個方式支持作者。</p>
+<p>{% asset_img donate-button.jpg %}
+{% asset_img buy-me-a-coffee.png %}</p>
+<p>我將這樣「免費使用、付費支持」的模式稱為<strong>斗內模式</strong>。不只網站，各個開源專案像是 GNU、ArchLinux、Firefox，也都是採取斗內模式。</p>
+<h3 id="twitch">案例研究：Twitch</h3>
+<p>我今天要介紹一個經典的斗內模式案例，就是直播平台 Twitch。</p>
+<p>在 Twitch 上達成條件的直播主，可以讓觀眾透過給予代幣 &ndash; 小奇點，或是 <strong>付費訂閱</strong> 來獲得收入。在 Twitch 上的直播，都是公開給所有觀眾觀賞，因此符合「免費使用、付費支持」的原則。</p>
+<p>在 Twitch 上給予小奇點，用戶不需要離開 Twitch，減少付款不便帶來的損失。使用代幣，也可降低用戶「付款的痛苦」。</p>
+<p>更重要的是，Twitch 上的收益模式，比起 YouTube 等平台更直接，讓願意支持創作者的用戶有直接而方便的管道。</p>
+<h3 id="heading12">斗內收益模式的真正價值</h3>
+<p>我認為，採取斗內的最大好處在於：我們不需要迎合所有人。跟廣告收益模式不同，斗內只需要有一群願意持續支持你的觀眾，這個數量或許一兩萬就十分足夠；但廣告模式卻需要不停尋找新的客群，有時為了吸引更多人，就喪失了自己的初衷。</p>
+<p>斗內模式讓小眾的內容更容易生存下去，創作者的重點是培養一群有感情的觀眾，不必要去迎合大眾口味，迎合所有人。簡單來說，<strong>只要讓喜歡你的人喜歡就好，而不用讓所有人喜歡你</strong>。</p>
+<p>想像一下，如果今天每個 YouTube 影片下都有一個 Donate 按鈕，填寫金額後立刻送出，可以在 YouTuber 頻道頁面可以看到排名前幾的「大股東」，看到自己佔了多少「股份」，並且努力將自己支持的 YouTuber 推向高峰，是不是非常有趣呢？</p>
+<p>{% asset_img youtube-donate.svg.png %}</p>
+<p>{% asset_img youtube-channel.svg.png %}</p>
+<p>斗內，就是在網路上的 <strong>「街頭藝人」</strong>，他免費提供表演、服務、產品，如果你願意，就留下金錢作為報償。在紐約時代廣場的街頭藝人一個小時可以賺台幣 600 元，那如果在能觸及更多人的網路呢？這些免費的內容就是你自身最好的廣告，為你累積名氣，幫你找到更大的機會。</p>
+<p>只要線上小額付款，能做的像把銅板丟進帽子裡一樣方便，有一天，要靠著斗內活下去不是不可能。</p>
+<h1 id="heading13">結語：我到底幹嘛寫軟體？</h1>
+<p>所以我幹嘛寫軟體？寫軟體多麻煩，又困難，又不知道怎麼賣？還不如做硬體，至少硬體不會被無限量拷貝。</p>
+<p>在我國二的時候，我同時在學 Python 以及 Arduino，那個時候兩個其實都算做的不錯，但後來我就放下了硬體，把 Arduino 收進暗無天日的櫃子裡，專心寫軟體。</p>
+<p>為什麼？因為我發現，當我完成一個 Python 專案時，我可以將它傳給我的朋友，我可以把它發布在網路上，跟所有人分享。而當我完成 Arduino 後，別人需要擁有相同硬體才可使用，我只能孤芳自賞，頂多拍影片上傳到網路上，沒辦法與人一同分享它。</p>
+<p><strong>就是因為拷貝！</strong> 就是因為軟體可以無限的拷貝，我們才會遇到那些難題，但 <strong>我們也因此才能將自己的心血向全世界分享，才會有自由軟體，才會有 Linux！</strong></p>
+<blockquote>
+<p><strong>而分享，才是做軟體最大的樂趣。</strong></p>
+</blockquote>
+<h1 id="heading14">參考資料</h1>
+<p>書籍：柯利．多克托羅 ── 資訊分享，鎖得住？</p>
+<p><a href="https://zh.wikipedia.org/zh-tw/%E8%BE%B9%E9%99%85%E6%88%90%E6%9C%AC">WikiPedia 邊際成本</a>
+<a href="https://www.inside.com.tw/article/14530-payment-to-freemium-to-subsidies">從付費到免費再到補貼 ── 商業模式變遷的底層邏輯</a>
+<a href="https://www.youtube.com/watch?v=f-xhJVy5aMc">囧星人 ─ 盜版的未來 ｜ 資訊分享，鎖得住？</a></p>
+<p><a href="https://www.lifewire.com/twitch-subscriptions-4147319">Everything You Need to Know About Twitch Subscriptions </a>
+<a href="https://www.twitch.tv/p/zh-tw/partners/">Twitch 夥伴方案</a>
+<a href="https://affiliate.twitch.tv/zh-tw/">Twitch 實況盟友方案</a>
+<a href="https://help.twitch.tv/s/article/guide-to-cheering-with-bits?language=zh_TW">使用小奇點 Cheering 指南</a></p>
+
+                
+                <div class="alert alert-warning part" data-startline="5" data-endline="12">
+<p><strong>👉【幫我們一個忙！】👈</strong></p>
+<p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
+❤您的支持是我們最大的動力！</p>
+<p>您只要登入帳號（Facebook、Google），在下方按5個Like，我們就會收到來自 LikeCoin 基金會的贊助。<br>
+您只需要支持我們，完全不會花到錢！</p>
+</div>
+
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fthe-programming-future-is-donate%2f" width="100%" frameborder=0></iframe>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/should-you-use-password-manager/" data-toggle="tooltip" data-placement="top" title="妳該使用密碼管理工具嗎？">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/after-the-exam/" data-toggle="tooltip" data-placement="top" title="寫給會考後的我們：別再讓下一代經歷這些">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/jsp" title="jsp">
+                            jsp
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/life" title="life">
+                            life
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/minecraft" title="minecraft">
+                            minecraft
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ourliveworld" title="ourliveworld">
+                            ourliveworld
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
+                            教育
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
+                            自由軟體
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
+                        
+                        <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="WANcatServer" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:wancat@wancat.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://facebook.com/wancatserver">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lancatlin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://liker.social/@wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    <li>
+                        <a target="_blank" href="https://keybase.io/wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; WANcatServer 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

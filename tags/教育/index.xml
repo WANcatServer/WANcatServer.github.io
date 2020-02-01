@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>教育 on WANcatServer</title>
+    <link>https://www.wancat.cc/tags/%E6%95%99%E8%82%B2/</link>
+    <description>Recent content in 教育 on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 May 2019 20:21:44 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.wancat.cc/tags/%E6%95%99%E8%82%B2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>寫給會考後的我們：別再讓下一代經歷這些</title>
+      <link>https://www.wancat.cc/post/after-the-exam/</link>
+      <pubDate>Sun, 19 May 2019 20:21:44 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/after-the-exam/</guid>
+      <description>「而我們呢？在會考之後，你就要忘記國中這三年的痛苦，『只帶走美好的回憶』嗎？在面對學弟學妹的痛苦時，只會說『我們以前比你們更慘』而已嗎？在成</description>
+    </item>
+    
+    <item>
+      <title>我在技藝班所見所聞</title>
+      <link>https://www.wancat.cc/post/vocational-courses/</link>
+      <pubDate>Tue, 04 Dec 2018 20:22:23 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/vocational-courses/</guid>
+      <description>我在技藝班所見所聞 {% asset_img slug circuit-board.jpg %} 在先前的文章提到過，我高中計畫就讀北科大五專精英班，由於這個班不好考，所以我在國三參加技藝班，用來在超額比序中加</description>
+    </item>
+    
+    <item>
+      <title>十五歲的生涯選擇，我為何拒讀高中？</title>
+      <link>https://www.wancat.cc/post/progression/</link>
+      <pubDate>Sun, 14 Oct 2018 08:42:11 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/progression/</guid>
+      <description>兒子—林宏信： 我現在國三，從小六時接觸了 Scratch，國二開始學習 Python 程式語言，我漸漸的確定這是我想走的道路—做一名工程師。 //Scratch 為一個圖形化的</description>
+    </item>
+    
+    <item>
+      <title>當老師對我們說：「可悲台灣小孩」</title>
+      <link>https://www.wancat.cc/post/poor-taiwanese-kid/</link>
+      <pubDate>Sun, 14 Oct 2018 08:22:13 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/poor-taiwanese-kid/</guid>
+      <description>「這句話真是說到心坎裡」，我笑著說 「就只怕過幾年後，他就變『可悲台灣老師』」 一則笑話 我的朋友有次跟我聊起他的家政老師。 他的家政老師是一位年輕</description>
+    </item>
+    
+  </channel>
+</rss>
