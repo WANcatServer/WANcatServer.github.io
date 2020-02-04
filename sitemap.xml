@@ -3,18 +3,93 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.wancat.cc/tags/caddy/</loc>
+    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/caddy/</loc>
+    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.wancat.cc/categories/</loc>
-    <lastmod>2020-01-06T12:36:14+00:00</lastmod>
+    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/linux/</loc>
+    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wancat.cc/post/</loc>
-    <lastmod>2020-01-06T12:36:14+00:00</lastmod>
+    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/</loc>
+    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wancat.cc/</loc>
-    <lastmod>2020-01-06T12:36:14+00:00</lastmod>
+    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/categories/%E6%95%99%E5%AD%B8/</loc>
+    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/cloudflare/</loc>
+    <lastmod>2020-02-04T10:35:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/cloudflare-ddns/</loc>
+    <lastmod>2020-02-04T10:35:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/raspberry-pi/</loc>
+    <lastmod>2020-02-04T10:35:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/matomo-installation/</loc>
+    <lastmod>2020-02-04T10:27:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/matomo/</loc>
+    <lastmod>2020-02-04T10:27:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/sql/</loc>
+    <lastmod>2020-02-04T10:27:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/hugo/</loc>
+    <lastmod>2020-02-03T18:50:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/hugo-install-likecoin/</loc>
+    <lastmod>2020-02-03T18:50:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/likecoin/</loc>
+    <lastmod>2020-02-03T18:50:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/website/</loc>
+    <lastmod>2020-02-03T18:50:39+08:00</lastmod>
   </url>
   
   <url>
@@ -39,11 +114,6 @@
   
   <url>
     <loc>https://www.wancat.cc/tags/movie/</loc>
-    <lastmod>2019-12-22T14:34:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/tags/</loc>
     <lastmod>2019-12-22T14:34:42+00:00</lastmod>
   </url>
   
@@ -93,18 +163,8 @@
   </url>
   
   <url>
-    <loc>https://www.wancat.cc/categories/%E6%95%99%E5%AD%B8/</loc>
-    <lastmod>2019-07-26T10:49:46+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wancat.cc/tags/%E7%A8%8B%E5%BC%8F/</loc>
     <lastmod>2019-07-26T10:49:46+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/tags/linux/</loc>
-    <lastmod>2019-07-06T20:12:00+00:00</lastmod>
   </url>
   
   <url>
@@ -164,11 +224,6 @@
   
   <url>
     <loc>https://www.wancat.cc/tags/server/</loc>
-    <lastmod>2019-01-20T13:15:09+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/tags/website/</loc>
     <lastmod>2019-01-20T13:15:09+00:00</lastmod>
   </url>
   

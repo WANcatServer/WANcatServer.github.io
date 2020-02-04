@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry Pi on WANcatServer</title>
+    <link>https://www.wancat.cc/tags/raspberry-pi/</link>
+    <description>Recent content in Raspberry Pi on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Feb 2020 10:35:52 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.wancat.cc/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CloudFlare 設定 DDNS 教學</title>
+      <link>https://www.wancat.cc/post/cloudflare-ddns/</link>
+      <pubDate>Tue, 04 Feb 2020 10:35:52 +0800</pubDate>
+      
+      <guid>https://www.wancat.cc/post/cloudflare-ddns/</guid>
+      <description>最近剛入手一個 Raspberry Pi，用來作為一個省電的伺服器，本來困擾自己家裡的固定 IP 已經給了其他台伺服器，但找到方法用 CloudFlare 實現 DDNS。 CloudFlare DDNS CloudFlare 本身沒有官方</description>
+    </item>
+    
+  </channel>
+</rss>

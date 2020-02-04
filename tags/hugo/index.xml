@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on WANcatServer</title>
+    <link>https://www.wancat.cc/tags/hugo/</link>
+    <description>Recent content in Hugo on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Feb 2020 18:50:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.wancat.cc/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo 安裝 LikeCoin 教學</title>
+      <link>https://www.wancat.cc/post/hugo-install-likecoin/</link>
+      <pubDate>Mon, 03 Feb 2020 18:50:39 +0800</pubDate>
+      
+      <guid>https://www.wancat.cc/post/hugo-install-likecoin/</guid>
+      <description>取代 Hexo 我使用 Hexo 作為靜態網站生成器已經一年半，然而它有些我越來越難忍受的缺點，加上認識了由 Go 寫成的 Hugo，我在使用 Hugo 建立了幾個網站作為練習後</description>
+    </item>
+    
+  </channel>
+</rss>

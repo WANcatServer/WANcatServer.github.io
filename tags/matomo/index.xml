@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Matomo on WANcatServer</title>
+    <link>https://www.wancat.cc/tags/matomo/</link>
+    <description>Recent content in Matomo on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Feb 2020 10:27:38 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.wancat.cc/tags/matomo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Analytics 替代方案 Matomo 安裝教學</title>
+      <link>https://www.wancat.cc/post/matomo-installation/</link>
+      <pubDate>Tue, 04 Feb 2020 10:27:38 +0800</pubDate>
+      
+      <guid>https://www.wancat.cc/post/matomo-installation/</guid>
+      <description>因為實在不想再讓 Google 拿到資料了，所以我到 No More Google 網站上找 Google Analytics 的替代方案，第一名就是 Matomo。 Matomo 是一個自架的流量分析程式，是自由軟體，也有提供</description>
+    </item>
+    
+  </channel>
+</rss>
