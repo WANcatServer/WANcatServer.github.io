@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="WANcatServer">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="用 TOTP 擺脫簡訊驗證碼：安全好用的兩步驟驗證" />
+    <meta property="og:title" content="用 TOTP 擺脫簡訊驗證碼：安全好用的兩步驟驗證" />
+    <meta property="twitter:title" content="用 TOTP 擺脫簡訊驗證碼：安全好用的兩步驟驗證" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>用 TOTP 擺脫簡訊驗證碼：安全好用的兩步驟驗證-WANcatServer 網貓伺服器</title>
+
+    <link rel="canonical" href="/post/totp/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+    
+<script type="text/javascript">
+    var _paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.wancat.cc/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">WANcatServer</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8" title="資訊安全">
+                            資訊安全
+                        </a>
+                        
+                    </div>
+                    <h1>用 TOTP 擺脫簡訊驗證碼：安全好用的兩步驟驗證</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                wancat
+                         
+                        on 
+                        2020 02/07
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>目錄</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#heading">兩步驟驗證</a></li>
+    <li><a href="#totp-">TOTP 如何運作？</a></li>
+    <li><a href="#totp-1">TOTP 的優點</a></li>
+    <li><a href="#-totp">開始使用 TOTP</a>
+      <ul>
+        <li><a href="#facebook">實際操作示範：Facebook</a></li>
+      </ul>
+    </li>
+    <li><a href="#-totp-">使用 TOTP 的注意事項</a></li>
+    <li><a href="#heading1">參考資料</a></li>
+  </ul>
+</nav>
+                
+                <h2 id="heading">兩步驟驗證</h2>
+<p>隨著數位身份在生活中的影響力愈來愈大，只靠著一組密碼來保護我們的帳戶已經不夠安全，而且記密碼實在是違反人腦天性的行為，因此大部分人總是使用重複的、好記的脆弱密碼。要解決這個問題，除了<a href="/post/should-you-use-password-manager/">使用密碼管理工具</a>來幫你記密碼，還可以透過設定兩步驟驗證（2FA：Two-Factor Authentication），大大提昇帳戶的安全性。</p>
+<p>兩步驟驗證就是在密碼之外，多用一個資訊來驗證你是本人，主流的作法有像 Email、簡訊驗證信，但用過的人可能都會覺得登入時要開信箱收信很麻煩，信箱也會被這些信件給弄亂，更別提當人在國外時，簡訊收不到害你無法登入。</p>
+<p>今天要介紹的 TOTP: <strong>Time-based One-Time Password algorithm</strong>，就是一種公開的標準，讓你透過手機上的 APP 產生一組 6 位數的一次性驗證碼進行登入，而且在沒有網路的情況下還能使用！</p>
+<h2 id="totp-">TOTP 如何運作？</h2>
+<p>TOTP 的概念，就是網站與你事先約定好一組金鑰，並以當下的時間作為參數，運算出一個雜湊值，並取最後 6 位數作為一次性密碼。</p>
+<p>然而如果網站和使用者的時間不同的話，就無法計算出相同的結果，因此通常會以 30 秒作為一個單位，來避免使用者與網站的時間差。網站為了良好的使用者體驗，通常也會允許前一次的一次性密碼。</p>
+<h2 id="totp-1">TOTP 的優點</h2>
+<p>TOTP 它是一個公開標準，你不需要依賴單一企業或組織，各種客戶端都能相容；它的安全性基於密碼學，而非第三方機構的信用；它是去中心化驗證，整個驗證流程只有要驗證身份的雙方而已。</p>
+<p>Google 可以讀你的 Gmail，簡訊也可以被政府或通訊業者攔截，然而 TOTP 不需要依賴中介機構，甚至在離線的情況下也仍然可用。</p>
+<p>同時對於服務提供者而言，TOTP 也很容易實做，不需要花錢去發簡訊或是寄 Email 被當成垃圾郵件，也不需要跟第三方機構申請，是個省錢又安全的好方法。</p>
+<h2 id="-totp">開始使用 TOTP</h2>
+<p>儘管目前懂得使用 TOTP 的使用者並不多，但其實已經有相當多網站支持以 TOTP 作為驗證方式，例如 Google、Facebook、Apple、Amazon、GitHub、PayPal 等，我管理伺服器需要用到的 CloudFlare、Linode、Porkbun 也都有設定 TOTP 來提高安全性。</p>
+<p>開始使用的第一步是下載一個 TOTP 的應用程式，有非常多的選項，我自己使用的是 <a href="https://authy.com/">Authy</a>，界面簡單易用，提供加密的雲端備份，此外還有 <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">Google Authenticator</a>、<a href="https://support.microsoft.com/zh-tw/help/4026727/microsoft-account-how-to-use-the-microsoft-authenticator-app">Microsoft Authenticator</a>，自由軟體則有 Red Hat 開發的 <a href="https://freeotp.github.io/">FreeOTP</a>，先前在密碼管理工具提到的 <a href="https://bitwarden.com/">Bitwarden</a> 的付費版也有提供 TOTP 的功能。</p>
+<p>安裝好驗證器後，到你的網站去設定兩步驟驗證，它可能會顯示「驗證應用程式」、「谷歌驗證器」、「代碼產生器」，但背後都是 TOTP 這套標準，流程也很簡單，網站會將金鑰以 QR Code 的方式顯示，打開手機上的驗證器程式掃描就可以加入帳號，並輸入產生的一次性密碼供網站確認，就可以完成綁定。網站若是在手機上，則可以用「複製金鑰」的方式來手動輸入金鑰。</p>
+<h3 id="facebook">實際操作示範：Facebook</h3>
+<h4 id="-authy">安裝 Authy</h4>
+<p>首先在 Play 商店下載安裝 Authy</p>
+<p><img src="/img/totp/authy-install.jpg" alt=""></p>
+<p>安裝完後會出現註冊頁面</p>
+<p><img src="/img/totp/authy-sign-up.jpg" alt=""></p>
+<p>選用電話或簡訊完成認證，這裡的認證是註冊 Authy 帳號用的。</p>
+<p><img src="/img/totp/authy-authentication.jpg" alt=""></p>
+<p>完成後要設定一組密碼來作為加密儲存的金鑰，如果不想開啟雲端同步功能可點擊右上腳的 skip 跳過。</p>
+<h4 id="-facebook-totp">設定 Facebook TOTP</h4>
+<p>打開 Facebook APP，到最右欄的設定頁面，開啟設定</p>
+<p><img src="/img/totp/facebook-menu.jpg" alt=""></p>
+<p>進到帳號安全中的帳號安全與登入</p>
+<p><img src="/img/totp/facebook-setting.jpg" alt=""></p>
+<p>點擊「使用雙重驗證」</p>
+<p><img src="/img/totp/facebook-set-2fa.jpg" alt=""></p>
+<p>選擇「驗證應用程式」</p>
+<p><img src="/img/totp/facebook-select-2fa-method.jpg" alt=""></p>
+<p>接下來 Facebook 就會顯示包含金鑰的 QR Code</p>
+<p><img src="/img/totp/facebook-qrcode.jpg" alt=""></p>
+<p>如果在電腦上的話，開啟手機上的 Authy 掃描；如果在手機上的話，則點擊「在相同裝置上設定」，就會自動導向到 Authy，如果沒有成功導向，則可以複製螢幕下方的金鑰，手動輸入 Authy 中。</p>
+<p><img src="/img/totp/authy-add-account.jpg" alt=""></p>
+<p>接著就可以設定應用名稱（顯示用）和 Logo</p>
+<p><img src="/img/totp/authy-add-facebook.jpg" alt=""></p>
+<p>接下來 Authy 就會產生驗證碼</p>
+<p><img src="/img/totp/authy-facebook.jpg" alt=""></p>
+<p>複製驗證碼填入 Facebook，就可以完成設定</p>
+<p><img src="/img/totp/facebook-input-code.jpg" alt=""></p>
+<p><img src="/img/totp/facebook-succeed.jpg" alt=""></p>
+<p>設定完成後，要在新裝置登入時，就要開啟 Authy 取得驗證碼，增加帳戶的安全性。</p>
+<h2 id="-totp-">使用 TOTP 的注意事項</h2>
+<p>首先，無論使用哪種 2FA 方式，都要記得<strong>抄寫復原碼</strong>，假如今天你的手機遺失，無法取得 TOTP 驗證碼，這時就要靠事先紀錄下的一次性復原碼來登入。每個支援 TOTP 的網站也都會在設定完成後生成多組復原碼，建議將其紀錄在密碼管理工具或是紙本筆記本上，用一本專門的筆記本紀錄復原碼是個好主意，儘管身處 21 世紀，紙本紀錄仍然是最安全的方式。</p>
+<p>此外，也要注意使用的驗證器是否安全，了解驗證器在儲存你的金鑰時是否有先加密，如果有雲端備份功能，也要確定在雲端是有加密的。</p>
+<h2 id="heading1">參考資料</h2>
+<ul>
+<li>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%9F%BA%E4%BA%8E%E6%97%B6%E9%97%B4%E7%9A%84%E4%B8%80%E6%AC%A1%E6%80%A7%E5%AF%86%E7%A0%81%E7%AE%97%E6%B3%95">維基百科：基於時間的一次性密碼演算法</a></p>
+</li>
+<li>
+<p><a href="https://ithome.com.tw/news/112845">IThome：透過簡訊執行二次驗證不再安全，美國國家標準技術研究所建議別再使用</a></p>
+</li>
+</ul>
+
+                
+                <div class="alert alert-warning part" data-startline="5" data-endline="12">
+<p><strong>👉【幫我們一個忙！】👈</strong></p>
+<p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
+❤您的支持是我們最大的動力！</p>
+<p>您只要登入帳號（Facebook、Google），在下方按5個Like，我們就會收到來自 LikeCoin 基金會的贊助。<br>
+您只需要支持我們，完全不會花到錢！</p>
+</div>
+
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2ftotp%2f" width="100%" frameborder=0></iframe>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/caddy/" data-toggle="tooltip" data-placement="top" title="Caddy 安裝教學">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/caddy" title="caddy">
+                            caddy
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/jsp" title="jsp">
+                            jsp
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/life" title="life">
+                            life
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/minecraft" title="minecraft">
+                            minecraft
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ourliveworld" title="ourliveworld">
+                            ourliveworld
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/website" title="website">
+                            website
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
+                            教育
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
+                            自由軟體
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8" title="資訊安全">
+                            資訊安全
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
+                        
+                        <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="WANcatServer" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:wancat@wancat.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://facebook.com/wancatserver">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lancatlin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://liker.social/@wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    <li>
+                        <a target="_blank" href="https://keybase.io/wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; WANcatServer 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

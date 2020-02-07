@@ -3,6 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.wancat.cc/categories/</loc>
+    <lastmod>2020-02-07T19:22:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/</loc>
+    <lastmod>2020-02-07T19:22:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/</loc>
+    <lastmod>2020-02-07T19:22:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/</loc>
+    <lastmod>2020-02-07T19:22:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/categories/%E6%95%99%E5%AD%B8/</loc>
+    <lastmod>2020-02-07T19:22:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/totp/</loc>
+    <lastmod>2020-02-07T19:22:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/categories/%E8%A9%95%E8%AB%96/</loc>
+    <lastmod>2020-02-07T19:22:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2020-02-07T19:22:30+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.wancat.cc/tags/caddy/</loc>
     <lastmod>2020-02-04T10:39:46+08:00</lastmod>
   </url>
@@ -13,32 +53,7 @@
   </url>
   
   <url>
-    <loc>https://www.wancat.cc/categories/</loc>
-    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wancat.cc/tags/linux/</loc>
-    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/post/</loc>
-    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/tags/</loc>
-    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/</loc>
-    <lastmod>2020-02-04T10:39:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/categories/%E6%95%99%E5%AD%B8/</loc>
     <lastmod>2020-02-04T10:39:46+08:00</lastmod>
   </url>
   
@@ -94,11 +109,6 @@
   
   <url>
     <loc>https://www.wancat.cc/post/wrong-flipped-edu/</loc>
-    <lastmod>2020-01-06T12:36:14+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/categories/%E8%A9%95%E8%AB%96/</loc>
     <lastmod>2020-01-06T12:36:14+00:00</lastmod>
   </url>
   
@@ -214,11 +224,6 @@
   
   <url>
     <loc>https://www.wancat.cc/post/should-you-use-password-manager/</loc>
-    <lastmod>2019-02-21T20:07:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2019-02-21T20:07:35+00:00</lastmod>
   </url>
   

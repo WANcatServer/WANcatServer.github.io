@@ -6,10 +6,19 @@
     <description>Recent content in Posts on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Feb 2020 10:39:46 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Feb 2020 19:22:30 +0800</lastBuildDate>
     
 	<atom:link href="https://www.wancat.cc/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用 TOTP 擺脫簡訊驗證碼：安全好用的兩步驟驗證</title>
+      <link>https://www.wancat.cc/post/totp/</link>
+      <pubDate>Fri, 07 Feb 2020 19:22:30 +0800</pubDate>
+      
+      <guid>https://www.wancat.cc/post/totp/</guid>
+      <description>兩步驟驗證 隨著數位身份在生活中的影響力愈來愈大，只靠著一組密碼來保護我們的帳戶已經不夠安全，而且記密碼實在是違反人腦天性的行為，因此大部分人</description>
+    </item>
     
     <item>
       <title>Caddy 安裝教學</title>
