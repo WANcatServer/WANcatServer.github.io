@@ -272,7 +272,7 @@
 <h2 id="-totp">開始使用 TOTP</h2>
 <p>儘管目前懂得使用 TOTP 的使用者並不多，但其實已經有相當多網站支持以 TOTP 作為驗證方式，例如 Google、Facebook、Apple、Amazon、GitHub、PayPal 等，我管理伺服器需要用到的 CloudFlare、Linode、Porkbun 也都有設定 TOTP 來提高安全性。</p>
 <p>開始使用的第一步是下載一個 TOTP 的應用程式，有非常多的選項，我自己使用的是 <a href="https://authy.com/">Authy</a>，界面簡單易用，提供加密的雲端備份，此外還有 <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">Google Authenticator</a>、<a href="https://support.microsoft.com/zh-tw/help/4026727/microsoft-account-how-to-use-the-microsoft-authenticator-app">Microsoft Authenticator</a>，自由軟體則有 Red Hat 開發的 <a href="https://freeotp.github.io/">FreeOTP</a>，先前在密碼管理工具提到的 <a href="https://bitwarden.com/">Bitwarden</a> 的付費版也有提供 TOTP 的功能。</p>
-<p>安裝好驗證器後，到你的網站去設定兩步驟驗證，它可能會顯示「驗證應用程式」、「谷歌驗證器」、「代碼產生器」，但背後都是 TOTP 這套標準，流程也很簡單，網站會將金鑰以 QR Code 的方式顯示，打開手機上的驗證器程式掃描就可以加入帳號，並輸入產生的一次性密碼供網站確認，就可以完成綁定。網站若是在手機上，則可以用「複製金鑰」的方式來手動輸入金鑰。</p>
+<p>安裝好驗證器後，到你要登入的網站或 APP 的帳號設定中，啟動<strong>兩步驟驗證</strong>，在不同網站中，可能會以「驗證應用程式」、「谷歌驗證器」、「代碼產生器」等名稱出現，但背後都是 TOTP 這套標準，流程也很簡單，網站會將金鑰以 QR Code 的方式顯示，打開手機上的驗證器程式掃描就可以加入帳號，並輸入產生的一次性密碼供網站確認，就可以完成綁定。網站若是在手機上，則可以用「複製金鑰」的方式來手動輸入金鑰。</p>
 <h3 id="facebook">實際操作示範：Facebook</h3>
 <h4 id="-authy">安裝 Authy</h4>
 <p>首先在 Play 商店下載安裝 Authy</p>
@@ -303,6 +303,7 @@
 <p><img src="/img/totp/facebook-input-code.jpg" alt=""></p>
 <p><img src="/img/totp/facebook-succeed.jpg" alt=""></p>
 <p>設定完成後，要在新裝置登入時，就要開啟 Authy 取得驗證碼，增加帳戶的安全性。</p>
+<p>如果你想要在其他的網站設定 TOTP，可以參考 Authy 提供的<a href="https://authy.com/guides/">設定教學</a>。</p>
 <h2 id="-totp-">使用 TOTP 的注意事項</h2>
 <p>首先，無論使用哪種 2FA 方式，都要記得<strong>抄寫復原碼</strong>，假如今天你的手機遺失，無法取得 TOTP 驗證碼，這時就要靠事先紀錄下的一次性復原碼來登入。每個支援 TOTP 的網站也都會在設定完成後生成多組復原碼，建議將其紀錄在密碼管理工具或是紙本筆記本上，用一本專門的筆記本紀錄復原碼是個好主意，儘管身處 21 世紀，紙本紀錄仍然是最安全的方式。</p>
 <p>此外，也要注意使用的驗證器是否安全，了解驗證器在儲存你的金鑰時是否有先加密，如果有雲端備份功能，也要確定在雲端是有加密的。</p>
