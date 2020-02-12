@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
+    <meta name="title" content="elementary OS 啟用 System Tray" />
+    <meta property="og:title" content="elementary OS 啟用 System Tray" />
+    <meta property="twitter:title" content="elementary OS 啟用 System Tray" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Posts-WANcatServer 網貓伺服器</title>
+    <title>elementary OS 啟用 System Tray-WANcatServer 網貓伺服器</title>
 
-    <link rel="canonical" href="/post/">
+    <link rel="canonical" href="/post/elementary-system-tray/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -189,14 +189,41 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>WANcatServer </h1>
-                    
-		    <span class="subheading">網貓伺服器</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/elementaryos" title="elementaryOS">
+                            elementaryOS
+                        </a>
+                        
+                        <a class="tag" href="/tags/linux" title="Linux">
+                            Linux
+                        </a>
+                        
+                    </div>
+                    <h1>elementary OS 啟用 System Tray</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                wancat
+                         
+                        on 
+                        2020 02/12
+                        
+                        
+                        
+                    </span>
                 </div>
             </div>
         </div>
@@ -209,13 +236,74 @@
 <article>
     <div class="container">
         <div class="row">
+
             
             <div class="
                 col-lg-8 col-lg-offset-2
                 col-md-10 col-md-offset-1
                 post-container">
 
-         	
+                
+                <header>
+                    <h2>目錄</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安裝-ayatana-indicator">安裝 Ayatana Indicator</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+                
+                <p><a href="https://elementary.io">elementary OS</a> 是一個好看、易用的 Linux 發行版，然而它有一個缺點：系統狀態欄（system tray）無法顯示其他應用程式的 icon，這導致像輸入法、Discord 等有使用 system tray 的程式無法使用完整功能。最討厭的莫過於 HP 印表機驅動 HPLIP，每次開機就跳出來說 no system tray deteched，非常煩人。</p>
+<p>原因是 elementary OS 基本上不希望其他應用程式去使用 system tray，並且<a href="https://github.com/elementary/wingpanel/issues/96#issuecomment-401407354">停止支援 Ayatana Indicator API</a>，做出相同決定的還有 GNOME，參考 <a href="https://blogs.gnome.org/aday/2017/08/31/status-icons-and-gnome/">Status Icons and GNOME</a>。</p>
+<h2 id="安裝-ayatana-indicator">安裝 Ayatana Indicator</h2>
+<pre><code>sudo add-apt-repository ppa:yunnxx/elementary
+sudo apt update
+sudo apt install indicator-application wingpanel-indicator-ayatana
+</code></pre>
+<p>編輯 <code>/etc/xdg/autostart/indicator-application.desktop</code> 加入 Pantheon</p>
+<pre><code>OnlyShowIn=Unity;GNOME;Pantheon;
+</code></pre>
+<p>接下來重新啟動 X 或是重開機</p>
+<pre><code>sudo service lightdm restart
+# or 
+reboot
+</code></pre>
+<p>完成後 elementary 就可以顯示各個應用程式的圖示了！</p>
+<p><img src="/img/elementary_system_tray.png" alt=""></p>
+<h2 id="references">References</h2>
+<p><a href="https://elementaryos.stackexchange.com/questions/17452/how-to-display-system-tray-icons-in-elementary-os-juno">How to display system tray icons in elementary OS Juno?</a></p>
+<p><a href="https://elementaryos.stackexchange.com/questions/18474/no-system-tray-icon-for-ibus-in-elementary-os-juno">ibus no system tray</a></p>
+<p><a href="https://elementaryos.stackexchange.com/questions/8059/no-system-tray-icon-of-steam">steam no system tray</a></p>
+<p><a href="https://elementaryos.stackexchange.com/questions/22081/im-using-hplip-and-every-time-i-login-to-elementary-os-i-get-a-message-that-the">hplip system tray</a></p>
+<p><a href="https://elementaryos.stackexchange.com/questions/4226/how-can-i-get-applications-to-display-a-system-tray-icon">Elementary no longer support old API</a></p>
+<p><a href="https://www.reddit.com/r/elementaryos/comments/9p0sdi/system_tray_icons/">Elementary system tray icon</a></p>
+<p><a href="https://elementary.io/docs/human-interface-guidelines#system-indicators">elementary Guide: System Tray</a></p>
+<p><a href="https://www.linuxquestions.org/questions/slackware-14/hplip-status-service-no-system-tray-detected-on-this-system-4175617467/">HPLIP Status Service, No system tray detected on this system </a></p>
+
+                <div class="alert alert-warning part">
+<p><strong>👉【幫我們一個忙！】👈</strong></p>
+<p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
+❤您的支持是我們最大的動力！</p>
+<p>您只要登入帳號（Facebook、Google），在下方按5個Like，我們就會收到來自 LikeCoin 基金會的贊助。<br>
+您只需要支持我們，完全不會花到錢！</p>
+</div>
+
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2felementary-system-tray%2f" width="100%" frameborder=0></iframe>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/nextcloud-installation/" data-toggle="tooltip" data-placement="top" title="在 Raspberry Pi 安裝 Nextcloud">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
                 
 <div id="disqus-comment"></div>
 
@@ -240,7 +328,7 @@
                         
                         
                         <a href="/tags/caddy" title="caddy">
-                        caddy
+                            caddy
                         </a>
                         
                         
@@ -258,13 +346,13 @@
                         
                         
                         <a href="/tags/jsp" title="jsp">
-                        jsp
+                            jsp
                         </a>
                         
                         
                         
                         <a href="/tags/life" title="life">
-                        life
+                            life
                         </a>
                         
                         
@@ -272,7 +360,7 @@
                         
                         
                         <a href="/tags/linux" title="linux">
-                        linux
+                            linux
                         </a>
                         
                         
@@ -280,7 +368,7 @@
                         
                         
                         <a href="/tags/minecraft" title="minecraft">
-                        minecraft
+                            minecraft
                         </a>
                         
                         
@@ -292,13 +380,13 @@
                         
                         
                         <a href="/tags/ourliveworld" title="ourliveworld">
-                        ourliveworld
+                            ourliveworld
                         </a>
                         
                         
                         
                         <a href="/tags/raspberry-pi" title="raspberry-pi">
-                        raspberry-pi
+                            raspberry-pi
                         </a>
                         
                         
@@ -310,7 +398,7 @@
                         
                         
                         <a href="/tags/website" title="website">
-                        website
+                            website
                         </a>
                         
                         
@@ -318,7 +406,7 @@
                         
                         
                         <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
-                        教育
+                            教育
                         </a>
                         
                         
@@ -328,7 +416,7 @@
                         
                         
                         <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
-                        自由軟體
+                            自由軟體
                         </a>
                         
                         
@@ -336,7 +424,7 @@
                         
                         
                         <a href="/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8" title="資訊安全">
-                        資訊安全
+                            資訊安全
                         </a>
                         
                         
@@ -373,7 +461,7 @@
                 <ul class="list-inline text-center">
                    
                    <li>
-                       <a href='/post/index.xml' rel="alternate" type="application/rss+xml" title="WANcatServer" >
+                       <a href='' rel="alternate" type="application/rss+xml" title="WANcatServer" >
                            <span class="fa-stack fa-lg">
                                <i class="fa fa-circle fa-stack-2x"></i>
                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>

@@ -6,10 +6,19 @@
     <description>Recent content on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Feb 2020 14:40:06 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2020 19:15:22 +0800</lastBuildDate>
     
 	<atom:link href="https://www.wancat.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>elementary OS 啟用 System Tray</title>
+      <link>https://www.wancat.cc/post/elementary-system-tray/</link>
+      <pubDate>Wed, 12 Feb 2020 19:15:22 +0800</pubDate>
+      
+      <guid>https://www.wancat.cc/post/elementary-system-tray/</guid>
+      <description>elementary OS 是一個好看、易用的 Linux 發行版，然而它有一個缺點：系統狀態欄（system tray）無法顯示其他應用程式的 icon，這導致像輸入法、Disc</description>
+    </item>
     
     <item>
       <title>在 Raspberry Pi 安裝 Nextcloud</title>
