@@ -245,12 +245,12 @@
                 </header>
                 <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">環境說明</a></li>
-    <li><a href="#-java-8">伺服器安裝 Java 8</a></li>
-    <li><a href="#-yacy">安裝 YaCy</a></li>
-    <li><a href="#yacy-">YaCy 設定</a></li>
-    <li><a href="#yacy">YaCy自啟動設定</a></li>
-    <li><a href="#-nginx-">設定 Nginx 反向代理</a></li>
+    <li><a href="#環境說明">環境說明</a></li>
+    <li><a href="#伺服器安裝-java-8">伺服器安裝 Java 8</a></li>
+    <li><a href="#安裝-yacy">安裝 YaCy</a></li>
+    <li><a href="#yacy-設定">YaCy 設定</a></li>
+    <li><a href="#yacy自啟動設定">YaCy自啟動設定</a></li>
+    <li><a href="#設定-nginx-反向代理">設定 Nginx 反向代理</a></li>
   </ul>
 </nav>
                 
@@ -259,7 +259,7 @@
 本文將講解如何在 Ubuntu Server 上安裝 YaCy 搜尋引擎，並用Nginx做反向代理，將網址改成像是 yacy.example.com 的形式。</p>
 </blockquote>
 <p>YaCy 架好的範例可以來我架設的伺服器使用看看https://yacy.wancatserver.tk</p>
-<h2 id="heading">環境說明</h2>
+<h2 id="環境說明">環境說明</h2>
 <p>本文假設有一台無圖形界面的伺服器以及有圖形界面的Desktop。Desktop必須要能夠使用瀏覽器。
 <strong>假設伺服器網域</strong>： example.com，<strong>請將本文所有example.com改成你的網域名稱</strong>
 假設使用者名稱：user ，請換成自己的使用者名稱</p>
@@ -267,12 +267,12 @@
 <p>如果沒有網域名稱仍然可以安裝 YaCy ，只是需要用 ip:8090 的形式來連上它。
 如果沒有真實 ip 就只能在內網使用</p>
 </blockquote>
-<h2 id="-java-8">伺服器安裝 Java 8</h2>
+<h2 id="伺服器安裝-java-8">伺服器安裝 Java 8</h2>
 <p>YaCy可以使用 OpenJDK，也可以使用Oracle官方的JRE。
 OpenJDK使用apt安裝</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt install openjdk-8-jre
 </code></pre></div><p>官方的JRE比較麻煩，可參考<a href="https://dotblogs.com.tw/jhsiao/archive/2013/09/03/116186.aspx">此文章</a></p>
-<h2 id="-yacy">安裝 YaCy</h2>
+<h2 id="安裝-yacy">安裝 YaCy</h2>
 <p>至<a href="https://yacy.net/en/index.html">官網</a>下載程式。</p>
 <p>{% asset_img slug download.png %}</p>
 <p>將程式上傳至伺服器，請將/path/to/yacy.tar.gz替換成你下載的路徑</p>
@@ -312,13 +312,13 @@ Make your choice:
 <span style="color:#f92672">[</span>4<span style="color:#f92672">]</span> change HTTPS port
 <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> quit
 </code></pre></div><p>選項分別是 設定YaCy可用記憶體大小(重要)、設定管理員密碼(重要)、設定HTTP埠口、設定HTTPS埠口，前面兩項要記得設定，後面看個人情況調整，如果沒有特殊需求，保留預設值即可。</p>
-<h2 id="yacy-">YaCy 設定</h2>
+<h2 id="yacy-設定">YaCy 設定</h2>
 <p>啟動YaCy ，打開 example.com:8090，點擊右上方的&quot;Administration&rdquo;
 {% asset_img slug yacy_welcome.png %}
 會進到設定畫面
 {% asset_img slug yacy_status.png %}</p>
 <p>YaCy 的進階設定會在日後別篇文章作說明。</p>
-<h2 id="yacy">YaCy自啟動設定</h2>
+<h2 id="yacy自啟動設定">YaCy自啟動設定</h2>
 <p>現在已經可以使用YaCy了，但是得要手動開啟，不免覺得麻煩，所以接下來將會把YaCy加入service中，讓系統自動開啟，並且以yacy使用者執行，避免被攻擊後危害系統。
 建立系統使用者 yacy</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo useradd --system yacy
@@ -348,7 +348,7 @@ WantedBy<span style="color:#f92672">=</span>multi-user.target
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo systemctl start yacy.service
 $ sudo systemctl stop yacy.service
 </code></pre></div><p>//如果你按tab只跳出yacy，那就是了</p>
-<h2 id="-nginx-">設定 Nginx 反向代理</h2>
+<h2 id="設定-nginx-反向代理">設定 Nginx 反向代理</h2>
 <p>在做這一步之前，<strong>請先確定 yacy.example.com 可以指向你的伺服器。</strong></p>
 <p>Nginx 安裝，使用apt</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ sudo apt install nginx
@@ -374,12 +374,11 @@ $ sudo systemctl stop yacy.service
 <blockquote>
 <p>Nginx可以調整的選項很多，我只會最簡單的設定，如果了解，可以自己進行優化</p>
 </blockquote>
-<h1 id="heading1">結語</h1>
+<h1 id="結語">結語</h1>
 <p>YaCy是一個高度個人化的搜尋引擎，現在的節點數量仍嫌不足，沒有辦法查到如一般搜尋引擎一樣好的資料，速度也較慢，但可以讓小型網站有個「被搜尋」的機會。
 日後將會在別篇文章對於「如何讓自己的網頁被搜尋」，以及「建立自己的資料查詢庫」做說明。</p>
 
-                
-                <div class="alert alert-warning part" data-startline="5" data-endline="12">
+                <div class="alert alert-warning part">
 <p><strong>👉【幫我們一個忙！】👈</strong></p>
 <p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
 ❤您的支持是我們最大的動力！</p>
@@ -388,7 +387,6 @@ $ sudo systemctl stop yacy.service
 </div>
 
 <iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fyacy-install%2f" width="100%" frameborder=0></iframe>
-
 
                 
 
@@ -479,11 +477,17 @@ $ sudo systemctl stop yacy.service
                         
                         
                         
+                        
+                        
                         <a href="/tags/ourliveworld" title="ourliveworld">
                             ourliveworld
                         </a>
                         
                         
+                        
+                        <a href="/tags/raspberry-pi" title="raspberry-pi">
+                            raspberry-pi
+                        </a>
                         
                         
                         

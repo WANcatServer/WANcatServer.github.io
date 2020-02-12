@@ -249,21 +249,21 @@
                 </header>
                 <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">安裝</a></li>
+    <li><a href="#安裝">安裝</a></li>
     <li><a href="#systemd">Systemd</a></li>
-    <li><a href="#heading1">設定檔範例</a></li>
+    <li><a href="#設定檔範例">設定檔範例</a></li>
   </ul>
 </nav>
                 
                 <p>Caddy 是一個由 Go 撰寫的 Web Server，其主要賣點是簡單的設定檔，適合在開發環境中快速架設，還有自動 HTTPS 的功能，相當方便。</p>
 <p>我之前在 Linode 上就使用 Caddy，覺得體驗相當好，因此這次也選擇使用它。</p>
-<h2 id="heading">安裝</h2>
+<h2 id="安裝">安裝</h2>
 <p>到 <a href="https://caddyserver.com/">Caddy</a> 網站的下載頁面，複製 One-step installer script 就可以一鍵安裝。</p>
 <pre><code>curl https://getcaddy.com | bash -s personal
 </code></pre><p>如果是要拿來當開發環境中的 Web Server，這樣就足夠了，但我要讓它在背景執行，因此還需要設定好它的 systemd。</p>
 <h2 id="systemd">Systemd</h2>
-<p>請參考<a href="https://github.com/caddyserver/caddy/tree/master/dist/init/linux-systemd">官方的安裝教學</a>，照著做就行了，比較容易踩雷的是取得憑證的部份，首先 Let's Encrypt 會對你做 DNS challenge，所以如果是使用 CloudFlare 的，要把 Proxy 關掉（雲朵）。再來是寫設定檔，Caddy 的設定檔相當簡單，不過用 systemd 就是很難除錯（看 log 麻煩），所以建議先自己用 <code>sudo caddy -conf /etc/caddy/Caddy</code> 測試設定檔，等到沒問題再用 systemd 開。</p>
-<h2 id="heading1">設定檔範例</h2>
+<p>請參考<a href="https://github.com/caddyserver/caddy/tree/master/dist/init/linux-systemd">官方的安裝教學</a>，照著做就行了，比較容易踩雷的是取得憑證的部份，首先 Let&rsquo;s Encrypt 會對你做 DNS challenge，所以如果是使用 CloudFlare 的，要把 Proxy 關掉（雲朵）。再來是寫設定檔，Caddy 的設定檔相當簡單，不過用 systemd 就是很難除錯（看 log 麻煩），所以建議先自己用 <code>sudo caddy -conf /etc/caddy/Caddy</code> 測試設定檔，等到沒問題再用 systemd 開。</p>
+<h2 id="設定檔範例">設定檔範例</h2>
 <p>以下是我網站使用的設定檔</p>
 <pre><code>matomo.wancat.cc {
     root /var/www/matomo
@@ -286,8 +286,7 @@ stock.wancat.cc {
 }
 </code></pre><p>裡頭包含流量分析軟體 <a href="/post/matomo-installation/">Matomo</a>、<a href="https://lincalvino.me">我爸的網站</a>、還有我寫的<a href="https://stock.wancat.cc">股票爬蟲程式網站</a>。</p>
 
-                
-                <div class="alert alert-warning part" data-startline="5" data-endline="12">
+                <div class="alert alert-warning part">
 <p><strong>👉【幫我們一個忙！】👈</strong></p>
 <p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
 ❤您的支持是我們最大的動力！</p>
@@ -296,7 +295,6 @@ stock.wancat.cc {
 </div>
 
 <iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fcaddy%2f" width="100%" frameborder=0></iframe>
-
 
                 
 
@@ -387,11 +385,17 @@ stock.wancat.cc {
                         
                         
                         
+                        
+                        
                         <a href="/tags/ourliveworld" title="ourliveworld">
                             ourliveworld
                         </a>
                         
                         
+                        
+                        <a href="/tags/raspberry-pi" title="raspberry-pi">
+                            raspberry-pi
+                        </a>
                         
                         
                         

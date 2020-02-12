@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="WANcatServer">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="在 Raspberry Pi 安裝 Nextcloud" />
+    <meta property="og:title" content="在 Raspberry Pi 安裝 Nextcloud" />
+    <meta property="twitter:title" content="在 Raspberry Pi 安裝 Nextcloud" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>在 Raspberry Pi 安裝 Nextcloud-WANcatServer 網貓伺服器</title>
+
+    <link rel="canonical" href="/post/nextcloud-installation/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+    
+<script type="text/javascript">
+    var _paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.wancat.cc/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">WANcatServer</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+		    <li>
+                        <a href="/search">SEARCH <img src="/img/search.png" height="15" style="cursor: pointer;" alt="Search"></a>
+		    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/nextcloud" title="Nextcloud">
+                            Nextcloud
+                        </a>
+                        
+                        <a class="tag" href="/tags/raspberry-pi" title="Raspberry Pi">
+                            Raspberry Pi
+                        </a>
+                        
+                        <a class="tag" href="/tags/caddy" title="Caddy">
+                            Caddy
+                        </a>
+                        
+                        <a class="tag" href="/tags/linux" title="Linux">
+                            Linux
+                        </a>
+                        
+                    </div>
+                    <h1>在 Raspberry Pi 安裝 Nextcloud</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                wancat
+                         
+                        on 
+                        2020 02/11
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>目錄</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安裝">安裝</a>
+      <ul>
+        <li><a href="#php">PHP</a></li>
+        <li><a href="#mysql">MySQL</a></li>
+        <li><a href="#caddy">Caddy</a></li>
+      </ul>
+    </li>
+    <li><a href="#配置-redis-緩存">配置 Redis 緩存</a></li>
+    <li><a href="#troubleshooting">Troubleshooting</a>
+      <ul>
+        <li><a href="#502-bad-gateway">502 Bad Gateway</a></li>
+      </ul>
+    </li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+                
+                <p>Nextcloud 是一套自由的雲端硬碟系統，可以讓你自己架設像 Google Drive、One Drive 一般的雲端硬碟，將資料掌握在自己手中，本篇紀錄如何在樹梅派安裝 Nextcloud。</p>
+<h2 id="安裝">安裝</h2>
+<p>到<a href="https://nextcloud.com/install/#instructions-server">官方網站</a>下載壓縮檔</p>
+<pre><code>sudo unzip -d /var/www nextcloud-18.0.0.zip
+sudo chown www-data:www-data /var/www/nextcloud
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>安裝 PHP 依賴模組</p>
+<pre><code>sudo apt install php-gd php-json php-mysql php-curl php-mbstring php-intl php-imagick php-xml php-zip
+</code></pre>
+<p>參閱 <a href="https://docs.nextcloud.com/server/18/admin_manual/installation/source_installation.html#prerequisites-for-manual-installation">官方文件</a> 檢查依賴的 PHP 模組，或是擴充功能像是 smb、ldap 等等。</p>
+<h3 id="mysql">MySQL</h3>
+<p>建立 Nextcloud 的資料庫和使用者</p>
+<pre><code>$ sudo mysql
+&gt; create database nextcloud;
+&gt; create user 'nextcloud'@'localhost' identified by 'password';
+&gt; grant all privileges on nextcloud . * to 'nextcloud'@'localhost';
+&gt; flush privileges;
+</code></pre>
+<h3 id="caddy">Caddy</h3>
+<p>複製 Caddy 提供的 <a href="https://github.com/caddyserver/examples/blob/master/nextcloud/Caddyfile">Nextcloud Caddyfile</a> 到 <code>/etc/caddy/Caddyfile</code>，接著修改成你自己的域名、PHP 路徑。我的設定檔如下：</p>
+<pre><code>cloud.wancat.cc {
+
+	root   /var/www/nextcloud
+	log    /var/log/nextcloud_access.log
+	errors /var/log/nextcloud_errors.log
+
+	fastcgi / /var/run/php/php7.3-fpm.sock php {
+		env PATH /bin
+		env modHeadersAvailable true
+		env front_controller_active true
+		connect_timeout 60s
+		read_timeout 3600s
+		send_timeout 300s
+	}
+
+	header / {
+		Strict-Transport-Security		&quot;max-age=15768000;&quot;
+		X-Content-Type-Options			&quot;nosniff&quot;
+		X-XSS-Protection			&quot;1; mode=block&quot;
+		X-Robots-Tag				&quot;none&quot;
+		X-Download-Options			&quot;noopen&quot;
+		X-Permitted-Cross-Domain-Policies	&quot;none&quot;
+		Referrer-Policy				&quot;no-referrer&quot;
+	}
+
+	header /core/fonts {
+		Cache-Control				&quot;max-age=604800&quot;
+	}
+
+	# checks for images
+	rewrite {
+		ext .png .html .ttf .ico .jpg .jpeg .css .js .woff .woff2 .svg .gif .map
+		r ^/index.php/.*$
+		to /{1} /index.php?{query}
+	}
+	
+	rewrite {
+                r ^/\.well-known/host-meta$
+                to /public.php?service=host-meta&amp;{query}
+        }
+	rewrite {
+                r ^/\.well-known/host-meta\.json$
+                to /public.php?service=host-meta-json&amp;{query}
+        }
+	rewrite {
+                r ^/\.well-known/webfinger$
+                to /public.php?service=webfinger&amp;{query}
+        }
+
+	rewrite {
+		r ^/index.php/.*$
+		to /index.php?{query}
+	}
+
+	rewrite / {
+		if {path} not_starts_with /remote.php
+		if {path} not_starts_with /public.php
+		ext .png .html .ttf .ico .jpg .jpeg .css .js .woff .woff2 .svg .gif .map .html .ttf 
+		r ^/(.*)$
+		to /{1} /index.php{uri}
+	}
+
+	rewrite / {
+		if {path} not /core/img/favicon.ico
+		if {path} not /core/img/manifest.json
+		if {path} not_starts_with /remote.php
+		if {path} not_starts_with /public.php
+		if {path} not_starts_with /cron.php
+		if {path} not_starts_with /core/ajax/update.php
+		if {path} not_starts_with /status.php
+		if {path} not_starts_with /ocs/v1.php
+		if {path} not_starts_with /ocs/v2.php
+		if {path} not /robots.txt
+		if {path} not_starts_with /updater/
+		if {path} not_starts_with /ocs-provider/
+		if {path} not_starts_with /ocm-provider/ 
+		if {path} not_starts_with /.well-known/
+		to /index.php{uri}
+	}
+
+	# client support (e.g. os x calendar / contacts)
+	redir /.well-known/carddav /remote.php/carddav 301
+	redir /.well-known/caldav /remote.php/caldav 301
+
+	# remove trailing / as it causes errors with php-fpm
+	rewrite {
+		r ^/remote.php/(webdav|caldav|carddav|dav)(\/?)(\/?)$
+		to /remote.php/{1}
+	}
+
+	rewrite {
+		r ^/remote.php/(webdav|caldav|carddav|dav)/(.+?)(\/?)(\/?)$
+		to /remote.php/{1}/{2}
+	}
+
+	rewrite {
+		r ^/public.php/(dav|webdav|caldav|carddav)(\/?)(\/?)$
+		to /public.php/{1}
+	}
+
+	rewrite {
+		r ^/public.php/(dav|webdav|caldav|carddav)/(.+)(\/?)(\/?)$
+		to /public.php/{1}/{2}
+	}
+
+	# .htaccess / data / config / ... shouldn't be accessible from outside
+	status 404 {
+		/.htaccess
+		/data
+		/config
+		/db_structure
+		/.xml
+		/README
+		/3rdparty
+		/lib
+		/templates
+		/occ
+		/console.php
+	}
+
+}
+</code></pre><p>由於 Caddyfile 中定義了兩個 log 檔位置，所以我們要先將其建立，並設定所有者為 www-data，否則 Caddy 會噴錯</p>
+<pre><code>sudo touch /var/log/nextcloud-access.log /var/log/nextcloud-errors.log
+sudo chown www-data:www-data /var/log/nextcloud-access.log /var/log/nextcloud-errors.log
+</code></pre>
+<p>重新啟動 Caddy，可能需要 debug 一下</p>
+<pre><code>sudo service caddy restart
+</code></pre>
+<p>接下來打開你的 Nextcloud，就可以進行初始化設定。建立管理員帳號，輸入資料庫的帳號密碼，就可以開始使用了。</p>
+<h2 id="配置-redis-緩存">配置 Redis 緩存</h2>
+<p>沒有開 caching，效率有點差，安裝 Redis 增加效率</p>
+<pre><code>sudo apt install php-apcu php-redis redis-server
+</code></pre>
+<p>安裝後，修改 Redis 設定檔</p>
+<pre><code>sudo vim /etc/redis/redis.conf
+</code></pre>
+<p>修改下列欄位</p>
+<pre><code>port 0
+</code></pre><p>將下面欄位 uncomment</p>
+<pre><code>unixsocket /var/run/redis/redis-server.sock
+unixsocketperm 770
+</code></pre><p><strong>注意：你的 redis socket 路徑可能跟我不太一樣，請使用原本的路徑</strong></p>
+<p>重新啟動 Redis</p>
+<pre><code>sudo service redis restart
+</code></pre>
+<p>編輯 Nextcloud 設定檔</p>
+<pre><code>sudo vim /var/www/nextcloud/config/config.php
+</code></pre>
+<p>加入以下設定：</p>
+<pre><code>'memcache.local' =&gt; '\\OC\\Memcache\\Redis',
+'memcache.locking' =&gt; '\\OC\\Memcache\\Redis',
+'filelocking.enabled' =&gt; 'true',
+'redis' =&gt; 
+array (
+	'host' =&gt; '/var/run/redis/redis-server.sock',
+	'port' =&gt; 0,
+	'timeout' =&gt; 0.0,
+),
+</code></pre><p>請注意：在這裡要使用你的 redis socket 路徑
+設定系統開機啟動 Redis</p>
+<pre><code>sudo systemctl enable redis-server
+</code></pre>
+<p>打開 Nextcloud 應該就啟用了。</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="502-bad-gateway">502 Bad Gateway</h3>
+<p>打開網頁後發現 502 Bad Gateway，這代表 PHP 連不上。</p>
+<p>檢查 php socket 路徑，重開 php</p>
+<pre><code>sudo serivce php7.3-fpm restart
+</code></pre>
+<h2 id="references">References</h2>
+<p><a href="https://raspberrytips.com/install-nextcloud-raspberry-pi/">How to install Nextcloud on your Raspberry Pi? (2 ways)</a></p>
+<p><a href="https://bayton.org/docs/nextcloud/installing-nextcloud-on-ubuntu-16-04-lts-with-redis-apcu-ssl-apache/#6-2-enable-caching">Enable caching</a></p>
+
+                <div class="alert alert-warning part">
+<p><strong>👉【幫我們一個忙！】👈</strong></p>
+<p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
+❤您的支持是我們最大的動力！</p>
+<p>您只要登入帳號（Facebook、Google），在下方按5個Like，我們就會收到來自 LikeCoin 基金會的贊助。<br>
+您只需要支持我們，完全不會花到錢！</p>
+</div>
+
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fnextcloud-installation%2f" width="100%" frameborder=0></iframe>
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/totp/" data-toggle="tooltip" data-placement="top" title="用 TOTP 擺脫簡訊驗證碼：安全好用的兩步驟驗證">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/caddy" title="caddy">
+                            caddy
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/jsp" title="jsp">
+                            jsp
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/life" title="life">
+                            life
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/minecraft" title="minecraft">
+                            minecraft
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ourliveworld" title="ourliveworld">
+                            ourliveworld
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/raspberry-pi" title="raspberry-pi">
+                            raspberry-pi
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/website" title="website">
+                            website
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
+                            教育
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
+                            自由軟體
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8" title="資訊安全">
+                            資訊安全
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
+                        
+                        <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="WANcatServer" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:wancat@wancat.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://facebook.com/wancatserver">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lancatlin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://liker.social/@wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    <li>
+                        <a target="_blank" href="https://keybase.io/wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; WANcatServer 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

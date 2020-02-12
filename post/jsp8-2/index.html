@@ -245,16 +245,16 @@
                 </header>
                 <nav id="TableOfContents">
   <ul>
-    <li><a href="#heading">老街解謎</a></li>
-    <li><a href="#heading1">熱血駭客魂</a></li>
-    <li><a href="#-object">撩妹不，我們撩 Object</a>
+    <li><a href="#老街解謎">老街解謎</a></li>
+    <li><a href="#熱血駭客魂">熱血駭客魂</a></li>
+    <li><a href="#撩妹不我們撩-object">撩妹&hellip;不，我們撩 Object</a>
       <ul>
-        <li><a href="#heading2">畢達哥拉斯</a></li>
-        <li><a href="#heading3">伽利略</a></li>
-        <li><a href="#heading4">完整的內容</a></li>
+        <li><a href="#畢達哥拉斯">畢達哥拉斯</a></li>
+        <li><a href="#伽利略">伽利略</a></li>
+        <li><a href="#完整的內容">完整的內容</a></li>
       </ul>
     </li>
-    <li><a href="#heading5">心得</a></li>
+    <li><a href="#心得">心得</a></li>
   </ul>
 </nav>
                 
@@ -262,14 +262,14 @@
 <p>參加 <strong>JSP 國中科學探究聯合發表會</strong> 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。
 本次主題的<a href="/2018/08/01/FireWheel0/">系列文章</a>, <a href="https://www.youtube.com/embed/j0jkjbXKWTg">演講影片</a></p>
 </blockquote>
-<h2 id="heading">老街解謎</h2>
+<h2 id="老街解謎">老街解謎</h2>
 <p>在看了海報發表以及趣味課程後，我們在下午四點即將出發到大溪老街，進行<strong>大溪老街實境解謎</strong>，要在大溪老街中，找出各個謎題的答案。我將網站的連結放<a href="https://holiyo.tn.edu.tw/game/game_platform/edit/play.jsp?id=9f79e8bc&amp;data=a00001010.2-b9f2b7625247ed3c8b4dfdb1e8b008d7.8-5e3365323f06ad325551e70716d2a77f.2-846a8cf583fd4d26f212368d944eabc5.1-07b1f5df63bf04e1a10afadf525e6153.4-0cc0d3284567a8066ed2e1c4d10a7960.2-029d7c7b554c7a3bf9b869764ae19403&amp;fe=nnnnnnnnnnnnnnnn&amp;title=%E8%80%81%E8%A1%97%E8%A7%A3%E8%AC%8E&amp;time=1532694743885">這邊</a>
 （抱怨一下，這個網站沒辦法用Firefox開啟！！害我用了55 mb下載 chromium）</p>
 <p>裡面的每一題都十分困難，需要實際到老街裡面走，而且不太可能用搜尋引擎得到答案。</p>
 <p>我一開始是非常熱血的，在前往的路途上就開始研究地圖，根據主辦老師給的地圖，我發現一些可疑之處，並且開始計畫一個攻克路線。
 結果到了現場，我們的隊輔表示已經跟友隊串通好要一起破解，我就失去動力了，有時候自己快解出來了卻「被」公佈答案，真的是最掃興的事。</p>
 <p>直到我發現，<strong>答案都在網頁裡</strong>。</p>
-<h2 id="heading1">熱血駭客魂</h2>
+<h2 id="熱血駭客魂">熱血駭客魂</h2>
 <p>事情是這樣的，原先我以為答案在伺服器中，客戶端將輸入的答案傳送給伺服器核對，伺服器再回傳是否正確。但是我關了網路，卻仍然可以知道答案是否正確，證明了「答案」一定被紀錄在網頁的某個角落。</p>
 <p>哇！發現這個之後不得了，我立刻跟我的工程師朋友講這件事，就用手機想來看原始碼，手機打不開，於是就出動了我隨身攜帶的筆電。</p>
 <p>我和我朋友的熱血駭客魂立刻爆發了，我們雖然無法自己找出答案，但可以<strong>追求屬於我們的勝利</strong>。原本我想答案應該會被隨便擺在某個陣列或是物件中，於是就根據前面所得到的答案內容下去搜尋，應該就能找到擺放答案的陣列。結果不然，什麼都沒查到。我們繼續嘗試用各種關鍵字，像是「答案」、「answer」、「第六題」等等，仍然一無所獲。</p>
@@ -284,7 +284,7 @@
 <p>那要如何利用MD5? 以這個網頁為例，假設答案是「地瓜」（我絕對沒有要劇透的意思），那網站就先將「地瓜」用MD5加密成一段暗碼，然後把暗碼放到網頁裡面。
 當使用者輸入答案時，網頁的程式將會將輸入的答案用MD5加密，然後比對<strong>加密的結果跟原先放在網站裡的暗碼是否一致</strong>，如果一致則代表使用者輸入的答案是正確的。</p>
 <p>在證得了這個網頁使用MD5來防止破解後，我們就放棄透過看原始碼來取得答案了。雖然破解失敗了，但是這個破解的過程，或者說跟朋友一起破解的過程，卻是我從未體驗過的。</p>
-<h2 id="-object">撩妹&hellip;不，我們撩 Object</h2>
+<h2 id="撩妹不我們撩-object">撩妹&hellip;不，我們撩 Object</h2>
 <p>話說JSP最刺激而瘋狂的活動就是**「隱藏任務」**啦！第二天的晚上你別想睡覺，有著最困難的任務要和你的組員一起完成。我們去年在福科的隱藏任務是**「開店計畫」**，我們從下午到夜市探勘，到晚上在體育館內討論，我還負責了影片的製作，結果竟然到了半夜三點才睡覺，而且隔天六點就得起來。</p>
 <p>隱藏任務雖然辛苦，但非常好玩，在去年的最後一天發表會上，所有人都非常熱烈，台上與台下在熱絡的<del>嘴炮</del>討論。最吵的莫過於我們學校的學生了，每個人好像都不怕生，對台上的講者有一堆意見，這可歸功於我們科研社老師平日的「教育有方」。</p>
 <p>而今年的隱藏任務是什麼呢？<strong>「科學幽默Slogan」</strong>（這是我自己的取名啦），看中最近蔚為流行的「撩妹語錄」、「負能量語錄」，今年的隱藏任務就是要來想跟科學相關的各種Slogan啦！</p>
@@ -297,21 +297,21 @@
 <p>其他人都愣在那裡，只有我當場笑倒。</p>
 <p>跟大家解釋一下，Object 物件，是在程式設計中的一個概念，在物件導向程式設計中，認為程式是由各種「物件」所組成的，而通常這些物件的最高Parent物件就是<strong>Object</strong>，所以「撩Object」，根據<a href="https://zh.wikipedia.org/zh-tw/%E5%A4%9A%E5%9E%8B_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">多型</a>的原則，就是撩了所有的宇宙萬物了。</p>
 <p>// <em>在我的<a href="https://lancatlin.github.io/2018/08/01/FireWheel0/#%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91%E5%9F%BA%E7%A4%8E">文章</a>中有講解簡單的物件導向觀念，有興趣的朋友可以去看看。物件導向的細節很多，如果想知道更深入的可能要自己去查囉！</em></p>
-<h3 id="heading2">畢達哥拉斯</h3>
+<h3 id="畢達哥拉斯">畢達哥拉斯</h3>
 <p>那既然確定要「撩Object語錄」了，那也不用在乎受眾是誰，我們開始想各個科學家的撩Object語錄。
 幸好強者我朋友，平日都在看一些<del>怪怪的</del>書，科學素養很高，認識許多<em>科學家和他們的產地</em>。我們常使用一種比較艱澀的鋪梗法，是將科學家本來自己的理論，為了撩Object而故意弄成錯的，例如我自己很喜歡的一則:</p>
 <blockquote>
 <p>畢達哥拉斯: 「你是唯一的無理數」</p>
 </blockquote>
 <p>還是稍微解釋一下，畢達哥拉斯的教派（他有一幫的弟子）有一個思想，是對「比例」的追求，他們相信所有的數字都可以用 <strong>&ldquo;a/b&rdquo;</strong> 這樣來表示，然而當他的一位弟子證明了正方形的斜邊長，也就是√2是個<a href="https://zh.wikipedia.org/wiki/%E7%84%A1%E7%90%86%E6%95%B8">無理數</a>時，他弟子就「溺死」了，我是說被溺死了。</p>
-<h3 id="heading3">伽利略</h3>
+<h3 id="伽利略">伽利略</h3>
 <p>再舉一個比較熟知的例子，伽利略應該很多人都熟悉。</p>
 <blockquote>
 <p>伽利略: 「我想和你一起掉下去」</p>
 </blockquote>
 <p>伽利略是推翻過去亞里斯多德「越重東西掉落速度越快」理論的人，在他著名的<a href="https://zh.wikipedia.org/zh-tw/%E4%BC%BD%E5%88%A9%E7%95%A5%C2%B7%E4%BC%BD%E5%88%A9%E8%8E%B1#%E8%B3%AA%E9%87%8F%E7%9B%B8%E7%95%B0%E8%80%85%E5%90%8C%E6%99%82%E8%90%BD%E5%9C%B0">比薩斜塔實驗</a>中，他將兩顆材質相同但質量不同的球體，從比薩斜塔上往下丟，證明物體的掉落速度與質量無關。</p>
 <p>所以「和你一起掉下去」，我們就永遠不分開啦！</p>
-<h3 id="heading4">完整的內容</h3>
+<h3 id="完整的內容">完整的內容</h3>
 <p><img src="/img/jsp8-2/img1.png" alt="">
 <img src="/img/jsp8-2/img2.png" alt="">
 <img src="/img/jsp8-2/img3.png" alt="">
@@ -320,7 +320,7 @@
 <img src="/img/jsp8-2/img6.png" alt="">
 <img src="/img/jsp8-2/img7.png" alt="">
 這張做一個小註解，它是我們的另一位組員想的，唯一不是我們這兩個阿宅想的內容。非常令人驚訝的是，在發表會上，這是最成功的一則。</p>
-<h4 id="-">現場的老師還加了一個附註: <strong>此事(式)不存在</strong></h4>
+<h4 id="現場的老師還加了一個附註-此事式不存在">現場的老師還加了一個附註: <strong>此事(式)不存在</strong></h4>
 <hr>
 <p><img src="/img/jsp8-2/img8.png" alt="">
 <img src="/img/jsp8-2/img9.png" alt="">
@@ -333,7 +333,7 @@
     love(you);
 }
 </code></pre><hr>
-<h2 id="heading5">心得</h2>
+<h2 id="心得">心得</h2>
 <p>以上，就是今年JSP的紀實啦！
 今年最大的收穫，莫過於捕獲了一名野生工程師，從小六開始自己玩Scratch，到現在一路走來都是孤獨的，有時候真的會懷疑，自己寫的程式會不會其實很爛，但從來都沒有可以比較或互相學習的對象。</p>
 <p>在離開會場之前，我們留下彼此的四五個聯絡方式（確保萬一），還約好了一起來做火輪手槍的網頁版！現在已經開始研發。</p>
@@ -341,8 +341,7 @@
 我一直很害怕自己會過一個虛無飄渺的暑假，擔心當暑假即將到達盡頭，自己卻什麼都沒留下。</p>
 <p>而現在我終於可以確定，因為JSP，這個暑假，我不會忘記。</p>
 
-                
-                <div class="alert alert-warning part" data-startline="5" data-endline="12">
+                <div class="alert alert-warning part">
 <p><strong>👉【幫我們一個忙！】👈</strong></p>
 <p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
 ❤您的支持是我們最大的動力！</p>
@@ -351,7 +350,6 @@
 </div>
 
 <iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fjsp8-2%2f" width="100%" frameborder=0></iframe>
-
 
                 
 
@@ -442,11 +440,17 @@
                         
                         
                         
+                        
+                        
                         <a href="/tags/ourliveworld" title="ourliveworld">
                             ourliveworld
                         </a>
                         
                         
+                        
+                        <a href="/tags/raspberry-pi" title="raspberry-pi">
+                            raspberry-pi
+                        </a>
                         
                         
                         
