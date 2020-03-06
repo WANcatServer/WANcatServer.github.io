@@ -257,14 +257,14 @@
                 </header>
                 <nav id="TableOfContents">
   <ul>
-    <li><a href="#安裝">安裝</a>
+    <li><a href="#heading">安裝</a>
       <ul>
         <li><a href="#php">PHP</a></li>
         <li><a href="#mysql">MySQL</a></li>
         <li><a href="#caddy">Caddy</a></li>
       </ul>
     </li>
-    <li><a href="#配置-redis-緩存">配置 Redis 緩存</a></li>
+    <li><a href="#-redis-">配置 Redis 緩存</a></li>
     <li><a href="#troubleshooting">Troubleshooting</a>
       <ul>
         <li><a href="#502-bad-gateway">502 Bad Gateway</a></li>
@@ -275,7 +275,7 @@
 </nav>
                 
                 <p>Nextcloud 是一套自由的雲端硬碟系統，可以讓你自己架設像 Google Drive、One Drive 一般的雲端硬碟，將資料掌握在自己手中，本篇紀錄如何在樹梅派安裝 Nextcloud。</p>
-<h2 id="安裝">安裝</h2>
+<h2 id="heading">安裝</h2>
 <p>到<a href="https://nextcloud.com/install/#instructions-server">官方網站</a>下載壓縮檔</p>
 <pre><code>sudo unzip -d /var/www nextcloud-18.0.0.zip
 sudo chown www-data:www-data /var/www/nextcloud
@@ -424,7 +424,7 @@ sudo chown www-data:www-data /var/log/nextcloud-access.log /var/log/nextcloud-er
 <pre><code>sudo service caddy restart
 </code></pre>
 <p>接下來打開你的 Nextcloud，就可以進行初始化設定。建立管理員帳號，輸入資料庫的帳號密碼，就可以開始使用了。</p>
-<h2 id="配置-redis-緩存">配置 Redis 緩存</h2>
+<h2 id="-redis-">配置 Redis 緩存</h2>
 <p>沒有開 caching，效率有點差，安裝 Redis 增加效率</p>
 <pre><code>sudo apt install php-apcu php-redis redis-server
 </code></pre>
@@ -478,6 +478,10 @@ array (
 
 <iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fnextcloud-installation%2f" width="100%" frameborder=0></iframe>
 
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/">
+    <img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/tw/88x31.png" />
+</a><br />
+本著作係採用<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/">創用 CC 姓名標示-相同方式分享 3.0 台灣 授權條款</a>授權.
                 
 
                 <hr>
