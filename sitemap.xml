@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.wancat.cc/post/</loc>
+    <lastmod>2020-03-29T19:56:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/</loc>
+    <lastmod>2020-03-29T19:56:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/fever-pass-intro/</loc>
+    <lastmod>2020-03-29T19:56:21+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.wancat.cc/post/elementary-system-tray/</loc>
     <lastmod>2020-02-12T19:15:22+08:00</lastmod>
   </url>
@@ -18,17 +33,7 @@
   </url>
   
   <url>
-    <loc>https://www.wancat.cc/post/</loc>
-    <lastmod>2020-02-12T19:15:22+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wancat.cc/tags/</loc>
-    <lastmod>2020-02-12T19:15:22+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/</loc>
     <lastmod>2020-02-12T19:15:22+08:00</lastmod>
   </url>
   
@@ -360,6 +365,11 @@
   <url>
     <loc>https://www.wancat.cc/post/minecraft-trip/</loc>
     <lastmod>2018-06-10T18:38:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/%E5%A4%B1%E6%8E%A7%E7%9A%84%E6%99%BA%E8%B2%A1%E6%AC%8A/</loc>
+    <priority>0</priority>
   </url>
   
   <url>

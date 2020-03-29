@@ -15,9 +15,9 @@
     
 
     
-    <meta name="title" content="Google Analytics 替代方案 Matomo 安裝教學" />
-    <meta property="og:title" content="Google Analytics 替代方案 Matomo 安裝教學" />
-    <meta property="twitter:title" content="Google Analytics 替代方案 Matomo 安裝教學" />
+    <meta name="title" content="專案介紹：Fever Pass 體溫登記系統" />
+    <meta property="og:title" content="專案介紹：Fever Pass 體溫登記系統" />
+    <meta property="twitter:title" content="專案介紹：Fever Pass 體溫登記系統" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Google Analytics 替代方案 Matomo 安裝教學-WANcatServer 網貓伺服器</title>
+    <title>專案介紹：Fever Pass 體溫登記系統-WANcatServer 網貓伺服器</title>
 
-    <link rel="canonical" href="/post/matomo-installation/">
+    <link rel="canonical" href="/post/fever-pass-intro/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -202,24 +202,8 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/matomo" title="Matomo">
-                            Matomo
-                        </a>
-                        
-                        <a class="tag" href="/tags/linux" title="Linux">
-                            Linux
-                        </a>
-                        
-                        <a class="tag" href="/tags/caddy" title="Caddy">
-                            Caddy
-                        </a>
-                        
-                        <a class="tag" href="/tags/sql" title="SQL">
-                            SQL
-                        </a>
-                        
                     </div>
-                    <h1>Google Analytics 替代方案 Matomo 安裝教學</h1>
+                    <h1>專案介紹：Fever Pass 體溫登記系統</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by 
@@ -227,7 +211,7 @@
                                 wancat
                          
                         on 
-                        2020 02/04
+                        2020 03/29
                         
                         
                         
@@ -252,37 +236,84 @@
                 post-container">
 
                 
-                <header>
-                    <h2>目錄</h2>
-                </header>
-                <nav id="TableOfContents"></nav>
-                
-                <p>因為實在不想再讓 Google 拿到資料了，所以我到 <a href="https://nomoregoogle.com/">No More Google</a> 網站上找 Google Analytics 的替代方案，第一名就是 <a href="https://matomo.org/">Matomo</a>。</p>
-<p>Matomo 是一個自架的流量分析程式，是自由軟體，也有提供付費的 Cloud hosting 服務。我在試用後覺得還不錯，就決定自行在 Raspberry Pi 上安裝。因為是自架的，所以資料都在自己手上，不會被 Google 拿去利用。</p>
-<p>安裝方式參考<a href="https://matomo.org/docs/installation/">官方文件</a>。</p>
-<p>環境需要 PHP、MySQL or MariaDB</p>
-<p>PHP 安裝：</p>
-<pre><code>sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-cli mysql-server php7.0-mysql php-xml php7.0-mbstring
-</code></pre><p>資料庫我比較偏好社群維護的 MariaDB：</p>
-<pre><code>sudo apt install mariadb-server
-sudo mysql_secure_installation
-</code></pre><p>建議在執行 <code>mysql_secure_installation</code> 來強化安全性。</p>
-<p>由於我使用 Caddy，所以 Caddyfile 中要加入以下程式：</p>
-<pre><code>matomo.wancat.cc {
-    root /var/www/matomo # 換成你的 matomo 位置
-    gzip
-    fastcgi / /var/run/php/php7.3-fpm.sock php {
-        index index.php
-    }
-}
-</code></pre><p>然後打開網頁，就可以看到安裝程式了。接著要幫 Matomo 設定好 SQL User 和 Database，</p>
-<pre><code>$ sudo mysql
-&gt; create database matomo;
-&gt; create user 'matomo'@'localhost' identified by 'password';
-&gt; grant all privileges on matomo . * to 'matomo'@'localhost';
-&gt; flush privileges;
-</code></pre><p>這樣 matomo 帳號就只能控制 &lsquo;matomo&rsquo; 這個 database。把帳號密碼填入安裝程序，就會檢查是否完成了。這裡有個要注意的是，執行 matomo 的帳號（www-data）基本上不該給它對網站的寫入權限，可以設成 555，matomo.js 這個 JavaScript 檔需要給予寫入權限。</p>
-<p>接下來 Matomo 的安裝程序會自動完成了。</p>
+                <p>Fever Pass 是我們團隊 Linchpins 在 2020 年初，為了因應新型冠狀病毒開發的一套體溫登記系統，用於協助各級機關、學校自主登記體溫。</p>
+<p><a href="https://github.com/Linchpins-team/fever-pass">GitHub Repository</a>。可以在我們的 <a href="https://demo.feverpass.life">demo</a> 試用本系統，用以下帳號登入：</p>
+<ul>
+<li>導師 紀體溫 帳號 t101 密碼 10100</li>
+<li>學生 梁體溫 帳號 1081201 密碼 10141</li>
+<li>護理師 護理師 帳號 nurse 密碼 nurse</li>
+</ul>
+<p>歡迎體驗 demo 的各種功能。demo 每日早上八點會幫所有帳號隨機登記體溫。</p>
+<p>Fever Pass 是一個自由且開放原始碼的專案，使用 Go 語言撰寫，以網頁界面進行操作。可以讓機構中的成員自主登記體溫，也可由管理員登記他人體溫。</p>
+<p>目前 Fever Pass 被臺中一中使用，<a href="http://w2.tcfsh.tc.edu.tw/zh_tw/news/announcement/%E8%87%AA%E4%B8%BB%E5%81%A5%E5%BA%B7%E7%AE%A1%E7%90%86-%E9%AB%94%E6%BA%AB%E7%99%BB%E9%8C%84%E5%85%A8%E9%9D%A2%E9%9B%BB%E8%85%A6%E5%8C%96-%E3%80%8EFever-Pass%E9%AB%94%E6%BA%AB%E8%A8%98%E9%8C%84%E7%B3%BB%E7%B5%B1%E3%80%8F-13903318">自主健康管理-體溫登錄全面電腦化-『Fever Pass體溫記錄系統』</a></p>
+<p><img src="/img/fever-pass/index.png" alt="登記自己體溫"></p>
+<hr>
+<p><img src="/img/fever-pass/new.png" alt="新增他人體溫"></p>
+<p>Fever Pass 有清晰的統計頁面，可以看到每日的登記情況，快速找出發燒與未登記的人員。</p>
+<p><img src="/img/fever-pass/stats.png" alt="統計頁面"></p>
+<p>Fever Pass 有豐富的權限設計，分為體溫管理權限和帳號管理權限，以這些為基礎組成許多預設的身份組，用來滿足各式各樣的管理需求。</p>
+<table>
+<thead>
+<tr>
+<th align="center">職稱</th>
+<th align="center">身份</th>
+<th align="center">體溫記錄權限</th>
+<th align="center">帳號管理權限</th>
+<th align="center">重置密碼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">admin</td>
+<td align="center">管理員</td>
+<td align="center">全校</td>
+<td align="center">全校</td>
+<td align="center">全校</td>
+</tr>
+<tr>
+<td align="center">護理師</td>
+<td align="center">教職員</td>
+<td align="center">全校</td>
+<td align="center">個人</td>
+<td align="center">個人</td>
+</tr>
+<tr>
+<td align="center">教職員</td>
+<td align="center">教職員</td>
+<td align="center">個人</td>
+<td align="center">個人</td>
+<td align="center">個人</td>
+</tr>
+<tr>
+<td align="center">導師</td>
+<td align="center">教職員</td>
+<td align="center">班級</td>
+<td align="center">班級</td>
+<td align="center">班級</td>
+</tr>
+<tr>
+<td align="center">衛生股長</td>
+<td align="center">學生</td>
+<td align="center">班級</td>
+<td align="center">班級</td>
+<td align="center">班級</td>
+</tr>
+<tr>
+<td align="center">學生</td>
+<td align="center">學生</td>
+<td align="center">個人</td>
+<td align="center">個人</td>
+<td align="center">個人</td>
+</tr>
+</tbody>
+</table>
+<p>歡迎有需要的機關或學校自行安裝使用，希望這個系統能夠幫助更多人度過這次疫情，也歡迎志願者貢獻此專案。若需要代為安裝或是佈署，請來信 <a href="mailto:linchpins-team@protonmail.com">linchpins-team@protonmail.com</a> 。</p>
+<h2 id="heading">開發者介紹</h2>
+<p>Linchpins 是一個自由軟體開發團隊，本專案由林宏信與張旭誠負責開發。</p>
+<p>林宏信：資料庫、後端與網頁模板<br>
+張旭誠：網頁設計、功能優化</p>
+<h2 id="heading1">支持本專案</h2>
+<p>請幫我們用 LikeCoin 拍手，或是直接轉帳給 <a href="https://like.co/linchpins">linchpins</a>（Liker ID: linchpins），您的支持能鼓勵我們繼續開發！</p>
 
                 <div class="alert alert-warning part">
 <p><strong>👉【幫我們一個忙！】👈</strong></p>
@@ -292,7 +323,7 @@ sudo mysql_secure_installation
 您只需要支持我們，完全不會花到錢！</p>
 </div>
 
-<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fmatomo-installation%2f" width="100%" frameborder=0></iframe>
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/linchpins/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2ffever-pass-intro%2f" width="100%" frameborder=0></iframe>
                 <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/">
     <img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/tw/88x31.png" />
 </a><br />
@@ -303,15 +334,10 @@ sudo mysql_secure_installation
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/post/hugo-install-likecoin/" data-toggle="tooltip" data-placement="top" title="Hugo 安裝 LikeCoin 教學">&larr;
+                        <a href="/post/elementary-system-tray/" data-toggle="tooltip" data-placement="top" title="elementary OS 啟用 System Tray">&larr;
                             Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/post/cloudflare-ddns/" data-toggle="tooltip" data-placement="top" title="CloudFlare 設定 DDNS 教學">Next
-                            Post &rarr;</a>
-                    </li>
                     
                 </ul>
 

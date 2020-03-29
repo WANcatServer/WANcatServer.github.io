@@ -6,10 +6,19 @@
     <description>Recent content on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 12 Feb 2020 19:15:22 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 19:56:21 +0800</lastBuildDate>
     
 	<atom:link href="https://www.wancat.cc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>專案介紹：Fever Pass 體溫登記系統</title>
+      <link>https://www.wancat.cc/post/fever-pass-intro/</link>
+      <pubDate>Sun, 29 Mar 2020 19:56:21 +0800</pubDate>
+      
+      <guid>https://www.wancat.cc/post/fever-pass-intro/</guid>
+      <description>Fever Pass 是我們團隊 Linchpins 在 2020 年初，為了因應新型冠狀病毒開發的一套體溫登記系統，用於協助各級機關、學校自主登記體溫。 GitHub Repository。可以在我們</description>
+    </item>
     
     <item>
       <title>elementary OS 啟用 System Tray</title>
@@ -297,6 +306,15 @@
       
       <guid>https://www.wancat.cc/post/minecraft-trip/</guid>
       <description>— OurLiveWorld 我們的生存故事 這是Minecraft的冒險故事系列，每篇將記載在我們世界中的一場冒險。 星期日邀請二姐 Andrea來我們的世界，這天And</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.wancat.cc/post/%E5%A4%B1%E6%8E%A7%E7%9A%84%E6%99%BA%E8%B2%A1%E6%AC%8A/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/post/%E5%A4%B1%E6%8E%A7%E7%9A%84%E6%99%BA%E8%B2%A1%E6%AC%8A/</guid>
+      <description>失控的智財權  智財權保護的是誰  例子 1：辛苦的窮作家  創作的小說被出版社未經同意出版     例子 2：口袋滿滿的娛樂大亨  控告使用其角色 IP 的前任員工（且正是其創作者）     智財權保護的是既得利益者  智財權立法背景  嚴格的智財權，不利於發展 智慧財產的嚴重不對稱性，造成了兩難     我們想要的，是什麼樣的環境  是一個對新手友善、充滿前人資源的社會 亦或是一個被少數巨頭壟斷，舉步維艱的社會    </description>
     </item>
     
     <item>
