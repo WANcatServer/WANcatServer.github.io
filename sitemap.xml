@@ -3,23 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.wancat.cc/tags/caddy/</loc>
+    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.wancat.cc/categories/</loc>
-    <lastmod>2020-04-26T10:44:00+08:00</lastmod>
+    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wancat.cc/post/</loc>
-    <lastmod>2020-04-26T10:44:00+08:00</lastmod>
+    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/raspberry-pi/</loc>
+    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/wordpress-installation/</loc>
+    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wancat.cc/tags/</loc>
-    <lastmod>2020-04-26T10:44:00+08:00</lastmod>
+    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wancat.cc/</loc>
-    <lastmod>2020-04-26T10:44:00+08:00</lastmod>
+    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/wordpress/</loc>
+    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/categories/%E6%95%99%E5%AD%B8/</loc>
+    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
   </url>
   
   <url>
@@ -68,27 +93,12 @@
   </url>
   
   <url>
-    <loc>https://www.wancat.cc/tags/caddy/</loc>
-    <lastmod>2020-02-11T14:40:06+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wancat.cc/tags/nextcloud/</loc>
     <lastmod>2020-02-11T14:40:06+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.wancat.cc/tags/raspberry-pi/</loc>
-    <lastmod>2020-02-11T14:40:06+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wancat.cc/post/nextcloud-installation/</loc>
-    <lastmod>2020-02-11T14:40:06+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/categories/%E6%95%99%E5%AD%B8/</loc>
     <lastmod>2020-02-11T14:40:06+08:00</lastmod>
   </url>
   
