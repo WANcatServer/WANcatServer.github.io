@@ -6,10 +6,28 @@
     <description>Recent content in Tags on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 May 2020 22:17:08 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2020 23:44:48 +0800</lastBuildDate>
     
 	<atom:link href="https://www.wancat.cc/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://www.wancat.cc/tags/javascript/</link>
+      <pubDate>Wed, 17 Jun 2020 23:44:48 +0800</pubDate>
+      
+      <guid>https://www.wancat.cc/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>https://www.wancat.cc/tags/math/</link>
+      <pubDate>Wed, 17 Jun 2020 23:44:48 +0800</pubDate>
+      
+      <guid>https://www.wancat.cc/tags/math/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Caddy</title>
@@ -62,6 +80,15 @@
       <pubDate>Sun, 26 Apr 2020 10:44:00 +0800</pubDate>
       
       <guid>https://www.wancat.cc/tags/%E9%9C%A7%E8%A6%96%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://www.wancat.cc/tags/golang/</link>
+      <pubDate>Sun, 29 Mar 2020 19:56:21 +0800</pubDate>
+      
+      <guid>https://www.wancat.cc/tags/golang/</guid>
       <description></description>
     </item>
     
@@ -188,15 +215,6 @@
       <pubDate>Tue, 20 Aug 2019 10:38:52 +0000</pubDate>
       
       <guid>https://www.wancat.cc/tags/jsp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://www.wancat.cc/tags/golang/</link>
-      <pubDate>Fri, 26 Jul 2019 10:49:46 +0000</pubDate>
-      
-      <guid>https://www.wancat.cc/tags/golang/</guid>
       <description></description>
     </item>
     

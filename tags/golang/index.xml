@@ -6,10 +6,19 @@
     <description>Recent content in Golang on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Jul 2019 10:49:46 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 19:56:21 +0800</lastBuildDate>
     
 	<atom:link href="https://www.wancat.cc/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>專案介紹：Fever Pass 體溫登記系統</title>
+      <link>https://www.wancat.cc/post/fever-pass-intro/</link>
+      <pubDate>Sun, 29 Mar 2020 19:56:21 +0800</pubDate>
+      
+      <guid>https://www.wancat.cc/post/fever-pass-intro/</guid>
+      <description>Fever Pass 是我們團隊 Linchpins 在 2020 年初，為了因應新型冠狀病毒開發的一套體溫登記系統，用於協助各級機關、學校自主登記體溫。 GitHub Repository。可以在我們</description>
+    </item>
     
     <item>
       <title>ORM 入門：如何區分 ORM 中的關聯</title>

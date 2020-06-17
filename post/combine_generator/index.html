@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="WANcatServer">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="專案介紹：排列組合計算機" />
+    <meta property="og:title" content="專案介紹：排列組合計算機" />
+    <meta property="twitter:title" content="專案介紹：排列組合計算機" />
+    
+
+    
+    <meta name="description" content="">
+    <meta property="og:description" content="" />
+    <meta property="twitter:description" content="" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>專案介紹：排列組合計算機-WANcatServer 網貓伺服器</title>
+
+    <link rel="canonical" href="/post/combine_generator/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/syntax.css">
+    
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    
+
+    
+<script type="text/javascript">
+    var _paq = window._paq || [];
+     
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//matomo.wancat.cc/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">WANcatServer</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%B0%88%E6%A1%88">專案</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/javascript" title="JavaScript">
+                            JavaScript
+                        </a>
+                        
+                        <a class="tag" href="/tags/math" title="Math">
+                            Math
+                        </a>
+                        
+                    </div>
+                    <h1>專案介紹：排列組合計算機</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                wancat
+                         
+                        on 
+                        2020 06/17
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>目錄</h2>
+                </header>
+                <nav id="TableOfContents"></nav>
+                
+                <p>近來數學課在教排列組合，排列組合不簡單，很難考慮周全，因此我設計了一個排列組合計算機，根據設定條件窮舉出所有可能，並一一列出。</p>
+<p><a href="https://lancatlin.github.io/combine_generator">排列組合計算機</a></p>
+<p><a href="https://github.com/lancatlin/combine_generator">GitHub 與使用教學</a></p>
+<p>我覺得這個工具對於學習排列組合蠻有幫助的，當然工具沒辦法教你排列組合，但是可以通過觀察結果來促進思考，或找到沒考慮周全的地方，以及驗證題目是否正確。</p>
+<p>其實用電腦窮舉不難，只是排列組合的題目變化多，難以用一個程式解出所有題目，但我發現其中基本上都可以分成兩個部份：<strong>窮舉與篩選</strong>，先窮舉出所有結果，再將結果進行篩選。窮舉基本上大同小異，就是<strong>排列/組合</strong>、<strong>重複/不重複</strong>，每個題目不一樣的主要是篩選的部份，因此我設計讓使用者自己在網頁上用 JavaScript 寫篩選器，這樣各種複雜的條件都能做出來，這裡是運用 JavaScript 的 <code>eval()</code> 函式，可以將一個字串轉成 JavaScript 語句，這感覺超不安全的，但既然不是在伺服器端，應該不會有什麼資安疑慮，程式若是失控，請使用者自行負責。</p>
+<p>整個專案就是一個靜態網頁，託管在 GitHub Page，程式在瀏覽器端執行運算，整個專案相當簡短，全部 JavaScript 不過一百多行。由於排列組合的結果數上升得很快，我有做一個簡易的保護機制，確保總運算量不會超過十億，在這之前我多次搞到 RAM 吃光，整台電腦當機（但主因是 VSCode 和 TabNine 吃太多記憶體）。</p>
+<p>使用上由於要寫 JavaScript，或許會有些門檻，但畢竟只是對陣列數值做加總、判斷，我在 <a href="https://github.com/lancatlin/combine_generator">GitHub</a> 上有提供一些範例，應該參考一下就會寫了。</p>
+<p>如果這個工具對你有幫助，希望你幫我拍手或是到 <a href="https://github.com/lancatlin/combine_generator">GitHub</a> 上給個星星！</p>
+
+                <div class="alert alert-warning part">
+<p><strong>👉【幫我們一個忙！】👈</strong></p>
+<p>👋如果您喜歡這篇文章，請在下方按5個Like！<br>
+❤您的支持是我們最大的動力！</p>
+<p>您只要登入帳號（Facebook、Google），在下方按5個Like，我們就會收到來自 LikeCoin 基金會的贊助。<br>
+您只需要支持我們，完全不會花到錢！</p>
+</div>
+
+<iframe class="LikeCoin" height="235" src="https://button.like.co/in/embed/wancatserver/button?referrer=https%3a%2f%2fwww.wancat.cc%2fpost%2fcombine_generator%2f" width="100%" frameborder=0></iframe>
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/">
+    <img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/3.0/tw/88x31.png" />
+</a><br />
+本著作係採用<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/tw/">創用 CC 姓名標示-相同方式分享 3.0 台灣 授權條款</a>授權.
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/wordpress-installation/" data-toggle="tooltip" data-placement="top" title="Raspberry Pi 安裝 WordPress 教學">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/caddy" title="caddy">
+                            caddy
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/golang" title="golang">
+                            golang
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/jsp" title="jsp">
+                            jsp
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/life" title="life">
+                            life
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/linux" title="linux">
+                            linux
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/minecraft" title="minecraft">
+                            minecraft
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/ourliveworld" title="ourliveworld">
+                            ourliveworld
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/raspberry-pi" title="raspberry-pi">
+                            raspberry-pi
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/website" title="website">
+                            website
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
+                            教育
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
+                            自由軟體
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8" title="資訊安全">
+                            資訊安全
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
+                        
+                        <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="WANcatServer" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:wancat@wancat.cc">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+
+                    
+                    <li>
+                        <a target="_blank" href="https://facebook.com/wancatserver">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lancatlin">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://liker.social/@wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+                    
+                    <li>
+                        <a target="_blank" href="https://keybase.io/wancat">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; WANcatServer 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+</body>
+</html>

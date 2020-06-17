@@ -3,17 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.wancat.cc/tags/caddy/</loc>
-    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
+    <loc>https://www.wancat.cc/categories/</loc>
+    <lastmod>2020-06-17T23:44:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.wancat.cc/categories/</loc>
-    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
+    <loc>https://www.wancat.cc/tags/javascript/</loc>
+    <lastmod>2020-06-17T23:44:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/math/</loc>
+    <lastmod>2020-06-17T23:44:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wancat.cc/post/</loc>
+    <lastmod>2020-06-17T23:44:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/</loc>
+    <lastmod>2020-06-17T23:44:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/</loc>
+    <lastmod>2020-06-17T23:44:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/categories/%E5%B0%88%E6%A1%88/</loc>
+    <lastmod>2020-06-17T23:44:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/combine_generator/</loc>
+    <lastmod>2020-06-17T23:44:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/caddy/</loc>
     <lastmod>2020-05-17T22:17:08+08:00</lastmod>
   </url>
   
@@ -24,16 +54,6 @@
   
   <url>
     <loc>https://www.wancat.cc/post/wordpress-installation/</loc>
-    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/tags/</loc>
-    <lastmod>2020-05-17T22:17:08+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/</loc>
     <lastmod>2020-05-17T22:17:08+08:00</lastmod>
   </url>
   
@@ -70,6 +90,11 @@
   <url>
     <loc>https://www.wancat.cc/tags/%E9%9C%A7%E8%A6%96%E6%B3%95/</loc>
     <lastmod>2020-04-26T10:44:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/golang/</loc>
+    <lastmod>2020-03-29T19:56:21+08:00</lastmod>
   </url>
   
   <url>
@@ -210,11 +235,6 @@
   <url>
     <loc>https://www.wancat.cc/post/jsp-9/</loc>
     <lastmod>2019-08-20T10:38:52+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/tags/golang/</loc>
-    <lastmod>2019-07-26T10:49:46+00:00</lastmod>
   </url>
   
   <url>
