@@ -249,14 +249,14 @@
                 </header>
                 <nav id="TableOfContents">
   <ul>
-    <li><a href="#-ayatana-indicator">安裝 Ayatana Indicator</a></li>
+    <li><a href="#安裝-ayatana-indicator">安裝 Ayatana Indicator</a></li>
     <li><a href="#references">References</a></li>
   </ul>
 </nav>
                 
                 <p><a href="https://elementary.io">elementary OS</a> 是一個好看、易用的 Linux 發行版，然而它有一個缺點：系統狀態欄（system tray）無法顯示其他應用程式的 icon，這導致像輸入法、Discord 等有使用 system tray 的程式無法使用完整功能。最討厭的莫過於 HP 印表機驅動 HPLIP，每次開機就跳出來說 no system tray deteched，非常煩人。</p>
 <p>原因是 elementary OS 基本上不希望其他應用程式去使用 system tray，並且<a href="https://github.com/elementary/wingpanel/issues/96#issuecomment-401407354">停止支援 Ayatana Indicator API</a>，做出相同決定的還有 GNOME，參考 <a href="https://blogs.gnome.org/aday/2017/08/31/status-icons-and-gnome/">Status Icons and GNOME</a>。</p>
-<h2 id="-ayatana-indicator">安裝 Ayatana Indicator</h2>
+<h2 id="安裝-ayatana-indicator">安裝 Ayatana Indicator</h2>
 <pre><code>sudo add-apt-repository ppa:yunnxx/elementary
 sudo apt update
 sudo apt install indicator-application wingpanel-indicator-ayatana

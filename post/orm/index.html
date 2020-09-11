@@ -253,17 +253,17 @@
                 </header>
                 <nav id="TableOfContents">
   <ul>
-    <li><a href="#-relation">什麼時候會用到 Relation？</a></li>
+    <li><a href="#什麼時候會用到-relation">什麼時候會用到 Relation？</a></li>
     <li><a href="#has-one">Has One</a></li>
     <li><a href="#belongs-to">Belongs to</a></li>
     <li><a href="#has-many">Has many</a></li>
     <li><a href="#many-to-many">Many To Many</a></li>
-    <li><a href="#heading">總結</a></li>
+    <li><a href="#總結">總結</a></li>
   </ul>
 </nav>
                 
                 <p>最近初次接觸 ORM——Object-relational mapping——這個強大的工具，但是為其中的<strong>關聯</strong>而苦惱不已。在仔細研究後終於了解其差異，本篇文章透過一個圖書館專案的實例，使用 Golang + GORM 來實做，並輔以 SQL 做說明，讓已經學會 SQL 而想要了解 ORM 的人真的「懂」如何設計 Relation。</p>
-<h2 id="-relation">什麼時候會用到 Relation？</h2>
+<h2 id="什麼時候會用到-relation">什麼時候會用到 Relation？</h2>
 <p>ORM 中的 Relation 就是相當於 SQL 中的各種 Join，用來將不同表格中的資料串起。由於 ORM 是用物件，所以如果未來有關聯到其他表格的需求，必須在物件設計時就包含進來。</p>
 <p>來定義需求吧！我們今天假設情境是要定義一個圖書館的資料庫，那我們會有編目資料 <code>Book</code>（書的資料）、館藏資料 <code>Item</code>（書的實體），作者資料 <code>Author</code>，出版社資料 <code>Publisher</code>。書名、ISBN 等等跟關聯沒有關係的就不放入。</p>
 <p>我們先不要討論 gorm 要怎麼寫，先把要取得的資料擺出來。</p>
@@ -403,11 +403,11 @@ ON book_authors.book_id = books.id
 WHERE book_authors.author_id = ?;
 </code></pre><p>那 ORM 就可以簡化這個複雜的實做過程，今天有 Many To Many 的對應關係，可以簡單的在各自的物件宣告被參考者的 slice，然後透過 struct tag 來設定「第三個表格」的名稱即可。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Book</span> <span style="color:#66d9ef">struct</span> {
-    <span style="color:#a6e22e">Authors</span> []<span style="color:#a6e22e">Author</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">gorm:&#34;many2many:book_authors&#34;</span><span style="color:#e6db74">`</span> <span style="color:#75715e">// struct tag 設定第三個表格的名稱
+    <span style="color:#a6e22e">Authors</span> []<span style="color:#a6e22e">Author</span> <span style="color:#e6db74">`gorm:&#34;many2many:book_authors&#34;`</span> <span style="color:#75715e">// struct tag 設定第三個表格的名稱
 </span><span style="color:#75715e"></span>}
 
 <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Author</span> <span style="color:#66d9ef">struct</span> {
-    <span style="color:#a6e22e">Works</span> []<span style="color:#a6e22e">Book</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">gorm:&#34;many2many:book_authors&#34;</span><span style="color:#e6db74">`</span> <span style="color:#75715e">// struct tag 設定第三個表格的名稱
+    <span style="color:#a6e22e">Works</span> []<span style="color:#a6e22e">Book</span> <span style="color:#e6db74">`gorm:&#34;many2many:book_authors&#34;`</span> <span style="color:#75715e">// struct tag 設定第三個表格的名稱
 </span><span style="color:#75715e"></span>}
 </code></pre></div><p>這樣 ORM 就會自動幫你建立 <code>book_authors</code> 這個表格並完成他們的依賴關係囉！</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 找尋某 book 的所有作者
@@ -416,7 +416,7 @@ WHERE book_authors.author_id = ?;
 <span style="color:#75715e">// 找尋某 author 的所有作品
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">gorm</span>.<span style="color:#a6e22e">Model</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">author</span>).<span style="color:#a6e22e">Related</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">books</span>)
 </code></pre></div><p>注意！Many To Many 指的是「彼此皆為一對多」，不是說你在查詢的時候要拿「多個」去找「多個」喔！查詢時還是拿一個找多個。</p>
-<h2 id="heading">總結</h2>
+<h2 id="總結">總結</h2>
 <p>所以我們最後來回顧一下 Belongs To、Has One、Has Many、Many To Many 的差別吧！</p>
 <p>所謂 Has something 的，就是將「自己的主鍵」儲存在「對方的欄位」，也就是說被 Has 的那一方，就是 Belongs To，沒錯！Has something 的 back-reference 就是 Belongs To，差別在於 Has One 的對象是單數，Has Many 的對象是複數，但其實兩者的 SQL 表格實做起來會是一樣的！</p>
 <p>反過來說，Belongs To 就是將「對方的主鍵」保存在「自己的欄位」，那根據資料庫正規化的第一條原則：不能有群集，所以 Belongs To 一定只能保存一個對方的主鍵，因此被參考方一定是單數喔！</p>
