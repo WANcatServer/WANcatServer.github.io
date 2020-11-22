@@ -3,8 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.wancat.cc/post/red-chord-2020/</loc>
+    <lastmod>2020-11-22T18:02:26+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.wancat.cc/categories/</loc>
-    <lastmod>2020-06-17T23:44:48+08:00</lastmod>
+    <lastmod>2020-11-22T18:02:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/</loc>
+    <lastmod>2020-11-22T18:02:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/</loc>
+    <lastmod>2020-11-22T18:02:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/</loc>
+    <lastmod>2020-11-22T18:02:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/%E5%90%89%E4%BB%96/</loc>
+    <lastmod>2020-11-22T18:02:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/%E6%AF%94%E8%B3%BD/</loc>
+    <lastmod>2020-11-22T18:02:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/</loc>
+    <lastmod>2020-11-22T18:02:26+08:00</lastmod>
   </url>
   
   <url>
@@ -14,21 +49,6 @@
   
   <url>
     <loc>https://www.wancat.cc/tags/math/</loc>
-    <lastmod>2020-06-17T23:44:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/post/</loc>
-    <lastmod>2020-06-17T23:44:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/tags/</loc>
-    <lastmod>2020-06-17T23:44:48+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/</loc>
     <lastmod>2020-06-17T23:44:48+08:00</lastmod>
   </url>
   
@@ -219,11 +239,6 @@
   
   <url>
     <loc>https://www.wancat.cc/post/first-ctf/</loc>
-    <lastmod>2019-11-16T10:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/</loc>
     <lastmod>2019-11-16T10:00:00+00:00</lastmod>
   </url>
   
