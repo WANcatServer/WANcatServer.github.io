@@ -3,27 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.wancat.cc/categories/</loc>
+    <lastmod>2020-12-04T23:38:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/</loc>
+    <lastmod>2020-12-04T23:38:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/</loc>
+    <lastmod>2020-12-04T23:38:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/categories/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2020-12-04T23:38:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/more-hate-more-hard-working/</loc>
+    <lastmod>2020-12-04T23:38:01+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.wancat.cc/post/red-string-2020/</loc>
     <lastmod>2020-11-22T18:02:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.wancat.cc/categories/</loc>
-    <lastmod>2020-11-22T18:02:26+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/post/</loc>
-    <lastmod>2020-11-22T18:02:26+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wancat.cc/tags/</loc>
-    <lastmod>2020-11-22T18:02:26+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/</loc>
     <lastmod>2020-11-22T18:02:26+08:00</lastmod>
   </url>
   
@@ -224,11 +234,6 @@
   
   <url>
     <loc>https://www.wancat.cc/tags/movie/</loc>
-    <lastmod>2019-12-22T14:34:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/categories/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2019-12-22T14:34:42+00:00</lastmod>
   </url>
   

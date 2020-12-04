@@ -6,7 +6,16 @@
     <description>Recent content in Categories on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 22 Nov 2020 18:02:26 +0800</lastBuildDate><atom:link href="https://www.wancat.cc/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Dec 2020 23:38:01 +0800</lastBuildDate><atom:link href="https://www.wancat.cc/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>生活</title>
+      <link>https://www.wancat.cc/categories/%E7%94%9F%E6%B4%BB/</link>
+      <pubDate>Fri, 04 Dec 2020 23:38:01 +0800</pubDate>
+      
+      <guid>https://www.wancat.cc/categories/%E7%94%9F%E6%B4%BB/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>活動紀錄</title>
       <link>https://www.wancat.cc/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/</link>
@@ -40,15 +49,6 @@
       <pubDate>Sun, 26 Apr 2020 10:44:00 +0800</pubDate>
       
       <guid>https://www.wancat.cc/categories/%E8%A9%95%E8%AB%96/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>生活</title>
-      <link>https://www.wancat.cc/categories/%E7%94%9F%E6%B4%BB/</link>
-      <pubDate>Sun, 22 Dec 2019 14:34:42 +0000</pubDate>
-      
-      <guid>https://www.wancat.cc/categories/%E7%94%9F%E6%B4%BB/</guid>
       <description></description>
     </item>
     
