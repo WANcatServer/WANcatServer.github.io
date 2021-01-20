@@ -80,19 +80,20 @@
 
     
 <script type="text/javascript">
-    var _paq = window._paq || [];
-     
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="//matomo.wancat.cc/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
-  
+  var _paq = window._paq = window._paq || [];
+   
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//matomo.linchpins.cloud/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
 </head>
 
 
@@ -264,13 +265,13 @@
 <h2 id="hexo">Hexo</h2>
 <p>我的部落格是用 <a href="https://hexo.io">Hexo</a> 將 Markdown 轉成一個靜態網站的，所以可以部屬到 GitHub Page 或是任何伺服器，我自己現在還留著 <a href="https://wancatserver.github.io">https://wancatserver.github.io</a> 避免哪天伺服器發生不測&hellip;&hellip;。那 Hexo 可以多重部屬，我的設定檔大概長這樣。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># _config.yml</span>
-<span style="color:#f92672">deploy</span>:
-- <span style="color:#f92672">type</span>: <span style="color:#ae81ff">git</span>
-  <span style="color:#f92672">repo</span>: <span style="color:#ae81ff">git@github.com:WANcatServer/WANcatServer.github.io.git</span>
-- <span style="color:#f92672">type</span>: <span style="color:#ae81ff">rsync</span>
-  <span style="color:#f92672">host</span>: <span style="color:#ae81ff">我的伺服器 ip</span>
-  <span style="color:#f92672">user</span>: <span style="color:#ae81ff">lancat</span>
-  <span style="color:#f92672">root</span>: <span style="color:#ae81ff">/volume2/WANcatServer/www</span>
+<span style="color:#66d9ef">deploy</span>:
+- <span style="color:#66d9ef">type</span>: git
+  <span style="color:#66d9ef">repo</span>: git@github.com:WANcatServer/WANcatServer.github.io.git
+- <span style="color:#66d9ef">type</span>: rsync
+  <span style="color:#66d9ef">host</span>: 我的伺服器 ip
+  <span style="color:#66d9ef">user</span>: lancat
+  <span style="color:#66d9ef">root</span>: /volume2/WANcatServer/www
 
 </code></pre></div><p>那我的佈景是使用 <a href="https://github.com/fi3ework/hexo-theme-archer">Archer</a>，非常好看的一個佈景，那我有做一些小調整：把簡體中文換成繁體，然後將授權地方放上 CC 授權。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd path/to/blog
@@ -279,17 +280,17 @@ vim /theme/archer/layout/post.ejs
 <p>到 <a href="https://creativecommons.org/">創用 CC 官網</a> 上找你要的授權，就可以複製 HTML 嵌入到網站裡了。可以直接加在 Archer 裡面的 _config.yml</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># theme/archer/_config.yml</span>
 <span style="color:#75715e"># 將 license 改成以下</span>
-<span style="color:#f92672">license</span>: <span style="color:#ae81ff">&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;&lt;img alt=&#34;創用 CC 授權條款&#34; style=&#34;border-width:0&#34; src=&#34;https://i.creativecommons.org/l/by-sa/4.0/88x31.png&#34; /&gt;&lt;/a&gt;&lt;br /&gt;本著作係採用&lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34;&gt;創用 CC 姓名標示-相同方式分享 4.0 國際 授權條款&lt;/a&gt;授權.</span>
+<span style="color:#66d9ef">license</span>: &lt;a rel=<span style="color:#e6db74">&#34;license&#34;</span> href=<span style="color:#e6db74">&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34;</span>&gt;&lt;img alt=<span style="color:#e6db74">&#34;創用 CC 授權條款&#34;</span> style=<span style="color:#e6db74">&#34;border-width:0&#34;</span> src=<span style="color:#e6db74">&#34;https://i.creativecommons.org/l/by-sa/4.0/88x31.png&#34;</span> /&gt;&lt;/a&gt;&lt;br /&gt;本著作係採用&lt;a rel=<span style="color:#e6db74">&#34;license&#34;</span> href=<span style="color:#e6db74">&#34;http://creativecommons.org/licenses/by-sa/4.0/&#34;</span>&gt;創用 CC 姓名標示-相同方式分享 <span style="color:#ae81ff">4.0</span> 國際 授權條款&lt;/a&gt;授權.
 
 </code></pre></div><p>RSS feed 須安裝 <code>hexo-generator-feed</code> 包，然後在 Archer 裡配置</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># theme/archer/_config.yml</span>
-<span style="color:#f92672">rss</span>: <span style="color:#ae81ff">/atom.xml</span>
+<span style="color:#66d9ef">rss</span>: /atom.xml
 </code></pre></div><p>Disqus 也很簡單，只要將 Disqus ID 丟到網站的 _config （不是佈景的）裡就好</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># _config.yml</span>
-<span style="color:#f92672">disqus_shortname</span>: <span style="color:#ae81ff">//你的 ID</span>
+<span style="color:#66d9ef">disqus_shortname</span>: //你的 ID
 </code></pre></div><p>可以裝 Google Analytics 看流量，設定 Archer _config：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># theme/archer/_config.yml</span>
-<span style="color:#f92672">google_analytics</span>: <span style="color:#ae81ff">//你的 ID</span>
+<span style="color:#66d9ef">google_analytics</span>: //你的 ID
 </code></pre></div><p>一開始流量不會進去的那麼快，我是隔天才看到流量進去的，所以不用緊張（也可能是我當初時間沒設到當天）。</p>
 <h3 id="版本控制">版本控制</h3>
 <p>用 Hexo 的好處就是可以版控，所有文章都是好讀的 Markdown，我有做 Git 版控並同步到我自己架的 <a href="https://gitea.io/zh-tw/">Gitea</a> 上（沒有公開）。比較麻煩的是佈景，佈景裝的時候是用 <code>git clone</code> 下來，所以在 Git 裡頭就會變成 <strong>子模組 Submodules</strong> ，那因為佈景基本上不用更新，而且我不太會用子模組，所以不如整個一起做版控（會把自己微調的內容紀錄進去），所以就把 Archer 底下的 .git 刪掉，整個 add 進去就好。Archer 的更新比較麻煩些，要自己把有更動過的檔案抓出來，然後下載新版本再移進去，所以我只更新過一次。</p>
@@ -602,7 +603,7 @@ vim /theme/archer/layout/post.ejs
             
                 </ul>
 		<p class="copyright text-muted">
-                    Copyright &copy; WANcatServer 2020
+                    Copyright &copy; WANcatServer 2021
                     <br>
                     <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
                     <iframe
