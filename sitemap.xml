@@ -4,17 +4,37 @@
   
   <url>
     <loc>https://www.wancat.cc/categories/</loc>
-    <lastmod>2020-12-04T23:38:01+08:00</lastmod>
+    <lastmod>2021-01-23T11:55:47+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wancat.cc/post/</loc>
-    <lastmod>2020-12-04T23:38:01+08:00</lastmod>
+    <lastmod>2021-01-23T11:55:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/</loc>
+    <lastmod>2021-01-23T11:55:47+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wancat.cc/</loc>
-    <lastmod>2020-12-04T23:38:01+08:00</lastmod>
+    <lastmod>2021-01-23T11:55:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/%E6%AD%B7%E5%8F%B2/</loc>
+    <lastmod>2021-01-23T11:55:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%95%8F/</loc>
+    <lastmod>2021-01-23T11:55:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/history-of-calendar/</loc>
+    <lastmod>2021-01-23T11:55:47+08:00</lastmod>
   </url>
   
   <url>
@@ -29,11 +49,6 @@
   
   <url>
     <loc>https://www.wancat.cc/post/red-string-2020/</loc>
-    <lastmod>2020-11-22T18:02:26+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/tags/</loc>
     <lastmod>2020-11-22T18:02:26+08:00</lastmod>
   </url>
   

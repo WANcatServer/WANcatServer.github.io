@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>每日一問 on WANcatServer</title>
+    <link>https://www.wancat.cc/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%95%8F/</link>
+    <description>Recent content in 每日一問 on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Jan 2021 11:55:47 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.wancat.cc/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%95%8F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>每日一問：為什麼新年定在 1/1 號？</title>
+      <link>https://www.wancat.cc/post/history-of-calendar/</link>
+      <pubDate>Sat, 23 Jan 2021 11:55:47 +0800</pubDate>
+      
+      <guid>https://www.wancat.cc/post/history-of-calendar/</guid>
+      <description>這個標題也許令人誤解，1/1 本來就是一年的開始啊？當然，但為什麼我們會選擇一個冬天的日子作為一年的開始，而不是某個春天、夏天、秋天的日子呢？</description>
+    </item>
+    
+  </channel>
+</rss>
