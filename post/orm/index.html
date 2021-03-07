@@ -408,11 +408,11 @@ ON book_authors.book_id = books.id
 WHERE book_authors.author_id = ?;
 </code></pre><p>那 ORM 就可以簡化這個複雜的實做過程，今天有 Many To Many 的對應關係，可以簡單的在各自的物件宣告被參考者的 slice，然後透過 struct tag 來設定「第三個表格」的名稱即可。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Book</span> <span style="color:#66d9ef">struct</span> {
-    <span style="color:#a6e22e">Authors</span> []<span style="color:#a6e22e">Author</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">gorm:&#34;many2many:book_authors&#34;</span><span style="color:#e6db74">`</span> <span style="color:#75715e">// struct tag 設定第三個表格的名稱
+    <span style="color:#a6e22e">Authors</span> []<span style="color:#a6e22e">Author</span> <span style="color:#e6db74">`gorm:&#34;many2many:book_authors&#34;`</span> <span style="color:#75715e">// struct tag 設定第三個表格的名稱
 </span><span style="color:#75715e"></span>}
 
 <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Author</span> <span style="color:#66d9ef">struct</span> {
-    <span style="color:#a6e22e">Works</span> []<span style="color:#a6e22e">Book</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">gorm:&#34;many2many:book_authors&#34;</span><span style="color:#e6db74">`</span> <span style="color:#75715e">// struct tag 設定第三個表格的名稱
+    <span style="color:#a6e22e">Works</span> []<span style="color:#a6e22e">Book</span> <span style="color:#e6db74">`gorm:&#34;many2many:book_authors&#34;`</span> <span style="color:#75715e">// struct tag 設定第三個表格的名稱
 </span><span style="color:#75715e"></span>}
 </code></pre></div><p>這樣 ORM 就會自動幫你建立 <code>book_authors</code> 這個表格並完成他們的依賴關係囉！</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// 找尋某 book 的所有作者
@@ -590,6 +590,8 @@ WHERE book_authors.author_id = ?;
                         <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
                             教育
                         </a>
+                        
+                        
                         
                         
                         
