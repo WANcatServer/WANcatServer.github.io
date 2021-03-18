@@ -6,19 +6,9 @@
     <description>Recent content in Tops on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Oct 2018 10:54:45 +0000</lastBuildDate>
     
 	<atom:link href="https://www.wancat.cc/top/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>關於我</title>
-      <link>https://www.wancat.cc/top/about/</link>
-      <pubDate>Sat, 27 Oct 2018 10:54:45 +0000</pubDate>
-      
-      <guid>https://www.wancat.cc/top/about/</guid>
-      <description>我是 Wancat，過去叫做 lancatlin，就讀五專，從小六開始學習 Scratch，國二開始學習 Python。現在主要用 Go 寫網頁後端。 我喜</description>
-    </item>
     
     <item>
       <title></title>
@@ -27,6 +17,15 @@
       
       <guid>https://www.wancat.cc/top/books/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>關於我</title>
+      <link>https://www.wancat.cc/top/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.wancat.cc/top/about/</guid>
+      <description>我是 Wancat，就讀五專，從小六開始學習 Scratch，國二開始學習 Python。寫 Go、Python、JavaScript。 我喜歡寫程式</description>
     </item>
     
   </channel>

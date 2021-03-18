@@ -383,16 +383,6 @@
   </url>
   
   <url>
-    <loc>https://www.wancat.cc/top/</loc>
-    <lastmod>2018-10-27T10:54:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/top/about/</loc>
-    <lastmod>2018-10-27T10:54:45+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wancat.cc/tags/minecraft/</loc>
     <lastmod>2018-10-20T14:33:34+00:00</lastmod>
   </url>
@@ -463,10 +453,6 @@
   </url>
   
   <url>
-    <loc>https://www.wancat.cc/post/%E5%A4%B1%E6%8E%A7%E7%9A%84%E6%99%BA%E8%B2%A1%E6%AC%8A/</loc>
-  </url>
-  
-  <url>
     <loc>https://www.wancat.cc/search/placeholder/</loc>
   </url>
   
@@ -476,6 +462,14 @@
   
   <url>
     <loc>https://www.wancat.cc/search/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/top/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/top/about/</loc>
   </url>
   
 </urlset>
