@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Website on WANcatServer</title>
-    <link>https://wancat.cc/tags/website/</link>
+    <link>https://www.wancat.cc/tags/website/</link>
     <description>Recent content in Website on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 03 Feb 2020 18:50:39 +0800</lastBuildDate>
     
-	<atom:link href="https://wancat.cc/tags/website/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.wancat.cc/tags/website/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo 安裝 LikeCoin 教學</title>
-      <link>https://wancat.cc/post/hugo-install-likecoin/</link>
+      <link>https://www.wancat.cc/post/hugo-install-likecoin/</link>
       <pubDate>Mon, 03 Feb 2020 18:50:39 +0800</pubDate>
       
-      <guid>https://wancat.cc/post/hugo-install-likecoin/</guid>
+      <guid>https://www.wancat.cc/post/hugo-install-likecoin/</guid>
       <description>取代 Hexo 我使用 Hexo 作為靜態網站生成器已經一年半，然而它有些我越來越難忍受的缺點，加上認識了由 Go 寫成的 Hugo，我在使用 Hugo 建立了幾個網站作為練習後，決定將自己的部落格改到 Hugo。
 Hexo 仍然是一套很棒的工具，我主要是覺得它每次執行都要等大約十秒的時間，讓我很不耐煩；另外它的 server 功能有些缺陷，有時候改變內容會讓它變成 Untitled Post，不過我也沒有很認真的想要解決就是了。
 Hugo 是 Go 寫的工具，所以是編譯好的，效能很高，server 功能也很棒，content 的管理更有彈性，整個網站也有更高的配置空間，但使用難度較高，每個 theme 的差異度很大，必須依據使用的 theme 去調整。
@@ -28,10 +28,10 @@ cp -r theme/YOUR_THEME/layouts/ . Hugo 中的 Partial 功能，可以讓你建�
     
     <item>
       <title>網站建置紀錄</title>
-      <link>https://wancat.cc/post/my-website-building-log/</link>
+      <link>https://www.wancat.cc/post/my-website-building-log/</link>
       <pubDate>Sun, 20 Jan 2019 13:15:09 +0000</pubDate>
       
-      <guid>https://wancat.cc/post/my-website-building-log/</guid>
+      <guid>https://www.wancat.cc/post/my-website-building-log/</guid>
       <description>網站建置紀錄 我的網站從 2017 年六月第一次上 GitHub Page，到現在 www.wancat.cc ，也已經半年了，寫下這篇文章紀錄一下架站的方法。
 Hexo 我的部落格是用 Hexo 將 Markdown 轉成一個靜態網站的，所以可以部屬到 GitHub Page 或是任何伺服器，我自己現在還留著 https://wancatserver.github.io 避免哪天伺服器發生不測&amp;hellip;&amp;hellip;。那 Hexo 可以多重部屬，我的設定檔大概長這樣。
 # _config.yml deploy: - type: git repo: git@github.com:WANcatServer/WANcatServer.github.io.git - type: rsync host: 我的伺服器 ip user: lancat root: /volume2/WANcatServer/www 那我的佈景是使用 Archer，非常好看的一個佈景，那我有做一些小調整：把簡體中文換成繁體，然後將授權地方放上 CC 授權。

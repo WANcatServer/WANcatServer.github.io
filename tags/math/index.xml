@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Math on WANcatServer</title>
-    <link>https://wancat.cc/tags/math/</link>
+    <link>https://www.wancat.cc/tags/math/</link>
     <description>Recent content in Math on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 17 Jun 2020 23:44:48 +0800</lastBuildDate>
     
-	<atom:link href="https://wancat.cc/tags/math/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.wancat.cc/tags/math/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>專案介紹：排列組合計算機</title>
-      <link>https://wancat.cc/post/combine_generator/</link>
+      <link>https://www.wancat.cc/post/combine_generator/</link>
       <pubDate>Wed, 17 Jun 2020 23:44:48 +0800</pubDate>
       
-      <guid>https://wancat.cc/post/combine_generator/</guid>
+      <guid>https://www.wancat.cc/post/combine_generator/</guid>
       <description>近來數學課在教排列組合，排列組合不簡單，很難考慮周全，因此我設計了一個排列組合計算機，根據設定條件窮舉出所有可能，並一一列出。
 排列組合計算機
 GitHub 與使用教學

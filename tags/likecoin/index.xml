@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LikeCoin on WANcatServer</title>
-    <link>https://wancat.cc/tags/likecoin/</link>
+    <link>https://www.wancat.cc/tags/likecoin/</link>
     <description>Recent content in LikeCoin on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 03 Feb 2020 18:50:39 +0800</lastBuildDate>
     
-	<atom:link href="https://wancat.cc/tags/likecoin/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.wancat.cc/tags/likecoin/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo 安裝 LikeCoin 教學</title>
-      <link>https://wancat.cc/post/hugo-install-likecoin/</link>
+      <link>https://www.wancat.cc/post/hugo-install-likecoin/</link>
       <pubDate>Mon, 03 Feb 2020 18:50:39 +0800</pubDate>
       
-      <guid>https://wancat.cc/post/hugo-install-likecoin/</guid>
+      <guid>https://www.wancat.cc/post/hugo-install-likecoin/</guid>
       <description>取代 Hexo 我使用 Hexo 作為靜態網站生成器已經一年半，然而它有些我越來越難忍受的缺點，加上認識了由 Go 寫成的 Hugo，我在使用 Hugo 建立了幾個網站作為練習後，決定將自己的部落格改到 Hugo。
 Hexo 仍然是一套很棒的工具，我主要是覺得它每次執行都要等大約十秒的時間，讓我很不耐煩；另外它的 server 功能有些缺陷，有時候改變內容會讓它變成 Untitled Post，不過我也沒有很認真的想要解決就是了。
 Hugo 是 Go 寫的工具，所以是編譯好的，效能很高，server 功能也很棒，content 的管理更有彈性，整個網站也有更高的配置空間，但使用難度較高，每個 theme 的差異度很大，必須依據使用的 theme 去調整。

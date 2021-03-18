@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>資訊安全 on WANcatServer</title>
-    <link>https://wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</link>
+    <link>https://www.wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</link>
     <description>Recent content in 資訊安全 on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Fri, 07 Feb 2020 19:22:30 +0800</lastBuildDate>
     
-	<atom:link href="https://wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>用 TOTP 擺脫簡訊驗證碼：安全好用的兩步驟驗證</title>
-      <link>https://wancat.cc/post/totp/</link>
+      <link>https://www.wancat.cc/post/totp/</link>
       <pubDate>Fri, 07 Feb 2020 19:22:30 +0800</pubDate>
       
-      <guid>https://wancat.cc/post/totp/</guid>
+      <guid>https://www.wancat.cc/post/totp/</guid>
       <description>兩步驟驗證 隨著數位身份在生活中的影響力愈來愈大，只靠著一組密碼來保護我們的帳戶已經不夠安全，而且記密碼實在是違反人腦天性的行為，因此大部分人總是使用重複的、好記的脆弱密碼。要解決這個問題，除了使用密碼管理工具來幫你記密碼，還可以透過設定兩步驟驗證（2FA：Two-Factor Authentication），大大提昇帳戶的安全性。
 兩步驟驗證就是在密碼之外，多用一個資訊來驗證你是本人，主流的作法有像 Email、簡訊驗證信，但用過的人可能都會覺得登入時要開信箱收信很麻煩，信箱也會被這些信件給弄亂，更別提當人在國外時，簡訊收不到害你無法登入。
 今天要介紹的 TOTP: Time-based One-Time Password algorithm，就是一種公開的標準，讓你透過手機上的 APP 產生一組 6 位數的一次性驗證碼進行登入，而且在沒有網路的情況下還能使用！
@@ -31,10 +31,10 @@ Google 可以讀你的 Gmail，簡訊也可以被政府或通訊業者攔截，�
     
     <item>
       <title>妳該使用密碼管理工具嗎？</title>
-      <link>https://wancat.cc/post/should-you-use-password-manager/</link>
+      <link>https://www.wancat.cc/post/should-you-use-password-manager/</link>
       <pubDate>Thu, 21 Feb 2019 20:07:35 +0000</pubDate>
       
-      <guid>https://wancat.cc/post/should-you-use-password-manager/</guid>
+      <guid>https://www.wancat.cc/post/should-you-use-password-manager/</guid>
       <description>現代人的密碼危機 如果妳是一位有正常使用網路的現代人，基本上在網路上會有許多的帳號。我算是用量比較高的用戶，我稍微統計了一下：光是記得的我就有 72 個帳號，還有很多早就忘掉的黑數呢！
 過去，帳號被盜或許是件小事，當然如果 LOL 或玩遊戲的帳號被盜會很心痛，但不至於會影響生活。隨著現代我們將生活越來越多部份放入網路，網路身份的重要性已經足以影響生活，因此我們勢必要用一些方法好好管理自己的網路身份。
 重複密碼 密碼的大原則就是不要重複，但哪有辦法呢？我們有那麼多的帳號，如果每個都要背一個密碼哪辦得到？每次在「Sign up」頁面停了很久，最後還是用了以前的密碼。

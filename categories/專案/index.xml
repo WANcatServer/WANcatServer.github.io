@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>專案 on WANcatServer</title>
-    <link>https://wancat.cc/categories/%E5%B0%88%E6%A1%88/</link>
+    <link>https://www.wancat.cc/categories/%E5%B0%88%E6%A1%88/</link>
     <description>Recent content in 專案 on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 17 Jun 2020 23:44:48 +0800</lastBuildDate>
     
-	<atom:link href="https://wancat.cc/categories/%E5%B0%88%E6%A1%88/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.wancat.cc/categories/%E5%B0%88%E6%A1%88/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>專案介紹：排列組合計算機</title>
-      <link>https://wancat.cc/post/combine_generator/</link>
+      <link>https://www.wancat.cc/post/combine_generator/</link>
       <pubDate>Wed, 17 Jun 2020 23:44:48 +0800</pubDate>
       
-      <guid>https://wancat.cc/post/combine_generator/</guid>
+      <guid>https://www.wancat.cc/post/combine_generator/</guid>
       <description>近來數學課在教排列組合，排列組合不簡單，很難考慮周全，因此我設計了一個排列組合計算機，根據設定條件窮舉出所有可能，並一一列出。
 排列組合計算機
 GitHub 與使用教學
@@ -28,10 +28,10 @@ GitHub 與使用教學
     
     <item>
       <title>專案介紹：Fever Pass 體溫登記系統</title>
-      <link>https://wancat.cc/post/fever-pass-intro/</link>
+      <link>https://www.wancat.cc/post/fever-pass-intro/</link>
       <pubDate>Sun, 29 Mar 2020 19:56:21 +0800</pubDate>
       
-      <guid>https://wancat.cc/post/fever-pass-intro/</guid>
+      <guid>https://www.wancat.cc/post/fever-pass-intro/</guid>
       <description>Fever Pass 是我們團隊 Linchpins 在 2020 年初，為了因應新型冠狀病毒開發的一套體溫登記系統，用於協助各級機關、學校自主登記體溫。
 GitHub Repository。可以在我們的 demo 試用本系統，用以下帳號登入：
  導師 紀體溫 帳號 t101 密碼 10100 學生 梁體溫 帳號 1081201 密碼 10141 護理師 護理師 帳號 nurse 密碼 nurse  歡迎體驗 demo 的各種功能。demo 每日早上八點會幫所有帳號隨機登記體溫。
