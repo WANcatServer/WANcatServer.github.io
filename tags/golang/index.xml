@@ -2,31 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/golang/</link>
+    <link>https://wancat.cc/tags/golang/</link>
     <description>Recent content in Golang on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Sun, 29 Mar 2020 19:56:21 +0800</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>專案介紹：Fever Pass 體溫登記系統</title>
-      <link>https://www.wancat.cc/post/fever-pass-intro/</link>
+      <link>https://wancat.cc/post/fever-pass-intro/</link>
       <pubDate>Sun, 29 Mar 2020 19:56:21 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/post/fever-pass-intro/</guid>
-      <description>Fever Pass 是我們團隊 Linchpins 在 2020 年初，為了因應新型冠狀病毒開發的一套體溫登記系統，用於協助各級機關、學校自主登記體溫。 GitHub Repository。可以在我們</description>
+      <guid>https://wancat.cc/post/fever-pass-intro/</guid>
+      <description>Fever Pass 是我們團隊 Linchpins 在 2020 年初，為了因應新型冠狀病毒開發的一套體溫登記系統，用於協助各級機關、學校自主登記體溫。
+GitHub Repository。可以在我們的 demo 試用本系統，用以下帳號登入：
+ 導師 紀體溫 帳號 t101 密碼 10100 學生 梁體溫 帳號 1081201 密碼 10141 護理師 護理師 帳號 nurse 密碼 nurse  歡迎體驗 demo 的各種功能。demo 每日早上八點會幫所有帳號隨機登記體溫。
+Fever Pass 是一個自由且開放原始碼的專案，使用 Go 語言撰寫，以網頁界面進行操作。可以讓機構中的成員自主登記體溫，也可由管理員登記他人體溫。
+目前 Fever Pass 被臺中一中使用，自主健康管理-體溫登錄全面電腦化-『Fever Pass體溫記錄系統』
+ Fever Pass 有清晰的統計頁面，可以看到每日的登記情況，快速找出發燒與未登記的人員。
+Fever Pass 有豐富的權限設計，分為體溫管理權限和帳號管理權限，以這些為基礎組成許多預設的身份組，用來滿足各式各樣的管理需求。
+   職稱 身份 體溫記錄權限 帳號管理權限 重置密碼     admin 管理員 全校 全校 全校   護理師 教職員 全校 個人 個人   教職員 教職員 個人 個人 個人   導師 教職員 班級 班級 班級   衛生股長 學生 班級 班級 班級   學生 學生 個人 個人 個人    歡迎有需要的機關或學校自行安裝使用，希望這個系統能夠幫助更多人度過這次疫情，也歡迎志願者貢獻此專案。若需要代為安裝或是佈署，請來信 linchpins-team@protonmail.</description>
     </item>
     
     <item>
       <title>ORM 入門：如何區分 ORM 中的關聯</title>
-      <link>https://www.wancat.cc/post/orm/</link>
+      <link>https://wancat.cc/post/orm/</link>
       <pubDate>Fri, 26 Jul 2019 10:49:46 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/orm/</guid>
-      <description>最近初次接觸 ORM——Object-relational mapping——這個強大的工具，但是為其中的關聯而苦惱不已。在仔細研究後終於了解其</description>
+      <guid>https://wancat.cc/post/orm/</guid>
+      <description>最近初次接觸 ORM——Object-relational mapping——這個強大的工具，但是為其中的關聯而苦惱不已。在仔細研究後終於了解其差異，本篇文章透過一個圖書館專案的實例，使用 Golang + GORM 來實做，並輔以 SQL 做說明，讓已經學會 SQL 而想要了解 ORM 的人真的「懂」如何設計 Relation。
+什麼時候會用到 Relation？ ORM 中的 Relation 就是相當於 SQL 中的各種 Join，用來將不同表格中的資料串起。由於 ORM 是用物件，所以如果未來有關聯到其他表格的需求，必須在物件設計時就包含進來。
+來定義需求吧！我們今天假設情境是要定義一個圖書館的資料庫，那我們會有編目資料 Book（書的資料）、館藏資料 Item（書的實體），作者資料 Author，出版社資料 Publisher。書名、ISBN 等等跟關聯沒有關係的就不放入。
+我們先不要討論 gorm 要怎麼寫，先把要取得的資料擺出來。
+type Book struct { Items []Item Authors []Author Publisher Publisher } type Item struct { Book Book } type Author struct { Works []Book } type Publisher struct { Publication []Book } 我們要讓所有的 structure 都能夠參考到依賴自己的對象：作者必須參考到作品集、出版社要能參考出版品、分類要能找出其中的所有書籍。
+接下來我們一個一個釐清物件之間的關聯關係，來設計 ORM 吧！</description>
     </item>
     
   </channel>

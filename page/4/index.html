@@ -1,829 +1,165 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-	<meta name="generator" content="Hugo 0.74.3" />
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-    <meta property="og:site_name" content="WANcatServer">
-    <meta property="og:type" content="article">
-
-    
-    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
-    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
-    
-
-    
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
-    
-
-    
-    <meta name="description" content="">
-    <meta property="og:description" content="" />
-    <meta property="twitter:description" content="" />
-    
-
-    
-    <meta property="twitter:card" content="summary" />
-    
-    
-
-    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>WANcatServer-WANcatServer 網貓伺服器</title>
-
-    <link rel="canonical" href="/">
-
-    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
-	
-    
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    
-    <link rel="stylesheet" href="/css/hux-blog.min.css">
-
-    
-    <link rel="stylesheet" href="/css/syntax.css">
-    
-    
-    <link rel="stylesheet" href="/css/zanshang.css">
-    
-    
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    
-    
-
-    
-    
-    <script src="/js/jquery.min.js"></script>
-    
-    
-    <script src="/js/bootstrap.min.js"></script>
-    
-    
-    <script src="/js/hux-blog.min.js"></script>
-
-    
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    
-    
-
-    
-<script type="text/javascript">
-  var _paq = window._paq = window._paq || [];
-   
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//matomo.linchpins.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '3']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-
-
-</head>
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">WANcatServer</a>
-        </div>
-
-        
-        
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    
-                        
-                        <li>
-                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E5%B0%88%E6%A1%88">專案</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%95%8F">每日一問</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
-                        </li>
-                        
-                    
-                    
-		    
-                        <li><a href="/top/about/">ABOUT</a></li>
-                    
-
-                    
-                </ul>
-            </div>
-        </div>
-        
-    </div>
-    
-</nav>
-<script>
-    
-    
-    
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        
-            $navbar.className = " ";
-            
-            setTimeout(function(){
-                
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
-
-
-
-<header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>WANcatServer </h1>
-                    
-		    <span class="subheading">網貓伺服器</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-
-  
-<div class="container">
-    <div class="row">
-        
-        
-   	    <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container
-        ">
-            
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/progression/">
-        <h2 class="post-title">
-            十五歲的生涯選擇，我為何拒讀高中？
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            兒子—林宏信： 我現在國三，從小六時接觸了 Scratch，國二開始學習 Python 程式語言，我漸漸的確定這是我想走的道路—做一名工程師。 //Scratch 為一個圖形化的
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Sunday, October 14, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/poor-taiwanese-kid/">
-        <h2 class="post-title">
-            當老師對我們說：「可悲台灣小孩」
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            「這句話真是說到心坎裡」，我笑著說 「就只怕過幾年後，他就變『可悲台灣老師』」 一則笑話 我的朋友有次跟我聊起他的家政老師。 他的家政老師是一位年輕
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Sunday, October 14, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/yacy-install/">
-        <h2 class="post-title">
-            YaCy安裝教學
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            YaCy是一個開源的點對點搜尋引擎 本文將講解如何在 Ubuntu Server 上安裝 YaCy 搜尋引擎，並用Nginx做反向代理，將網址改成像是 yacy.example.com 的形式。 YaCy 架好的範例可以來
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Saturday, September 22, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/dont-use-docx/">
-        <h2 class="post-title">
-            從今天起，不要使用 .docx
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            妳使用什麼文書軟體？相信大部分的答案會是 Word, Powerpoint, Excel ，微軟Office的產品。那是否可以麻煩妳做一件事？在 存檔的時候選擇用ODF 。 檔案格式的霸主 &mdash;OOXML
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Sunday, September 16, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/summer-vacation/">
-        <h2 class="post-title">
-            2018 暑假回顧
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            兩個月(?)的暑假，到底幹了些什麼？ 從七月結束之時，我就開始有了「這個暑假什麼都沒做」的恐懼。明明每一天都過得很充實，但努力回想，卻想不出自
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Wednesday, August 29, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/jsp8-2/">
-        <h2 class="post-title">
-            2018 JSP 紀錄與心得 (二)
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            參加 JSP 國中科學探究聯合發表會 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。 本次主題的系列文章, 演講影片 老街解謎 在看了海報
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Thursday, August 23, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/jsp8/">
-        <h2 class="post-title">
-            2018 JSP 紀錄與心得 (一)
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            參加 JSP 國中科學探究聯合發表會 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。 本次主題的系列文章, 演講影片 JSP 簡介 今年很高興又
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Monday, August 6, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/21earlyday/">
-        <h2 class="post-title">
-            二十一天的連續早起
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            我的21earlyday計畫終於在今天結束了。 這21天，我做了生活中最大的改變，而這21天，我很享受。 所以在這結束之後，我還是會持續下去。 什
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Monday, June 18, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/minecraft-trip/">
-        <h2 class="post-title">
-            長征 尋找沙漠之旅（一）
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            — OurLiveWorld 我們的生存故事 這是Minecraft的冒險故事系列，每篇將記載在我們世界中的一場冒險。 星期日邀請二姐 Andrea來我們的世界，這天And
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Sunday, June 10, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-
-            
-
-
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/page/3/">&larr; Newer Posts</a>
-    </li>
-    
-    
-</ul>
-
-
-       	</div>
-        
-
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-             
-            
-                
-            
-                
-                    <a href="/tags/caddy" title="caddy">
-                        caddy
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/golang" title="golang">
-                        golang
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/jsp" title="jsp">
-                        jsp
-                    </a>
-                
-            
-                
-                    <a href="/tags/life" title="life">
-                        life
-                    </a>
-                
-            
-                
-            
-                
-                    <a href="/tags/linux" title="linux">
-                        linux
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/minecraft" title="minecraft">
-                        minecraft
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/ourliveworld" title="ourliveworld">
-                        ourliveworld
-                    </a>
-                
-            
-                
-                    <a href="/tags/raspberry-pi" title="raspberry-pi">
-                        raspberry-pi
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/website" title="website">
-                        website
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
-                        教育
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
-                        自由軟體
-                    </a>
-                
-            
-                
-            
-                
-                    <a href="/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8" title="資訊安全">
-                        資訊安全
-                    </a>
-                
-            
-                
-            
-                
-            
-        </div>
-    </section>
-    
-
-    
-	
-    <section class="visible-md visible-lg">
-	<hr><h5><a href="/top/about">ABOUT ME</a></h5>
-        <div class="short-about">
-            
-            <a href="/top/about">
-               <img src="/img/wancat.jpg" alt="avatar" style="cursor: pointer" />
-            </a>
-            
-            
-                <p>Student, Golang Programmer, Linux User</p>
-            
-           
-           <ul class="list-inline"> 
-               
-               <li>
-                   <a href='/index.xml' rel="alternate" type="application/rss+xml" title="WANcatServer" >
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://facebook.com/wancatserver">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://github.com/lancatlin">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-            
-            
-               <li>
-                   <a target="_blank" href="https://liker.social/@wancat">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               <li>
-                   <a target="_blank" href="https://keybase.io/wancat">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-                </ul>
-            </div>
-    </section>
-	
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FRIENDS</h5>
-        <ul class="list-inline">
-            
-            <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
-            
-            <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
-            
-        </ul>
-    </section>
-    
-
-    
-    
-</div>
-
-	</div>
-</div>
-
-
-
-
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                   
-                   <li>
-                       <a href='/index.xml' rel="alternate" type="application/rss+xml" title="WANcatServer" >
-                           <span class="fa-stack fa-lg">
-                               <i class="fa fa-circle fa-stack-2x"></i>
-                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                           </span>
-                       </a>
-                   </li>
-                   
-                    
-                    <li>
-                        <a href="mailto:wancat@wancat.cc">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
-                    
-                    
-                    
-                    
-
-                    
-                    <li>
-                        <a target="_blank" href="https://facebook.com/wancatserver">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
-
-		    
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/lancatlin">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://liker.social/@wancat">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
-                    
-                    <li>
-                        <a target="_blank" href="https://keybase.io/wancat">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
-            
-                </ul>
-		<p class="copyright text-muted">
-                    Copyright &copy; WANcatServer 2021
-                    <br>
-                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
-                    </iframe>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-
-
-
-
-
-<script>
-    
-    if($('#tag_cloud').length !== 0){
-        async("/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-
-<script>
-    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-
-
-
-
-</body>
-</html>
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>WANcatServer</title><meta name=keywords content><meta name=description content="網貓伺服器"><meta name=author content="wancat"><link rel=canonical href=https://wancat.cc/><link href=/assets/css/stylesheet.min.0e4a1b49e740c28140e9ee4945aab2f86cb0a7bfbf5a5d612d0cb5df7d6141f4.css integrity="sha256-DkobSedAwoFA6e5JRaqy+Gywp7+/Wl1hLQy1331hQfQ=" rel="preload stylesheet" as=style><link rel=icon href=https://wancat.cc/img/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://wancat.cc/img/logo.png><link rel=icon type=image/png sizes=32x32 href=https://wancat.cc/img/logo.png><link rel=apple-touch-icon href=https://wancat.cc/img/logo.png><link rel=mask-icon href=https://wancat.cc/img/logo.png><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.74.3"><link rel=alternate type=application/rss+xml href=https://wancat.cc/index.xml><link rel=alternate type=application/json href=https://wancat.cc/index.json><script type=text/javascript>var _paq=window._paq=window._paq||[];_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);(function(){var u="//matomo.linchpins.cloud/";_paq.push(['setTrackerUrl',u+'matomo.php']);_paq.push(['setSiteId','3']);var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.type='text/javascript';g.async=true;g.src=u+'matomo.js';s.parentNode.insertBefore(g,s);})();</script><meta property="og:title" content="WANcatServer"><meta property="og:description" content="網貓伺服器"><meta property="og:type" content="website"><meta property="og:url" content="https://wancat.cc/"><meta property="og:image" content="https://wancat.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:updated_time" content="2021-03-07T21:28:38+08:00"><meta property="og:site_name" content="WANcatServer"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://wancat.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="WANcatServer"><meta name=twitter:description content="網貓伺服器"><script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"WANcatServer","url":"https://wancat.cc","description":"網貓伺服器","thumbnailUrl":"https://wancat.cc/img/favicon.ico","sameAs":["https://github.com/lancatlin","https://t.me/wancatserver","mailto:wancat@wancat.cc","/index.xml"]}</script></head><body class=list id=top><script>if(localStorage.getItem("pref-theme")==="dark"){document.body.classList.add('dark');}else if(localStorage.getItem("pref-theme")==="light"){document.body.classList.remove('dark')}else if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.body.classList.add('dark');}</script><noscript><style type=text/css>#theme-toggle,.top-link{display:none}</style></noscript><header class=header><nav class=nav><div class=logo><a href=https://wancat.cc accesskey=h title="WANcatServer (Alt + H)"><img src=/img/logo.png alt=logo aria-label=logo height=35>WANcatServer</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu onscroll=menu_on_scroll()><li><a href=https://wancat.cc/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://wancat.cc/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://wancat.cc/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://wancat.cc/search/ title=Search><span>Search</span></a></li><li><a href=https://wancat.cc/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-entry><header class=entry-header><h2>妳該使用密碼管理工具嗎？</h2></header><section class=entry-content><p>現代人的密碼危機 如果妳是一位有正常使用網路的現代人，基本上在網路上會有許多的帳號。我算是用量比較高的用戶，我稍微統計了一下：光是記得的我就有 72 個帳號，還有很多早就忘掉的黑數呢！
+過去，帳號被盜或許是件小事，當然如果 LOL 或玩遊戲的帳號被盜會很心痛，但不至於會影響生活。隨著現代我們將生活越來越多部份放入網路，網路身份的重要性已經足以影響生活，因此我們勢必要用一些方法好好管理自己的網路身份。
+重複密碼 密碼的大原則就是不要重複，但哪有辦法呢？我們有那麼多的帳號，如果每個都要背一個密碼哪辦得到？每次在「Sign up」頁面停了很久，最後還是用了以前的密碼。
+重複密碼的危險性在於：只要妳其中一個帳戶被破解，其他帳戶都會遭殃，尤其是一些安全性不高的小網站，或是居心不良的惡意網站，如果跟重要的帳號設了相同的密碼，那就危險了。
+使用不安全工具紀錄 第二個危險的情形就是使用不安全的工具紀錄密碼，像是我以前也會用 Evernote 紀錄密碼，相信不只我，很多人都會用一些筆記本軟體來紀錄密碼，這非常危險！ 以下用 Evernote 舉例：一方面我們無法確定 Evernote 公司會不會讀妳的筆記，而且內容沒有經過加密，要是 Evernote 的伺服器被攻擊，資料外洩，妳的密碼就等於是明文獻給了駭客。何況妳怎麼知道 Evernote 不會授權某些極權政府讀妳的資料？（這裡就不點名了）
+有些人認為將檔案存在本機，不要上傳到網路就安全了，但其實不然：在妳的手機上有非常多的應用程式都有權限存取妳的檔案，若是其中有惡意程式發現妳的密碼文件，大可直接上傳到它的網路資料庫。
+因此紀錄密碼的工具以及儲存的資料必須要被加密，也就是要有所謂的主控密碼。
+密碼管理工具，安全嗎？ 許多人，包括我，一開始聽到「密碼管理工具」時，都會覺得不可思議：這種東西真的能信任嗎？但其實一個做得好的密碼管理工具，是很安全的，以下我將回應常見的疑慮。
+我主密碼被破解了不就完了？ 有些人覺得，使用密碼管理工具，就是將所有密碼的命運寄放在一組密碼上，這樣風險太大了！
+其實沒錯，如果妳今天能夠記得自己每個帳號的每個密碼，妳壓根不需要密碼管理工具，但問題是我們辦不到。
+就是因為我們記不得密碼，我們才會用相同的密碼，才會有上述所說的安全問題。而事實上也沒錯，使用密碼管理工具就是將所有密碼寄放在一組密碼上。但我們可以透過兩步驟驗證來避免主密碼被破解就被盜用。
+兩步驟驗證，顧名思義，就是在妳輸入密碼後還要經過另一道手續才可以登入。例如 簡訊驗證碼、Email 確認信都是常見的形式，這樣可以避免密碼被破解就導致帳號被盜，駭客必須同時掌握妳的密碼和手機才有辦法登入，這個難度實在蠻高的，所以現在幾乎所有研究都指出兩步驟驗證能確實提高安全性。
+它會偷我的密碼嗎？ 另一個考量就是這個程式是否值得信任？，畢竟我在上面舉 Evernote 例子時也提到：我們很難確定程式有沒有在背後搞鬼！ 而這就見仁見智了，有些人可能是信任大公司的軟體，而我是信任良好的加密演算法和開源軟體。
+一個安全的加密演算法，就是妳就算知道它的原理還是無法破解它
+舉我所使用的 Bitwarden 為例，在官網 FAQ 就寫了 為什麼妳要信任 Bitwarden。
+Bitwarden is 100% open source software. All of our source code is hosted on GitHub and is free for anyone to review....</p></section><footer class=entry-footer>February 21, 2019&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 妳該使用密碼管理工具嗎？" href=https://wancat.cc/post/should-you-use-password-manager/></a></article><article class=post-entry><header class=entry-header><h2>網站建置紀錄</h2></header><section class=entry-content><p>網站建置紀錄 我的網站從 2017 年六月第一次上 GitHub Page，到現在 www.wancat.cc ，也已經半年了，寫下這篇文章紀錄一下架站的方法。
+Hexo 我的部落格是用 Hexo 將 Markdown 轉成一個靜態網站的，所以可以部屬到 GitHub Page 或是任何伺服器，我自己現在還留著 https://wancatserver.github.io 避免哪天伺服器發生不測……。那 Hexo 可以多重部屬，我的設定檔大概長這樣。
+# _config.yml deploy: - type: git repo: git@github.com:WANcatServer/WANcatServer.github.io.git - type: rsync host: 我的伺服器 ip user: lancat root: /volume2/WANcatServer/www 那我的佈景是使用 Archer，非常好看的一個佈景，那我有做一些小調整：把簡體中文換成繁體，然後將授權地方放上 CC 授權。
+cd path/to/blog vim /theme/archer/layout/post.ejs 即可修改模板內容，EJS 也是我之前用過的模板引擎，所以挺快就弄好了。
+到 創用 CC 官網 上找你要的授權，就可以複製 HTML 嵌入到網站裡了。可以直接加在 Archer 裡面的 _config.yml
+# theme/archer/_config.yml # 將 license 改成以下 license: &lt;a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">&lt;img alt="創用 CC 授權條款" style="border-width:0" src="https://i....</p></section><footer class=entry-footer>January 20, 2019&nbsp;·&nbsp;2 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 網站建置紀錄" href=https://wancat.cc/post/my-website-building-log/></a></article><article class=post-entry><header class=entry-header><h2>理想王與潰爛王的一天</h2></header><section class=entry-content><p>理想王與潰爛王是出於鄭問漫畫—深邃美麗的亞細亞中的角色。
+　理想王有著建立一個「理想國」的理想，畢生為此努力。他過著規律且高度自我要求的生活，但他不只要求自己，還連帶要求了周遭的所有人。他殺掉不符合理想世界的人，他甚至透過「理想錶」控制與洗腦人民；但他也願意為了理想放棄一切，在與完美王的對決中，當他知曉有能力比他更高的完美王，他願意由完美王來實踐理想，證明他所在乎的不是權力，而是理想。
+　潰爛王有著高深莫測的能力，他有著高潔的思想，主張順應自然，不去做些什麼，只是成日「漂著」，像一灘爛泥般。潰爛王表面上無所事事的漂著，但其實在養精蓄銳，累積他的能量。
+理想王與潰爛王的一天 King in The Mud 早上五點，理想王關掉鬧鐘，起身，開始他計畫好的一天。
+簡單梳洗後，理想王坐在電腦前，操作著 Linux 系統，開始工作。六點四十，理想王闔上電腦，準備去上學。
+七點半，理想王拿出抽屜中的一本講義。他不喜歡學校，他不喜歡時間被他人安排，在面對內容不理想的課程時，他拿出講義，自顧自的寫著，因為他不想浪費回家後一絲一毫的時間來應付學校的作業。
+下課時，理想王放下講義，拿著已經用了六年的直笛，走到教室一隅，吹著自己譜寫的旋律。吵雜的教室內，沒有人聽著，但理想王不在乎，因為他明瞭，總有一天會有屬於他的聽眾。
+五點，潰爛王放學了。
+背著尚未完成的作業，漫步走出校園－書包較昨天沉了些，潰爛王步伐緩慢，彷彿在泥沼中漂浮，但比起他的步伐，他的內心更像一灘爛泥。潰爛王眼睛盯著不斷向後的腳下，眼神平靜，但內心在翻攪，企圖在這灘爛泥中，找尋一項非常重要的事物，但又隨即忘了是什麼，繼續望著腳下的地面，只在偶爾瞧見蟑螂屍體時，心才又產生了波動。
+五點十五，潰爛王回到家，一股腦地倒在沙發上，他知道他該去做功課，但身體長了根，深深地箝入沙發裡，飢渴的想從沙發中汲取些什麼。「什麼？」，潰爛王不知道，他不餓，坐一整天並不消耗多少血糖；他不累，但大腦似乎比身體更加疲憊。
+潰爛王打開書包，開始做功課，可是寫沒兩個字，潰爛王又開始在泥沼中翻找。「什麼？」，潰爛王心思紊亂，眼睛雖盯著題目，但一個字都讀不進去。「BDCBA」，潰爛王隨手猜完剩下的題目，便將作業扔到一邊。
+五點，鬧鐘響了。今天是段考，理想王昨天為了段考特別早睡，走到書桌，打算再做最後的複習，不過想想自己也沒什麼好讀的了，於是打開電腦，繼續工作。
+七點二十，理想王到了學校。他討厭段考，因為段考會破壞他好幾天的工作時間，又會讓他精神變差。但理想王還是應付著，考前的週末仍然會多花時間讀書，縱然段考結果根本無關緊要，每次段考理想王還是認真地準備。
+暑假時，理想王規定自己每天要看四小時的書，書桌上複習講義排一列，每本翻開都可以看到理想王的筆跡。暑假第一天，理想王老實的讀了四小時，四小時結束後，理想王有種虛脫的感覺，很累、非常累，他發覺自己唸書比在學校坐著要累多了，而當他唸完書後，也沒什麼精力工作了。當暑假過了一個禮拜後，理想王突然驚覺，自己這個禮拜似乎什麼也沒做，沒有學習到新的事物，沒有完成自己安排的工作。
+他發覺，自己儘管花了那麼多時間寫複習講義，他的心智卻沒有一絲一毫的成長，反而變得更沒耐心、更加死板，開始只在乎題目，開始不重視真實。
+打鐘了，學生們收拾書本，準備開始考試。理想王心思回到了學校，握著已經磨圓的 2B 鉛筆，準備好成為稱職的考試機器。
+收卷了。潰爛王放下手中的筆，手臂還隱隱作痛。想著剛才寫的作文，心裡感到很糟糕，他喜歡寫作，但 45 分鐘的限制，讓潰爛王總是寫出一篇又一篇的垃圾。稿紙太小，放不下他的思想，而那所有關於「青春」、「校園生活」的題目，都使他腦袋空白。
+四點，段考提早放學，或該說是正常時間放學。潰爛王帶著成績單，徐徐走出校園，他冷眼看著熱鬧的球場、興奮討論的學生們。一點都高興不起來，潰爛王十分空虛，滑開手機，看著長長一串準備在段考後完成的工作，但他一點幹勁都沒有。眼光飄到行事曆，下次模擬考就在三週後，心又更沉了。潰爛王關上螢幕，低頭繼續走。
+四點十五，回到家，潰爛王隨手將書包扔在一旁，便走向電腦。開了機，看著他的 Linux 系統，卻不知要幹嘛。打開遊戲，玩不到十分鐘又把它關掉了。潰爛王無聊極了，坐在沙發滑手機，想看些技術文章，卻又沒耐心讀完，於是一直存到 Pocket，稍後閱讀，儘管自己也知道未來不會讀。潰爛王突然感到眼睛酸痛，就放下手機，睡了。
+五點二十七，他關掉鬧鐘，看了手錶一驚，自己竟讓鬧鐘吵了半個小時。
+躺在床上看著天花板，他竟不知該如何安排這一個半小時的時間，這早晨的黃金時段，讀書？寫程式？寫文章？他什麼也不想做，轉身把燈關掉，繼續睡。
+七點二十，到了學校，他看著滿是教科書的抽屜，隨便抽了一本，但眼睛沒法好好對焦在題目上，心也是。早修的考卷發了下來，他對著考卷發呆，每當他試圖回想方才究竟在思索什麼，卻又忘的一乾二淨。記憶體塞滿了資料，又被刪個精光，什麼都沒留下；CPU 忙碌的在各個程序做切換，卻一個也做不好。
+七點十五，美好週末早晨。他看著段考前留下的 To Do List。「什麼都沒解決呢」，卡住的佇列，無數的 Zombie Process，和被無用資料佔滿的記憶體。
+他再也無法忍受了。
+他坐下，閉上眼睛，慢慢清空前景的程序。他不再翻攪了，心中那片爛泥，彷彿從沸騰的、冒泡的，逐漸安靜、冷卻下來，變成一片寂靜的泥沼。漸漸的，泥沼開始沉澱，水變得澄清。而在水中的，似乎就是他一直在找尋的那個「什麼」。
+$ reboot
+他睜開眼睛，看著貓咪懶洋洋的，躺在週末早晨的和煦陽光下。
+他知道答案了，他帶著水，走向書桌，繼續修築他的理想。</p></section><footer class=entry-footer>January 1, 2019&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 理想王與潰爛王的一天" href=https://wancat.cc/post/king-in-the-mud/></a></article><article class=post-entry><header class=entry-header><h2>我在技藝班所見所聞</h2></header><section class=entry-content><p>我在技藝班所見所聞 {% asset_img slug circuit-board.jpg %}
+在先前的文章提到過，我高中計畫就讀北科大五專精英班，由於這個班不好考，所以我在國三參加技藝班，用來在超額比序中加分。
+我選擇的是電機電子群，學習內容大致是 焊接、佈線，以及計算電壓 。
+焊接 我在加入技藝班之前已經有焊接的經驗，當初為了做 Arduino，有時需要自己焊零件，當時沒有觀念，買了烙鐵沒買海綿和烙鐵架，烙鐵頭第一天就黑了。也不知道要在電路板上焊，焊得又髒又醜，有時還把零件弄壞。
+上了技藝班之後我才第一次使用了整套的焊接工具，烙鐵、烙鐵架、海綿、吸錫器、尖嘴鉗、斜口鉗、剝線鉗，技藝班的工具還不錯，至少設備完整、錫的品質還算優。
+技藝班的課程基本上都是自己實做，老師會指定今天要做的東西，然後就讓同學開始做，第一天從焊三角錐開始，把六根電線兩端剝掉，焊成一個立體的正三角錐。後來還有練習拉線、做跳線、做電路，我認為這些都很好，在上了技藝班後我的焊接技巧的確提昇了不少，至少可以準確掌握烙鐵溫度與習性，可以讓手中的錫乖乖聽話。
+當然班上有些同學對此沒有興趣，有些還會在旁邊亂，這不稀奇，不管是什麼課程總會有人沒興趣。只要對我而言，這是很有用的，這就夠了。
+可惜並非如此
+計算 技藝班的課程還有一環是練習「計算」，主要計算的內容是一個電路圖指定位置的電壓和電流。大概在第四堂課開始，老師給我們上計算的課程，老師直接告訴我們公式怎麼算，沒有多做解釋為什麼要這樣算。
+對於這個我可以理解，畢竟大部分上技藝班的學生並不一定能吸收，就像是現在的國中教育，許多老師也是直接教公式，沒辦法，你就算教了原理學生也聽不懂。只是從中我發現我並不那麼適合技職教育，我的骨子裡還是希望追根究底想明白，我無法接受自己搞不懂的公式。
+但這不是最糟的。
+所有的計算都是「用手算」，電壓的計算基本上數字不會給你太好看，不用想約分什麼的，常常有那種 50.9 V、51 K 的缺德數字，常常你要處理的是四位數除上三位數的除法，而且要算到小數第四位四捨五入到第三位。
+{% asset_img slug process.jpg 計算過程 %}
+我真的無法理解，我們是未來要操作電腦的人，為什麼要做電腦完全可以取代的事？我們應該學習的是如何善用電腦，怎麼會是把人當電腦用？
+在這個 AI 的時代，教的卻是計算機就能取代的事？
+不為什麼，比賽就是這樣考。技藝競賽的選手就是要面對這種無腦四則運算，然而你完全無法從中得到任何有用的能力，算這個有什麼用？變人體計算機嗎？醒醒吧你永遠算不贏電腦的。
+從這裡我開始看出台灣技職教育的落伍，為什麼那麼多人看不起技職？為什麼師長不願我們選擇技職？
+面對桌上的一盤盤大便 過去我往往認為是因為社會「唯有讀書高」的觀念，保守家長不願意讓孩子成為一個「做工的人」，但現在我發覺政府自己就將技職教育辦的一團糟！
+我只敢說電機電子群的範圍，我曾經訪問過一些讀過高職的學長，大概了解到現在的高職教學內容實在非常落伍，就像是上面舉的例子，以及各式各樣的遠古程式語言、無法跟上時代的課程，甚至據說某間高職還規定要使用 Windows XP。
+我有位朋友就毫不客氣的說了高職資訊科全部都是 shit，他就是進去念之後才發現教的跟想像中完全不同，於是休學去工作了。
+我知道資訊領域是社會變遷較快的領域，同樣的技術，可能五年、十年過後就變得完全不同，但台灣的技職教育沒有進步，還是在使用 20 年前的課本，還是在教著 20 年前的技術，還是在考學生如何用手算電壓。
+我認同技職教育的價值，但如果政府端不出像樣點的課程，就莫怪學生不願意、企業不稀罕、家長不認同。
+台灣的學生就像是要在一桌大便中選擇比較不臭的吃下去一樣，面對一樣爛的高中、高職、五專中，挑一個對自己最沒傷害的，忍痛吞下去，期望熬過去就有比較好的食物吃。
+可悲台灣小孩，有未來嗎？ 我寫這篇文章是希望，政府能重新制定真正有品質的技職教育課程，在推廣技職教育的同時，把技職教育的品質做好，教授與時俱進的課程，而不是算電壓這種荒謬的內容。甚至在給準技職學生上的技藝班中，就讓學生看出其之落伍。
+「一屆不如一屆」，據說在十幾年前的高職，仍是十分重視實作。然而到了今天，高職卻越來越考試取向。
+我相信台灣是辦得到的，我相信。
+延伸閱讀 可悲台灣小孩 — 一個國中生，是如何變得不聞不問？
+十五歲的生涯選擇，我為何拒讀高中？ — 父子對於升學、技職教育的看法</p></section><footer class=entry-footer>December 4, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 我在技藝班所見所聞" href=https://wancat.cc/post/vocational-courses/></a></article><article class=post-entry><header class=entry-header><h2>軟體開發的未來，是大斗內時代？</h2></header><section class=entry-content><p>本文從付費軟體的困境，講到廣告商業模式以及付費帳號模式，再講到近年來日趨流行的**「獎賞制度」**，來談談內容創作的困境，以及當面對網際網路快速發展的因應之道。
+軟體如何賺錢 在我剛開始寫程式的時候，我就曾經想過，如果我做出了一個很好的遊戲，我該如何賺錢？，簡單就是賣嘛，付了錢我就給你程式。但這最大的問題是你如何確定買家不會將你的產品給其他人？。
+我開始思考各種的商業模式，發現要賣軟體竟是一件相當困難的事，阻止盜版非常困難，其實這本質的原因在於軟體是一種邊際成本為 0 的產品。
+付費軟體的困境 盜版猖獗，永遠是付費軟體最大的困境。軟體之所以有這樣的問題，正是由於它的**「邊際成本為 0 」**。邊際成本是經濟學的名詞，意思是當你增加一份產品時所需要增加的成本。生產一台汽車的成本很大，但生產 10000 量汽車可能平均下來就沒那麼大。而軟體則是一個邊際成本為 0 的產品，你要多賣給一個使用者，頂多光碟多燒一片，不然哪有什麼成本？
+你以為這樣很好嗎？是的，或許你可以節省成本，但 對於盜版者而言更好 。你開發軟體需要成本，但盜版的人連開發的成本的省下來了，那對盜版者而言，可真的是「無本生意」。不只是軟體，各式各樣的創作，只要是邊際成本為 0 的，例如文章、圖畫、影片，可以被輕易用電腦複製的，都可說是邊際成本為 0 的產品，因此很容易遭受盜版威脅。
+因此，邊際成本為 0 的產品，用免費的商業模式最有效率，我並不是說不該支持使用者付費，只是在效率上，免費的商業模式效率較佳。
+也因為這個原因，導致廣告的商業模式興起。
+免費時代來臨？ 在網際網路普及之後，盜版軟體變得越來越猖獗，基本上所有知名的商業作品一定都有它的盜版，漸漸的，購買正版已經成為一種額外的支持行為，講難聽點，是一種**「施捨」**，而不是正常消費途徑了。
+軟體開發商開始注意到這個問題，於是他們開始用一種截然不同的商業模式—免費。從 YouTube、Google 搜尋引擎 ，到 LINE、Facebook ，打開 Play 商店，大部分的 app 也都是免費的，它們依靠著廣告商賺錢。
+你有想過為什麼 Facebook 免費嗎？因為你對它有價值，你的加入會讓你的更多朋友喜歡使用，也就會讓廣告被更多人看見，它就能賺更多錢。
+當你使用一個免費軟體，多半代表你對軟體公司有價值，你就是他們的產品之一，因此你得以免費。所以才會有人說「免費的最貴」這類的話。
+付費帳號 —兼具免費與付費的解法 如果我真的不想要廣告呢？現在還有「付費帳號」這種解法，例如 Medium, Pocket, GitHub 等公司，在除了提供免費服務外，另外提供了「付費版帳號」，讓想要更多功能的使用者可以購買付費版，這樣既能保持不受廣告控制，又能有經濟收入。
+但付費版帳號就不會被盜版嗎？，事實上，比較難。現代的各種付費商業模式多半是採「帳號制」，也就是你購買的是一個帳號。只要是帳號，就比較好控制，因為資料在公司內部的伺服器，如果服務是在網頁上的話更是如此，使用者無法取得完整的程式（只能夠取得單一網頁的 HTML、JavaScript …），也就比較難被逆向或是破解，因為所有的程式碼都在公司自己的伺服器中。
+想想看，你一定有聽過盜版的威力導演、盜版的 Windows，但你有聽過 盜版的 YouTube 嗎？盜版的 Medium？盜版的 GitHub？我相信你沒有，因為將帳號資料放在伺服器，基本上就能夠避免無限量複製，因為服務是「認帳號」，你沒有帳號，空有程式也沒用。事實上，現在許多 YouTuber 使用的付費訂閱 PressPlay 就是採用帳號制，內容都在 PressPlay 的伺服器，它可以依據你帳號的狀態來決定是否要給你內容，因此你很難盜版。而有名的付費遊戲— Minecraft 也是採帳號制，這樣可以方便使用者在不同設備遷移，而且管控簡單。
+大斗內時代，可能嗎？ 但即使是上述所說的付費帳號制度，仍然是有可能被盜版的，因此在過去許多軟體開發商設計很多數位鎖，想要防止被盜版，但 歷史證明，都沒有用。開發數位鎖浪費了軟體開發商的大筆時間和金錢，但最後鎖住的，卻往往是有良心乖乖買正版的使用者。...</p></section><footer class=entry-footer>November 6, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 軟體開發的未來，是大斗內時代？" href=https://wancat.cc/post/future-of-software/></a></article><article class=post-entry><header class=entry-header><h2>OurLiveWorld 回到過去</h2></header><section class=entry-content><p>自古以來，穿越時空的能力令人嚮往，但就算你是神（創造），仍無法辦到。
+地獄之旅 故事要從我們一次去地獄的冒險開始說起。隨著文明的開發，我們世界的地獄資源越來越短缺，尤其是大量的 終界箱 需求，讓烈焰桿的消耗超乎預期，用完已經是不久之後的事了。
+因此我們計畫一趟地獄要塞之旅，我們在先前的日子裡已經發現了地獄要塞的存在，也去過幾趟，把一些寶箱都開箱了。但儘管去了很多趟，它仍是十分危險的地方，底下一大片岩漿海不說，整個要塞遍布著發射火球的 烈焰使者，還有很難打的 凋零骷髏。
+這天剛好 Andrea 有空，我們就一起來出任務。
+出發 我們基於先前去得到的材料，烈焰桿與熔岩球，得以釀製抗火藥水，有了抗火藥水，就不怕烈焰使者的攻擊，基本上在要塞就安全了多。
+走地下道，來到了我們的轉運站 —地獄門，出發到了地獄，尋著過去留下的痕跡，一路找尋到了地獄要塞的入口。
+Andrea 說下山的路不好走，於是我們 挖了一條隧道下山，接著吞了抗火藥水，進入要塞之中。
+遇害 Andrea 第一次進到這座要塞，非常的緊張，不知路怎麼走又一直遇到凋零骷髏。而我目的要刷烈焰使者，一時也不知在哪刷比較好，隨意的上了一棟高樓，就準備開刷了。
+我拿我的鑽劍去敲了一下，烈焰使者受傷，飄到空中，打不到。我拿出我的神弓，拉滿弓一射，好巧不巧一隻殭屍豬人走到我面前。
+頓時，四周響起了殭屍豬人憤怒的聲音，我知道我犯下大錯了，趕緊轉身就跑，Andrea 注意到了，但她不熟悉路，也幫不到我。
+我從高台上往下跑，一路沒煞車，在走一條一格寬的樓梯時差點跌進岩漿海。
+我跑到了要塞的走廊上，這時連凋零骷髏也來找我了。後方是幾十隻憤怒的殭屍豬人，而前面則有凋零骷髏數只，我心一橫，有我這把鋒利4鑽劍，還有什麼打不贏的敵人？
+但在緊張下，我的攻擊卻屢屢放空，而後方 Andrea 的救援卻遲遲不來，舉盾擋住一邊就遭到另一邊的攻擊，凋零骷髏的凋零效果讓我看不清血量。而當我正在吃金蘋果時，眼前出現了一片紅屏。
+我死了。 一場空 憤怒的殭屍豬人停止了，恢復了平常呆呆的樣子。Andrea 終於到了，但看到的已是掉了滿地的物品。她趕緊幫我撿起來，能撿多少算多少，但她的背包太滿，裝不下我的所有裝備。
+我在家裡重生，望著自己空空的背包，以及歸零的經驗條。趕緊抓了些破衣服，拿了把粗製的鐵劍，帶瓶抗火藥水，準備衝回地獄。
+Andrea 聽我的指示，先離開危險的要塞，回到我們地獄的基地，我和她在基地會合，先給我一些撿到的物品。
+就只有這樣？
+只撿回了一把鑽劍，我那吃到一半的金蘋果，以及一條褲子。
+「也許還有些遺落的在那邊」，我們趕緊出發，再次進入要塞，但到了我所死亡的地點，卻不見任何東西。
+不會吧…
+我不敢相信，在要塞中不斷尋找，但就是找不到我遺落的物品。
+回到了家中，我的裝備已不再，原本一趟掠奪之旅，竟然換來一場空。
+「你想…回到過去嗎？」
+回到過去 「可以嗎？」，Andrea 十分震驚，因為 就算是創造的世界，仍辦不到穿越時空這件事。
+其實在八月的時候，我就開始用版本控制工具 Git 來紀錄我們的世界，每次玩完就會做一個紀錄。因此我就得以回到過去存檔的任何時間點。
+我先關閉了伺服器，將這次的更動先放到一個分支，將世界 checkout 回主分支，就回到了我們出發前的世界。
+$ git add . $ git checkout -b dead-branch $ git commit -m "死了" $ git checkout master $ ....</p></section><footer class=entry-footer>October 20, 2018&nbsp;·&nbsp;2 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to OurLiveWorld 回到過去" href=https://wancat.cc/post/time-travel/></a></article><article class=post-entry><header class=entry-header><h2>十五歲的生涯選擇，我為何拒讀高中？</h2></header><section class=entry-content><p>兒子—林宏信： 我現在國三，從小六時接觸了 Scratch，國二開始學習 Python 程式語言，我漸漸的確定這是我想走的道路—做一名工程師。
+//Scratch 為一個圖形化的程式語言，可以透過拉積木、組合的方式，來做動畫、寫遊戲。 https://scratch.mit.edu/
+小六時，我開始玩 Scratch，心中想著要做出好玩的遊戲分享給大家，於是開始設計遊戲，製作出一個又一個的遊戲，在別人都在玩做好的遊戲時，我在設計屬於自己的遊戲。我很享受這種感覺，將心中的藍圖實現出來， 創造 的感覺。
+到了國一下學期的時候，我發現 Scratch 已經不敷使用，沒辦法寫出更好的程式了，於是我開始學習程式語言，後來甚至接觸 Linux 作業系統，開始替人做圖書管理系統。在這些過程中，我逐漸確定這是我的熱情所在。
+對高中的不滿 我平常的生活是，在學校認真上課，將作業寫完，回家就開始 「工作」 ，寫程式、寫文章、寫音樂。我幫自己安排了很多工作、很多專案，這些都是能使我成長的事，我也樂在其中，但每每遇到段考，就會使我的生活遭到破壞。為了準備考試，我必須將工作的時間拿去讀書，讀一些 無法使你成長的教科書 ，浪費黃金的課餘時間。
+現在的高中教育，坦白講是為了升大學而存在。內容教授國英數自社等基本學科，但開始越發奇怪，脫離了「義務教育」的範疇。尤其是國文，目前的教學方式 完全沒有辦法促進表達能力 ，要取得高分只需要 背誦和考試技巧 。而考試制度又扼殺了語言的多變性，把文義僅限在唯一的解。
+在我兩個姐姐就讀高中的期間，我就知道了普通高中並非我想要的學校，我將會花許多時間去學習基本科目。但這並非令我反感的原因，對我而言，基本學科的內容也是有趣的，我對於「學習」沒有那麼勢利，不會說要對我有用的知識才肯去學。問題是 我得花許多時間去準備考試 ，這就不有趣了，事實上這已經不是在「學習」了。而這些時間，是我原本可以用來充實自己、做專案的時間。
+所以我下定決心， 這樣的生活到國中就好 ，三年了，體驗的也夠多了，高中我不要再繼續下去了。
+出路在哪裡？ 我開始去找我的出路，我問了工程師朋友：如果想當工程師要怎麼升學？基本上大多的回答是念普高或高職都可以，重點是大學。我不免感到懷疑，既然大家的目標都是大學，為什麼我們不能直接去考？反而還要在高中三年作為跳板，這樣高中不就像是補習班一樣嗎？
+我對於普通高中的教學內容感到不滿意，認為這會浪費我大量時間和精力，而且會壞了我學習這門知識的胃口，因此我決定走技職的路。
+在我父母的觀念中，是很支持技職教育的，台灣太多只會考試的學生，卻缺乏實做的訓練。雖這麼說，但過去「技職」從來不在我的考慮範圍內，由於成績優異，似乎就是注定要念普通高中，注定要繼續讀書考試下去。
+直到我開始去了解，開始找自己的出路後，我才發現，自己的未來不一定要侷限在普通高中裡，我可以作為一名專業的技術人才，提早開始走自己的道路。很慶幸我的父母在溝通後也支持我的決定，我想 願意支持孩子決定的父母，就是最好的父母了。
+未來，從現在開始 我的夢想就是成為一位現在很夯的斜槓青年：工程師/寫作者/作曲家，選擇技職教育不代表限制自己的未來，我相信只要內心清楚方向，走哪都不會迷失。
+我的學校現在目標是 北科大 新開的五專菁英班— 自動化工程科 ，內容包括程式設計、電機、機械等內容，這個班之所以吸引我，是因為在那可以得到台北科技大學的豐富資源，而且豐富的實做課程，以及豐富的教師資源，同時我也相信，在只收30人的班級中，能遇到更多像我一樣懷抱著熱情的人。 而在生活中一步一步朝著理想邁進，這不就是最幸福的事嗎？
+父親—林寓森： 老實說，兒子選擇讀技職體系，心中 並不是完全沒有遲疑與猶豫的 。畢竟我是成長於台灣舊聯考時期的人，很多習慣性的反應還是直接出現。像是「你的成績是學霸級的耶，可以念很困難的學科，念技職會不會太可惜了啊」，「你跟其他念技職的人會不會有很大的差異，適應上會不會有問題？」，「現在才國中生耶！交給他自己決定未來行不行啊！會不會是我自己太不負責任，沒有好好幫他們規劃？」。
+其實不光是對兒子，兩個姊姊決定念美術與音樂時，我心裡都有過遲疑。
+但是我心中的這些O.S.我全部沒說出口，因為我相信他們，也相信自己對於個人成長的信念。
+我的信念就先不多說了，有興趣了解的人可以看我在站上發表的文章。我在這裡想對其他為人父母者強調一個我的判斷邏輯—「讓孩子相信自己是一個絕對不會失敗的選擇」。
+這個邏輯並不是說，小孩的選擇不會錯誤；而是說當他們能真正相信自己時，即使選擇錯誤，並不會因此就喪失信心，一蹶不振；當他們是自己做的選擇時，失敗了不會怨天尤人，而是調整自己。當我們試著要去幫他們做未來決定時，依據的是目前的環境狀態，但是未來瞬息萬變，誰也沒辦法有把握一定選對。那麼讓他們做自己喜歡的事情，即使不成功或是過得困難，做的過程總還是有開心的感覺，這就夠了。很多人生活過的舒適、安全、無憂，但是做的不是自己喜歡的事情，甚至不知道自己喜歡什麼，這樣的生活說真的，還比較不快樂。
+所以表面上我做的似乎是一個冒險的決定，但我認為這其實是一個最安全的決定，這取決於背後對於生活價值的信念。
+很多人擔心小孩不夠成熟，讓他們自己決定可能在生活上會很容易失控。我自己的經驗是，當他們覺得可以自己決定時，反而會更謹慎，更會想要聽你的意見參考；而決定了之後，更能投入想做的事情與克制玩樂的衝動。有人會說，「小孩的特質不同，不能一概而論，自制力差的小孩不能這麼做」。
+我的三個小孩的特質都不同，也有人真的自制力不好（就不點名了），但是結果都一樣耶。雖然其他生活部份的自制力各有差異（其實我的自制力是家中成員最差的XD），但是他們對於自己的選擇都是全力投入喔！
+真的沒有理由不相信他們啊！</p></section><footer class=entry-footer>October 14, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 十五歲的生涯選擇，我為何拒讀高中？" href=https://wancat.cc/post/progression/></a></article><article class=post-entry><header class=entry-header><h2>當老師對我們說：「可悲台灣小孩」</h2></header><section class=entry-content><p>「這句話真是說到心坎裡」，我笑著說 「就只怕過幾年後，他就變『可悲台灣老師』」
+一則笑話 我的朋友有次跟我聊起他的家政老師。
+他的家政老師是一位年輕的新老師，充滿著熱情，似乎希望能在家政課做一些「有意義」的課程。所以他出了很多報告作業，上很多課程，而且從不借課考試，因為他覺得，台灣小孩的綜合、藝文課程被拿去考試，真的很可憐。
+但同學們並沒有認真的去做報告，反而覺得很煩，都只想躺分，丟給組員做。上課也沒什麼在聽，反倒是很多同學在訂正考卷、寫講義等等，根本沒在上課。
+我朋友說，他的老師就很生氣，有次就對他們班同學說：
+「你們這群可悲台灣小孩」。
+聽到這裡，我已經笑到不行，
+「這句話真是說進心坎裡」，我笑著說 「就只怕過幾年後，他就變『可悲台灣老師』」
+可悲台灣小孩與老師 這則笑話之所以好笑，就是因為我們的確可悲。
+我們的學生生活被考試佔滿，漸漸的讓學生也變得考試導向、勢利，只在乎「會不會考」，再也不在乎學習的本質是理解、是應用。
+有時，當老師充滿熱血，希望做些什麼，帶些不一樣的課程來改變時，反而會受到學生的反彈，反而覺得老師很煩，還不如拿來考試、自習。
+這樣子的反應，往往是毀了一位教師熱忱最可怕的殺手。
+我如何成為一位可悲的國中生？ 一個學生，是如何變得漠不關心？
+從升上國中開始說起，在國一時，我對於綜合、藝文課是高度參與的，一方面老師懂的帶學生，而且國一的課業還沒有那麼重，所以在上考試科目之餘，能夠做一些不一樣的事，我想大部分學生都是喜歡的。
+到了二年級，我開始有自己課餘的活動，也就是寫程式。我在家需要大量的時間來維持我的興趣，我甚至一度考慮不參加第八節，但後來考慮怕不能跟上進度與造成別人麻煩，仍然是參加了。
+從此在學校，我的目標就是「將所有學習相關的事情在學校完成」，什麼意思呢？就是將作業在學校寫完，要考的科目在上課讀完，讓回家時間百分之百都是屬於自己的。
+漸漸的，我開始將一些「我認為學不到東西」的課用來寫作業、自習；漸漸的，當老師出報告作業時，心中只有反感，與麻煩；漸漸的，我開始變成自己瞧不起的那種「可悲台灣小孩」。
+夢中的教室 我有一個夢，是一間教室，中間一個大桌，老師不站在講台上，跟同學一塊坐在桌旁。老師上課，但強調的不是如何解題目，而是為什麼我們要學這個？如何理解這門學問。學生可以自由的討論，如果願意，學生能向大家發表自己的看法，甚至自己準備內容向大家發表。
+沒有正解，沒有標準答案，沒有考試技巧，沒有「這題目有瑕疵，但你還是得這樣寫」，只有學習本身。
+「這樣的教室，真希望不只是出現在夢裡。」</p></section><footer class=entry-footer>October 14, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 當老師對我們說：「可悲台灣小孩」" href=https://wancat.cc/post/poor-taiwanese-kid/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=https://wancat.cc/page/3/>« Prev Page</a>
+<a class=next href=https://wancat.cc/page/5/>Next Page »</a></nav></footer></main><footer class=footer><span>&copy; 2021 <a href=https://wancat.cc>WANcatServer</a></span>
+<span>&#183;</span>
+<span>Powered by <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a></span>
+<span>&#183;</span>
+<span>Theme <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)"><button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></button></a>
+<script>window.onload=function(){if(localStorage.getItem("menu-scroll-position")){document.getElementById('menu').scrollLeft=localStorage.getItem("menu-scroll-position");}}
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener("click",function(e){e.preventDefault();var id=this.getAttribute("href").substr(1);if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({behavior:"smooth"});}else{document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();}
+if(id==="top"){history.replaceState(null,null," ");}else{history.pushState(null,null,`#${id}`);}});});var mybutton=document.getElementById("top-link");window.onscroll=function(){if(document.body.scrollTop>800||document.documentElement.scrollTop>800){mybutton.style.visibility="visible";mybutton.style.opacity="1";}else{mybutton.style.visibility="hidden";mybutton.style.opacity="0";}};function menu_on_scroll(){localStorage.setItem("menu-scroll-position",document.getElementById('menu').scrollLeft);}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{if(document.body.className.includes("dark")){document.body.classList.remove('dark');localStorage.setItem("pref-theme",'light');}else{document.body.classList.add('dark');localStorage.setItem("pref-theme",'dark');}})</script></body></html>

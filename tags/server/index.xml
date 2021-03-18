@@ -2,22 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Server on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/server/</link>
+    <link>https://wancat.cc/tags/server/</link>
     <description>Recent content in Server on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Sun, 20 Jan 2019 13:15:09 +0000</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/server/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/server/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>網站建置紀錄</title>
-      <link>https://www.wancat.cc/post/my-website-building-log/</link>
+      <link>https://wancat.cc/post/my-website-building-log/</link>
       <pubDate>Sun, 20 Jan 2019 13:15:09 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/my-website-building-log/</guid>
-      <description>網站建置紀錄 我的網站從 2017 年六月第一次上 GitHub Page，到現在 www.wancat.cc ，也已經半年了，寫下這篇文章紀錄一下架站的方法。 Hexo 我的部落格是用 Hexo 將 Markdown 轉成一個靜態</description>
+      <guid>https://wancat.cc/post/my-website-building-log/</guid>
+      <description>網站建置紀錄 我的網站從 2017 年六月第一次上 GitHub Page，到現在 www.wancat.cc ，也已經半年了，寫下這篇文章紀錄一下架站的方法。
+Hexo 我的部落格是用 Hexo 將 Markdown 轉成一個靜態網站的，所以可以部屬到 GitHub Page 或是任何伺服器，我自己現在還留著 https://wancatserver.github.io 避免哪天伺服器發生不測&amp;hellip;&amp;hellip;。那 Hexo 可以多重部屬，我的設定檔大概長這樣。
+# _config.yml deploy: - type: git repo: git@github.com:WANcatServer/WANcatServer.github.io.git - type: rsync host: 我的伺服器 ip user: lancat root: /volume2/WANcatServer/www 那我的佈景是使用 Archer，非常好看的一個佈景，那我有做一些小調整：把簡體中文換成繁體，然後將授權地方放上 CC 授權。
+cd path/to/blog vim /theme/archer/layout/post.ejs 即可修改模板內容，EJS 也是我之前用過的模板引擎，所以挺快就弄好了。
+到 創用 CC 官網 上找你要的授權，就可以複製 HTML 嵌入到網站裡了。可以直接加在 Archer 裡面的 _config.yml
+# theme/archer/_config.yml # 將 license 改成以下 license: &amp;lt;a rel=&amp;#34;license&amp;#34; href=&amp;#34;http://creativecommons.org/licenses/by-sa/4.0/&amp;#34;&amp;gt;&amp;lt;img alt=&amp;#34;創用 CC 授權條款&amp;#34; style=&amp;#34;border-width:0&amp;#34; src=&amp;#34;https://i.</description>
     </item>
     
   </channel>

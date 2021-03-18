@@ -2,22 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Matomo on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/matomo/</link>
+    <link>https://wancat.cc/tags/matomo/</link>
     <description>Recent content in Matomo on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Tue, 04 Feb 2020 10:27:38 +0800</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/matomo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/matomo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Google Analytics 替代方案 Matomo 安裝教學</title>
-      <link>https://www.wancat.cc/post/matomo-installation/</link>
+      <link>https://wancat.cc/post/matomo-installation/</link>
       <pubDate>Tue, 04 Feb 2020 10:27:38 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/post/matomo-installation/</guid>
-      <description>因為實在不想再讓 Google 拿到資料了，所以我到 No More Google 網站上找 Google Analytics 的替代方案，第一名就是 Matomo。 Matomo 是一個自架的流量分析程式，是自由軟體，也有提供</description>
+      <guid>https://wancat.cc/post/matomo-installation/</guid>
+      <description>因為實在不想再讓 Google 拿到資料了，所以我到 No More Google 網站上找 Google Analytics 的替代方案，第一名就是 Matomo。
+Matomo 是一個自架的流量分析程式，是自由軟體，也有提供付費的 Cloud hosting 服務。我在試用後覺得還不錯，就決定自行在 Raspberry Pi 上安裝。因為是自架的，所以資料都在自己手上，不會被 Google 拿去利用。
+安裝方式參考官方文件。
+環境需要 PHP、MySQL or MariaDB
+PHP 安裝：
+sudo apt-get install php7.0 php7.0-curl php7.0-gd php7.0-cli mysql-server php7.0-mysql php-xml php7.0-mbstring 資料庫我比較偏好社群維護的 MariaDB：
+sudo apt install mariadb-server sudo mysql_secure_installation 建議在執行 mysql_secure_installation 來強化安全性。
+由於我使用 Caddy，所以 Caddyfile 中要加入以下程式：
+matomo.wancat.cc { root /var/www/matomo # 換成你的 matomo 位置 gzip fastcgi / /var/run/php/php7.3-fpm.sock php { index index.php } } 然後打開網頁，就可以看到安裝程式了。接著要幫 Matomo 設定好 SQL User 和 Database，</description>
     </item>
     
   </channel>

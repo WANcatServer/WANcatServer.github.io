@@ -1,0 +1,166 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>WANcatServer</title><meta name=keywords content><meta name=description content="網貓伺服器"><meta name=author content="wancat"><link rel=canonical href=https://wancat.cc/><link href=/assets/css/stylesheet.min.0e4a1b49e740c28140e9ee4945aab2f86cb0a7bfbf5a5d612d0cb5df7d6141f4.css integrity="sha256-DkobSedAwoFA6e5JRaqy+Gywp7+/Wl1hLQy1331hQfQ=" rel="preload stylesheet" as=style><link rel=icon href=https://wancat.cc/img/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://wancat.cc/img/logo.png><link rel=icon type=image/png sizes=32x32 href=https://wancat.cc/img/logo.png><link rel=apple-touch-icon href=https://wancat.cc/img/logo.png><link rel=mask-icon href=https://wancat.cc/img/logo.png><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.74.3"><link rel=alternate type=application/rss+xml href=https://wancat.cc/index.xml><link rel=alternate type=application/json href=https://wancat.cc/index.json><script type=text/javascript>var _paq=window._paq=window._paq||[];_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);(function(){var u="//matomo.linchpins.cloud/";_paq.push(['setTrackerUrl',u+'matomo.php']);_paq.push(['setSiteId','3']);var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.type='text/javascript';g.async=true;g.src=u+'matomo.js';s.parentNode.insertBefore(g,s);})();</script><meta property="og:title" content="WANcatServer"><meta property="og:description" content="網貓伺服器"><meta property="og:type" content="website"><meta property="og:url" content="https://wancat.cc/"><meta property="og:image" content="https://wancat.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:updated_time" content="2021-03-07T21:28:38+08:00"><meta property="og:site_name" content="WANcatServer"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://wancat.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="WANcatServer"><meta name=twitter:description content="網貓伺服器"><script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"WANcatServer","url":"https://wancat.cc","description":"網貓伺服器","thumbnailUrl":"https://wancat.cc/img/favicon.ico","sameAs":["https://github.com/lancatlin","https://t.me/wancatserver","mailto:wancat@wancat.cc","/index.xml"]}</script></head><body class=list id=top><script>if(localStorage.getItem("pref-theme")==="dark"){document.body.classList.add('dark');}else if(localStorage.getItem("pref-theme")==="light"){document.body.classList.remove('dark')}else if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.body.classList.add('dark');}</script><noscript><style type=text/css>#theme-toggle,.top-link{display:none}</style></noscript><header class=header><nav class=nav><div class=logo><a href=https://wancat.cc accesskey=h title="WANcatServer (Alt + H)"><img src=/img/logo.png alt=logo aria-label=logo height=35>WANcatServer</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu onscroll=menu_on_scroll()><li><a href=https://wancat.cc/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://wancat.cc/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://wancat.cc/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://wancat.cc/search/ title=Search><span>Search</span></a></li><li><a href=https://wancat.cc/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-entry><header class=entry-header><h2>YaCy安裝教學</h2></header><section class=entry-content><p>YaCy是一個開源的點對點搜尋引擎 本文將講解如何在 Ubuntu Server 上安裝 YaCy 搜尋引擎，並用Nginx做反向代理，將網址改成像是 yacy.example.com 的形式。
+YaCy 架好的範例可以來我架設的伺服器使用看看https://yacy.wancatserver.tk
+環境說明 本文假設有一台無圖形界面的伺服器以及有圖形界面的Desktop。Desktop必須要能夠使用瀏覽器。 假設伺服器網域： example.com，請將本文所有example.com改成你的網域名稱 假設使用者名稱：user ，請換成自己的使用者名稱
+如果沒有網域名稱仍然可以安裝 YaCy ，只是需要用 ip:8090 的形式來連上它。 如果沒有真實 ip 就只能在內網使用
+伺服器安裝 Java 8 YaCy可以使用 OpenJDK，也可以使用Oracle官方的JRE。 OpenJDK使用apt安裝
+$ sudo apt install openjdk-8-jre 官方的JRE比較麻煩，可參考此文章
+安裝 YaCy 至官網下載程式。
+{% asset_img slug download.png %}
+將程式上傳至伺服器，請將/path/to/yacy.tar.gz替換成你下載的路徑
+$ scp /path/to/yacy.tar.gz user@example.com:/home/user/ 接下來以ssh登入伺服器
+$ ssh user@example.com 解壓縮，將yacy.tar.gz替換成你下載的路徑
+$ tar -zxvf yacy.tar.gz 解壓縮完可以看到家目錄下多了一個目錄yacy，裡面有 startYACY.sh, stopYACY.sh, killYACY.sh, reconfigureYACY.sh, updateYACY.sh等執行檔，以及許多資料夾。
+我們先去打開防火牆，YaCy使用的是 8090 port (HTTP)，以及8443 (HTTPS)。...</p></section><footer class=entry-footer>September 22, 2018&nbsp;·&nbsp;2 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to YaCy安裝教學" href=https://wancat.cc/post/yacy-install/></a></article><article class=post-entry><header class=entry-header><h2>從今天起，不要使用 .docx</h2></header><section class=entry-content><p>妳使用什麼文書軟體？相信大部分的答案會是 Word, Powerpoint, Excel ，微軟Office的產品。那是否可以麻煩妳做一件事？在 存檔的時候選擇用ODF 。
+檔案格式的霸主 —OOXML 早在1993年，微軟就推出了Microsoft Office 3.0，在當時還只能使用純文字編輯的時代，這樣「所見即所得」的編輯器是一個創舉，而買軟體要付費這件事也天經地義，畢竟沒有人逼妳。
+漸漸的在這二十多年，微軟Office在文書軟體中取得了霸主的地位，絕大多數的文件檔都是微軟的私有格式 —OOXML，也就是docx, pptx, xlsx等微軟Office的專用檔案格式。
+OOXML雖然號稱是 「Open」 ，也是一項國際標準，但是微軟總是會在新版的軟體中加入OOXML不包含的功能，導致其他office軟件，或甚至是微軟自己的舊版office，都無法正確開啟檔案。
+同時微軟對於舊版office的支援也可說是毫不留情，新版的檔案在舊版皆無法開啟，變相逼迫使用者升級，但這樣也不利於須長久保存的文件（十年過後文件就打不開了）。
+微軟霸權 由於OOXML的普及與它的封閉，漸漸的許多使用者「必須」得購買微軟Office，才得以工作、做報告，甚至是政府機關，每年都得花大量金錢購買微軟的授權，而每次的更新，都是痛苦的開始。
+而國中小的電腦課卻上的是Windows系統，教的是微軟Office，一批一批出來的學生也都只會使用微軟的產品，未來想要轉換也變得更加辛苦，導致許多人最後放棄，繼續使用微軟的產品。
+開放檔案格式ODF 這樣的問題也早早就被注意到了，在2002年，許多的公司與團體聚在一起，討論開發一項 開放 的檔案格式。在2005年5月，OpenDocument成為了國際標準，也就是現今的ODF檔（Open Document Format）。而在2012年發布ODF 1.2的更新版，至此無再更新標準。
+說ODF妳可能會很陌生，其實odt, odp, ods等檔案就是ODF在不同種類文件下的副檔名。odt是文件（相當於Word），odp是簡報（相當於Powerpoint），ods是試算表（相當於Excel）。
+現今幾乎所有的文書辦公軟體，都能完整支援ODF，由於ODF是開放的檔案格式，而且很少異動，所以軟體相容性做得非常好。而且可以跨平台、跨軟體支援。
+為什麼妳不該使用OOXML？ 首先，OOXML對於其他軟體的支援度很差，妳可能有經驗，當妳把docx檔丟到Google drive，在上面開啟都會跑掉格式，這種感覺真的很差，妳可能會怪Google drive沒做好相容，但實際上是因為微軟在程式裡 「故意讓它不相容」 導致。
+再來，如果妳像我一樣使用Linux系統，別人給妳OOXML妳會很火大，Linux沒有微軟Office，它不只逼我買Office，還連帶逼我買Windows。
+最後，OOXML很喜歡包一堆沒用的東西進去，導致妳的檔案變得比較大。
+國際間的ODF趨勢 在ODF格式訂定後，許多的國家包括美國的麻省、日本、英國，都開始將ODF定為國家的標準格式。而台灣在這一塊也不馬虎。
+事實上，台灣在2009年也將ODF訂為國家的文件標準，政府也開始規定，公部門之間的文件交流須使用ODF格式。此舉也有助於政府節約財源，從2008年到2014年間，政府用於購買微軟Office的支出就高達32億元，每年平均支出需要4億元。
+可惜的是，許多人尚未知曉ODF格式與它的好處。
+該如何改變？ 最簡單的方法，就是從「存檔」開始，只要在存檔的選項中，選擇ODF檔，妳就邁出了離開微軟的一小步。是的，妳 不一定 要更換軟體，妳仍然可以使用順手的微軟Office，但這樣就是留給別人或未來的自己選擇的空間，當妳未來不打算繼續購買時，可以不要承受那麼大的代價。
+如果妳今天已經下定決心，要離開微軟，那妳可以開始尋找替代微軟的文書軟體，在這裡我會推薦LibreOffice。
+LibreOffice是一個開源軟體，意指妳可以免費的下載，更改程式碼，並再發布，使用完全不用擔心盜版的問題。
+過去或許你有聽過OpenOffice，但由於複雜的原因（被Oracle併購），開發社群自行建立了一個分支（branch），開始了LibreOffice計畫。
+而現在LibreOffice計畫已經超越了OpenOffice了，有較大的社群進行維護，在安全性與功能上也較OpenOffice優越，因此我會推薦直接使用LibreOffice。事實上兩者使用界面是差不多的，想要隨時更換也不是問題。
+我們需要讓更多人知道 我的媽媽是學校老師，儘管現在政府已經規定要使用ODF格式，她要工作時仍得要開啟各種OOXML文件，導致她常常跟我抱怨沒辦法在家裡的Linux系統工作。
+而現今學校的電腦課教學仍是以微軟Office為主，導致學生普遍對於自由軟體、ODF等概念缺乏認識，更難在未來推動ODF。現在已經有許多學校開始推動自由軟體的教育，我們希望這樣的改變可以繼續成長下去！
+我們需要讓更多人認識ODF，讓更多人知道文書處理不一定要用微軟Office！
+這樣的改變，可以從妳的存檔開始，從今天起，存成ODF。
+參考資料 國家發展委員會 —推動ODF為政府文件標準格式研析報告 http://www.itc.ntnu.edu.tw/files/archive/444_932e8ff6.pdf IThome周峻佑 —政府機關文件新趨勢，ODF成為主要通用格式 https://www.ithome.com.tw/article/117301 維基百科 —開放文檔格式 https://zh....</p></section><footer class=entry-footer>September 16, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 從今天起，不要使用 .docx" href=https://wancat.cc/post/dont-use-docx/></a></article><article class=post-entry><header class=entry-header><h2>2018 暑假回顧</h2></header><section class=entry-content><p>兩個月(?)的暑假，到底幹了些什麼？ 從七月結束之時，我就開始有了「這個暑假什麼都沒做」的恐懼。明明每一天都過得很充實，但努力回想，卻想不出自己完成些什麼。
+為了幫助我的回想，我要來將它寫成一篇文章，來避免我忘記，同時也是紀念一下今年的暑假。
+日常的規劃 講到這個，我在暑假開始之前，就很興奮的開始規劃一天中的時間表。幫各項活動標上百分比，仔細的計算所需花用的時間。
+規劃圖 讀書: 30 寫程式: 20 玩樂: 30 swap: 20 每日五點起床 畢竟要國三了，每天讀一下複習講義是必須的。 五點起床是我現在的生活作息，我在之前的一篇文章曾經說明過早起的各種好處，有興趣可以去看看。
+每個大項例如寫程式，還有各個小項。那swap代表著空閒的，自由運用的時間。 所以照這個時間表，讀書每天大約四小時，寫程式三小時，玩樂四小時。 但我還是沒有做到
+真正ㄉ情形 讀書 暑假第一天，我非常確實的唸了四個小時的書，八科都念。然後唸完真的是呈虛脫狀態，沒有想到會這麼累，接下來只想玩樂了。可見平常在學校有五成都在放空。 再來出乎意料的是，被雜事浪費了許多時間，不同活動的交換之時，常常拖太久，結果時間沒有想像的多。
+於是第二天，我就只讀了兩個半小時。
+但是我發現，要完成一週的複習講義不需要每一科一天半小時，不需要，可能只要一天 15~20 分鐘足矣，結果每天讀書的時間越來越短，但還是都有準時完成複習講義。
+原先我是採用時間分配，也就是設定每科一天的時數。後來發現這樣不行，一方面花的時間太高，再來每科的時間比重其實不太均衡。像是數學就需要花比較久，而社會科通常比較快。
+於是我改成採進度分配，每天開始讀之前，先翻一下今天需要寫到哪裡，完成自己分配的進度就換下一科。
+寫程式 暑假前兩週我非常認真的在寫圖書管理系統，這個Project我從五月開始做，第一次寫web、第一次寫Javascript、第一次寫Node.js。
+我每天有寫程式，但我卻沒有辦法寫三小時。寫程式當然會累，或許因為以前都是利用晚上的零碎時間寫，不會有這種「時間太多」的問題，到了暑假，我才發現我的行程安排與計畫執行非常的爛。
+在過慣了平常被安排好的生活，當現在終於可以自己安排時，反而不知道該怎麼做了。
+玩樂 玩樂大概是執行的最精確的(喂)，我玩的遊戲只有Minecraft，從今年一月開始，我就和幾個朋友以及我姐一起經營一個世界 —OurLiveWorld，之前也有寫一篇 文章 來講其中遇到的小故事。
+暑假的期間，我們的進度終於要去討伐終界龍啦！但我的主要戰力 —Ken 平常在家玩電腦只想打LOL，不想玩Minecraft，於是前兩週我幾乎都只有和我姐Andrea經營世界，挖挖礦、蓋一些基礎建設、四處探險。
+到了一個週末時Ken來我家玩，我們才出發去討伐終界龍。這個故事有點長，以後有機會再說明。
+JSP 從暑假第二周，我開始準備JSP的演講，但一開始準備的速度很慢，就只是寫稿、寫稿、再寫稿，也沒有每天寫，到了第三週開始有危機意識了，才開始每天趕稿。 詳細JSP的紀錄可以來看我的2018 JSP 紀錄與心得
+八月第一周每天去準備演講、練口說，到了星期五出發去JSP。
+三天結束後，回來開始剪影片，花了三天時間完成。 影片剪完就開始寫心得，一樣是斷斷續續，但不知不覺也寫了4000字
+現在想想，JSP應該是今年暑假最主要的活動了。
+暑輔 從暑假的第四周開始暑輔，在二年級的時候我非常叛逆的不參加暑輔，不參加暑輔在幹嘛呢？寫程式，做自己的計畫，準備JSP。
+現在要升上三年級，知道自己一定得上暑輔，不然會缺一堆考試和課，就只得乖乖的去。
+暑輔期間我的安排是，上午上課，下午則和Ken在我家讀書，讀書兩小時後來玩Minecraft。在接近JSP的時候則是在讀完書後準備JSP。
+暑輔期間大概是Minecraft玩的最兇的時候，一方面Ken在我家，我去工作怕他無聊，再來上午上課下午讀書，接下來的工作效率也不好，所以我把工作時間都安排到五點起床到七點上課之間，活力正佳的時候。
+伺服器 在我的工作項目中，有一大項就是管理我的伺服器啦！ 在今年，我將我家的舊Dell桌機給改裝成伺服器，灌上了Ubuntu 18.04 Server，原先是將它灌Lubuntu，給我爸當文書機用，但因為他不常使用（都用他的Lubuntu 筆電），所以我就把它給拿來當server了。
+Minecraft server的主要需求就是玩minecraft，我開服都是自己架，以前用Aternos，但因為要排隊所以一直找替代，後來學會架服，就用自己的筆電，但沒辦法通外網，而且會讓筆電容易當。
+我的server雖然不強，是七年前的電腦，只有二核心的AMD，但至少minecraft的伺服器跑得動，只是騎馬或飛行時會容易破圖。...</p></section><footer class=entry-footer>August 29, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 2018 暑假回顧" href=https://wancat.cc/post/summer-vacation/></a></article><article class=post-entry><header class=entry-header><h2>2018 JSP 紀錄與心得 (二)</h2></header><section class=entry-content><p>參加 JSP 國中科學探究聯合發表會 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。 本次主題的系列文章, 演講影片
+老街解謎 在看了海報發表以及趣味課程後，我們在下午四點即將出發到大溪老街，進行大溪老街實境解謎，要在大溪老街中，找出各個謎題的答案。我將網站的連結放這邊 （抱怨一下，這個網站沒辦法用Firefox開啟！！害我用了55 mb下載 chromium）
+裡面的每一題都十分困難，需要實際到老街裡面走，而且不太可能用搜尋引擎得到答案。
+我一開始是非常熱血的，在前往的路途上就開始研究地圖，根據主辦老師給的地圖，我發現一些可疑之處，並且開始計畫一個攻克路線。 結果到了現場，我們的隊輔表示已經跟友隊串通好要一起破解，我就失去動力了，有時候自己快解出來了卻「被」公佈答案，真的是最掃興的事。
+直到我發現，答案都在網頁裡。
+熱血駭客魂 事情是這樣的，原先我以為答案在伺服器中，客戶端將輸入的答案傳送給伺服器核對，伺服器再回傳是否正確。但是我關了網路，卻仍然可以知道答案是否正確，證明了「答案」一定被紀錄在網頁的某個角落。
+哇！發現這個之後不得了，我立刻跟我的工程師朋友講這件事，就用手機想來看原始碼，手機打不開，於是就出動了我隨身攜帶的筆電。
+我和我朋友的熱血駭客魂立刻爆發了，我們雖然無法自己找出答案，但可以追求屬於我們的勝利。原本我想答案應該會被隨便擺在某個陣列或是物件中，於是就根據前面所得到的答案內容下去搜尋，應該就能找到擺放答案的陣列。結果不然，什麼都沒查到。我們繼續嘗試用各種關鍵字，像是「答案」、「answer」、「第六題」等等，仍然一無所獲。
+看來設計網頁的人有想刻意隱藏這個答案，沒辦法那麼容易破解。
+我們開始一行一行慢慢看原始碼，有時候看到關鍵字搜尋，我們兩個都對Javascript(撰寫網頁程式的程式語言)不太擅長，因此看的有些吃力。
+&lt;script type="text/javascript" src="../js/md5.js">&lt;/script> 當我們看到這一行的時候，我朋友突然大叫。
+天啊！它竟然用MD5!這下解不開了。
+我不知道MD5是什麼，朋友解釋說，MD5是一種密碼雜湊函式，簡單來說，可以將一個資料轉換為一段暗碼，但你難以透過暗碼去推回原先的資料，也就是單向函式。
+那要如何利用MD5? 以這個網頁為例，假設答案是「地瓜」（我絕對沒有要劇透的意思），那網站就先將「地瓜」用MD5加密成一段暗碼，然後把暗碼放到網頁裡面。 當使用者輸入答案時，網頁的程式將會將輸入的答案用MD5加密，然後比對加密的結果跟原先放在網站裡的暗碼是否一致，如果一致則代表使用者輸入的答案是正確的。
+在證得了這個網頁使用MD5來防止破解後，我們就放棄透過看原始碼來取得答案了。雖然破解失敗了，但是這個破解的過程，或者說跟朋友一起破解的過程，卻是我從未體驗過的。
+撩妹…不，我們撩 Object 話說JSP最刺激而瘋狂的活動就是**「隱藏任務」**啦！第二天的晚上你別想睡覺，有著最困難的任務要和你的組員一起完成。我們去年在福科的隱藏任務是**「開店計畫」**，我們從下午到夜市探勘，到晚上在體育館內討論，我還負責了影片的製作，結果竟然到了半夜三點才睡覺，而且隔天六點就得起來。
+隱藏任務雖然辛苦，但非常好玩，在去年的最後一天發表會上，所有人都非常熱烈，台上與台下在熱絡的嘴炮討論。最吵的莫過於我們學校的學生了，每個人好像都不怕生，對台上的講者有一堆意見，這可歸功於我們科研社老師平日的「教育有方」。
+而今年的隱藏任務是什麼呢？「科學幽默Slogan」（這是我自己的取名啦），看中最近蔚為流行的「撩妹語錄」、「負能量語錄」，今年的隱藏任務就是要來想跟科學相關的各種Slogan啦！
+那我們這組想了什麼呢？我們一開始就打算反骨到底，撩「妹」太嫩啦！我們來撩弟，但一群雄性動物不知道該怎麼撩自己；再來是使用的語詞，我們絞盡腦汁，還是想不出什麼可以用來騷擾同性的詞彙。
+於是有人說不要針對性別啦！都撩好嗎？都撩。咦？那就變成「撩People語錄」了？ 這時，我朋友突然用他的工程師專業說了句：
+「不然『撩Object語錄』？」
+其他人都愣在那裡，只有我當場笑倒。
+跟大家解釋一下，Object 物件，是在程式設計中的一個概念，在物件導向程式設計中，認為程式是由各種「物件」所組成的，而通常這些物件的最高Parent物件就是Object，所以「撩Object」，根據多型的原則，就是撩了所有的宇宙萬物了。
+// 在我的文章中有講解簡單的物件導向觀念，有興趣的朋友可以去看看。物件導向的細節很多，如果想知道更深入的可能要自己去查囉！
+畢達哥拉斯 那既然確定要「撩Object語錄」了，那也不用在乎受眾是誰，我們開始想各個科學家的撩Object語錄。 幸好強者我朋友，平日都在看一些怪怪的書，科學素養很高，認識許多科學家和他們的產地。我們常使用一種比較艱澀的鋪梗法，是將科學家本來自己的理論，為了撩Object而故意弄成錯的，例如我自己很喜歡的一則:
+畢達哥拉斯: 「你是唯一的無理數」
+還是稍微解釋一下，畢達哥拉斯的教派（他有一幫的弟子）有一個思想，是對「比例」的追求，他們相信所有的數字都可以用 “a/b” 這樣來表示，然而當他的一位弟子證明了正方形的斜邊長，也就是√2是個無理數時，他弟子就「溺死」了，我是說被溺死了。
+伽利略 再舉一個比較熟知的例子，伽利略應該很多人都熟悉。
+伽利略: 「我想和你一起掉下去」
+伽利略是推翻過去亞里斯多德「越重東西掉落速度越快」理論的人，在他著名的比薩斜塔實驗中，他將兩顆材質相同但質量不同的球體，從比薩斜塔上往下丟，證明物體的掉落速度與質量無關。
+所以「和你一起掉下去」，我們就永遠不分開啦！
+完整的內容 這張做一個小註解，它是我們的另一位組員想的，唯一不是我們這兩個阿宅想的內容。非常令人驚訝的是，在發表會上，這是最成功的一則。...</p></section><footer class=entry-footer>August 23, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 2018 JSP 紀錄與心得 (二)" href=https://wancat.cc/post/jsp8-2/></a></article><article class=post-entry><header class=entry-header><h2>2018 JSP 紀錄與心得 (一)</h2></header><section class=entry-content><p>參加 JSP 國中科學探究聯合發表會 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。 本次主題的系列文章, 演講影片
+JSP 簡介 今年很高興又參加了JSP，自從去年在我的學校 —福科國中舉辦後，就深深愛上了這個活動。 JSP的全名為 國中科學探究聯合發表會 ， Junior Scientist Party ，是一個非比賽導向，純粹讓學生進行交流與交朋友的科學派對。
+每一位參加的學生，都必須準備一點功課，可能是將你的研究成果做成一張海報，與觀眾們互動；抑或是準備一項科學課程，帶著學員們一起做；或者是在大會議廳中向所有人發表你的研究成果。 不管是哪一種都不簡單，所以參與的學生個個是有行動力、勇敢且努力的人，花了很多時間準備，才能來到這裡的。 而來到了JSP，也並非是跟同校的在一起，所有的學生會被打散到各個小組中，能因此認識不同的人，建立新的人脈。
+去年我曾經參加，深受感動，因此今年，我仍在這裡。
+事前準備 如前面所說，需要準備一個發表的項目。去年我是做海報分享，介紹我自製的Arduino紅外線遙控車。那今年我要挑戰更大的項目，就是在百人會議廳前進行專題發表。
+題材呢？我在今年參加台中市的科展，是製作單感測器循線車，可能是科展講到會怕了，不太想要講這個題材。另外一個就是在比科展的同時，自己在製作的遊戲專案 — FireWheel火輪手槍，一方面較有趣、新鮮，二來老師也認為資訊領域是JSP較少見的題材。從暑假的第二周開始，我就在準備這場演講。 講稿連結 我寫了非常多的內容，雖然要講的只有遊戲中的「碰撞檢測」與「三角函數」，這兩個有點偏數學的項目，但是一寫不得了，每天都寫了超越千字（打字太快了），結果到所有內容寫畢，才發現已經14000字元了，根本不可能在10分鐘的報告中講完。
+這時老師也給了一個方向大轉彎，突然要我放多一點的歷程，像是怎麼學習程式的，途中遇到的困難等等，但隔天就要在學校進行試講，實在來不及，也不知該怎麼改。到了星期一在學校對著老師同學試講時，整整講了37分鐘，是限定時間的將近4倍。在最前面找同學上來試玩的地方，讓場面變得很歡樂，老師也說我臉上出現了「興奮」的神情，但在後面講的越來越久時，興奮的表情開始慢慢的黯淡。
+在星期一的試講結束後，老師給了很多建議，最多還是要「刪」，刪是很正常的，在做科展的報告時我就了解，反正我還有部落格，沒法在口說講完的內容，就放在部落格給有興趣的看就好。最後一路刪刪刪，刪到只剩遊戲簡介、試玩、架構以及圓形對圓形的碰撞檢測。 星期二時我帶著麥克風、筆電，一個人到教室開始練習口說，一次一次試，逐漸可以把時間控制在15分鐘內，且慢慢可以不用看稿，對於我的投影片也更加熟悉，知道該在什麼時候翻頁、什麼時候用手去指。花了一個多小時練了四次，偶爾加強班下課還會有人路過來看。 在星期三的驗收，老師表示我已經足夠熟練，剩下的就是要看臨場反應，以及一定要找人試玩，我自己也發現試玩對於整個報告會有不同於我自己玩的「笑果」，讓報告變得活潑，讓觀眾產生興趣。
+這次的所有圖片，包括投影片底圖都是我自己設計的，一開始要畫碰撞檢測的示意圖，調出了非常可愛的粉紅色以及粉綠色，就決定以此作為這次報告的主題色彩。
+同為天涯程式人 當JSP開始，我們在一個禮堂要進行分組，分組基本上是隨便亂分啦！唯一的規則就是不要跟同校的一組。(我也沒有同校的)
+特別的是，我們的組裡有一位組員也會寫程式，竟然也玩Linux作業系統，是我人生中第一次遇到同年齡也會玩Linux的(我也是他第一次遇到有人用Linux的，可見Linux的市占率…)。
+我們一下就聊起來了，我發現他懂的非常多。關於我很缺乏的電腦底層知識，資訊領域的各種知識，還有科學，他幾乎都知道。有時候還會知道一些很奇怪的冷知識，像是Unicode裡面的編碼，令人會心一笑。
+我們也彼此分享了所做的專案，像我的 圖書管理系統、火輪手槍，他做了一個加密系統、現在正在做作業系統。
+專題演講 在第二天的早上，就是專題演講的時候。
+記得從小學六年級的時候，我就常常成為團隊中的發表者，對於「上台」這件事，從一開始的害怕、忐忑，到後來可以面無懼色的在台上講話，甚至對於表現開始有種興奮，開始期待，並且恨不得自己第一個上場。
+科研社ㄉ特別訓練 我的「台風」，絕不是什麼演講比賽、即席演說所訓練的，而是科研社。 在科研社的兩年給了我很多時間去學習「如何發表」。我想我們學校的科研社應該跟其他學校有很大的不同，我們不常做實驗，相對的，我們不停的交流。我們常常分享彼此的想法，常常上台發表，常常把報告拖到最後一天才做。
+對我而言，在科研社學到的不是科學知識，而是做研究的方法。或許你不會因此變得對某個領域非常的精熟，但你會知道如何讓自己成為那樣的人。
+在經過了前面的四組後，終於輪到了我。
+我早已把筆電準備在前面，這次很堅持的使用了自己的筆電，自己設計簡報，自己設計底圖，一人團隊有些辛苦，但我的成果讓我很滿意。
+這次的演講算是出奇的成功。首先我很擅長問答，因此我往往更擅長應變實際的情況，還有就是事前的準備，這次我的指導老師很精準的預期了觀眾的反應，因此採用最低強度的演講，成功的讓所有人都感到興趣且聽的懂。
+很開心的是觀眾反應非常熱烈，在報告的一開始，有安排找觀眾試玩的橋段， 原本還有些擔心會不會沒人願意上來，還好在 我事先的布局 觀眾熱烈的反應下，這個擔心不成問題，事實上還有三位觀眾願意上台呢！
+最後有些時間不足，因此在程式解說之處稍微草率，但還好有時間讓我好好講結論。
+在這邊我想謝謝每一位聽我演講的觀眾，我相信，一個好的演講，是需要講者與觀眾一同參與的，謝謝你們作了一個稱職的觀眾，讓我有一個好的舞台。也謝謝願意鼓起勇氣上台試玩的朋友，讓我們能一起完成一場好的演講。 請大家一定要去看影片喔！</p></section><footer class=entry-footer>August 6, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 2018 JSP 紀錄與心得 (一)" href=https://wancat.cc/post/jsp8/></a></article><article class=post-entry><header class=entry-header><h2>二十一天的連續早起</h2></header><section class=entry-content><p>我的21earlyday計畫終於在今天結束了。 這21天，我做了生活中最大的改變，而這21天，我很享受。 所以在這結束之後，我還是會持續下去。
+什麼是21earlyday？ 它是一個Hashtag，連續21天早起的計畫。這個早起不是一般那種7點起床就算早起，而是4點5點那種，異於常人的早起。 那為什麼是21天呢？因為（據說）21天是養成一個習慣的最短時間，所以當初創辦人就選定了這個時間。 之所以有這個活動（而且挺多人響應），是為了改變生活。在我過去的日子，我是很難7點爬起來的，因為我很愛睡，但又捨不得那麼早睡，加上假日都晚睡晚起，所以讓我平常天的起床簡直痛不欲生。 我其實並沒有很在乎這些，讓我真正下定決心的原因是，增加時間。 【TED 有意識週報】連續 21 天四點半起床：我零成本創造了更多時間
+在每天的早起中，無意間增加的時間 我是很熱愛軟體開發的，但讓我很不滿的是時間不足，每天上九小時的義務教育，老實說到家只想休息，大概到了晚上8, 9 點才會有精神起來「開工」（而且還要寫完作業），但是大概用沒多久就得去睡覺了。 這實在很令人洩氣，我有許多想做的事，例如開發專案、寫文章，而且這些我都會做，唯一的問題就是時間不足，因此時間不足這個煩惱蟬聯了兩屆我的輔導手冊（每個學生都有一本，用來應付教育部的謎樣物品）。因此我常常注意一些時間管理方面的文章，希望能從我現有的生活中，再壓縮出一些時間。 但說實話，我通常只能夠往睡眠時間壓縮，結果我變得越來越晚睡，11:30已經變成日常，而且問題是，當我開始工作，我會不想睡，結果在床上躺了半個小時還是睡不著，最後還得拿本書來看逼自己入眠。 再不然，就是下課後已經精神疲累，沒有精力再去忙自己的事，畢竟我的這些工作很多都是很燒腦的，在一天的尾聲，有時候就算想做也提不起勁。
+早起創造更多時間的四個原因 睡一覺起來精神抖擻：累了就早點睡，早上起來有精神工作 避免滑手機浪費時間：有時晚上就是發懶，還沒到睡覺時就一直滑手機，無形中浪費許多時間 早起比早睡容易： 雖然你五點起來，但是相信我，你還是會十點睡的 避免賴床：其實…只要想你起床後可以用電腦，就會馬上起床了 如果一天過完你很累的話，那第一點尤其適合你，先睡一覺再起來，早上十分安靜，而且你可以專心的做你熱愛的事。（早起打code最幸福）。 另一方面，早上是非常安靜的，很適合寫文章這一種要高度專注的活動，如果你想避免干擾，也可以試試。
+二十一天的心路歷程 第一天，我五點起床，還到臉書發了個動態。第一天五點起床，很安靜，天已經有點亮了，陽光搭配我的數學鬧鐘，不難起來。 那我起來後做什麼事呢？打Code去，我沒有先吃早餐，我直接就去用電腦。事實上我早餐的食慾通常要起床一個小時候才有，所以在以前我都是帶去學校吃，因為在家裡不是沒時間，是真的吃不下。五點起床之後，我先用一個半小時的電腦，然後走到廚房自己弄一頓早餐，熱騰騰的蛋餅，一方面早餐的選擇可以更多樣化，二方面可以在家裡悠閒的吃。 有時前一晚還沒寫完作業也可以趁這兩個小時寫。
+早起要做什麼？ 常常有人問我這麼早起要做什麼？做我平常會做的事啊！他們似乎認為早起是有一個「目的」，我是有目的沒錯，可是並非專為某件事而早起，而是一種生活習慣。我早起不做什麼，做我平常會做的事，可能是寫程式，可能是寫作業，也可能只是看Youtube配早餐。 那這樣跟你晚上做有差嗎？有差，真的有差，晚上一方面干擾多，不管是家人、朋友、還是你追蹤的Youtube都常常在這個時間發動態，如果在這個時間工作是很難專注的；相對的，早上幾乎沒有人起來，你可以安靜，不受干擾的動作，對我而言這差別很大。 另一方面就是上面所說，精神的問題。晚上精神差，就工作起來沒勁；如果有精神呢？恭喜你，等一下上床後就睡不著啦！事實上晚上工作真的很衰小，工作的很順就是不用睡，不順那根本沒做到工作，本質上就不適合在睡前或是晚上工作；但如果是早上爬起來，只要精神好就好，不用怕睡不著，反而待會兒上課時會更有精神。
+有時候，你會睡的更少 雖然原作者說你會因為早起而更早睡，可能是我的生理時鐘仍然被太陽影響，我到了九點並不會想睡，通常是十點入眠，因此我的睡眠時間大概會是7個小時之內。 另外有時是為了朋友，我和幾個同為學習程式的朋友在星期三、六都會上線聊天，但由於他們多半是大學，或著已經出社會了，所以我們的上線時間是晚上9點。原本我都很OK，但是自從開始這個計畫後，我多半十點就得下線了，減少了彼此交流的時間。
+那如果睡的很少怎麼辦？我假日仍然會補眠，只是並非用晚起來補眠，而是用早睡，假日我通常會準時九點前去睡，有一次假日跟朋友出去玩，回家太累，六點就睡著了，還沒吃晚餐，直接睡到隔天五點。
+我實話說，早起並不會讓你交更多朋友，對我而言，早起的很大意義是獨處，我的很多工作都是要獨處才適合的。或許你很難忍受孤獨，但早起的孤獨並不是「孤單寂寞覺得冷」，而是自由自在。
+重點不是早睡早起，重點是一致 其實原先的生活有很大的問題就是假日會整個將生活時間往後延，可能起來就已經10點了，並不是說一定要早睡早起，重點是要生活作息一致，事實上很多科學研究指出青少年本來就會比較晚睡，但是現今的社會制度是這樣我無法改變，週末晚睡當夜貓子固然很爽，也固然很安靜可以很專注，但是你不能持續啊！因為學校就是逼你7.30到校，這沒辦法改。 早起的好處是符合社會規則，你不會因為早起就被處罰，而且是可以一致、連貫的，即使是假日也能持續下去。當然現今的社會規則是很不合理的，但我們可以一邊改變，同時讓自己好過一點。
+對某些人來說，早睡是奢侈的 在我開始這個計畫，大概一週後，我有一位朋友也心動了，一起參加21earlyday。但由於她平常補習甚多，每天都晚上九點半才下課，所以要「早睡」都有些困難。但她還是盡所能的早睡早起，雖然有幾天可能不小心睡到6點。 在知道後我不免懷疑，那些補習班所開出的「補到十點」課程真的有用嗎？我認為人的專注時間是有限的，在專注時間用完後你多讀也無益，就像是藥吃太多一樣。每天把學生弄到十一點才能睡覺，真的能讓學習表現變好嗎？（設問中的疑問） 我不知道，我很幸運，學業並不需要額外補習就可維持，事實上班上前幾名的同學也確實很多是有補習的，我也不反對補習，只是我很難接受為了學業把學生操到上課時間都沒精神。 事實上我的朋友也不知道，她不知道她的成績變好究竟是自己努力，還是補習造成的；是因為晚上上到9.30，還是其實8.30就足矣？
+但我想她能確定的是，她不喜歡這樣的生活，因此她開始了21earlyday。
+後記 很高興這篇文章在兩小時內迅速飆完了，也很慶幸沒有字數大爆炸。 真的由衷的喜歡現在的生活方式，也希望給看到這篇文章的你，一個改變的契機。</p></section><footer class=entry-footer>June 18, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 二十一天的連續早起" href=https://wancat.cc/post/21earlyday/></a></article><article class=post-entry><header class=entry-header><h2>長征 尋找沙漠之旅（一）</h2></header><section class=entry-content><p>— OurLiveWorld 我們的生存故事 這是Minecraft的冒險故事系列，每篇將記載在我們世界中的一場冒險。
+星期日邀請二姐 Andrea來我們的世界，這天Andrea突然想玩麥塊，於是我們就一同騎馬去旅行，尋找沙漠。沙漠是不適合生存的，但是夜晚的沙漠十分美麗，而且有些稀有的資源，於是我們此次旅行就以沙漠為目標。
+我們是騎馬旅行的，在我們的居所是天然的馬棲息地，憑藉我過去辛苦打來的裝備，我們擁有兩個鞍以及鑽石和黃金馬鎧。 說實在之所以要旅行也只是因為要找事做，麥塊跟其他遊戲不一樣，不會有固定的遊戲進度給你做，我們的冒險目前也有些卡關，需要收集更多的終界之眼。
+老實說我們一開始是想要去找終界傳送門的，那時候帶著一顆終界之眼，以為一顆就可以帶我們找到，想不到才使用兩次它就破了。 破了，但也沒有備用的了，那就去旅行吧！我們就不管，朝著原先終界之眼指向的方向繼續前進。
+在我們的家後方的山脈，裡面是杉木林，在Minecraft的所有樹林中，我最喜歡的就是杉木林了，理由其實也挺老套，因為樹幹與樹葉的顏色很和諧，樹幹又高，葉子也不多，有如高緯度地區的針葉林，很優雅。
+在裡面穿梭不久，我們遇到了狼群。狼被馴服後是很有用的，當你戰鬥時，狼會為你而戰。可惜我們為了節省空間，並沒有攜帶用來馴服狼的骨頭，在討論後，我們決定晚一天啟程，先回家裡拿骨頭，再出發。回到了那片森林，我和Andrea各馴服了兩隻狼，有兩隻往後就能生更多小狼。
+雪山 在穿越了幾處森林後，我們到達了一處雪山。我們下馬玩雪，在路途中我有收集到南瓜，於是我們拿鏟子挖了些雪，開始堆雪人。
+Andrea以前沒看過雪，覺得很新奇，就拿著雪球到處亂丟動物，在我堆好雪人之後，我們的攻擊目標就轉移到雪人身上了。對雪人丟雪球很有趣，你會看到它被打到後跳一下。我想要試試看能不能把雪人的南瓜頭脫下來，於是走上前去用手打它，我忘記我有狼了，我的狼就衝上去把它給咬死了……，我們看著這荒謬的結果，兩個人大笑起來，超級沒有意義，我們就這樣很沒有意義的過了一個白天。
+夜晚很快的降臨了，為了更好的視野，我們爬上山頂，由於山地不適合連夜趕路，於是我們停在山上，插上幾根火把就算是紮營了。之所以不睡覺，是為了保持家裡的重生點，所以每每出外旅行，我們都不會帶床的。由於是騎馬，所以在晚上趕路其實不太危險，看到怪物只要快速通過即可，不需要戰鬥，如果真的要戰鬥也不會在馬背上，一方面攻擊力下降，二方面難操作又會怕傷到馬。 為了餵飽我們的一群狼，在沿路上我們也獵殺了許多動物，晚上紮營就是烤肉的最佳時刻。沒想到會需要烤肉，所以當初也沒有帶煤炭，幸好煤炭「俯拾皆是」，我們在附近的山壁上就挖掘到了足以使用的煤炭。
+在夜晚過了約莫一半，天空開始下雪了，白色雪花從天空中緩緩的旋轉、飄落，比起下雨等其他天氣，下雪真的十分美麗。我們看到白天為了堆雪人而鏟開的地面，又漸漸的覆蓋上一層潔白的雪。從山頂望去，盡是杉木林與一座又一座的山頭，仰頭望向天空，看到一大片雪花從漆黑的天空落下，繞著我們打轉。這正是為什麼我喜歡杉木林與雪山，高緯度地區雖然不適合生存，但是有種極簡的美。
+寒漠 白天後，我們下山繼續前進。看到眼見所及之內全部都是雪地，但是我們的海拔明明已經沒那麼高了，遠處還看見冰川與北極熊，我傻住了，我們竟然到了寒漠。
+寒漠是一個類似北極的地方，一大片一望無際的雪地，就像是沙漠改成下雪了一般。寒漠中的河流與湖泊都會凍結成冰，人可以行走在上面。走一走還能在路上遇到北極熊，幸好在Minecraft裡牠不是保育類動物。 北極熊不好惹，我之前知道牠是中立生物（註1），想不到我只是離牠很近，牠就開始攻擊我了。我的狼看到我被攻擊，全部衝上前去，結果一群動物在打群架。北極熊的血很厚，而且攻擊力很痛，我的狼群有幾隻被打到快掛了。幸好最後還是把牠給殺死了，往後為了避免再發生這種危險的戰事，我和Andrea都離北極熊遠遠的。
+我們抵達寒漠後，開始懷疑自己走的方向是不是正確的？
+「你確定要走這？我們都已經走到寒漠了，怎麼想都是在遠離沙漠」 「麥塊應該沒有緯度這種設計，我想我們一直走還是能到達的」
+馬在寒漠中挺好走的，對馬而言最難走的莫過於樹林，尤其是矮小的樺木與橡木林，常常卡住頭，寸步難行。在寒漠中，不但沒有卡住頭的問題，河都結冰了，可以很方便的過河。
+註1 中立生物：一個生物在某些條件下才具有攻擊性稱為中立生物，例如野狼、蜘蛛、終界使者、殭屍豬人等。
+那是…骷公!? 在寒漠中的第一天晚上，我們在寒漠上隨便找了個地方落腳，點了些火把，就靜靜的一邊烤肉，一邊等著白天。 突然，我被弓箭給攻擊了，我的狼群衝了出去，要找攻擊者。我跟著出去，看到一個從沒見過的生物。
+「天啊!那是…骷公嗎!?」
+眼前一個身穿破爛綠袍的人形生物，他眼睛是白色的，身上的衣服破得像是綠藻黏在身上，手持一把弓，現在正架著弓箭瞄準我。 我想要追上前，但腳步似乎被拖住，變得很慢。
+我的狼看到了它，衝上前去追趕。這生物似乎也知道要怕狼，竟然放下手上弓箭，開始逃命。 我就待在原地，看著一個衣衫襤褸的莫名生物被我的一大群狼追趕，這個畫面非常逗趣，平常神氣的骷公，在狼群的追逐下也不得不屈服。 那個形似骷髏的生物後來朝向我這跑來，我便拿起我的附魔鑽劍，將他給斬殺，結束他這荒謬的一生。 我打開背包，找到之前腳步變慢的原因，原來我中了緩速效果(註1)，在殺死這個奇怪生物後，我撿到了一支「緩速之箭」（註2）。
+事後我上網查，原來這個生物是「流浪者」，骷公的變種，專門生於寒漠地區。實際上這種生物是很危險的，因為你被射中後跑不快，很難接近它，只是因為我有狼，才會那麼好打。
+註1 緩速效果：為麥塊中的藥水效果之一，使人速度變慢。 註2 緩速之箭：藥水箭之一，被射中後會得到緩速效果
+大陸邊際 我們就這樣日以繼夜的不停趕路，(夜晚也可以走，由於速度很快，不擔心怪物來襲)，在大概走了三天後，我們走出了寒漠。
+「這是…」
+我們到達了海岸，但是一眼望去完全看不到陸地，眼前只有一整片波濤洶湧的大海。 這下子可真的麻煩了，我們騎馬，沒有辦法過水用划船的。 但是我們仍然不放棄，繼續繞路，穿越了幾座森林，勉強的朝向第一象限邁進，但每次繞路後，總是又碰到了大海，不然就根本是在走回頭路。
+這樣子繞路了幾天，有一次，我們穿越了一大片樺木林，到達海邊。 那天我們紮營的位置很糟，在一個陡峭的小山丘上，周圍又滿滿的樹，連好好停馬的位置都沒有。
+那天晚上我們烤著肉，一邊應付從四周來的零星怪物，眼看著第一象限的方向一眼望盡全部都是大海。
+「我想…我們回頭吧！」
+回程 我們決定要返家了，當我們要回頭時，座標已經離家有好一段距離，約莫3500座標單位。 我們筆直的朝向家的方向 — 第三象限前進，不過可以預知到一個一個問題，會碰到海。我們來的時候走得是彎彎曲曲，遇到海就繞路，但是一路上我們並沒有紀錄座標，因此很難沿著過去走的路原路回家。 一開始還算順遂，在走出樹林後，再度回到了寒漠中，但是在寒漠中快速奔馳不久，就撞海了。
+時間也不早了，由於隔天還要上課，我們便在此登出。...</p></section><footer class=entry-footer>June 10, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 長征 尋找沙漠之旅（一）" href=https://wancat.cc/post/minecraft-trip/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=https://wancat.cc/page/4/>« Prev Page</a></nav></footer></main><footer class=footer><span>&copy; 2021 <a href=https://wancat.cc>WANcatServer</a></span>
+<span>&#183;</span>
+<span>Powered by <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a></span>
+<span>&#183;</span>
+<span>Theme <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)"><button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></button></a>
+<script>window.onload=function(){if(localStorage.getItem("menu-scroll-position")){document.getElementById('menu').scrollLeft=localStorage.getItem("menu-scroll-position");}}
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener("click",function(e){e.preventDefault();var id=this.getAttribute("href").substr(1);if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({behavior:"smooth"});}else{document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();}
+if(id==="top"){history.replaceState(null,null," ");}else{history.pushState(null,null,`#${id}`);}});});var mybutton=document.getElementById("top-link");window.onscroll=function(){if(document.body.scrollTop>800||document.documentElement.scrollTop>800){mybutton.style.visibility="visible";mybutton.style.opacity="1";}else{mybutton.style.visibility="hidden";mybutton.style.opacity="0";}};function menu_on_scroll(){localStorage.setItem("menu-scroll-position",document.getElementById('menu').scrollLeft);}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{if(document.body.className.includes("dark")){document.body.classList.remove('dark');localStorage.setItem("pref-theme",'light');}else{document.body.classList.add('dark');localStorage.setItem("pref-theme",'dark');}})</script></body></html>

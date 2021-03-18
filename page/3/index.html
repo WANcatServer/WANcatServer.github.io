@@ -1,854 +1,122 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-	<meta name="generator" content="Hugo 0.74.3" />
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-    <meta property="og:site_name" content="WANcatServer">
-    <meta property="og:type" content="article">
-
-    
-    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
-    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
-    
-
-    
-    <meta name="title" content="" />
-    <meta property="og:title" content="" />
-    <meta property="twitter:title" content="" />
-    
-
-    
-    <meta name="description" content="">
-    <meta property="og:description" content="" />
-    <meta property="twitter:description" content="" />
-    
-
-    
-    <meta property="twitter:card" content="summary" />
-    
-    
-
-    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>WANcatServer-WANcatServer 網貓伺服器</title>
-
-    <link rel="canonical" href="/">
-
-    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
-	
-    
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    
-    <link rel="stylesheet" href="/css/hux-blog.min.css">
-
-    
-    <link rel="stylesheet" href="/css/syntax.css">
-    
-    
-    <link rel="stylesheet" href="/css/zanshang.css">
-    
-    
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    
-    
-
-    
-    
-    <script src="/js/jquery.min.js"></script>
-    
-    
-    <script src="/js/bootstrap.min.js"></script>
-    
-    
-    <script src="/js/hux-blog.min.js"></script>
-
-    
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    
-    
-
-    
-<script type="text/javascript">
-  var _paq = window._paq = window._paq || [];
-   
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//matomo.linchpins.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '3']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-
-
-</head>
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">WANcatServer</a>
-        </div>
-
-        
-        
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    
-                        
-                        <li>
-                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E5%B0%88%E6%A1%88">專案</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%95%8F">每日一問</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
-                        </li>
-                        
-                    
-                    
-		    
-                        <li><a href="/top/about/">ABOUT</a></li>
-                    
-
-                    
-                </ul>
-            </div>
-        </div>
-        
-    </div>
-    
-</nav>
-<script>
-    
-    
-    
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        
-            $navbar.className = " ";
-            
-            setTimeout(function(){
-                
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
-
-
-
-<header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>WANcatServer </h1>
-                    
-		    <span class="subheading">網貓伺服器</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-
-  
-<div class="container">
-    <div class="row">
-        
-        
-   	    <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container
-        ">
-            
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/capslock/">
-        <h2 class="post-title">
-            如何在 Linux 使用 Caps Lock 切換輸入法
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            Caps Lock 是一個我們很少用的鍵，偏偏它擺在鍵盤的黃金位置，實在是大大的浪費，在 Mac 上可以使用 Caps Lock 來作為中英切換鍵，我認為是很好的設計，以下教學將介紹
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Saturday, July 6, 2019
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/myopia-should-take-magnifier/">
-        <h2 class="post-title">
-            我認為，近視應該戴放大鏡
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            警告！這篇文章是由一個國中生撰寫，只依據國中光學的知識，請帶著批判與謹慎的心態來看待這篇文章。 本篇文章最大的目的是促進討論，激發新的想法，因
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Friday, June 7, 2019
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/after-the-exam/">
-        <h2 class="post-title">
-            寫給會考後的我們：別再讓下一代經歷這些
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            「而我們呢？在會考之後，你就要忘記國中這三年的痛苦，『只帶走美好的回憶』嗎？在面對學弟學妹的痛苦時，只會說『我們以前比你們更慘』而已嗎？在成
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Sunday, May 19, 2019
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/the-programming-future-is-donate/">
-        <h2 class="post-title">
-            SITCON 演講：軟體開發的未來，是大斗內時代？
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            2019 SITCON 演講：軟體開發的未來，是大斗內時代？ 前言 我參加了 2019 在中研院舉行的 SITCON 學生計算機年會，並投稿了一篇 Espresso 短講，以下是我的演講稿： 講者介紹 大家好，
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Monday, March 25, 2019
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/should-you-use-password-manager/">
-        <h2 class="post-title">
-            妳該使用密碼管理工具嗎？
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            現代人的密碼危機 如果妳是一位有正常使用網路的現代人，基本上在網路上會有許多的帳號。我算是用量比較高的用戶，我稍微統計了一下：光是記得的我就有
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Thursday, February 21, 2019
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/my-website-building-log/">
-        <h2 class="post-title">
-            網站建置紀錄
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            網站建置紀錄 我的網站從 2017 年六月第一次上 GitHub Page，到現在 www.wancat.cc ，也已經半年了，寫下這篇文章紀錄一下架站的方法。 Hexo 我的部落格是用 Hexo 將 Markdown 轉成一個靜態
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Sunday, January 20, 2019
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/king-in-the-mud/">
-        <h2 class="post-title">
-            理想王與潰爛王的一天
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            理想王與潰爛王是出於鄭問漫畫—深邃美麗的亞細亞中的角色。 理想王有著建立一個「理想國」的理想，畢生為此努力。他過著規律且高度自我要求的生活，但
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Tuesday, January 1, 2019
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/vocational-courses/">
-        <h2 class="post-title">
-            我在技藝班所見所聞
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            我在技藝班所見所聞 {% asset_img slug circuit-board.jpg %} 在先前的文章提到過，我高中計畫就讀北科大五專精英班，由於這個班不好考，所以我在國三參加技藝班，用來在超額比序中加
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Tuesday, December 4, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/future-of-software/">
-        <h2 class="post-title">
-            軟體開發的未來，是大斗內時代？
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            本文從付費軟體的困境，講到廣告商業模式以及付費帳號模式，再講到近年來日趨流行的**「獎賞制度」**，來談談內容創作的困境，以及當面對網際網路
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Tuesday, November 6, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/time-travel/">
-        <h2 class="post-title">
-            OurLiveWorld 回到過去
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            自古以來，穿越時空的能力令人嚮往，但就算你是神（創造），仍無法辦到。 地獄之旅 故事要從我們一次去地獄的冒險開始說起。隨著文明的開發，我們世界的
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Saturday, October 20, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-
-            
-
-
-<ul class="pager">
-    
-    <li class="previous">
-        <a href="/page/2/">&larr; Newer Posts</a>
-    </li>
-    
-    
-    <li class="next">
-        <a href="/page/4/">Older Posts &rarr;</a>
-    </li>
-    
-</ul>
-
-
-       	</div>
-        
-
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-             
-            
-                
-            
-                
-                    <a href="/tags/caddy" title="caddy">
-                        caddy
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/golang" title="golang">
-                        golang
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/jsp" title="jsp">
-                        jsp
-                    </a>
-                
-            
-                
-                    <a href="/tags/life" title="life">
-                        life
-                    </a>
-                
-            
-                
-            
-                
-                    <a href="/tags/linux" title="linux">
-                        linux
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/minecraft" title="minecraft">
-                        minecraft
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/ourliveworld" title="ourliveworld">
-                        ourliveworld
-                    </a>
-                
-            
-                
-                    <a href="/tags/raspberry-pi" title="raspberry-pi">
-                        raspberry-pi
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/website" title="website">
-                        website
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
-                        教育
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
-                        自由軟體
-                    </a>
-                
-            
-                
-            
-                
-                    <a href="/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8" title="資訊安全">
-                        資訊安全
-                    </a>
-                
-            
-                
-            
-                
-            
-        </div>
-    </section>
-    
-
-    
-	
-    <section class="visible-md visible-lg">
-	<hr><h5><a href="/top/about">ABOUT ME</a></h5>
-        <div class="short-about">
-            
-            <a href="/top/about">
-               <img src="/img/wancat.jpg" alt="avatar" style="cursor: pointer" />
-            </a>
-            
-            
-                <p>Student, Golang Programmer, Linux User</p>
-            
-           
-           <ul class="list-inline"> 
-               
-               <li>
-                   <a href='/index.xml' rel="alternate" type="application/rss+xml" title="WANcatServer" >
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://facebook.com/wancatserver">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://github.com/lancatlin">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-            
-            
-               <li>
-                   <a target="_blank" href="https://liker.social/@wancat">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               <li>
-                   <a target="_blank" href="https://keybase.io/wancat">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-                </ul>
-            </div>
-    </section>
-	
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FRIENDS</h5>
-        <ul class="list-inline">
-            
-            <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
-            
-            <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
-            
-        </ul>
-    </section>
-    
-
-    
-    
-</div>
-
-	</div>
-</div>
-
-
-
-
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                   
-                   <li>
-                       <a href='/index.xml' rel="alternate" type="application/rss+xml" title="WANcatServer" >
-                           <span class="fa-stack fa-lg">
-                               <i class="fa fa-circle fa-stack-2x"></i>
-                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                           </span>
-                       </a>
-                   </li>
-                   
-                    
-                    <li>
-                        <a href="mailto:wancat@wancat.cc">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
-                    
-                    
-                    
-                    
-
-                    
-                    <li>
-                        <a target="_blank" href="https://facebook.com/wancatserver">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
-
-		    
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/lancatlin">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://liker.social/@wancat">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
-                    
-                    <li>
-                        <a target="_blank" href="https://keybase.io/wancat">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
-            
-                </ul>
-		<p class="copyright text-muted">
-                    Copyright &copy; WANcatServer 2021
-                    <br>
-                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
-                    </iframe>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-
-
-
-
-
-<script>
-    
-    if($('#tag_cloud').length !== 0){
-        async("/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-
-<script>
-    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-
-
-
-
-</body>
-</html>
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>WANcatServer</title><meta name=keywords content><meta name=description content="網貓伺服器"><meta name=author content="wancat"><link rel=canonical href=https://wancat.cc/><link href=/assets/css/stylesheet.min.0e4a1b49e740c28140e9ee4945aab2f86cb0a7bfbf5a5d612d0cb5df7d6141f4.css integrity="sha256-DkobSedAwoFA6e5JRaqy+Gywp7+/Wl1hLQy1331hQfQ=" rel="preload stylesheet" as=style><link rel=icon href=https://wancat.cc/img/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://wancat.cc/img/logo.png><link rel=icon type=image/png sizes=32x32 href=https://wancat.cc/img/logo.png><link rel=apple-touch-icon href=https://wancat.cc/img/logo.png><link rel=mask-icon href=https://wancat.cc/img/logo.png><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.74.3"><link rel=alternate type=application/rss+xml href=https://wancat.cc/index.xml><link rel=alternate type=application/json href=https://wancat.cc/index.json><script type=text/javascript>var _paq=window._paq=window._paq||[];_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);(function(){var u="//matomo.linchpins.cloud/";_paq.push(['setTrackerUrl',u+'matomo.php']);_paq.push(['setSiteId','3']);var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.type='text/javascript';g.async=true;g.src=u+'matomo.js';s.parentNode.insertBefore(g,s);})();</script><meta property="og:title" content="WANcatServer"><meta property="og:description" content="網貓伺服器"><meta property="og:type" content="website"><meta property="og:url" content="https://wancat.cc/"><meta property="og:image" content="https://wancat.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:updated_time" content="2021-03-07T21:28:38+08:00"><meta property="og:site_name" content="WANcatServer"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://wancat.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="WANcatServer"><meta name=twitter:description content="網貓伺服器"><script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"WANcatServer","url":"https://wancat.cc","description":"網貓伺服器","thumbnailUrl":"https://wancat.cc/img/favicon.ico","sameAs":["https://github.com/lancatlin","https://t.me/wancatserver","mailto:wancat@wancat.cc","/index.xml"]}</script></head><body class=list id=top><script>if(localStorage.getItem("pref-theme")==="dark"){document.body.classList.add('dark');}else if(localStorage.getItem("pref-theme")==="light"){document.body.classList.remove('dark')}else if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.body.classList.add('dark');}</script><noscript><style type=text/css>#theme-toggle,.top-link{display:none}</style></noscript><header class=header><nav class=nav><div class=logo><a href=https://wancat.cc accesskey=h title="WANcatServer (Alt + H)"><img src=/img/logo.png alt=logo aria-label=logo height=35>WANcatServer</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu onscroll=menu_on_scroll()><li><a href=https://wancat.cc/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://wancat.cc/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://wancat.cc/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://wancat.cc/search/ title=Search><span>Search</span></a></li><li><a href=https://wancat.cc/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-entry><header class=entry-header><h2>Frozen 2 安全觀影指南</h2></header><section class=entry-content><p>近來 Frozen 2 上映，然而卻傳出許多人受困在 Frozen 世界中的不幸消息，最長的已經失聯長達數週，人身安全有極高的危險。
+為什麼 Frozen 能造成這麼大的危險？專家推測，有可能是精緻的動畫和引人入勝的音樂讓人在無意間陷入了 Frozen 世界中，卻無法在電影結束後抽離，稱為 Frozen 症候群。根據估計，Frozen 症候群已經造成不亞於 SAO 的嚴重危機，世界衛生組織也將其列為 2019 年最嚴重的傳染病之一。
+如何避免受困 首先，如果可以不看就不要看，假如非看不可，那千萬要做好以下準備，才能提高你存活的機率。
+一、不要聽原聲帶。 千萬別小看音樂的力量，也許你在看完電影後以為自己已經平安脫困，但其實危險才正要開始。只要你聽了電影的原聲帶，你的受困風險就會大大增加，哪怕只是一首歌，只要聽到後，身體將會逐漸被冰魔法滲透，讓你不能自己。
+到了最後，你將會不斷用 Spotify 聽原聲帶，直到你每首都會唱，甚至收集第一集第二集還有外傳的所有歌，做出一個危險播放清單然後循環播放。此播放清單將會公佈在文章的最後。
+二、不要看影評 你以為迪士尼是給小孩子看的嗎？在你看影評前或許是這樣沒錯。千萬別輕易看影評，你將會發現埋藏在 Frozen 中的深刻含意。不看還好，看了不得了，你可能就會從此對它改觀。原本已經安全的逃出了，卻反而陷的更深。
+文章的最後我將公佈幾個危險的影評，不要輕易點擊，否則風險自負。
+三、不要重看第一集 千萬不要重看第一集。也許你早就看過了第一集，但在你看完第二集後，第一集的殺傷力又會有加乘作用。許多人儘管通過了上面的兩道關卡，然而在重看了第一集後，就失去了抵抗力，只能眼睜睜看著自己被冰凍。
+同樣的，Frozen 的兩個短片 Frozen Fever 和 Olaf’s Frozen Adventure 也都是危險的影片，雖然影片不長，但歌同樣好聽，角色同樣可愛，所以假如你已經出現了 Frozen 症候群，這兩部短片將會加重你的病情。
+高風險族群 以下列出幾個 Frozen 症候群的高風險族群，如果你在以下族群之中，你對 Frozen 將會有較弱的抵抗力，請斟酌是否要前往觀影：
+姐妹控、百合控 不要懷疑，男主角 Kristoff 完全就是煙霧彈，兩位女主角 Elsa 和 Anna 才是真愛！尤其是第二集，沒有了第一集的枷鎖，Elsa 和 Anna 每場戲都是全糖去冰！真香、真香。這百合毒性很強，在做好防護措施前，千萬別輕易嘗試。
+畫面控 如果你對於精緻的畫面情有獨鍾，那 Frozen 2 將會對你非常危險，這次的動畫品質跟六年前的 Frozen 已經不可相提並論，不論在場景、服裝、人物表情都變得更加栩栩如生，看了真的非常享受…不，是危險！小心不要被視覺所迷惑了！
+尤其 Frozen 2 擺脫了過去「公主總是穿裙子」的設定，以角色的實際需求出發，設計好看又實用的褲裝。隨著動畫技術的進步，衣服的材質做得更加真實，衣服上的每個細節都看得出細膩的設計。...</p></section><footer class=entry-footer>December 22, 2019&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to Frozen 2 安全觀影指南" href=https://wancat.cc/post/frozen-2-safe-watching-guide/></a></article><article class=post-entry><header class=entry-header><h2>CTF 參加初體驗</h2></header><section class=entry-content><p>CTF 參加初體驗 承蒙朋友邀請，我人生首度參加資訊安全競賽——政府舉辦的資安金盾獎，本來就預期會很難，但沒想到會這麼難，深深感受到有一個世界等著去探索。
+在報名時有個小插曲，本人就讀五專，現在是高一的年紀，然而我的學校在報名網被歸類在大專組，這樣我就無法和其他高中的友人 TNPLR 一同參加。為此我寫信去跟主辦單位反應，主班單位就添加了五專部的選項，實在令人感動，可見主辦單位的誠意。
+初賽 設備 初賽的設備我覺得挺神奇的，首先不能帶自己的電腦、儲存裝置，手機不能用，主辦單位提供的是一台 Windows 電腦，並且要「連到虛擬機」作答，然而虛擬機還是 Windows，我不懂為何不用實體機就好了？
+作答過程不能連上外網，也就是說沒辦法查資料，我本來就夠弱了，沒辦法搜尋就更弱了。只能用 Windows 電腦也是個很大的障礙，工具很不足，Base64 這種基本工具都沒有… 沒網路又不能用線上工具。我在此建議大會，既然使用了虛擬機，就提供 Linux 這個選項，不然對於長年不使用專有作業系統的人來說實在不友善。
+題目 雖然只是初賽，但每題都很難，我們在 Crypto、Web 和 Misc 都稍有斬獲，但最終都沒有解出來，全部輸掉。但很神奇的是，在兩週之後，我們竟然收到了決賽通知書，還是從 98 中剩餘的 15 隊。我們推測之後認為應該是題目有錯，導致當天顯示錯誤，但其實有答對，否則不可能隨便挑 15 隊進入決賽。
+無論真相為何，既然進入了決賽，就要好好比。
+決賽 決賽場地位於張榮發基金會，決賽比五個小時，國高中組有十題題目，題目分數為 100 三題、200 四題、300 三題。試題範圍跟初賽一樣，但沒有特別標注哪題是哪種類型，以下將根據我的觀察進行分類。
+設備 決賽使用個人的電腦，並且可以上外網，這樣真的好很多，不需要用彆扭的 Windows，我也先裝好資安方面的 Linux 虛擬機——Kali，但還沒熟悉其中的工具，所以其實沒有很大的幫助。
+雖然可以上外網，但比賽禁止與「外部通訊」，意思是不能和隊員以外的人類溝通，我覺得這個用字要再精確一點，因為瀏覽網頁其實也是一種「與外部通訊」，避免造成選手誤會。
+既然是比資安比賽，當然就要破解漏洞，在比賽後我想到了一種安全的通訊方式。假設有兩個隊伍 A 和 B，A 事先在賽前跟 B 約好一個通訊埠和一組帳密，比賽開始後，A 在他的電腦架設一個 SSH Server，並使用事前約定好的埠口，然後 B 就用 nmap 掃描區網所有電腦，掃到事前約定好的埠口就代表該主機是 A 隊，然後就可以用約定好的帳密登入進去了。
+這個作法有多種安全性，首先，這個過程完全就是操作終端機，看起來跟平常解 CTF 並無二異。第二，因為使用 SSH，所以通訊過程是加密的，主辦單位也不知道。那有了這個通訊方法後，就可以透過把 flag 留在伺服器中的某個檔案的方式來交換答案。
+但有個大漏洞是：主辦單位可以發現兩個不同隊伍的 IP 有通訊的行為，雖然不知道通訊內容為何，但還是有可能會因此被舉發，所以好孩子還是不要嘗試喔！...</p></section><footer class=entry-footer>November 16, 2019&nbsp;·&nbsp;2 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to CTF 參加初體驗" href=https://wancat.cc/post/first-ctf/></a></article><article class=post-entry><header class=entry-header><h2>JSP 第九屆參加心得</h2></header><section class=entry-content><p>JSP——國中科學探究聯合發表會——是一個給學生的派對，讓愛好科學的學生聚在一起互相交流，從 2017 年 JSP７時開始，我已經參加了三屆的 JSP，每次參加，心態都有些不同；每次參加，也都領悟到不一樣的事。
+今年，我已經國中畢業了，抱持著「參加最後一次」的心情來到 JSP，卻發現自己跟過去不一樣了。
+專題演講 自從二年級的科展比完之後，我就沒有再做過科學研究，可以說是有些倦了，這三年來參加 JSP 的作品也都不是比賽作品，而是為了 JSP 而準備的內容。
+為什麼講區塊鏈？ 我大約一年前從 台灣吧的芬特克 系列中第一次認識了區塊鏈，後續我加入了 Matters 社群、LikeCoin 讚賞公民，逐漸對區塊鏈有越來越深的興趣，後來透過閱讀區塊鏈媒體 區塊勢 了解許多的區塊鏈應用相關的知識。
+JSP 大部分還是以傳統學術的科學為主，在資訊科學的部份，通常只是「工具」，而不是研究主軸。而我 去年的演講 就已經開始以「資訊科普」為主題，像大家介紹透過 Python 來寫一個遊戲，和遊戲中物理系統設計的基本概念。
+我其實並不是多會寫程式的人，這一年來也沒完成什麼值得驕傲的專案，所以我想區塊鏈應該是 JSP 的學員比較陌生的主題，「科普區塊鏈」應該會蠻不錯的。而相對於加密貨幣，我自己更喜歡區塊鏈在「非貨幣上的應用」，於是決定來講「數位資產」這個主題。
+演講的準備 我認識一些在區塊鏈領域的前輩，根據前輩的經驗，要早點給聽眾「一點區塊鏈上的東西」比較能提起聽眾的興趣，所以通常會發一點幣或是數位資產。但慢慢發給一位一位聽眾想必會花很多時間，於是我就決定來設計一套「發禮物系統」，只要將資產建立好，然後產生一個限時限量連結，點入連結貼上自己錢包地址就可以取得數位資產。
+說實在的，這不是多困難的系統，產權區塊鏈 Bitmark 有給開發者使用的 SDK，所以不需要自己處理底層，甚至連 API Request 都不用發。但我畢竟還是個菜鳥工程師，整個系統開發下來仍花了一個多禮拜，直到演講的前兩天才開發完畢。
+Bitmark 很高興有開發者願意加入他們的生態系，所以聽到我在開發這個系統時，就送了我一件 Bitmark 的 T-Shirt（就是我當天穿的），也免費給了我活動三天的 Token。
+但相對於花了很多時間準備程式，我在演講本身的準備相對較少，以前準備演講都會先寫好逐字稿，然後大量的練習，但這實在是太耗費心力，所以從這次演講開始，我決定要練習只準備投影片就能講完整的能力。
+演講 就結果來說，我認為這次演講並不成功，我事後訪問了一些聽眾，表示聽懂的並不多，數位資產我總共準備了 120 份，最後卻只發出了 16 份。
+原因有幾項：原本約定好的時間是 25 分鐘，然而到了當天我才知道只有 10 分鐘，很多內容都來不及說，數位資產也變成是吃午餐的時候發，觀眾參與度就變得很低；而且接收數位資產需要安裝 Bitmark app，現代人不喜歡得裝 app 的事情，而且畢竟課程沒有要求，不是大家都有帶著手機，也有些人根本懶得安裝。
+區塊鏈本身就是個很難在幾個小時內說完的主題，何況我只有十分鐘，我只能帶個聽眾最粗淺的印象並帶入一些實際的應用。
+因為我沒有準備演講稿，只有大綱跟投影片，可以加速在 10 分鐘說完，但就沒什麼問答時間，其實有不少觀眾有提問題，但卻沒時間回答，這是我覺得很可惜的。
+我這次演講有準備 sli.do，因為我知道很多聽眾很害羞不太敢發問，不過因為大家並不都有手機，也不一定有網路，但還是有一位觀眾留下問題（還有我自己先準備的假問題），所以我覺得未來還是可用。
+我希望未來 JSP 能夠增加每個發表的時間，錯失珍貴的討論機會，真的很可惜。...</p></section><footer class=entry-footer>August 20, 2019&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to JSP 第九屆參加心得" href=https://wancat.cc/post/jsp-9/></a></article><article class=post-entry><header class=entry-header><h2>ORM 入門：如何區分 ORM 中的關聯</h2></header><section class=entry-content><p>最近初次接觸 ORM——Object-relational mapping——這個強大的工具，但是為其中的關聯而苦惱不已。在仔細研究後終於了解其差異，本篇文章透過一個圖書館專案的實例，使用 Golang + GORM 來實做，並輔以 SQL 做說明，讓已經學會 SQL 而想要了解 ORM 的人真的「懂」如何設計 Relation。
+什麼時候會用到 Relation？ ORM 中的 Relation 就是相當於 SQL 中的各種 Join，用來將不同表格中的資料串起。由於 ORM 是用物件，所以如果未來有關聯到其他表格的需求，必須在物件設計時就包含進來。
+來定義需求吧！我們今天假設情境是要定義一個圖書館的資料庫，那我們會有編目資料 Book（書的資料）、館藏資料 Item（書的實體），作者資料 Author，出版社資料 Publisher。書名、ISBN 等等跟關聯沒有關係的就不放入。
+我們先不要討論 gorm 要怎麼寫，先把要取得的資料擺出來。
+type Book struct { Items []Item Authors []Author Publisher Publisher } type Item struct { Book Book } type Author struct { Works []Book } type Publisher struct { Publication []Book } 我們要讓所有的 structure 都能夠參考到依賴自己的對象：作者必須參考到作品集、出版社要能參考出版品、分類要能找出其中的所有書籍。
+接下來我們一個一個釐清物件之間的關聯關係，來設計 ORM 吧！...</p></section><footer class=entry-footer>July 26, 2019&nbsp;·&nbsp;3 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to ORM 入門：如何區分 ORM 中的關聯" href=https://wancat.cc/post/orm/></a></article><article class=post-entry><header class=entry-header><h2>如何在 Linux 使用 Caps Lock 切換輸入法</h2></header><section class=entry-content><p>Caps Lock 是一個我們很少用的鍵，偏偏它擺在鍵盤的黃金位置，實在是大大的浪費，在 Mac 上可以使用 Caps Lock 來作為中英切換鍵，我認為是很好的設計，以下教學將介紹如何用指令列來設定 Fcitx 使用 Caps Lock 來切換輸入法。
+事實上 Fcitx 可以使用任何鍵作為輸入法切換鍵，然而因為 Caps Lock 有著切換大小寫的功能，如果不將此功能關閉，輸入法會發生異常——中文切到英文後變成大寫，因此我們要利用 xmodmap 工具來將 Caps_Lock 鍵指向到不會使用到的 Multi_key，再將 Fcitx 切換鍵對應到 Multi_key。
+我們先查詢一下 Caps_Lock 對應到的 keycode 是多少。
+$ xmodmap -pke | grep Caps_Lock keycode 66 = Caps_Lock NoSymbol Caps_Lock 可以看到鍵盤上的 Caps_Lock 對應到的是 66 這個 keycode，那我們接下來就是要將 66 改成對應到 Multi_key。
+$ xmodmap -pke > ~/.Xmodmap #將設定存為檔案 $ vim ~/.Xmodmap # 將 keycode 66 處改為 keycode 66 = Multi_key NoSymbol Multi_key # 在最底下加入 clear lock $ xmodmap ~/....</p></section><footer class=entry-footer>July 6, 2019&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 如何在 Linux 使用 Caps Lock 切換輸入法" href=https://wancat.cc/post/capslock/></a></article><article class=post-entry><header class=entry-header><h2>我認為，近視應該戴放大鏡</h2></header><section class=entry-content><p>警告！這篇文章是由一個國中生撰寫，只依據國中光學的知識，請帶著批判與謹慎的心態來看待這篇文章。
+本篇文章最大的目的是促進討論，激發新的想法，因此歡迎有不同看法的朋友在下方留言與我討論，我也可能會根據討論的內容修正文章內容與看法。但請你在發表評論之前，先仔細的看過本文，了解對方的論述比較能帶來有效率的討論。
+先備知識 眼睛原理 我們的眼睛的主要結構，是一個凸透鏡（水晶體）與感光元件（視網膜），透過凸透鏡成像的原理，將遠處的光線成像在視網膜上，讓我們看到影像。
+不同遠近的物體，需要不同的焦距才能看得清楚，在視網膜不動的情況下，就只能改變水晶體的凹凸程度，稱為曲率。水晶體曲率大，光線折射的角度越大，就能看越近的影像，反之折射角度小，則能看清楚遠處的影像。
+控制水晶體的肌肉就是我們常聽到的睫狀肌，睫狀肌收縮（用力）就可讓水晶體變凸，看清近處的影像；睫狀肌放鬆，就可以讓水晶體變平，看清遠處的影像。
+近視原理 所謂近視，就是睫狀肌出了問題，長時間看近物，讓睫狀肌必須長時間用力，導致睫狀肌痙攣而無法放鬆。睫狀肌無法收縮就會導致遠處的物體看不清楚，也就形成我們一般所說的「假性近視」。
+假性近視還有機會治療，然而當時間一久，眼球就會開始變「凸」，水晶體和視網膜的距離拉遠，這就是無法治療的「真近視」。
+我個人沒有科學根據的想法是：近視是一種「生物的用進廢退」現象，當我們在小時候長時間看近物，身體會認為該個體這輩子大概就是要看近物了，於是透過拉長眼睛來「優化看近物的能力」，越近的物體會成像在越後方，拉長眼睛可以比較輕鬆的看清楚近物，讓水晶體不用維持在很高的凸度，睫狀肌就可以不用保持在緊繃狀態。
+眼鏡原理 近視眼鏡 眼鏡的意義，就是透過凹、凸透鏡，來改變光線折射的路徑。先講凹透鏡，也就是我們現在的近視眼鏡，我使用最簡單、可能不完全正確的方式來比喻鏡片與眼睛的關係：
+如果我們定義平的玻璃片（平透鏡）的凹凸程度（簡稱凸度）是 0，凸透鏡為正，則凹透鏡就是負。（這裡不使用曲率一詞，是因為曲率有其正確的定義與計算方式，較為複雜故使用簡化的「凸度」表達，科學上並沒有凸度一詞）。
+水晶體一定是個凸透鏡，我們假設看清楚一百公尺遠的物體凸度要為 5，看清楚 10 公分的物體凸度為 15。當今天一個人看 10 公分的距離太久，導致睫狀肌痙攣，水晶體凸度維持在 15 無法放鬆，則此人就不能看清楚一百公尺遠的物體。
+那假設有一個凸度 -10 的鏡片，則凸度 15 的水晶體加上凸度 -10 的鏡片，就可讓總凸度變成 5，就可以看清楚一百公尺遠的物體了。
+以上當然是非常簡化的說法，可能也不能完全用加法來做運算，但概念是類似的。近視眼鏡的功能，是讓凸度太高的眼睛降低總凸度，以讓無法放鬆的眼睛還是能看清楚遠處的物體，注意，近視眼鏡不能讓你的睫狀肌放鬆，它僅是讓你能看清楚而已。
+有什麼差別呢？請看我們下個例子：
+今天你已經近視，眼睛本身的凸度為 15，你戴著凸度 -10 的眼鏡，然而現在如果你要再看 10 公分距離的物體，眼睛的凸度會如何變化呢？
+10 公分的物體需要總凸度為 15，因此眼睛的凸度須增加到 25，搭配凸度 -10 的眼鏡才能看清楚 10 公分的物體。
+戴著近視眼鏡，反而讓睫狀肌需要更加用力。
+因為眼鏡不會依照你所看著的物體而改變凸度，因此近視眼鏡可以總歸為一句話：讓東西變近。它讓遠處物體變近讓你能看清楚，但也讓近處物體變得更近，以至於你必須更加用力才能看清楚，而這樣將會更加傷害你的視力。
+遠視眼鏡 遠視眼鏡是凸透鏡，可以增加凸度，讓我們更輕鬆的看清楚近的物體。以下為例子：
+今天一個人沒有近視，他戴著一個凸度為 +10 的遠視眼鏡，要看一個 10 公分的物體。看清楚 10 公分近的物體需要總凸度為 15，所以他的水晶體只要凸度 5，搭配凸度 10 的遠視眼鏡，就可以看清楚物體了。...</p></section><footer class=entry-footer>June 7, 2019&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 我認為，近視應該戴放大鏡" href=https://wancat.cc/post/myopia-should-take-magnifier/></a></article><article class=post-entry><header class=entry-header><h2>寫給會考後的我們：別再讓下一代經歷這些</h2></header><section class=entry-content><p>「而我們呢？在會考之後，你就要忘記國中這三年的痛苦，『只帶走美好的回憶』嗎？在面對學弟學妹的痛苦時，只會說『我們以前比你們更慘』而已嗎？在成為既得利益者後，就反過頭來維護這個體制嗎？」
+「同學們，我希望我們不要成為這樣的大人。」
+會考，國中三年的最大目標，終於在今天結束了。大家也即將分發到不同的學校，國中，變成了回憶。
+但，我希望你不要忘記，自己這三年是怎麼過的。
+我們的今天 我對國中的印象，就是考試和第八節。沒有「早自修」，只有考試。記得在我國小的一段時間，我早修會拿班上一本有關數學的書，坐在位子，邊看邊吃早餐，那是一段很美好的時光，真正的早自修，就應該如此美好。
+每次段考前兩個禮拜，我會開始認真準備，段考前衝刺期是很煎熬的時光，每天在學校都是面對成千上萬的考卷，我是好學生，每一張都認真寫，可是越寫越懷疑 ——
+「我來學校就是為了這些嗎？」
+漸漸的，我們都變成了可悲台灣小孩，只在乎考試，不在乎學習的樂趣；只關心分數，不關心實際的運用；只了解作法，不了解背後的原因。
+許多人去補習，將已經少得可憐的課餘時間再度榨的一滴不剩，這樣零碎而疲憊的課餘時間，除了打電動，還會想做什麼？還能做什麼？
+大人們總是說，他們以前也是這樣過的，他們以前更慘。那我試問，為什麼當你們成為大人後，沒有改變它？
+大人的過去 三十年前，我爸在國中時就被送去私立住宿學校，接受著「非常不健康的打罵教育」。每天一早起來就進學校，放學後還要晚自習到九點，可說是零自由時間。
+高中畢業，聯考成績不理想，重考，過了一年痛苦的補習班生活。
+我相信，過去的大人們一定經歷了比我們更糟的生活，生活困苦，教材也更加的填鴨。但這些大人們，在長大後，為什麼還是擁護著這套考試制度、擁護著升學主義？為什麼你們還是將孩子送進了補習班、還是要求學校要有第八節？
+因為你們都經歷過嗎？
+為什麼，你們沒有讓我們更好？ 為什麼，當年受盡折磨的大人，在長大後，不願意改變這一切？
+不要牽拖政治，政治反映出的就是選民的意志，有什麼樣的選民，就會有什麼樣的政治人物。當初十二年國教，出來反對的不也是由「受盡折磨的大人」組成的家長嗎？
+我曾經在班聯會問教務主任，可不可以取消第八節，她說學校一點也不想辦第八節，是家長們要求的。
+制度反應的，永遠都是掌權者的價值觀。過去歷經折磨的是你們，但現在掌權的也是有投票權的你們。
+我不否定許多大人對教育改革的努力，我也知道三十年前到現在教育體制已經好了許多，不再規定頭髮、不再有教官、不再有三民主義，有即將上路的 108 課綱；但我們還有充滿考試的早修、上正課的第八節、過早的上學時間和過長的上課時數，我們可以更好嗎？ 可以讓受了十二年國教的我們，不要變成 可悲台灣小孩 嗎？
+我相信，所有的改革，都要從理念層面開始，只有當我們開始重新思考考試制度、升學主義，制度才有可能改變。
+三十年前的大人們，或許在威權的時代裡，不被允許質疑體制，我並不責怪。
+而我們呢？
+不要成為，那個「我們也是這樣過」的大人 而我們呢？在會考之後，你就要忘記國中這三年的痛苦，「只帶走美好的回憶」嗎？在面對學弟學妹的痛苦時，只會說「我們以前比你們更慘」而已嗎？在成為既得利益者後，就反過頭來維護這個體制嗎？
+同學們，我希望我們不要成為這樣的大人。
+體制可以限制你的行為，但可別讓它限制你的思想。
+我希望，當我們有能力、有權力、有影響力時，用你的話語、用你的行動、用你的臉書 IG 貼文、用你的選票，去表達對這個體制的不滿，去嘗試改變這一切，去做跟上一代不一樣的事。
+我希望，我們在面對下一代時，不要用一種「過來人的傲慢」，來打壓對體制的質疑。
+我希望，當我們為人父母時，可以想想自己在學生時是什麼感受，不要拚命將子女送進補習班，不要要求學校上第八節，不要對你的子女做過去你痛恨的事。
+最有能量去改變的，往往是身處在體制中的人。我希望我們不要因為脫離了這個體制，就漸漸失去了這些能量。
+我希望，這些痛苦留在我們這一代就好。
+延伸閱讀 林寓森《別把孩子的時間填滿》
+15 歲的生涯選擇—我為何拒讀高中
+當老師對我們說：「可悲台灣小孩」</p></section><footer class=entry-footer>May 19, 2019&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 寫給會考後的我們：別再讓下一代經歷這些" href=https://wancat.cc/post/after-the-exam/></a></article><article class=post-entry><header class=entry-header><h2>SITCON 演講：軟體開發的未來，是大斗內時代？</h2></header><section class=entry-content><p>2019 SITCON 演講：軟體開發的未來，是大斗內時代？ 前言 我參加了 2019 在中研院舉行的 SITCON 學生計算機年會，並投稿了一篇 Espresso 短講，以下是我的演講稿：
+講者介紹 大家好，我是林宏信，現在是國中三年級。我從小六開始接觸 Scratch，國二開始學習 Python，目前正在學習 Go Web 開發。我的興趣是寫程式、寫音樂、寫文章，經營部落格 WANcatServer 網貓伺服器 ，歡迎大家去看看喔！。
+今天要跟大家分享的是 我們如何靠軟體賺錢，相信在台下的大多數人，包括我，都喜歡寫程式，那你是否思考過，我們該如何靠軟體賺錢呢？畢竟這攸關生計，是個很重要的問題。
+軟體難以賺錢 雖然軟體工程可說是現代社會最熱門的行業之一，但事實上「純靠軟體賺錢」是一件很難的事。當然，今天如果你受雇於公司，公司付薪水請你寫軟體，那沒什麼困難。但如果今天你要將手頭上的軟體換成錢，可不是那麼容易的事。
+拷貝發大財 也許今天你寫了一個很好玩的遊戲，你想要賣給別人玩，你將它打包成 binary，找到買家，收了錢將軟體寄給他，但也許他就直接將你的軟體發布在網路上免費供人下載，你後面的生意都不用賺了。
+憑什麼？根本原因在於軟體是一項「0 邊際成本」的產品。
+邊際成本 邊際成本是經濟學的名詞，意思是 「增加一單位產品所需要的成本」，生產一台汽車的成本高昂，但生產第 10000 台汽車的成本就低的多。
+軟體開發絕不是無本生意，從設計、開發到產品做出來都需要大量的時間、金錢、人力成本。0 邊際成本，一方面可以將產品賣給更多人，但另一方面所有拿到軟體的人都有「拷貝的能力」，隨時可以破壞你的生意。
+不只是軟體，現在所有的創作媒介：文字、影片、音樂，幾乎都是 0 邊際成本的產品，各式各樣的創作也無法逃離「被拷貝」的命運。為了擋住這波拷貝攻勢，政府定了許多著作權法規、DRM 來規範。但事實上，Who cares? 大家還不是複製得很爽？
+那該怎麼辦？與其讓心血被別人拿去散佈，不如 我們自己將它「免費」。
+免費時代崛起 如果我們要完美結合軟體 0 邊際成本的特質，最有效方式就是「免費」，並另找方式獲利。明顯的例子就是廣告業的崛起。
+消費者轉為生產者？ 記得我小時候剛開始用電腦，Windows 要錢，Office 也要錢，買遊戲也要錢，花錢好像理所當然。但當我開始上網後，發現 Google 是免費的、Facebook 是免費的、YouTube 也是免費的。我相信做 Facebook 絕不會比 Windows 簡單，那為什麼 Windows 要收錢，而 Facebook 不用呢？
+原因在於使用者對公司的價值。
+在網際網路尚未普及前，使用者與軟體公司就是單純的消費供給關係，使用者花了錢買到軟體就拍拍屁股走了，不會帶給軟體公司任何附加價值，所以軟體公司必須收費。（除了用 Word 檔征服全世界）
+而當網際網路開始蓬勃發展後，事情就不同了。一個使用者對 Facebook 而言，是賺錢的工具！他不只能提供自身的資料，還能鼓勵周圍的親朋好友一起使用。因為使用者對 Facebook 有價值，所以採免費的商業模式來拉更多的使用者，是最有效率且最賺錢的方式。...</p></section><footer class=entry-footer>March 25, 2019&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to SITCON 演講：軟體開發的未來，是大斗內時代？" href=https://wancat.cc/post/the-programming-future-is-donate/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=https://wancat.cc/page/2/>« Prev Page</a>
+<a class=next href=https://wancat.cc/page/4/>Next Page »</a></nav></footer></main><footer class=footer><span>&copy; 2021 <a href=https://wancat.cc>WANcatServer</a></span>
+<span>&#183;</span>
+<span>Powered by <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a></span>
+<span>&#183;</span>
+<span>Theme <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)"><button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></button></a>
+<script>window.onload=function(){if(localStorage.getItem("menu-scroll-position")){document.getElementById('menu').scrollLeft=localStorage.getItem("menu-scroll-position");}}
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener("click",function(e){e.preventDefault();var id=this.getAttribute("href").substr(1);if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({behavior:"smooth"});}else{document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();}
+if(id==="top"){history.replaceState(null,null," ");}else{history.pushState(null,null,`#${id}`);}});});var mybutton=document.getElementById("top-link");window.onscroll=function(){if(document.body.scrollTop>800||document.documentElement.scrollTop>800){mybutton.style.visibility="visible";mybutton.style.opacity="1";}else{mybutton.style.visibility="hidden";mybutton.style.opacity="0";}};function menu_on_scroll(){localStorage.setItem("menu-scroll-position",document.getElementById('menu').scrollLeft);}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{if(document.body.className.includes("dark")){document.body.classList.remove('dark');localStorage.setItem("pref-theme",'light');}else{document.body.classList.add('dark');localStorage.setItem("pref-theme",'dark');}})</script></body></html>

@@ -2,22 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>elementaryOS on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/elementaryos/</link>
+    <link>https://wancat.cc/tags/elementaryos/</link>
     <description>Recent content in elementaryOS on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Wed, 12 Feb 2020 19:15:22 +0800</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/elementaryos/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/elementaryos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>elementary OS 啟用 System Tray</title>
-      <link>https://www.wancat.cc/post/elementary-system-tray/</link>
+      <link>https://wancat.cc/post/elementary-system-tray/</link>
       <pubDate>Wed, 12 Feb 2020 19:15:22 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/post/elementary-system-tray/</guid>
-      <description>elementary OS 是一個好看、易用的 Linux 發行版，然而它有一個缺點：系統狀態欄（system tray）無法顯示其他應用程式的 icon，這導致像輸入法、Disc</description>
+      <guid>https://wancat.cc/post/elementary-system-tray/</guid>
+      <description>elementary OS 是一個好看、易用的 Linux 發行版，然而它有一個缺點：系統狀態欄（system tray）無法顯示其他應用程式的 icon，這導致像輸入法、Discord 等有使用 system tray 的程式無法使用完整功能。最討厭的莫過於 HP 印表機驅動 HPLIP，每次開機就跳出來說 no system tray deteched，非常煩人。
+原因是 elementary OS 基本上不希望其他應用程式去使用 system tray，並且停止支援 Ayatana Indicator API，做出相同決定的還有 GNOME，參考 Status Icons and GNOME。
+安裝 Ayatana Indicator sudo add-apt-repository ppa:yunnxx/elementary sudo apt update sudo apt install indicator-application wingpanel-indicator-ayatana  編輯 /etc/xdg/autostart/indicator-application.desktop 加入 Pantheon
+OnlyShowIn=Unity;GNOME;Pantheon;  接下來重新啟動 X 或是重開機
+sudo service lightdm restart # or reboot  完成後 elementary 就可以顯示各個應用程式的圖示了！
+References How to display system tray icons in elementary OS Juno?</description>
     </item>
     
   </channel>

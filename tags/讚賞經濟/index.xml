@@ -2,22 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>讚賞經濟 on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/%E8%AE%9A%E8%B3%9E%E7%B6%93%E6%BF%9F/</link>
+    <link>https://wancat.cc/tags/%E8%AE%9A%E8%B3%9E%E7%B6%93%E6%BF%9F/</link>
     <description>Recent content in 讚賞經濟 on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Mon, 25 Mar 2019 17:22:22 +0000</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/%E8%AE%9A%E8%B3%9E%E7%B6%93%E6%BF%9F/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/%E8%AE%9A%E8%B3%9E%E7%B6%93%E6%BF%9F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SITCON 演講：軟體開發的未來，是大斗內時代？</title>
-      <link>https://www.wancat.cc/post/the-programming-future-is-donate/</link>
+      <link>https://wancat.cc/post/the-programming-future-is-donate/</link>
       <pubDate>Mon, 25 Mar 2019 17:22:22 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/the-programming-future-is-donate/</guid>
-      <description>2019 SITCON 演講：軟體開發的未來，是大斗內時代？ 前言 我參加了 2019 在中研院舉行的 SITCON 學生計算機年會，並投稿了一篇 Espresso 短講，以下是我的演講稿： 講者介紹 大家好，</description>
+      <guid>https://wancat.cc/post/the-programming-future-is-donate/</guid>
+      <description>2019 SITCON 演講：軟體開發的未來，是大斗內時代？ 前言 我參加了 2019 在中研院舉行的 SITCON 學生計算機年會，並投稿了一篇 Espresso 短講，以下是我的演講稿：
+講者介紹 大家好，我是林宏信，現在是國中三年級。我從小六開始接觸 Scratch，國二開始學習 Python，目前正在學習 Go Web 開發。我的興趣是寫程式、寫音樂、寫文章，經營部落格 WANcatServer 網貓伺服器 ，歡迎大家去看看喔！。
+今天要跟大家分享的是 我們如何靠軟體賺錢，相信在台下的大多數人，包括我，都喜歡寫程式，那你是否思考過，我們該如何靠軟體賺錢呢？畢竟這攸關生計，是個很重要的問題。
+軟體難以賺錢 雖然軟體工程可說是現代社會最熱門的行業之一，但事實上「純靠軟體賺錢」是一件很難的事。當然，今天如果你受雇於公司，公司付薪水請你寫軟體，那沒什麼困難。但如果今天你要將手頭上的軟體換成錢，可不是那麼容易的事。
+拷貝發大財 也許今天你寫了一個很好玩的遊戲，你想要賣給別人玩，你將它打包成 binary，找到買家，收了錢將軟體寄給他，但也許他就直接將你的軟體發布在網路上免費供人下載，你後面的生意都不用賺了。
+憑什麼？根本原因在於軟體是一項「0 邊際成本」的產品。
+邊際成本 邊際成本是經濟學的名詞，意思是 「增加一單位產品所需要的成本」，生產一台汽車的成本高昂，但生產第 10000 台汽車的成本就低的多。
+軟體開發絕不是無本生意，從設計、開發到產品做出來都需要大量的時間、金錢、人力成本。0 邊際成本，一方面可以將產品賣給更多人，但另一方面所有拿到軟體的人都有「拷貝的能力」，隨時可以破壞你的生意。
+不只是軟體，現在所有的創作媒介：文字、影片、音樂，幾乎都是 0 邊際成本的產品，各式各樣的創作也無法逃離「被拷貝」的命運。為了擋住這波拷貝攻勢，政府定了許多著作權法規、DRM 來規範。但事實上，Who cares? 大家還不是複製得很爽？
+那該怎麼辦？與其讓心血被別人拿去散佈，不如 我們自己將它「免費」。
+免費時代崛起 如果我們要完美結合軟體 0 邊際成本的特質，最有效方式就是「免費」，並另找方式獲利。明顯的例子就是廣告業的崛起。
+消費者轉為生產者？ 記得我小時候剛開始用電腦，Windows 要錢，Office 也要錢，買遊戲也要錢，花錢好像理所當然。但當我開始上網後，發現 Google 是免費的、Facebook 是免費的、YouTube 也是免費的。我相信做 Facebook 絕不會比 Windows 簡單，那為什麼 Windows 要收錢，而 Facebook 不用呢？
+原因在於使用者對公司的價值。
+在網際網路尚未普及前，使用者與軟體公司就是單純的消費供給關係，使用者花了錢買到軟體就拍拍屁股走了，不會帶給軟體公司任何附加價值，所以軟體公司必須收費。（除了用 Word 檔征服全世界）
+而當網際網路開始蓬勃發展後，事情就不同了。一個使用者對 Facebook 而言，是賺錢的工具！他不只能提供自身的資料，還能鼓勵周圍的親朋好友一起使用。因為使用者對 Facebook 有價值，所以採免費的商業模式來拉更多的使用者，是最有效率且最賺錢的方式。</description>
     </item>
     
   </channel>

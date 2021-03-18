@@ -2,22 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bitwarden on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/bitwarden/</link>
+    <link>https://wancat.cc/tags/bitwarden/</link>
     <description>Recent content in Bitwarden on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Thu, 21 Feb 2019 20:07:35 +0000</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/bitwarden/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/bitwarden/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>妳該使用密碼管理工具嗎？</title>
-      <link>https://www.wancat.cc/post/should-you-use-password-manager/</link>
+      <link>https://wancat.cc/post/should-you-use-password-manager/</link>
       <pubDate>Thu, 21 Feb 2019 20:07:35 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/should-you-use-password-manager/</guid>
-      <description>現代人的密碼危機 如果妳是一位有正常使用網路的現代人，基本上在網路上會有許多的帳號。我算是用量比較高的用戶，我稍微統計了一下：光是記得的我就有</description>
+      <guid>https://wancat.cc/post/should-you-use-password-manager/</guid>
+      <description>現代人的密碼危機 如果妳是一位有正常使用網路的現代人，基本上在網路上會有許多的帳號。我算是用量比較高的用戶，我稍微統計了一下：光是記得的我就有 72 個帳號，還有很多早就忘掉的黑數呢！
+過去，帳號被盜或許是件小事，當然如果 LOL 或玩遊戲的帳號被盜會很心痛，但不至於會影響生活。隨著現代我們將生活越來越多部份放入網路，網路身份的重要性已經足以影響生活，因此我們勢必要用一些方法好好管理自己的網路身份。
+重複密碼 密碼的大原則就是不要重複，但哪有辦法呢？我們有那麼多的帳號，如果每個都要背一個密碼哪辦得到？每次在「Sign up」頁面停了很久，最後還是用了以前的密碼。
+重複密碼的危險性在於：只要妳其中一個帳戶被破解，其他帳戶都會遭殃，尤其是一些安全性不高的小網站，或是居心不良的惡意網站，如果跟重要的帳號設了相同的密碼，那就危險了。
+使用不安全工具紀錄 第二個危險的情形就是使用不安全的工具紀錄密碼，像是我以前也會用 Evernote 紀錄密碼，相信不只我，很多人都會用一些筆記本軟體來紀錄密碼，這非常危險！ 以下用 Evernote 舉例：一方面我們無法確定 Evernote 公司會不會讀妳的筆記，而且內容沒有經過加密，要是 Evernote 的伺服器被攻擊，資料外洩，妳的密碼就等於是明文獻給了駭客。何況妳怎麼知道 Evernote 不會授權某些極權政府讀妳的資料？（這裡就不點名了）
+有些人認為將檔案存在本機，不要上傳到網路就安全了，但其實不然：在妳的手機上有非常多的應用程式都有權限存取妳的檔案，若是其中有惡意程式發現妳的密碼文件，大可直接上傳到它的網路資料庫。
+因此紀錄密碼的工具以及儲存的資料必須要被加密，也就是要有所謂的主控密碼。
+ 密碼管理工具，安全嗎？ 許多人，包括我，一開始聽到「密碼管理工具」時，都會覺得不可思議：這種東西真的能信任嗎？但其實一個做得好的密碼管理工具，是很安全的，以下我將回應常見的疑慮。
+我主密碼被破解了不就完了？ 有些人覺得，使用密碼管理工具，就是將所有密碼的命運寄放在一組密碼上，這樣風險太大了！
+其實沒錯，如果妳今天能夠記得自己每個帳號的每個密碼，妳壓根不需要密碼管理工具，但問題是我們辦不到。
+就是因為我們記不得密碼，我們才會用相同的密碼，才會有上述所說的安全問題。而事實上也沒錯，使用密碼管理工具就是將所有密碼寄放在一組密碼上。但我們可以透過兩步驟驗證來避免主密碼被破解就被盜用。
+兩步驟驗證，顧名思義，就是在妳輸入密碼後還要經過另一道手續才可以登入。例如 簡訊驗證碼、Email 確認信都是常見的形式，這樣可以避免密碼被破解就導致帳號被盜，駭客必須同時掌握妳的密碼和手機才有辦法登入，這個難度實在蠻高的，所以現在幾乎所有研究都指出兩步驟驗證能確實提高安全性。
+它會偷我的密碼嗎？ 另一個考量就是這個程式是否值得信任？，畢竟我在上面舉 Evernote 例子時也提到：我們很難確定程式有沒有在背後搞鬼！ 而這就見仁見智了，有些人可能是信任大公司的軟體，而我是信任良好的加密演算法和開源軟體。
+ 一個安全的加密演算法，就是妳就算知道它的原理還是無法破解它
+ 舉我所使用的 Bitwarden 為例，在官網 FAQ 就寫了 為什麼妳要信任 Bitwarden。
+   Bitwarden is 100% open source software. All of our source code is hosted on GitHub and is free for anyone to review.</description>
     </item>
     
   </channel>

@@ -2,31 +2,55 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>資訊安全 on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</link>
+    <link>https://wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</link>
     <description>Recent content in 資訊安全 on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Fri, 07 Feb 2020 19:22:30 +0800</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>用 TOTP 擺脫簡訊驗證碼：安全好用的兩步驟驗證</title>
-      <link>https://www.wancat.cc/post/totp/</link>
+      <link>https://wancat.cc/post/totp/</link>
       <pubDate>Fri, 07 Feb 2020 19:22:30 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/post/totp/</guid>
-      <description>兩步驟驗證 隨著數位身份在生活中的影響力愈來愈大，只靠著一組密碼來保護我們的帳戶已經不夠安全，而且記密碼實在是違反人腦天性的行為，因此大部分人</description>
+      <guid>https://wancat.cc/post/totp/</guid>
+      <description>兩步驟驗證 隨著數位身份在生活中的影響力愈來愈大，只靠著一組密碼來保護我們的帳戶已經不夠安全，而且記密碼實在是違反人腦天性的行為，因此大部分人總是使用重複的、好記的脆弱密碼。要解決這個問題，除了使用密碼管理工具來幫你記密碼，還可以透過設定兩步驟驗證（2FA：Two-Factor Authentication），大大提昇帳戶的安全性。
+兩步驟驗證就是在密碼之外，多用一個資訊來驗證你是本人，主流的作法有像 Email、簡訊驗證信，但用過的人可能都會覺得登入時要開信箱收信很麻煩，信箱也會被這些信件給弄亂，更別提當人在國外時，簡訊收不到害你無法登入。
+今天要介紹的 TOTP: Time-based One-Time Password algorithm，就是一種公開的標準，讓你透過手機上的 APP 產生一組 6 位數的一次性驗證碼進行登入，而且在沒有網路的情況下還能使用！
+TOTP 如何運作？ TOTP 的概念，就是網站與你事先約定好一組金鑰，並以當下的時間作為參數，運算出一個雜湊值，並取最後 6 位數作為一次性密碼。
+然而如果網站和使用者的時間不同的話，就無法計算出相同的結果，因此通常會以 30 秒作為一個單位，來避免使用者與網站的時間差。網站為了良好的使用者體驗，通常也會允許前一次的一次性密碼。
+TOTP 的優點 TOTP 它是一個公開標準，你不需要依賴單一企業或組織，各種客戶端都能相容；它的安全性基於密碼學，而非第三方機構的信用；它是去中心化驗證，整個驗證流程只有要驗證身份的雙方而已。
+Google 可以讀你的 Gmail，簡訊也可以被政府或通訊業者攔截，然而 TOTP 不需要依賴中介機構，甚至在離線的情況下也仍然可用。
+同時對於服務提供者而言，TOTP 也很容易實做，不需要花錢去發簡訊或是寄 Email 被當成垃圾郵件，也不需要跟第三方機構申請，是個省錢又安全的好方法。
+開始使用 TOTP 儘管目前懂得使用 TOTP 的使用者並不多，但其實已經有相當多網站支持以 TOTP 作為驗證方式，例如 Google、Facebook、Apple、Amazon、GitHub、PayPal 等，我管理伺服器需要用到的 CloudFlare、Linode、Porkbun 也都有設定 TOTP 來提高安全性。
+開始使用的第一步是下載一個 TOTP 的應用程式，有非常多的選項，我自己使用的是 Authy，界面簡單易用，提供加密的雲端備份，此外還有 Google Authenticator、Microsoft Authenticator，自由軟體則有 Red Hat 開發的 FreeOTP，先前在密碼管理工具提到的 Bitwarden 的付費版也有提供 TOTP 的功能。
+安裝好驗證器後，到你要登入的網站或 APP 的帳號設定中，啟動兩步驟驗證，在不同網站中，可能會以「驗證應用程式」、「谷歌驗證器」、「代碼產生器」等名稱出現，但背後都是 TOTP 這套標準，流程也很簡單，網站會將金鑰以 QR Code 的方式顯示，打開手機上的驗證器程式掃描就可以加入帳號，並輸入產生的一次性密碼供網站確認，就可以完成綁定。網站若是在手機上，則可以用「複製金鑰」的方式來手動輸入金鑰。</description>
     </item>
     
     <item>
       <title>妳該使用密碼管理工具嗎？</title>
-      <link>https://www.wancat.cc/post/should-you-use-password-manager/</link>
+      <link>https://wancat.cc/post/should-you-use-password-manager/</link>
       <pubDate>Thu, 21 Feb 2019 20:07:35 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/should-you-use-password-manager/</guid>
-      <description>現代人的密碼危機 如果妳是一位有正常使用網路的現代人，基本上在網路上會有許多的帳號。我算是用量比較高的用戶，我稍微統計了一下：光是記得的我就有</description>
+      <guid>https://wancat.cc/post/should-you-use-password-manager/</guid>
+      <description>現代人的密碼危機 如果妳是一位有正常使用網路的現代人，基本上在網路上會有許多的帳號。我算是用量比較高的用戶，我稍微統計了一下：光是記得的我就有 72 個帳號，還有很多早就忘掉的黑數呢！
+過去，帳號被盜或許是件小事，當然如果 LOL 或玩遊戲的帳號被盜會很心痛，但不至於會影響生活。隨著現代我們將生活越來越多部份放入網路，網路身份的重要性已經足以影響生活，因此我們勢必要用一些方法好好管理自己的網路身份。
+重複密碼 密碼的大原則就是不要重複，但哪有辦法呢？我們有那麼多的帳號，如果每個都要背一個密碼哪辦得到？每次在「Sign up」頁面停了很久，最後還是用了以前的密碼。
+重複密碼的危險性在於：只要妳其中一個帳戶被破解，其他帳戶都會遭殃，尤其是一些安全性不高的小網站，或是居心不良的惡意網站，如果跟重要的帳號設了相同的密碼，那就危險了。
+使用不安全工具紀錄 第二個危險的情形就是使用不安全的工具紀錄密碼，像是我以前也會用 Evernote 紀錄密碼，相信不只我，很多人都會用一些筆記本軟體來紀錄密碼，這非常危險！ 以下用 Evernote 舉例：一方面我們無法確定 Evernote 公司會不會讀妳的筆記，而且內容沒有經過加密，要是 Evernote 的伺服器被攻擊，資料外洩，妳的密碼就等於是明文獻給了駭客。何況妳怎麼知道 Evernote 不會授權某些極權政府讀妳的資料？（這裡就不點名了）
+有些人認為將檔案存在本機，不要上傳到網路就安全了，但其實不然：在妳的手機上有非常多的應用程式都有權限存取妳的檔案，若是其中有惡意程式發現妳的密碼文件，大可直接上傳到它的網路資料庫。
+因此紀錄密碼的工具以及儲存的資料必須要被加密，也就是要有所謂的主控密碼。
+ 密碼管理工具，安全嗎？ 許多人，包括我，一開始聽到「密碼管理工具」時，都會覺得不可思議：這種東西真的能信任嗎？但其實一個做得好的密碼管理工具，是很安全的，以下我將回應常見的疑慮。
+我主密碼被破解了不就完了？ 有些人覺得，使用密碼管理工具，就是將所有密碼的命運寄放在一組密碼上，這樣風險太大了！
+其實沒錯，如果妳今天能夠記得自己每個帳號的每個密碼，妳壓根不需要密碼管理工具，但問題是我們辦不到。
+就是因為我們記不得密碼，我們才會用相同的密碼，才會有上述所說的安全問題。而事實上也沒錯，使用密碼管理工具就是將所有密碼寄放在一組密碼上。但我們可以透過兩步驟驗證來避免主密碼被破解就被盜用。
+兩步驟驗證，顧名思義，就是在妳輸入密碼後還要經過另一道手續才可以登入。例如 簡訊驗證碼、Email 確認信都是常見的形式，這樣可以避免密碼被破解就導致帳號被盜，駭客必須同時掌握妳的密碼和手機才有辦法登入，這個難度實在蠻高的，所以現在幾乎所有研究都指出兩步驟驗證能確實提高安全性。
+它會偷我的密碼嗎？ 另一個考量就是這個程式是否值得信任？，畢竟我在上面舉 Evernote 例子時也提到：我們很難確定程式有沒有在背後搞鬼！ 而這就見仁見智了，有些人可能是信任大公司的軟體，而我是信任良好的加密演算法和開源軟體。
+ 一個安全的加密演算法，就是妳就算知道它的原理還是無法破解它
+ 舉我所使用的 Bitwarden 為例，在官網 FAQ 就寫了 為什麼妳要信任 Bitwarden。
+   Bitwarden is 100% open source software. All of our source code is hosted on GitHub and is free for anyone to review.</description>
     </item>
     
   </channel>

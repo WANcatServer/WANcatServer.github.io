@@ -1,756 +1,97 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-    <meta property="og:site_name" content="WANcatServer">
-    <meta property="og:type" content="article">
-
-    
-    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
-    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
-    
-
-    
-    <meta name="title" content="活動紀錄" />
-    <meta property="og:title" content="活動紀錄" />
-    <meta property="twitter:title" content="活動紀錄" />
-    
-
-    
-    <meta name="description" content="">
-    <meta property="og:description" content="" />
-    <meta property="twitter:description" content="" />
-    
-
-    
-    <meta property="twitter:card" content="summary" />
-    
-    
-
-    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>活動紀錄-WANcatServer 網貓伺服器</title>
-
-    <link rel="canonical" href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/">
-
-    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
-	
-    
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    
-    <link rel="stylesheet" href="/css/hux-blog.min.css">
-
-    
-    <link rel="stylesheet" href="/css/syntax.css">
-    
-    
-    <link rel="stylesheet" href="/css/zanshang.css">
-    
-    
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    
-    
-
-    
-    
-    <script src="/js/jquery.min.js"></script>
-    
-    
-    <script src="/js/bootstrap.min.js"></script>
-    
-    
-    <script src="/js/hux-blog.min.js"></script>
-
-    
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    
-    
-
-    
-<script type="text/javascript">
-  var _paq = window._paq = window._paq || [];
-   
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//matomo.linchpins.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '3']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-
-
-</head>
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">WANcatServer</a>
-        </div>
-
-        
-        
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    
-                        
-                        <li>
-                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E5%B0%88%E6%A1%88">專案</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%95%8F">每日一問</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
-                        </li>
-                        
-                    
-                    
-		    
-                        <li><a href="/top/about/">ABOUT</a></li>
-                    
-
-                    
-                </ul>
-            </div>
-        </div>
-        
-    </div>
-    
-</nav>
-<script>
-    
-    
-    
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        
-            $navbar.className = " ";
-            
-            setTimeout(function(){
-                
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
-
-
-
-<header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>WANcatServer </h1>
-                    
-		    <span class="subheading">網貓伺服器</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-
-  
-<div class="container">
-    <div class="row">
-        
-        
-   	    <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container
-        ">
-            
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/red-string-2020/">
-        <h2 class="post-title">
-            2020 赤弦獎比賽心得
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            今天我與班上同學 Annie 參加北科的民歌比賽——赤弦獎，我們報名高中演唱組，Annie 擔任主唱，我則是吉他手。我原先想報的其實是創作組，然而創作組只
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Sunday, November 22, 2020
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/first-ctf/">
-        <h2 class="post-title">
-            CTF 參加初體驗
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            CTF 參加初體驗 承蒙朋友邀請，我人生首度參加資訊安全競賽——政府舉辦的資安金盾獎，本來就預期會很難，但沒想到會這麼難，深深感受到有一個世界等著去
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Saturday, November 16, 2019
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/jsp-9/">
-        <h2 class="post-title">
-            JSP 第九屆參加心得
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            JSP——國中科學探究聯合發表會——是一個給學生的派對，讓愛好科學的學生聚在一起互相交流，從 2017 年 JSP７時開始，我已經參加了三屆的 JSP，每
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Tuesday, August 20, 2019
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/my-website-building-log/">
-        <h2 class="post-title">
-            網站建置紀錄
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            網站建置紀錄 我的網站從 2017 年六月第一次上 GitHub Page，到現在 www.wancat.cc ，也已經半年了，寫下這篇文章紀錄一下架站的方法。 Hexo 我的部落格是用 Hexo 將 Markdown 轉成一個靜態
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Sunday, January 20, 2019
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/jsp8-2/">
-        <h2 class="post-title">
-            2018 JSP 紀錄與心得 (二)
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            參加 JSP 國中科學探究聯合發表會 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。 本次主題的系列文章, 演講影片 老街解謎 在看了海報
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Thursday, August 23, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/jsp8/">
-        <h2 class="post-title">
-            2018 JSP 紀錄與心得 (一)
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            參加 JSP 國中科學探究聯合發表會 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。 本次主題的系列文章, 演講影片 JSP 簡介 今年很高興又
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Monday, August 6, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-
-            
-
-
-
-       	</div>
-        
-
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-             
-            
-                
-            
-                
-                    <a href="/tags/caddy" title="caddy">
-                        caddy
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/golang" title="golang">
-                        golang
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/jsp" title="jsp">
-                        jsp
-                    </a>
-                
-            
-                
-                    <a href="/tags/life" title="life">
-                        life
-                    </a>
-                
-            
-                
-            
-                
-                    <a href="/tags/linux" title="linux">
-                        linux
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/minecraft" title="minecraft">
-                        minecraft
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/ourliveworld" title="ourliveworld">
-                        ourliveworld
-                    </a>
-                
-            
-                
-                    <a href="/tags/raspberry-pi" title="raspberry-pi">
-                        raspberry-pi
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/website" title="website">
-                        website
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
-                        教育
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
-                        自由軟體
-                    </a>
-                
-            
-                
-            
-                
-                    <a href="/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8" title="資訊安全">
-                        資訊安全
-                    </a>
-                
-            
-                
-            
-                
-            
-        </div>
-    </section>
-    
-
-    
-	
-    <section class="visible-md visible-lg">
-	<hr><h5><a href="/top/about">ABOUT ME</a></h5>
-        <div class="short-about">
-            
-            <a href="/top/about">
-               <img src="/img/wancat.jpg" alt="avatar" style="cursor: pointer" />
-            </a>
-            
-            
-                <p>Student, Golang Programmer, Linux User</p>
-            
-           
-           <ul class="list-inline"> 
-               
-               <li>
-                   <a href='/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/index.xml' rel="alternate" type="application/rss+xml" title="WANcatServer" >
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://facebook.com/wancatserver">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://github.com/lancatlin">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-            
-            
-               <li>
-                   <a target="_blank" href="https://liker.social/@wancat">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               <li>
-                   <a target="_blank" href="https://keybase.io/wancat">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-                </ul>
-            </div>
-    </section>
-	
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FRIENDS</h5>
-        <ul class="list-inline">
-            
-            <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
-            
-            <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
-            
-        </ul>
-    </section>
-    
-
-    
-    
-</div>
-
-	</div>
-</div>
-
-
-
-
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                   
-                   <li>
-                       <a href='/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/index.xml' rel="alternate" type="application/rss+xml" title="WANcatServer" >
-                           <span class="fa-stack fa-lg">
-                               <i class="fa fa-circle fa-stack-2x"></i>
-                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                           </span>
-                       </a>
-                   </li>
-                   
-                    
-                    <li>
-                        <a href="mailto:wancat@wancat.cc">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
-                    
-                    
-                    
-                    
-
-                    
-                    <li>
-                        <a target="_blank" href="https://facebook.com/wancatserver">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
-
-		    
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/lancatlin">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://liker.social/@wancat">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
-                    
-                    <li>
-                        <a target="_blank" href="https://keybase.io/wancat">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
-            
-                </ul>
-		<p class="copyright text-muted">
-                    Copyright &copy; WANcatServer 2021
-                    <br>
-                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
-                    </iframe>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-
-
-
-
-
-<script>
-    
-    if($('#tag_cloud').length !== 0){
-        async("/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-
-<script>
-    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-
-
-
-
-</body>
-</html>
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>活動紀錄 | WANcatServer</title><meta name=keywords content><meta name=description content="網貓伺服器"><meta name=author content="wancat"><link rel=canonical href=https://wancat.cc/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/><link href=/assets/css/stylesheet.min.0e4a1b49e740c28140e9ee4945aab2f86cb0a7bfbf5a5d612d0cb5df7d6141f4.css integrity="sha256-DkobSedAwoFA6e5JRaqy+Gywp7+/Wl1hLQy1331hQfQ=" rel="preload stylesheet" as=style><link rel=icon href=https://wancat.cc/img/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://wancat.cc/img/logo.png><link rel=icon type=image/png sizes=32x32 href=https://wancat.cc/img/logo.png><link rel=apple-touch-icon href=https://wancat.cc/img/logo.png><link rel=mask-icon href=https://wancat.cc/img/logo.png><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.74.3"><link rel=alternate type=application/rss+xml href=https://wancat.cc/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/index.xml><script type=text/javascript>var _paq=window._paq=window._paq||[];_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);(function(){var u="//matomo.linchpins.cloud/";_paq.push(['setTrackerUrl',u+'matomo.php']);_paq.push(['setSiteId','3']);var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.type='text/javascript';g.async=true;g.src=u+'matomo.js';s.parentNode.insertBefore(g,s);})();</script><meta property="og:title" content="活動紀錄"><meta property="og:description" content="網貓伺服器"><meta property="og:type" content="website"><meta property="og:url" content="https://wancat.cc/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84/"><meta property="og:image" content="https://wancat.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:updated_time" content="2020-11-22T18:02:26+08:00"><meta property="og:site_name" content="WANcatServer"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://wancat.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="活動紀錄"><meta name=twitter:description content="網貓伺服器"></head><body class=list id=top><script>if(localStorage.getItem("pref-theme")==="dark"){document.body.classList.add('dark');}else if(localStorage.getItem("pref-theme")==="light"){document.body.classList.remove('dark')}else if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.body.classList.add('dark');}</script><noscript><style type=text/css>#theme-toggle,.top-link{display:none}</style></noscript><header class=header><nav class=nav><div class=logo><a href=https://wancat.cc accesskey=h title="WANcatServer (Alt + H)"><img src=/img/logo.png alt=logo aria-label=logo height=35>WANcatServer</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu onscroll=menu_on_scroll()><li><a href=https://wancat.cc/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://wancat.cc/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://wancat.cc/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://wancat.cc/search/ title=Search><span>Search</span></a></li><li><a href=https://wancat.cc/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><header class=page-header><h1>活動紀錄</h1></header><article class="post-entry tag-entry"><header class=entry-header><h2>2020 赤弦獎比賽心得</h2></header><section class=entry-content><p>今天我與班上同學 Annie 參加北科的民歌比賽——赤弦獎，我們報名高中演唱組，Annie 擔任主唱，我則是吉他手。我原先想報的其實是創作組，然而創作組只有大專才有，專一到專三只能報高中組，後來 Annie 就找我去參加高中演唱組。
+比賽結果是沒有入圍，我想主因還是表演本身不夠特別，我吉他基本上就只是看 91 譜，然後壓出最簡單的和弦，刷法上的變化也不多，也沒有什麼指彈的旋律，呈現出來的很普通。在比賽的前一週社團的學長姐給了我一些建議，調整了副歌的刷法，但可能還是難以改變整體缺乏特色的問題。評審指出了幾個可以改進的地方，包括刷法的變化、層次不足，還有我與 Annie 的搭配需要更緊密。我們這次比賽沒有指導老師，練習過程也缺乏檢討，因此常常找不到進步的方向，
+我自今年暑假開始學吉他，至今快四個月，然而我自滿於當前的狀態，自從開學以來毫無長進，我想主要原因可能是我疏於練別人的歌，因此技巧停留在基礎的程度，甚至基礎也不如——封閉和弦都還沒辦法按得很穩定。這學期加入社團，將時間投入去學習新的樂器，電吉他、貝斯、爵士鼓，然而每一樣都沒有充分的時間練習，學習的效果跟暑假時每天練吉他兩個小時相比實在相差太多了。之所以學那麼多樂器，倒不是想樣樣精通，而是為了編曲要對各種樂器有點概念，如此而已。
+我想以我的目標——成為創作歌手——而言，學好木吉他應該會是最優先的事項，畢竟初期創作會多以自彈自唱為主，能不能編出豐富的吉他會大大的影響到作品的好壞。因此接下來我需要加強吉他的訓練，要多練習別人的作品，並有系統的從中學習到技巧，將其應用於自己的作品，可能也會再去上一對一的吉他課，比起社團的大班課，一對一還是最能夠進步。但我想先自己努力看看，去請教社團的學長，等到自己已經無法更進一步了，再去上課。
+希望這次比賽可以作為一個契機，激勵我在吉他上更加努力。</p></section><footer class=entry-footer>November 22, 2020&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 2020 赤弦獎比賽心得" href=https://wancat.cc/post/red-string-2020/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>CTF 參加初體驗</h2></header><section class=entry-content><p>CTF 參加初體驗 承蒙朋友邀請，我人生首度參加資訊安全競賽——政府舉辦的資安金盾獎，本來就預期會很難，但沒想到會這麼難，深深感受到有一個世界等著去探索。
+在報名時有個小插曲，本人就讀五專，現在是高一的年紀，然而我的學校在報名網被歸類在大專組，這樣我就無法和其他高中的友人 TNPLR 一同參加。為此我寫信去跟主辦單位反應，主班單位就添加了五專部的選項，實在令人感動，可見主辦單位的誠意。
+初賽 設備 初賽的設備我覺得挺神奇的，首先不能帶自己的電腦、儲存裝置，手機不能用，主辦單位提供的是一台 Windows 電腦，並且要「連到虛擬機」作答，然而虛擬機還是 Windows，我不懂為何不用實體機就好了？
+作答過程不能連上外網，也就是說沒辦法查資料，我本來就夠弱了，沒辦法搜尋就更弱了。只能用 Windows 電腦也是個很大的障礙，工具很不足，Base64 這種基本工具都沒有… 沒網路又不能用線上工具。我在此建議大會，既然使用了虛擬機，就提供 Linux 這個選項，不然對於長年不使用專有作業系統的人來說實在不友善。
+題目 雖然只是初賽，但每題都很難，我們在 Crypto、Web 和 Misc 都稍有斬獲，但最終都沒有解出來，全部輸掉。但很神奇的是，在兩週之後，我們竟然收到了決賽通知書，還是從 98 中剩餘的 15 隊。我們推測之後認為應該是題目有錯，導致當天顯示錯誤，但其實有答對，否則不可能隨便挑 15 隊進入決賽。
+無論真相為何，既然進入了決賽，就要好好比。
+決賽 決賽場地位於張榮發基金會，決賽比五個小時，國高中組有十題題目，題目分數為 100 三題、200 四題、300 三題。試題範圍跟初賽一樣，但沒有特別標注哪題是哪種類型，以下將根據我的觀察進行分類。
+設備 決賽使用個人的電腦，並且可以上外網，這樣真的好很多，不需要用彆扭的 Windows，我也先裝好資安方面的 Linux 虛擬機——Kali，但還沒熟悉其中的工具，所以其實沒有很大的幫助。
+雖然可以上外網，但比賽禁止與「外部通訊」，意思是不能和隊員以外的人類溝通，我覺得這個用字要再精確一點，因為瀏覽網頁其實也是一種「與外部通訊」，避免造成選手誤會。
+既然是比資安比賽，當然就要破解漏洞，在比賽後我想到了一種安全的通訊方式。假設有兩個隊伍 A 和 B，A 事先在賽前跟 B 約好一個通訊埠和一組帳密，比賽開始後，A 在他的電腦架設一個 SSH Server，並使用事前約定好的埠口，然後 B 就用 nmap 掃描區網所有電腦，掃到事前約定好的埠口就代表該主機是 A 隊，然後就可以用約定好的帳密登入進去了。
+這個作法有多種安全性，首先，這個過程完全就是操作終端機，看起來跟平常解 CTF 並無二異。第二，因為使用 SSH，所以通訊過程是加密的，主辦單位也不知道。那有了這個通訊方法後，就可以透過把 flag 留在伺服器中的某個檔案的方式來交換答案。
+但有個大漏洞是：主辦單位可以發現兩個不同隊伍的 IP 有通訊的行為，雖然不知道通訊內容為何，但還是有可能會因此被舉發，所以好孩子還是不要嘗試喔！...</p></section><footer class=entry-footer>November 16, 2019&nbsp;·&nbsp;2 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to CTF 參加初體驗" href=https://wancat.cc/post/first-ctf/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>JSP 第九屆參加心得</h2></header><section class=entry-content><p>JSP——國中科學探究聯合發表會——是一個給學生的派對，讓愛好科學的學生聚在一起互相交流，從 2017 年 JSP７時開始，我已經參加了三屆的 JSP，每次參加，心態都有些不同；每次參加，也都領悟到不一樣的事。
+今年，我已經國中畢業了，抱持著「參加最後一次」的心情來到 JSP，卻發現自己跟過去不一樣了。
+專題演講 自從二年級的科展比完之後，我就沒有再做過科學研究，可以說是有些倦了，這三年來參加 JSP 的作品也都不是比賽作品，而是為了 JSP 而準備的內容。
+為什麼講區塊鏈？ 我大約一年前從 台灣吧的芬特克 系列中第一次認識了區塊鏈，後續我加入了 Matters 社群、LikeCoin 讚賞公民，逐漸對區塊鏈有越來越深的興趣，後來透過閱讀區塊鏈媒體 區塊勢 了解許多的區塊鏈應用相關的知識。
+JSP 大部分還是以傳統學術的科學為主，在資訊科學的部份，通常只是「工具」，而不是研究主軸。而我 去年的演講 就已經開始以「資訊科普」為主題，像大家介紹透過 Python 來寫一個遊戲，和遊戲中物理系統設計的基本概念。
+我其實並不是多會寫程式的人，這一年來也沒完成什麼值得驕傲的專案，所以我想區塊鏈應該是 JSP 的學員比較陌生的主題，「科普區塊鏈」應該會蠻不錯的。而相對於加密貨幣，我自己更喜歡區塊鏈在「非貨幣上的應用」，於是決定來講「數位資產」這個主題。
+演講的準備 我認識一些在區塊鏈領域的前輩，根據前輩的經驗，要早點給聽眾「一點區塊鏈上的東西」比較能提起聽眾的興趣，所以通常會發一點幣或是數位資產。但慢慢發給一位一位聽眾想必會花很多時間，於是我就決定來設計一套「發禮物系統」，只要將資產建立好，然後產生一個限時限量連結，點入連結貼上自己錢包地址就可以取得數位資產。
+說實在的，這不是多困難的系統，產權區塊鏈 Bitmark 有給開發者使用的 SDK，所以不需要自己處理底層，甚至連 API Request 都不用發。但我畢竟還是個菜鳥工程師，整個系統開發下來仍花了一個多禮拜，直到演講的前兩天才開發完畢。
+Bitmark 很高興有開發者願意加入他們的生態系，所以聽到我在開發這個系統時，就送了我一件 Bitmark 的 T-Shirt（就是我當天穿的），也免費給了我活動三天的 Token。
+但相對於花了很多時間準備程式，我在演講本身的準備相對較少，以前準備演講都會先寫好逐字稿，然後大量的練習，但這實在是太耗費心力，所以從這次演講開始，我決定要練習只準備投影片就能講完整的能力。
+演講 就結果來說，我認為這次演講並不成功，我事後訪問了一些聽眾，表示聽懂的並不多，數位資產我總共準備了 120 份，最後卻只發出了 16 份。
+原因有幾項：原本約定好的時間是 25 分鐘，然而到了當天我才知道只有 10 分鐘，很多內容都來不及說，數位資產也變成是吃午餐的時候發，觀眾參與度就變得很低；而且接收數位資產需要安裝 Bitmark app，現代人不喜歡得裝 app 的事情，而且畢竟課程沒有要求，不是大家都有帶著手機，也有些人根本懶得安裝。
+區塊鏈本身就是個很難在幾個小時內說完的主題，何況我只有十分鐘，我只能帶個聽眾最粗淺的印象並帶入一些實際的應用。
+因為我沒有準備演講稿，只有大綱跟投影片，可以加速在 10 分鐘說完，但就沒什麼問答時間，其實有不少觀眾有提問題，但卻沒時間回答，這是我覺得很可惜的。
+我這次演講有準備 sli.do，因為我知道很多聽眾很害羞不太敢發問，不過因為大家並不都有手機，也不一定有網路，但還是有一位觀眾留下問題（還有我自己先準備的假問題），所以我覺得未來還是可用。
+我希望未來 JSP 能夠增加每個發表的時間，錯失珍貴的討論機會，真的很可惜。...</p></section><footer class=entry-footer>August 20, 2019&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to JSP 第九屆參加心得" href=https://wancat.cc/post/jsp-9/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>網站建置紀錄</h2></header><section class=entry-content><p>網站建置紀錄 我的網站從 2017 年六月第一次上 GitHub Page，到現在 www.wancat.cc ，也已經半年了，寫下這篇文章紀錄一下架站的方法。
+Hexo 我的部落格是用 Hexo 將 Markdown 轉成一個靜態網站的，所以可以部屬到 GitHub Page 或是任何伺服器，我自己現在還留著 https://wancatserver.github.io 避免哪天伺服器發生不測……。那 Hexo 可以多重部屬，我的設定檔大概長這樣。
+# _config.yml deploy: - type: git repo: git@github.com:WANcatServer/WANcatServer.github.io.git - type: rsync host: 我的伺服器 ip user: lancat root: /volume2/WANcatServer/www 那我的佈景是使用 Archer，非常好看的一個佈景，那我有做一些小調整：把簡體中文換成繁體，然後將授權地方放上 CC 授權。
+cd path/to/blog vim /theme/archer/layout/post.ejs 即可修改模板內容，EJS 也是我之前用過的模板引擎，所以挺快就弄好了。
+到 創用 CC 官網 上找你要的授權，就可以複製 HTML 嵌入到網站裡了。可以直接加在 Archer 裡面的 _config.yml
+# theme/archer/_config.yml # 將 license 改成以下 license: &lt;a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">&lt;img alt="創用 CC 授權條款" style="border-width:0" src="https://i....</p></section><footer class=entry-footer>January 20, 2019&nbsp;·&nbsp;2 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 網站建置紀錄" href=https://wancat.cc/post/my-website-building-log/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2018 JSP 紀錄與心得 (二)</h2></header><section class=entry-content><p>參加 JSP 國中科學探究聯合發表會 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。 本次主題的系列文章, 演講影片
+老街解謎 在看了海報發表以及趣味課程後，我們在下午四點即將出發到大溪老街，進行大溪老街實境解謎，要在大溪老街中，找出各個謎題的答案。我將網站的連結放這邊 （抱怨一下，這個網站沒辦法用Firefox開啟！！害我用了55 mb下載 chromium）
+裡面的每一題都十分困難，需要實際到老街裡面走，而且不太可能用搜尋引擎得到答案。
+我一開始是非常熱血的，在前往的路途上就開始研究地圖，根據主辦老師給的地圖，我發現一些可疑之處，並且開始計畫一個攻克路線。 結果到了現場，我們的隊輔表示已經跟友隊串通好要一起破解，我就失去動力了，有時候自己快解出來了卻「被」公佈答案，真的是最掃興的事。
+直到我發現，答案都在網頁裡。
+熱血駭客魂 事情是這樣的，原先我以為答案在伺服器中，客戶端將輸入的答案傳送給伺服器核對，伺服器再回傳是否正確。但是我關了網路，卻仍然可以知道答案是否正確，證明了「答案」一定被紀錄在網頁的某個角落。
+哇！發現這個之後不得了，我立刻跟我的工程師朋友講這件事，就用手機想來看原始碼，手機打不開，於是就出動了我隨身攜帶的筆電。
+我和我朋友的熱血駭客魂立刻爆發了，我們雖然無法自己找出答案，但可以追求屬於我們的勝利。原本我想答案應該會被隨便擺在某個陣列或是物件中，於是就根據前面所得到的答案內容下去搜尋，應該就能找到擺放答案的陣列。結果不然，什麼都沒查到。我們繼續嘗試用各種關鍵字，像是「答案」、「answer」、「第六題」等等，仍然一無所獲。
+看來設計網頁的人有想刻意隱藏這個答案，沒辦法那麼容易破解。
+我們開始一行一行慢慢看原始碼，有時候看到關鍵字搜尋，我們兩個都對Javascript(撰寫網頁程式的程式語言)不太擅長，因此看的有些吃力。
+&lt;script type="text/javascript" src="../js/md5.js">&lt;/script> 當我們看到這一行的時候，我朋友突然大叫。
+天啊！它竟然用MD5!這下解不開了。
+我不知道MD5是什麼，朋友解釋說，MD5是一種密碼雜湊函式，簡單來說，可以將一個資料轉換為一段暗碼，但你難以透過暗碼去推回原先的資料，也就是單向函式。
+那要如何利用MD5? 以這個網頁為例，假設答案是「地瓜」（我絕對沒有要劇透的意思），那網站就先將「地瓜」用MD5加密成一段暗碼，然後把暗碼放到網頁裡面。 當使用者輸入答案時，網頁的程式將會將輸入的答案用MD5加密，然後比對加密的結果跟原先放在網站裡的暗碼是否一致，如果一致則代表使用者輸入的答案是正確的。
+在證得了這個網頁使用MD5來防止破解後，我們就放棄透過看原始碼來取得答案了。雖然破解失敗了，但是這個破解的過程，或者說跟朋友一起破解的過程，卻是我從未體驗過的。
+撩妹…不，我們撩 Object 話說JSP最刺激而瘋狂的活動就是**「隱藏任務」**啦！第二天的晚上你別想睡覺，有著最困難的任務要和你的組員一起完成。我們去年在福科的隱藏任務是**「開店計畫」**，我們從下午到夜市探勘，到晚上在體育館內討論，我還負責了影片的製作，結果竟然到了半夜三點才睡覺，而且隔天六點就得起來。
+隱藏任務雖然辛苦，但非常好玩，在去年的最後一天發表會上，所有人都非常熱烈，台上與台下在熱絡的嘴炮討論。最吵的莫過於我們學校的學生了，每個人好像都不怕生，對台上的講者有一堆意見，這可歸功於我們科研社老師平日的「教育有方」。
+而今年的隱藏任務是什麼呢？「科學幽默Slogan」（這是我自己的取名啦），看中最近蔚為流行的「撩妹語錄」、「負能量語錄」，今年的隱藏任務就是要來想跟科學相關的各種Slogan啦！
+那我們這組想了什麼呢？我們一開始就打算反骨到底，撩「妹」太嫩啦！我們來撩弟，但一群雄性動物不知道該怎麼撩自己；再來是使用的語詞，我們絞盡腦汁，還是想不出什麼可以用來騷擾同性的詞彙。
+於是有人說不要針對性別啦！都撩好嗎？都撩。咦？那就變成「撩People語錄」了？ 這時，我朋友突然用他的工程師專業說了句：
+「不然『撩Object語錄』？」
+其他人都愣在那裡，只有我當場笑倒。
+跟大家解釋一下，Object 物件，是在程式設計中的一個概念，在物件導向程式設計中，認為程式是由各種「物件」所組成的，而通常這些物件的最高Parent物件就是Object，所以「撩Object」，根據多型的原則，就是撩了所有的宇宙萬物了。
+// 在我的文章中有講解簡單的物件導向觀念，有興趣的朋友可以去看看。物件導向的細節很多，如果想知道更深入的可能要自己去查囉！
+畢達哥拉斯 那既然確定要「撩Object語錄」了，那也不用在乎受眾是誰，我們開始想各個科學家的撩Object語錄。 幸好強者我朋友，平日都在看一些怪怪的書，科學素養很高，認識許多科學家和他們的產地。我們常使用一種比較艱澀的鋪梗法，是將科學家本來自己的理論，為了撩Object而故意弄成錯的，例如我自己很喜歡的一則:
+畢達哥拉斯: 「你是唯一的無理數」
+還是稍微解釋一下，畢達哥拉斯的教派（他有一幫的弟子）有一個思想，是對「比例」的追求，他們相信所有的數字都可以用 “a/b” 這樣來表示，然而當他的一位弟子證明了正方形的斜邊長，也就是√2是個無理數時，他弟子就「溺死」了，我是說被溺死了。
+伽利略 再舉一個比較熟知的例子，伽利略應該很多人都熟悉。
+伽利略: 「我想和你一起掉下去」
+伽利略是推翻過去亞里斯多德「越重東西掉落速度越快」理論的人，在他著名的比薩斜塔實驗中，他將兩顆材質相同但質量不同的球體，從比薩斜塔上往下丟，證明物體的掉落速度與質量無關。
+所以「和你一起掉下去」，我們就永遠不分開啦！
+完整的內容 這張做一個小註解，它是我們的另一位組員想的，唯一不是我們這兩個阿宅想的內容。非常令人驚訝的是，在發表會上，這是最成功的一則。...</p></section><footer class=entry-footer>August 23, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 2018 JSP 紀錄與心得 (二)" href=https://wancat.cc/post/jsp8-2/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>2018 JSP 紀錄與心得 (一)</h2></header><section class=entry-content><p>參加 JSP 國中科學探究聯合發表會 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。 本次主題的系列文章, 演講影片
+JSP 簡介 今年很高興又參加了JSP，自從去年在我的學校 —福科國中舉辦後，就深深愛上了這個活動。 JSP的全名為 國中科學探究聯合發表會 ， Junior Scientist Party ，是一個非比賽導向，純粹讓學生進行交流與交朋友的科學派對。
+每一位參加的學生，都必須準備一點功課，可能是將你的研究成果做成一張海報，與觀眾們互動；抑或是準備一項科學課程，帶著學員們一起做；或者是在大會議廳中向所有人發表你的研究成果。 不管是哪一種都不簡單，所以參與的學生個個是有行動力、勇敢且努力的人，花了很多時間準備，才能來到這裡的。 而來到了JSP，也並非是跟同校的在一起，所有的學生會被打散到各個小組中，能因此認識不同的人，建立新的人脈。
+去年我曾經參加，深受感動，因此今年，我仍在這裡。
+事前準備 如前面所說，需要準備一個發表的項目。去年我是做海報分享，介紹我自製的Arduino紅外線遙控車。那今年我要挑戰更大的項目，就是在百人會議廳前進行專題發表。
+題材呢？我在今年參加台中市的科展，是製作單感測器循線車，可能是科展講到會怕了，不太想要講這個題材。另外一個就是在比科展的同時，自己在製作的遊戲專案 — FireWheel火輪手槍，一方面較有趣、新鮮，二來老師也認為資訊領域是JSP較少見的題材。從暑假的第二周開始，我就在準備這場演講。 講稿連結 我寫了非常多的內容，雖然要講的只有遊戲中的「碰撞檢測」與「三角函數」，這兩個有點偏數學的項目，但是一寫不得了，每天都寫了超越千字（打字太快了），結果到所有內容寫畢，才發現已經14000字元了，根本不可能在10分鐘的報告中講完。
+這時老師也給了一個方向大轉彎，突然要我放多一點的歷程，像是怎麼學習程式的，途中遇到的困難等等，但隔天就要在學校進行試講，實在來不及，也不知該怎麼改。到了星期一在學校對著老師同學試講時，整整講了37分鐘，是限定時間的將近4倍。在最前面找同學上來試玩的地方，讓場面變得很歡樂，老師也說我臉上出現了「興奮」的神情，但在後面講的越來越久時，興奮的表情開始慢慢的黯淡。
+在星期一的試講結束後，老師給了很多建議，最多還是要「刪」，刪是很正常的，在做科展的報告時我就了解，反正我還有部落格，沒法在口說講完的內容，就放在部落格給有興趣的看就好。最後一路刪刪刪，刪到只剩遊戲簡介、試玩、架構以及圓形對圓形的碰撞檢測。 星期二時我帶著麥克風、筆電，一個人到教室開始練習口說，一次一次試，逐漸可以把時間控制在15分鐘內，且慢慢可以不用看稿，對於我的投影片也更加熟悉，知道該在什麼時候翻頁、什麼時候用手去指。花了一個多小時練了四次，偶爾加強班下課還會有人路過來看。 在星期三的驗收，老師表示我已經足夠熟練，剩下的就是要看臨場反應，以及一定要找人試玩，我自己也發現試玩對於整個報告會有不同於我自己玩的「笑果」，讓報告變得活潑，讓觀眾產生興趣。
+這次的所有圖片，包括投影片底圖都是我自己設計的，一開始要畫碰撞檢測的示意圖，調出了非常可愛的粉紅色以及粉綠色，就決定以此作為這次報告的主題色彩。
+同為天涯程式人 當JSP開始，我們在一個禮堂要進行分組，分組基本上是隨便亂分啦！唯一的規則就是不要跟同校的一組。(我也沒有同校的)
+特別的是，我們的組裡有一位組員也會寫程式，竟然也玩Linux作業系統，是我人生中第一次遇到同年齡也會玩Linux的(我也是他第一次遇到有人用Linux的，可見Linux的市占率…)。
+我們一下就聊起來了，我發現他懂的非常多。關於我很缺乏的電腦底層知識，資訊領域的各種知識，還有科學，他幾乎都知道。有時候還會知道一些很奇怪的冷知識，像是Unicode裡面的編碼，令人會心一笑。
+我們也彼此分享了所做的專案，像我的 圖書管理系統、火輪手槍，他做了一個加密系統、現在正在做作業系統。
+專題演講 在第二天的早上，就是專題演講的時候。
+記得從小學六年級的時候，我就常常成為團隊中的發表者，對於「上台」這件事，從一開始的害怕、忐忑，到後來可以面無懼色的在台上講話，甚至對於表現開始有種興奮，開始期待，並且恨不得自己第一個上場。
+科研社ㄉ特別訓練 我的「台風」，絕不是什麼演講比賽、即席演說所訓練的，而是科研社。 在科研社的兩年給了我很多時間去學習「如何發表」。我想我們學校的科研社應該跟其他學校有很大的不同，我們不常做實驗，相對的，我們不停的交流。我們常常分享彼此的想法，常常上台發表，常常把報告拖到最後一天才做。
+對我而言，在科研社學到的不是科學知識，而是做研究的方法。或許你不會因此變得對某個領域非常的精熟，但你會知道如何讓自己成為那樣的人。
+在經過了前面的四組後，終於輪到了我。
+我早已把筆電準備在前面，這次很堅持的使用了自己的筆電，自己設計簡報，自己設計底圖，一人團隊有些辛苦，但我的成果讓我很滿意。
+這次的演講算是出奇的成功。首先我很擅長問答，因此我往往更擅長應變實際的情況，還有就是事前的準備，這次我的指導老師很精準的預期了觀眾的反應，因此採用最低強度的演講，成功的讓所有人都感到興趣且聽的懂。
+很開心的是觀眾反應非常熱烈，在報告的一開始，有安排找觀眾試玩的橋段， 原本還有些擔心會不會沒人願意上來，還好在 我事先的布局 觀眾熱烈的反應下，這個擔心不成問題，事實上還有三位觀眾願意上台呢！
+最後有些時間不足，因此在程式解說之處稍微草率，但還好有時間讓我好好講結論。
+在這邊我想謝謝每一位聽我演講的觀眾，我相信，一個好的演講，是需要講者與觀眾一同參與的，謝謝你們作了一個稱職的觀眾，讓我有一個好的舞台。也謝謝願意鼓起勇氣上台試玩的朋友，讓我們能一起完成一場好的演講。 請大家一定要去看影片喔！</p></section><footer class=entry-footer>August 6, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 2018 JSP 紀錄與心得 (一)" href=https://wancat.cc/post/jsp8/></a></article></main><footer class=footer><span>&copy; 2021 <a href=https://wancat.cc>WANcatServer</a></span>
+<span>&#183;</span>
+<span>Powered by <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a></span>
+<span>&#183;</span>
+<span>Theme <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)"><button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></button></a>
+<script>window.onload=function(){if(localStorage.getItem("menu-scroll-position")){document.getElementById('menu').scrollLeft=localStorage.getItem("menu-scroll-position");}}
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener("click",function(e){e.preventDefault();var id=this.getAttribute("href").substr(1);if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({behavior:"smooth"});}else{document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();}
+if(id==="top"){history.replaceState(null,null," ");}else{history.pushState(null,null,`#${id}`);}});});var mybutton=document.getElementById("top-link");window.onscroll=function(){if(document.body.scrollTop>800||document.documentElement.scrollTop>800){mybutton.style.visibility="visible";mybutton.style.opacity="1";}else{mybutton.style.visibility="hidden";mybutton.style.opacity="0";}};function menu_on_scroll(){localStorage.setItem("menu-scroll-position",document.getElementById('menu').scrollLeft);}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{if(document.body.className.includes("dark")){document.body.classList.remove('dark');localStorage.setItem("pref-theme",'light');}else{document.body.classList.add('dark');localStorage.setItem("pref-theme",'dark');}})</script></body></html>

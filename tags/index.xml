@@ -2,372 +2,371 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/</link>
+    <link>https://wancat.cc/tags/</link>
     <description>Recent content in Tags on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     <lastBuildDate>Sun, 07 Mar 2021 21:28:38 +0800</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>物理</title>
-      <link>https://www.wancat.cc/tags/%E7%89%A9%E7%90%86/</link>
+      <link>https://wancat.cc/tags/%E7%89%A9%E7%90%86/</link>
       <pubDate>Sun, 07 Mar 2021 21:28:38 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E7%89%A9%E7%90%86/</guid>
+      <guid>https://wancat.cc/tags/%E7%89%A9%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>歷史</title>
-      <link>https://www.wancat.cc/tags/%E6%AD%B7%E5%8F%B2/</link>
+      <link>https://wancat.cc/tags/%E6%AD%B7%E5%8F%B2/</link>
       <pubDate>Sat, 23 Jan 2021 11:55:47 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E6%AD%B7%E5%8F%B2/</guid>
+      <guid>https://wancat.cc/tags/%E6%AD%B7%E5%8F%B2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>吉他</title>
-      <link>https://www.wancat.cc/tags/%E5%90%89%E4%BB%96/</link>
+      <link>https://wancat.cc/tags/%E5%90%89%E4%BB%96/</link>
       <pubDate>Sun, 22 Nov 2020 18:02:26 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E5%90%89%E4%BB%96/</guid>
+      <guid>https://wancat.cc/tags/%E5%90%89%E4%BB%96/</guid>
       <description></description>
     </item>
     
     <item>
       <title>比賽</title>
-      <link>https://www.wancat.cc/tags/%E6%AF%94%E8%B3%BD/</link>
+      <link>https://wancat.cc/tags/%E6%AF%94%E8%B3%BD/</link>
       <pubDate>Sun, 22 Nov 2020 18:02:26 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E6%AF%94%E8%B3%BD/</guid>
+      <guid>https://wancat.cc/tags/%E6%AF%94%E8%B3%BD/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JavaScript</title>
-      <link>https://www.wancat.cc/tags/javascript/</link>
+      <link>https://wancat.cc/tags/javascript/</link>
       <pubDate>Wed, 17 Jun 2020 23:44:48 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/javascript/</guid>
+      <guid>https://wancat.cc/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Math</title>
-      <link>https://www.wancat.cc/tags/math/</link>
+      <link>https://wancat.cc/tags/math/</link>
       <pubDate>Wed, 17 Jun 2020 23:44:48 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/math/</guid>
+      <guid>https://wancat.cc/tags/math/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Caddy</title>
-      <link>https://www.wancat.cc/tags/caddy/</link>
+      <link>https://wancat.cc/tags/caddy/</link>
       <pubDate>Sun, 17 May 2020 22:17:08 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/caddy/</guid>
+      <guid>https://wancat.cc/tags/caddy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Raspberry Pi</title>
-      <link>https://www.wancat.cc/tags/raspberry-pi/</link>
+      <link>https://wancat.cc/tags/raspberry-pi/</link>
       <pubDate>Sun, 17 May 2020 22:17:08 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/raspberry-pi/</guid>
+      <guid>https://wancat.cc/tags/raspberry-pi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>WordPress</title>
-      <link>https://www.wancat.cc/tags/wordpress/</link>
+      <link>https://wancat.cc/tags/wordpress/</link>
       <pubDate>Sun, 17 May 2020 22:17:08 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/wordpress/</guid>
+      <guid>https://wancat.cc/tags/wordpress/</guid>
       <description></description>
     </item>
     
     <item>
       <title>科學</title>
-      <link>https://www.wancat.cc/tags/%E7%A7%91%E5%AD%B8/</link>
+      <link>https://wancat.cc/tags/%E7%A7%91%E5%AD%B8/</link>
       <pubDate>Sun, 26 Apr 2020 10:44:00 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E7%A7%91%E5%AD%B8/</guid>
+      <guid>https://wancat.cc/tags/%E7%A7%91%E5%AD%B8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>近視</title>
-      <link>https://www.wancat.cc/tags/%E8%BF%91%E8%A6%96/</link>
+      <link>https://wancat.cc/tags/%E8%BF%91%E8%A6%96/</link>
       <pubDate>Sun, 26 Apr 2020 10:44:00 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E8%BF%91%E8%A6%96/</guid>
+      <guid>https://wancat.cc/tags/%E8%BF%91%E8%A6%96/</guid>
       <description></description>
     </item>
     
     <item>
       <title>霧視法</title>
-      <link>https://www.wancat.cc/tags/%E9%9C%A7%E8%A6%96%E6%B3%95/</link>
+      <link>https://wancat.cc/tags/%E9%9C%A7%E8%A6%96%E6%B3%95/</link>
       <pubDate>Sun, 26 Apr 2020 10:44:00 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E9%9C%A7%E8%A6%96%E6%B3%95/</guid>
+      <guid>https://wancat.cc/tags/%E9%9C%A7%E8%A6%96%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Golang</title>
-      <link>https://www.wancat.cc/tags/golang/</link>
+      <link>https://wancat.cc/tags/golang/</link>
       <pubDate>Sun, 29 Mar 2020 19:56:21 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/golang/</guid>
+      <guid>https://wancat.cc/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>elementaryOS</title>
-      <link>https://www.wancat.cc/tags/elementaryos/</link>
+      <link>https://wancat.cc/tags/elementaryos/</link>
       <pubDate>Wed, 12 Feb 2020 19:15:22 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/elementaryos/</guid>
+      <guid>https://wancat.cc/tags/elementaryos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://www.wancat.cc/tags/linux/</link>
+      <link>https://wancat.cc/tags/linux/</link>
       <pubDate>Wed, 12 Feb 2020 19:15:22 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/linux/</guid>
+      <guid>https://wancat.cc/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nextcloud</title>
-      <link>https://www.wancat.cc/tags/nextcloud/</link>
+      <link>https://wancat.cc/tags/nextcloud/</link>
       <pubDate>Tue, 11 Feb 2020 14:40:06 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/nextcloud/</guid>
+      <guid>https://wancat.cc/tags/nextcloud/</guid>
       <description></description>
     </item>
     
     <item>
       <title>資訊安全</title>
-      <link>https://www.wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</link>
+      <link>https://wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</link>
       <pubDate>Fri, 07 Feb 2020 19:22:30 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</guid>
+      <guid>https://wancat.cc/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CloudFlare</title>
-      <link>https://www.wancat.cc/tags/cloudflare/</link>
+      <link>https://wancat.cc/tags/cloudflare/</link>
       <pubDate>Tue, 04 Feb 2020 10:35:52 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/cloudflare/</guid>
+      <guid>https://wancat.cc/tags/cloudflare/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Matomo</title>
-      <link>https://www.wancat.cc/tags/matomo/</link>
+      <link>https://wancat.cc/tags/matomo/</link>
       <pubDate>Tue, 04 Feb 2020 10:27:38 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/matomo/</guid>
+      <guid>https://wancat.cc/tags/matomo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SQL</title>
-      <link>https://www.wancat.cc/tags/sql/</link>
+      <link>https://wancat.cc/tags/sql/</link>
       <pubDate>Tue, 04 Feb 2020 10:27:38 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/sql/</guid>
+      <guid>https://wancat.cc/tags/sql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://www.wancat.cc/tags/hugo/</link>
+      <link>https://wancat.cc/tags/hugo/</link>
       <pubDate>Mon, 03 Feb 2020 18:50:39 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/hugo/</guid>
+      <guid>https://wancat.cc/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>LikeCoin</title>
-      <link>https://www.wancat.cc/tags/likecoin/</link>
+      <link>https://wancat.cc/tags/likecoin/</link>
       <pubDate>Mon, 03 Feb 2020 18:50:39 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/likecoin/</guid>
+      <guid>https://wancat.cc/tags/likecoin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Website</title>
-      <link>https://www.wancat.cc/tags/website/</link>
+      <link>https://wancat.cc/tags/website/</link>
       <pubDate>Mon, 03 Feb 2020 18:50:39 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/tags/website/</guid>
+      <guid>https://wancat.cc/tags/website/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Frozen</title>
-      <link>https://www.wancat.cc/tags/frozen/</link>
+      <link>https://wancat.cc/tags/frozen/</link>
       <pubDate>Sun, 22 Dec 2019 14:34:42 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/frozen/</guid>
+      <guid>https://wancat.cc/tags/frozen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Movie</title>
-      <link>https://www.wancat.cc/tags/movie/</link>
+      <link>https://wancat.cc/tags/movie/</link>
       <pubDate>Sun, 22 Dec 2019 14:34:42 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/movie/</guid>
+      <guid>https://wancat.cc/tags/movie/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CTF</title>
-      <link>https://www.wancat.cc/tags/ctf/</link>
+      <link>https://wancat.cc/tags/ctf/</link>
       <pubDate>Sat, 16 Nov 2019 10:00:00 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/ctf/</guid>
+      <guid>https://wancat.cc/tags/ctf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JSP</title>
-      <link>https://www.wancat.cc/tags/jsp/</link>
+      <link>https://wancat.cc/tags/jsp/</link>
       <pubDate>Tue, 20 Aug 2019 10:38:52 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/jsp/</guid>
+      <guid>https://wancat.cc/tags/jsp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ORM</title>
-      <link>https://www.wancat.cc/tags/orm/</link>
+      <link>https://wancat.cc/tags/orm/</link>
       <pubDate>Fri, 26 Jul 2019 10:49:46 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/orm/</guid>
+      <guid>https://wancat.cc/tags/orm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>程式</title>
-      <link>https://www.wancat.cc/tags/%E7%A8%8B%E5%BC%8F/</link>
+      <link>https://wancat.cc/tags/%E7%A8%8B%E5%BC%8F/</link>
       <pubDate>Fri, 26 Jul 2019 10:49:46 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E7%A8%8B%E5%BC%8F/</guid>
+      <guid>https://wancat.cc/tags/%E7%A8%8B%E5%BC%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>science</title>
-      <link>https://www.wancat.cc/tags/science/</link>
+      <link>https://wancat.cc/tags/science/</link>
       <pubDate>Fri, 07 Jun 2019 19:25:23 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/science/</guid>
+      <guid>https://wancat.cc/tags/science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>教育</title>
-      <link>https://www.wancat.cc/tags/%E6%95%99%E8%82%B2/</link>
+      <link>https://wancat.cc/tags/%E6%95%99%E8%82%B2/</link>
       <pubDate>Sun, 19 May 2019 20:21:44 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E6%95%99%E8%82%B2/</guid>
+      <guid>https://wancat.cc/tags/%E6%95%99%E8%82%B2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>商業模式</title>
-      <link>https://www.wancat.cc/tags/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://wancat.cc/tags/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Mon, 25 Mar 2019 17:22:22 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://wancat.cc/tags/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>讚賞經濟</title>
-      <link>https://www.wancat.cc/tags/%E8%AE%9A%E8%B3%9E%E7%B6%93%E6%BF%9F/</link>
+      <link>https://wancat.cc/tags/%E8%AE%9A%E8%B3%9E%E7%B6%93%E6%BF%9F/</link>
       <pubDate>Mon, 25 Mar 2019 17:22:22 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E8%AE%9A%E8%B3%9E%E7%B6%93%E6%BF%9F/</guid>
+      <guid>https://wancat.cc/tags/%E8%AE%9A%E8%B3%9E%E7%B6%93%E6%BF%9F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bitwarden</title>
-      <link>https://www.wancat.cc/tags/bitwarden/</link>
+      <link>https://wancat.cc/tags/bitwarden/</link>
       <pubDate>Thu, 21 Feb 2019 20:07:35 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/bitwarden/</guid>
+      <guid>https://wancat.cc/tags/bitwarden/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Server</title>
-      <link>https://www.wancat.cc/tags/server/</link>
+      <link>https://wancat.cc/tags/server/</link>
       <pubDate>Sun, 20 Jan 2019 13:15:09 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/server/</guid>
+      <guid>https://wancat.cc/tags/server/</guid>
       <description></description>
     </item>
     
     <item>
       <title>文學</title>
-      <link>https://www.wancat.cc/tags/%E6%96%87%E5%AD%B8/</link>
+      <link>https://wancat.cc/tags/%E6%96%87%E5%AD%B8/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E6%96%87%E5%AD%B8/</guid>
+      <guid>https://wancat.cc/tags/%E6%96%87%E5%AD%B8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Minecraft</title>
-      <link>https://www.wancat.cc/tags/minecraft/</link>
+      <link>https://wancat.cc/tags/minecraft/</link>
       <pubDate>Sat, 20 Oct 2018 14:33:34 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/minecraft/</guid>
+      <guid>https://wancat.cc/tags/minecraft/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OurLiveWorld</title>
-      <link>https://www.wancat.cc/tags/ourliveworld/</link>
+      <link>https://wancat.cc/tags/ourliveworld/</link>
       <pubDate>Sat, 20 Oct 2018 14:33:34 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/ourliveworld/</guid>
+      <guid>https://wancat.cc/tags/ourliveworld/</guid>
       <description></description>
     </item>
     
     <item>
       <title>life</title>
-      <link>https://www.wancat.cc/tags/life/</link>
+      <link>https://wancat.cc/tags/life/</link>
       <pubDate>Sun, 14 Oct 2018 08:22:13 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/life/</guid>
+      <guid>https://wancat.cc/tags/life/</guid>
       <description></description>
     </item>
     
     <item>
       <title>自由軟體</title>
-      <link>https://www.wancat.cc/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94/</link>
+      <link>https://wancat.cc/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94/</link>
       <pubDate>Sat, 22 Sep 2018 20:26:23 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94/</guid>
+      <guid>https://wancat.cc/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94/</guid>
       <description></description>
     </item>
     

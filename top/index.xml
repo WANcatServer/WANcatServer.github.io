@@ -2,30 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tops on WANcatServer</title>
-    <link>https://www.wancat.cc/top/</link>
+    <link>https://wancat.cc/top/</link>
     <description>Recent content in Tops on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
     
-	<atom:link href="https://www.wancat.cc/top/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/top/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://www.wancat.cc/top/books/</link>
+      <link>https://wancat.cc/top/books/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/top/books/</guid>
+      <guid>https://wancat.cc/top/books/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>關於我</title>
-      <link>https://www.wancat.cc/top/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.wancat.cc/top/about/</guid>
-      <description>我是 Wancat，就讀五專，從小六開始學習 Scratch，國二開始學習 Python。寫 Go、Python、JavaScript。 我喜歡寫程式</description>
     </item>
     
   </channel>

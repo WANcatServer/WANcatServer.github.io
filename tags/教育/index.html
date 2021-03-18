@@ -1,714 +1,109 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
-    <meta property="og:site_name" content="WANcatServer">
-    <meta property="og:type" content="article">
-
-    
-    <meta property="og:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg">
-    <meta property="twitter:image" content="https://www.wancat.cc/img/home-bg-jeep.jpg" />
-    
-
-    
-    <meta name="title" content="教育" />
-    <meta property="og:title" content="教育" />
-    <meta property="twitter:title" content="教育" />
-    
-
-    
-    <meta name="description" content="">
-    <meta property="og:description" content="" />
-    <meta property="twitter:description" content="" />
-    
-
-    
-    <meta property="twitter:card" content="summary" />
-    
-    
-
-    <meta name="keyword"  content="林宏信, wancat, Linux, Golang">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>教育-WANcatServer 網貓伺服器</title>
-
-    <link rel="canonical" href="/tags/%E6%95%99%E8%82%B2/">
-
-    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
-	
-    
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    
-    <link rel="stylesheet" href="/css/hux-blog.min.css">
-
-    
-    <link rel="stylesheet" href="/css/syntax.css">
-    
-    
-    <link rel="stylesheet" href="/css/zanshang.css">
-    
-    
-    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    
-    
-
-    
-    
-    <script src="/js/jquery.min.js"></script>
-    
-    
-    <script src="/js/bootstrap.min.js"></script>
-    
-    
-    <script src="/js/hux-blog.min.js"></script>
-
-    
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/docco.min.css">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    
-    
-
-    
-<script type="text/javascript">
-  var _paq = window._paq = window._paq || [];
-   
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//matomo.linchpins.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '3']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-
-
-</head>
-
-
-
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">WANcatServer</a>
-        </div>
-
-        
-        
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    
-                        
-                        <li>
-                            <a href="/categories/%E5%89%B5%E4%BD%9C">創作</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E5%B0%88%E6%A1%88">專案</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E6%95%99%E5%AD%B8">教學</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%95%8F">每日一問</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E6%B4%BB%E5%8B%95%E7%B4%80%E9%8C%84">活動紀錄</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E7%94%9F%E6%B4%BB">生活</a>
-                        </li>
-                        
-                        <li>
-                            <a href="/categories/%E8%A9%95%E8%AB%96">評論</a>
-                        </li>
-                        
-                    
-                    
-		    
-                        <li><a href="/top/about/">ABOUT</a></li>
-                    
-
-                    
-                </ul>
-            </div>
-        </div>
-        
-    </div>
-    
-</nav>
-<script>
-    
-    
-    
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
-
-    $toggle.addEventListener('click', handleMagic)
-    function handleMagic(e){
-        if ($navbar.className.indexOf('in') > 0) {
-        
-            $navbar.className = " ";
-            
-            setTimeout(function(){
-                
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        }else{
-        
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
-        }
-    }
-</script>
-
-
-
-<header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>WANcatServer </h1>
-                    
-		    <span class="subheading">網貓伺服器</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-
-  
-<div class="container">
-    <div class="row">
-        
-        
-   	    <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container
-        ">
-            
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/after-the-exam/">
-        <h2 class="post-title">
-            寫給會考後的我們：別再讓下一代經歷這些
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            「而我們呢？在會考之後，你就要忘記國中這三年的痛苦，『只帶走美好的回憶』嗎？在面對學弟學妹的痛苦時，只會說『我們以前比你們更慘』而已嗎？在成
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Sunday, May 19, 2019
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/vocational-courses/">
-        <h2 class="post-title">
-            我在技藝班所見所聞
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            我在技藝班所見所聞 {% asset_img slug circuit-board.jpg %} 在先前的文章提到過，我高中計畫就讀北科大五專精英班，由於這個班不好考，所以我在國三參加技藝班，用來在超額比序中加
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Tuesday, December 4, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/progression/">
-        <h2 class="post-title">
-            十五歲的生涯選擇，我為何拒讀高中？
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            兒子—林宏信： 我現在國三，從小六時接觸了 Scratch，國二開始學習 Python 程式語言，我漸漸的確定這是我想走的道路—做一名工程師。 //Scratch 為一個圖形化的
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Sunday, October 14, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="https://www.wancat.cc/post/poor-taiwanese-kid/">
-        <h2 class="post-title">
-            當老師對我們說：「可悲台灣小孩」
-        </h2>
-	
-        <div class="post-content-preview">
-	
-            「這句話真是說到心坎裡」，我笑著說 「就只怕過幾年後，他就變『可悲台灣老師』」 一則笑話 我的朋友有次跟我聊起他的家政老師。 他的家政老師是一位年輕
-       
-        </div>
-    </a>
-    <p class="post-meta">
-    Posted by WANcatServer Sunday, October 14, 2018
-    
-    
-    </p>
-
-</div>
-<hr>
-
-
-            
-
-
-
-       	</div>
-        
-
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-             
-            
-                
-            
-                
-                    <a href="/tags/caddy" title="caddy">
-                        caddy
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/golang" title="golang">
-                        golang
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/jsp" title="jsp">
-                        jsp
-                    </a>
-                
-            
-                
-                    <a href="/tags/life" title="life">
-                        life
-                    </a>
-                
-            
-                
-            
-                
-                    <a href="/tags/linux" title="linux">
-                        linux
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/minecraft" title="minecraft">
-                        minecraft
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/ourliveworld" title="ourliveworld">
-                        ourliveworld
-                    </a>
-                
-            
-                
-                    <a href="/tags/raspberry-pi" title="raspberry-pi">
-                        raspberry-pi
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/website" title="website">
-                        website
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/%E6%95%99%E8%82%B2" title="教育">
-                        教育
-                    </a>
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-            
-                
-                    <a href="/tags/%E8%87%AA%E7%94%B1%E8%BB%9F%E9%AB%94" title="自由軟體">
-                        自由軟體
-                    </a>
-                
-            
-                
-            
-                
-                    <a href="/tags/%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8" title="資訊安全">
-                        資訊安全
-                    </a>
-                
-            
-                
-            
-                
-            
-        </div>
-    </section>
-    
-
-    
-	
-    <section class="visible-md visible-lg">
-	<hr><h5><a href="/top/about">ABOUT ME</a></h5>
-        <div class="short-about">
-            
-            <a href="/top/about">
-               <img src="/img/wancat.jpg" alt="avatar" style="cursor: pointer" />
-            </a>
-            
-            
-                <p>Student, Golang Programmer, Linux User</p>
-            
-           
-           <ul class="list-inline"> 
-               
-               <li>
-                   <a href='/tags/%E6%95%99%E8%82%B2/index.xml' rel="alternate" type="application/rss+xml" title="WANcatServer" >
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://facebook.com/wancatserver">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://github.com/lancatlin">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-            
-            
-               <li>
-                   <a target="_blank" href="https://liker.social/@wancat">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               <li>
-                   <a target="_blank" href="https://keybase.io/wancat">
-                       <span class="fa-stack fa-lg">
-                           <i class="fa fa-circle fa-stack-2x"></i>
-                           <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-                </ul>
-            </div>
-    </section>
-	
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FRIENDS</h5>
-        <ul class="list-inline">
-            
-            <li><a target="_blank" href="https://chawteam.github.io">CHAWTeam</a></li>
-            
-            <li><a target="_blank" href="https://lincalvino.me">納西斯花園</a></li>
-            
-        </ul>
-    </section>
-    
-
-    
-    
-</div>
-
-	</div>
-</div>
-
-
-
-
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                   
-                   <li>
-                       <a href='/tags/%E6%95%99%E8%82%B2/index.xml' rel="alternate" type="application/rss+xml" title="WANcatServer" >
-                           <span class="fa-stack fa-lg">
-                               <i class="fa fa-circle fa-stack-2x"></i>
-                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                           </span>
-                       </a>
-                   </li>
-                   
-                    
-                    <li>
-                        <a href="mailto:wancat@wancat.cc">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
-                    
-                    
-                    
-                    
-
-                    
-                    <li>
-                        <a target="_blank" href="https://facebook.com/wancatserver">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
-
-		    
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/lancatlin">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-		    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <li>
-                        <a target="_blank" href="https://liker.social/@wancat">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
-                    
-                    <li>
-                        <a target="_blank" href="https://keybase.io/wancat">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-            
-            
-                </ul>
-		<p class="copyright text-muted">
-                    Copyright &copy; WANcatServer 2021
-                    <br>
-                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
-                    </iframe>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-
-
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-
-
-
-
-
-<script>
-    
-    if($('#tag_cloud').length !== 0){
-        async("/js/jquery.tagcloud.js",function(){
-            $.fn.tagcloud.defaults = {
-                
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
-
-
-<script>
-    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
-        var $nav = document.querySelector("nav");
-        if($nav) FastClick.attach($nav);
-    })
-</script>
-
-
-
-
-
-
-</body>
-</html>
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>教育 | WANcatServer</title><meta name=keywords content><meta name=description content="網貓伺服器"><meta name=author content="wancat"><link rel=canonical href=https://wancat.cc/tags/%E6%95%99%E8%82%B2/><link href=/assets/css/stylesheet.min.0e4a1b49e740c28140e9ee4945aab2f86cb0a7bfbf5a5d612d0cb5df7d6141f4.css integrity="sha256-DkobSedAwoFA6e5JRaqy+Gywp7+/Wl1hLQy1331hQfQ=" rel="preload stylesheet" as=style><link rel=icon href=https://wancat.cc/img/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://wancat.cc/img/logo.png><link rel=icon type=image/png sizes=32x32 href=https://wancat.cc/img/logo.png><link rel=apple-touch-icon href=https://wancat.cc/img/logo.png><link rel=mask-icon href=https://wancat.cc/img/logo.png><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.74.3"><link rel=alternate type=application/rss+xml href=https://wancat.cc/tags/%E6%95%99%E8%82%B2/index.xml><script type=text/javascript>var _paq=window._paq=window._paq||[];_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);(function(){var u="//matomo.linchpins.cloud/";_paq.push(['setTrackerUrl',u+'matomo.php']);_paq.push(['setSiteId','3']);var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0];g.type='text/javascript';g.async=true;g.src=u+'matomo.js';s.parentNode.insertBefore(g,s);})();</script><meta property="og:title" content="教育"><meta property="og:description" content="網貓伺服器"><meta property="og:type" content="website"><meta property="og:url" content="https://wancat.cc/tags/%E6%95%99%E8%82%B2/"><meta property="og:image" content="https://wancat.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:updated_time" content="2019-05-19T20:21:44+00:00"><meta property="og:site_name" content="WANcatServer"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://wancat.cc/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="教育"><meta name=twitter:description content="網貓伺服器"></head><body class=list id=top><script>if(localStorage.getItem("pref-theme")==="dark"){document.body.classList.add('dark');}else if(localStorage.getItem("pref-theme")==="light"){document.body.classList.remove('dark')}else if(window.matchMedia('(prefers-color-scheme: dark)').matches){document.body.classList.add('dark');}</script><noscript><style type=text/css>#theme-toggle,.top-link{display:none}</style></noscript><header class=header><nav class=nav><div class=logo><a href=https://wancat.cc accesskey=h title="WANcatServer (Alt + H)"><img src=/img/logo.png alt=logo aria-label=logo height=35>WANcatServer</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu onscroll=menu_on_scroll()><li><a href=https://wancat.cc/archives/ title=Archives><span>Archives</span></a></li><li><a href=https://wancat.cc/categories/ title=Categories><span>Categories</span></a></li><li><a href=https://wancat.cc/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://wancat.cc/search/ title=Search><span>Search</span></a></li><li><a href=https://wancat.cc/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><header class=page-header><h1>教育</h1></header><article class="post-entry tag-entry"><header class=entry-header><h2>寫給會考後的我們：別再讓下一代經歷這些</h2></header><section class=entry-content><p>「而我們呢？在會考之後，你就要忘記國中這三年的痛苦，『只帶走美好的回憶』嗎？在面對學弟學妹的痛苦時，只會說『我們以前比你們更慘』而已嗎？在成為既得利益者後，就反過頭來維護這個體制嗎？」
+「同學們，我希望我們不要成為這樣的大人。」
+會考，國中三年的最大目標，終於在今天結束了。大家也即將分發到不同的學校，國中，變成了回憶。
+但，我希望你不要忘記，自己這三年是怎麼過的。
+我們的今天 我對國中的印象，就是考試和第八節。沒有「早自修」，只有考試。記得在我國小的一段時間，我早修會拿班上一本有關數學的書，坐在位子，邊看邊吃早餐，那是一段很美好的時光，真正的早自修，就應該如此美好。
+每次段考前兩個禮拜，我會開始認真準備，段考前衝刺期是很煎熬的時光，每天在學校都是面對成千上萬的考卷，我是好學生，每一張都認真寫，可是越寫越懷疑 ——
+「我來學校就是為了這些嗎？」
+漸漸的，我們都變成了可悲台灣小孩，只在乎考試，不在乎學習的樂趣；只關心分數，不關心實際的運用；只了解作法，不了解背後的原因。
+許多人去補習，將已經少得可憐的課餘時間再度榨的一滴不剩，這樣零碎而疲憊的課餘時間，除了打電動，還會想做什麼？還能做什麼？
+大人們總是說，他們以前也是這樣過的，他們以前更慘。那我試問，為什麼當你們成為大人後，沒有改變它？
+大人的過去 三十年前，我爸在國中時就被送去私立住宿學校，接受著「非常不健康的打罵教育」。每天一早起來就進學校，放學後還要晚自習到九點，可說是零自由時間。
+高中畢業，聯考成績不理想，重考，過了一年痛苦的補習班生活。
+我相信，過去的大人們一定經歷了比我們更糟的生活，生活困苦，教材也更加的填鴨。但這些大人們，在長大後，為什麼還是擁護著這套考試制度、擁護著升學主義？為什麼你們還是將孩子送進了補習班、還是要求學校要有第八節？
+因為你們都經歷過嗎？
+為什麼，你們沒有讓我們更好？ 為什麼，當年受盡折磨的大人，在長大後，不願意改變這一切？
+不要牽拖政治，政治反映出的就是選民的意志，有什麼樣的選民，就會有什麼樣的政治人物。當初十二年國教，出來反對的不也是由「受盡折磨的大人」組成的家長嗎？
+我曾經在班聯會問教務主任，可不可以取消第八節，她說學校一點也不想辦第八節，是家長們要求的。
+制度反應的，永遠都是掌權者的價值觀。過去歷經折磨的是你們，但現在掌權的也是有投票權的你們。
+我不否定許多大人對教育改革的努力，我也知道三十年前到現在教育體制已經好了許多，不再規定頭髮、不再有教官、不再有三民主義，有即將上路的 108 課綱；但我們還有充滿考試的早修、上正課的第八節、過早的上學時間和過長的上課時數，我們可以更好嗎？ 可以讓受了十二年國教的我們，不要變成 可悲台灣小孩 嗎？
+我相信，所有的改革，都要從理念層面開始，只有當我們開始重新思考考試制度、升學主義，制度才有可能改變。
+三十年前的大人們，或許在威權的時代裡，不被允許質疑體制，我並不責怪。
+而我們呢？
+不要成為，那個「我們也是這樣過」的大人 而我們呢？在會考之後，你就要忘記國中這三年的痛苦，「只帶走美好的回憶」嗎？在面對學弟學妹的痛苦時，只會說「我們以前比你們更慘」而已嗎？在成為既得利益者後，就反過頭來維護這個體制嗎？
+同學們，我希望我們不要成為這樣的大人。
+體制可以限制你的行為，但可別讓它限制你的思想。
+我希望，當我們有能力、有權力、有影響力時，用你的話語、用你的行動、用你的臉書 IG 貼文、用你的選票，去表達對這個體制的不滿，去嘗試改變這一切，去做跟上一代不一樣的事。
+我希望，我們在面對下一代時，不要用一種「過來人的傲慢」，來打壓對體制的質疑。
+我希望，當我們為人父母時，可以想想自己在學生時是什麼感受，不要拚命將子女送進補習班，不要要求學校上第八節，不要對你的子女做過去你痛恨的事。
+最有能量去改變的，往往是身處在體制中的人。我希望我們不要因為脫離了這個體制，就漸漸失去了這些能量。
+我希望，這些痛苦留在我們這一代就好。
+延伸閱讀 林寓森《別把孩子的時間填滿》
+15 歲的生涯選擇—我為何拒讀高中
+當老師對我們說：「可悲台灣小孩」</p></section><footer class=entry-footer>May 19, 2019&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 寫給會考後的我們：別再讓下一代經歷這些" href=https://wancat.cc/post/after-the-exam/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>我在技藝班所見所聞</h2></header><section class=entry-content><p>我在技藝班所見所聞 {% asset_img slug circuit-board.jpg %}
+在先前的文章提到過，我高中計畫就讀北科大五專精英班，由於這個班不好考，所以我在國三參加技藝班，用來在超額比序中加分。
+我選擇的是電機電子群，學習內容大致是 焊接、佈線，以及計算電壓 。
+焊接 我在加入技藝班之前已經有焊接的經驗，當初為了做 Arduino，有時需要自己焊零件，當時沒有觀念，買了烙鐵沒買海綿和烙鐵架，烙鐵頭第一天就黑了。也不知道要在電路板上焊，焊得又髒又醜，有時還把零件弄壞。
+上了技藝班之後我才第一次使用了整套的焊接工具，烙鐵、烙鐵架、海綿、吸錫器、尖嘴鉗、斜口鉗、剝線鉗，技藝班的工具還不錯，至少設備完整、錫的品質還算優。
+技藝班的課程基本上都是自己實做，老師會指定今天要做的東西，然後就讓同學開始做，第一天從焊三角錐開始，把六根電線兩端剝掉，焊成一個立體的正三角錐。後來還有練習拉線、做跳線、做電路，我認為這些都很好，在上了技藝班後我的焊接技巧的確提昇了不少，至少可以準確掌握烙鐵溫度與習性，可以讓手中的錫乖乖聽話。
+當然班上有些同學對此沒有興趣，有些還會在旁邊亂，這不稀奇，不管是什麼課程總會有人沒興趣。只要對我而言，這是很有用的，這就夠了。
+可惜並非如此
+計算 技藝班的課程還有一環是練習「計算」，主要計算的內容是一個電路圖指定位置的電壓和電流。大概在第四堂課開始，老師給我們上計算的課程，老師直接告訴我們公式怎麼算，沒有多做解釋為什麼要這樣算。
+對於這個我可以理解，畢竟大部分上技藝班的學生並不一定能吸收，就像是現在的國中教育，許多老師也是直接教公式，沒辦法，你就算教了原理學生也聽不懂。只是從中我發現我並不那麼適合技職教育，我的骨子裡還是希望追根究底想明白，我無法接受自己搞不懂的公式。
+但這不是最糟的。
+所有的計算都是「用手算」，電壓的計算基本上數字不會給你太好看，不用想約分什麼的，常常有那種 50.9 V、51 K 的缺德數字，常常你要處理的是四位數除上三位數的除法，而且要算到小數第四位四捨五入到第三位。
+{% asset_img slug process.jpg 計算過程 %}
+我真的無法理解，我們是未來要操作電腦的人，為什麼要做電腦完全可以取代的事？我們應該學習的是如何善用電腦，怎麼會是把人當電腦用？
+在這個 AI 的時代，教的卻是計算機就能取代的事？
+不為什麼，比賽就是這樣考。技藝競賽的選手就是要面對這種無腦四則運算，然而你完全無法從中得到任何有用的能力，算這個有什麼用？變人體計算機嗎？醒醒吧你永遠算不贏電腦的。
+從這裡我開始看出台灣技職教育的落伍，為什麼那麼多人看不起技職？為什麼師長不願我們選擇技職？
+面對桌上的一盤盤大便 過去我往往認為是因為社會「唯有讀書高」的觀念，保守家長不願意讓孩子成為一個「做工的人」，但現在我發覺政府自己就將技職教育辦的一團糟！
+我只敢說電機電子群的範圍，我曾經訪問過一些讀過高職的學長，大概了解到現在的高職教學內容實在非常落伍，就像是上面舉的例子，以及各式各樣的遠古程式語言、無法跟上時代的課程，甚至據說某間高職還規定要使用 Windows XP。
+我有位朋友就毫不客氣的說了高職資訊科全部都是 shit，他就是進去念之後才發現教的跟想像中完全不同，於是休學去工作了。
+我知道資訊領域是社會變遷較快的領域，同樣的技術，可能五年、十年過後就變得完全不同，但台灣的技職教育沒有進步，還是在使用 20 年前的課本，還是在教著 20 年前的技術，還是在考學生如何用手算電壓。
+我認同技職教育的價值，但如果政府端不出像樣點的課程，就莫怪學生不願意、企業不稀罕、家長不認同。
+台灣的學生就像是要在一桌大便中選擇比較不臭的吃下去一樣，面對一樣爛的高中、高職、五專中，挑一個對自己最沒傷害的，忍痛吞下去，期望熬過去就有比較好的食物吃。
+可悲台灣小孩，有未來嗎？ 我寫這篇文章是希望，政府能重新制定真正有品質的技職教育課程，在推廣技職教育的同時，把技職教育的品質做好，教授與時俱進的課程，而不是算電壓這種荒謬的內容。甚至在給準技職學生上的技藝班中，就讓學生看出其之落伍。
+「一屆不如一屆」，據說在十幾年前的高職，仍是十分重視實作。然而到了今天，高職卻越來越考試取向。
+我相信台灣是辦得到的，我相信。
+延伸閱讀 可悲台灣小孩 — 一個國中生，是如何變得不聞不問？
+十五歲的生涯選擇，我為何拒讀高中？ — 父子對於升學、技職教育的看法</p></section><footer class=entry-footer>December 4, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 我在技藝班所見所聞" href=https://wancat.cc/post/vocational-courses/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>十五歲的生涯選擇，我為何拒讀高中？</h2></header><section class=entry-content><p>兒子—林宏信： 我現在國三，從小六時接觸了 Scratch，國二開始學習 Python 程式語言，我漸漸的確定這是我想走的道路—做一名工程師。
+//Scratch 為一個圖形化的程式語言，可以透過拉積木、組合的方式，來做動畫、寫遊戲。 https://scratch.mit.edu/
+小六時，我開始玩 Scratch，心中想著要做出好玩的遊戲分享給大家，於是開始設計遊戲，製作出一個又一個的遊戲，在別人都在玩做好的遊戲時，我在設計屬於自己的遊戲。我很享受這種感覺，將心中的藍圖實現出來， 創造 的感覺。
+到了國一下學期的時候，我發現 Scratch 已經不敷使用，沒辦法寫出更好的程式了，於是我開始學習程式語言，後來甚至接觸 Linux 作業系統，開始替人做圖書管理系統。在這些過程中，我逐漸確定這是我的熱情所在。
+對高中的不滿 我平常的生活是，在學校認真上課，將作業寫完，回家就開始 「工作」 ，寫程式、寫文章、寫音樂。我幫自己安排了很多工作、很多專案，這些都是能使我成長的事，我也樂在其中，但每每遇到段考，就會使我的生活遭到破壞。為了準備考試，我必須將工作的時間拿去讀書，讀一些 無法使你成長的教科書 ，浪費黃金的課餘時間。
+現在的高中教育，坦白講是為了升大學而存在。內容教授國英數自社等基本學科，但開始越發奇怪，脫離了「義務教育」的範疇。尤其是國文，目前的教學方式 完全沒有辦法促進表達能力 ，要取得高分只需要 背誦和考試技巧 。而考試制度又扼殺了語言的多變性，把文義僅限在唯一的解。
+在我兩個姐姐就讀高中的期間，我就知道了普通高中並非我想要的學校，我將會花許多時間去學習基本科目。但這並非令我反感的原因，對我而言，基本學科的內容也是有趣的，我對於「學習」沒有那麼勢利，不會說要對我有用的知識才肯去學。問題是 我得花許多時間去準備考試 ，這就不有趣了，事實上這已經不是在「學習」了。而這些時間，是我原本可以用來充實自己、做專案的時間。
+所以我下定決心， 這樣的生活到國中就好 ，三年了，體驗的也夠多了，高中我不要再繼續下去了。
+出路在哪裡？ 我開始去找我的出路，我問了工程師朋友：如果想當工程師要怎麼升學？基本上大多的回答是念普高或高職都可以，重點是大學。我不免感到懷疑，既然大家的目標都是大學，為什麼我們不能直接去考？反而還要在高中三年作為跳板，這樣高中不就像是補習班一樣嗎？
+我對於普通高中的教學內容感到不滿意，認為這會浪費我大量時間和精力，而且會壞了我學習這門知識的胃口，因此我決定走技職的路。
+在我父母的觀念中，是很支持技職教育的，台灣太多只會考試的學生，卻缺乏實做的訓練。雖這麼說，但過去「技職」從來不在我的考慮範圍內，由於成績優異，似乎就是注定要念普通高中，注定要繼續讀書考試下去。
+直到我開始去了解，開始找自己的出路後，我才發現，自己的未來不一定要侷限在普通高中裡，我可以作為一名專業的技術人才，提早開始走自己的道路。很慶幸我的父母在溝通後也支持我的決定，我想 願意支持孩子決定的父母，就是最好的父母了。
+未來，從現在開始 我的夢想就是成為一位現在很夯的斜槓青年：工程師/寫作者/作曲家，選擇技職教育不代表限制自己的未來，我相信只要內心清楚方向，走哪都不會迷失。
+我的學校現在目標是 北科大 新開的五專菁英班— 自動化工程科 ，內容包括程式設計、電機、機械等內容，這個班之所以吸引我，是因為在那可以得到台北科技大學的豐富資源，而且豐富的實做課程，以及豐富的教師資源，同時我也相信，在只收30人的班級中，能遇到更多像我一樣懷抱著熱情的人。 而在生活中一步一步朝著理想邁進，這不就是最幸福的事嗎？
+父親—林寓森： 老實說，兒子選擇讀技職體系，心中 並不是完全沒有遲疑與猶豫的 。畢竟我是成長於台灣舊聯考時期的人，很多習慣性的反應還是直接出現。像是「你的成績是學霸級的耶，可以念很困難的學科，念技職會不會太可惜了啊」，「你跟其他念技職的人會不會有很大的差異，適應上會不會有問題？」，「現在才國中生耶！交給他自己決定未來行不行啊！會不會是我自己太不負責任，沒有好好幫他們規劃？」。
+其實不光是對兒子，兩個姊姊決定念美術與音樂時，我心裡都有過遲疑。
+但是我心中的這些O.S.我全部沒說出口，因為我相信他們，也相信自己對於個人成長的信念。
+我的信念就先不多說了，有興趣了解的人可以看我在站上發表的文章。我在這裡想對其他為人父母者強調一個我的判斷邏輯—「讓孩子相信自己是一個絕對不會失敗的選擇」。
+這個邏輯並不是說，小孩的選擇不會錯誤；而是說當他們能真正相信自己時，即使選擇錯誤，並不會因此就喪失信心，一蹶不振；當他們是自己做的選擇時，失敗了不會怨天尤人，而是調整自己。當我們試著要去幫他們做未來決定時，依據的是目前的環境狀態，但是未來瞬息萬變，誰也沒辦法有把握一定選對。那麼讓他們做自己喜歡的事情，即使不成功或是過得困難，做的過程總還是有開心的感覺，這就夠了。很多人生活過的舒適、安全、無憂，但是做的不是自己喜歡的事情，甚至不知道自己喜歡什麼，這樣的生活說真的，還比較不快樂。
+所以表面上我做的似乎是一個冒險的決定，但我認為這其實是一個最安全的決定，這取決於背後對於生活價值的信念。
+很多人擔心小孩不夠成熟，讓他們自己決定可能在生活上會很容易失控。我自己的經驗是，當他們覺得可以自己決定時，反而會更謹慎，更會想要聽你的意見參考；而決定了之後，更能投入想做的事情與克制玩樂的衝動。有人會說，「小孩的特質不同，不能一概而論，自制力差的小孩不能這麼做」。
+我的三個小孩的特質都不同，也有人真的自制力不好（就不點名了），但是結果都一樣耶。雖然其他生活部份的自制力各有差異（其實我的自制力是家中成員最差的XD），但是他們對於自己的選擇都是全力投入喔！
+真的沒有理由不相信他們啊！</p></section><footer class=entry-footer>October 14, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 十五歲的生涯選擇，我為何拒讀高中？" href=https://wancat.cc/post/progression/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2>當老師對我們說：「可悲台灣小孩」</h2></header><section class=entry-content><p>「這句話真是說到心坎裡」，我笑著說 「就只怕過幾年後，他就變『可悲台灣老師』」
+一則笑話 我的朋友有次跟我聊起他的家政老師。
+他的家政老師是一位年輕的新老師，充滿著熱情，似乎希望能在家政課做一些「有意義」的課程。所以他出了很多報告作業，上很多課程，而且從不借課考試，因為他覺得，台灣小孩的綜合、藝文課程被拿去考試，真的很可憐。
+但同學們並沒有認真的去做報告，反而覺得很煩，都只想躺分，丟給組員做。上課也沒什麼在聽，反倒是很多同學在訂正考卷、寫講義等等，根本沒在上課。
+我朋友說，他的老師就很生氣，有次就對他們班同學說：
+「你們這群可悲台灣小孩」。
+聽到這裡，我已經笑到不行，
+「這句話真是說進心坎裡」，我笑著說 「就只怕過幾年後，他就變『可悲台灣老師』」
+可悲台灣小孩與老師 這則笑話之所以好笑，就是因為我們的確可悲。
+我們的學生生活被考試佔滿，漸漸的讓學生也變得考試導向、勢利，只在乎「會不會考」，再也不在乎學習的本質是理解、是應用。
+有時，當老師充滿熱血，希望做些什麼，帶些不一樣的課程來改變時，反而會受到學生的反彈，反而覺得老師很煩，還不如拿來考試、自習。
+這樣子的反應，往往是毀了一位教師熱忱最可怕的殺手。
+我如何成為一位可悲的國中生？ 一個學生，是如何變得漠不關心？
+從升上國中開始說起，在國一時，我對於綜合、藝文課是高度參與的，一方面老師懂的帶學生，而且國一的課業還沒有那麼重，所以在上考試科目之餘，能夠做一些不一樣的事，我想大部分學生都是喜歡的。
+到了二年級，我開始有自己課餘的活動，也就是寫程式。我在家需要大量的時間來維持我的興趣，我甚至一度考慮不參加第八節，但後來考慮怕不能跟上進度與造成別人麻煩，仍然是參加了。
+從此在學校，我的目標就是「將所有學習相關的事情在學校完成」，什麼意思呢？就是將作業在學校寫完，要考的科目在上課讀完，讓回家時間百分之百都是屬於自己的。
+漸漸的，我開始將一些「我認為學不到東西」的課用來寫作業、自習；漸漸的，當老師出報告作業時，心中只有反感，與麻煩；漸漸的，我開始變成自己瞧不起的那種「可悲台灣小孩」。
+夢中的教室 我有一個夢，是一間教室，中間一個大桌，老師不站在講台上，跟同學一塊坐在桌旁。老師上課，但強調的不是如何解題目，而是為什麼我們要學這個？如何理解這門學問。學生可以自由的討論，如果願意，學生能向大家發表自己的看法，甚至自己準備內容向大家發表。
+沒有正解，沒有標準答案，沒有考試技巧，沒有「這題目有瑕疵，但你還是得這樣寫」，只有學習本身。
+「這樣的教室，真希望不只是出現在夢裡。」</p></section><footer class=entry-footer>October 14, 2018&nbsp;·&nbsp;1 min&nbsp;·&nbsp;wancat</footer><a class=entry-link aria-label="post link to 當老師對我們說：「可悲台灣小孩」" href=https://wancat.cc/post/poor-taiwanese-kid/></a></article></main><footer class=footer><span>&copy; 2021 <a href=https://wancat.cc>WANcatServer</a></span>
+<span>&#183;</span>
+<span>Powered by <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a></span>
+<span>&#183;</span>
+<span>Theme <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)"><button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></button></a>
+<script>window.onload=function(){if(localStorage.getItem("menu-scroll-position")){document.getElementById('menu').scrollLeft=localStorage.getItem("menu-scroll-position");}}
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener("click",function(e){e.preventDefault();var id=this.getAttribute("href").substr(1);if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({behavior:"smooth"});}else{document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();}
+if(id==="top"){history.replaceState(null,null," ");}else{history.pushState(null,null,`#${id}`);}});});var mybutton=document.getElementById("top-link");window.onscroll=function(){if(document.body.scrollTop>800||document.documentElement.scrollTop>800){mybutton.style.visibility="visible";mybutton.style.opacity="1";}else{mybutton.style.visibility="hidden";mybutton.style.opacity="0";}};function menu_on_scroll(){localStorage.setItem("menu-scroll-position",document.getElementById('menu').scrollLeft);}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{if(document.body.className.includes("dark")){document.body.classList.remove('dark');localStorage.setItem("pref-theme",'light');}else{document.body.classList.add('dark');localStorage.setItem("pref-theme",'dark');}})</script></body></html>
