@@ -3,22 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.wancat.cc/categories/</loc>
-    <lastmod>2021-03-07T21:28:38+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.wancat.cc/post/</loc>
-    <lastmod>2021-03-07T21:28:38+08:00</lastmod>
+    <lastmod>2021-03-19T20:30:53+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wancat.cc/tags/</loc>
-    <lastmod>2021-03-07T21:28:38+08:00</lastmod>
+    <lastmod>2021-03-19T20:30:53+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.wancat.cc/</loc>
+    <lastmod>2021-03-19T20:30:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/tags/%E6%95%99%E8%82%B2/</loc>
+    <lastmod>2021-03-19T20:30:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/post/native-speaker/</loc>
+    <lastmod>2021-03-19T20:30:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.wancat.cc/categories/</loc>
     <lastmod>2021-03-07T21:28:38+08:00</lastmod>
   </url>
   
@@ -314,11 +324,6 @@
   
   <url>
     <loc>https://www.wancat.cc/post/after-the-exam/</loc>
-    <lastmod>2019-05-19T20:21:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.wancat.cc/tags/%E6%95%99%E8%82%B2/</loc>
     <lastmod>2019-05-19T20:21:44+00:00</lastmod>
   </url>
   
