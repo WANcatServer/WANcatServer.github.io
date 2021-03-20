@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nextcloud on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/nextcloud/</link>
+    <link>https://wancat.cc/tags/nextcloud/</link>
     <description>Recent content in Nextcloud on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 11 Feb 2020 14:40:06 +0800</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/nextcloud/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/nextcloud/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>在 Raspberry Pi 安裝 Nextcloud</title>
-      <link>https://www.wancat.cc/post/nextcloud-installation/</link>
+      <link>https://wancat.cc/post/nextcloud-installation/</link>
       <pubDate>Tue, 11 Feb 2020 14:40:06 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/post/nextcloud-installation/</guid>
+      <guid>https://wancat.cc/post/nextcloud-installation/</guid>
       <description>Nextcloud 是一套自由的雲端硬碟系統，可以讓你自己架設像 Google Drive、One Drive 一般的雲端硬碟，將資料掌握在自己手中，本篇紀錄如何在樹梅派安裝 Nextcloud。
 安裝 到官方網站下載壓縮檔
 sudo unzip -d /var/www nextcloud-18.0.0.zip sudo chown www-data:www-data /var/www/nextcloud  PHP 安裝 PHP 依賴模組

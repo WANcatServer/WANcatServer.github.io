@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>life on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/life/</link>
+    <link>https://wancat.cc/tags/life/</link>
     <description>Recent content in life on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 14 Oct 2018 08:22:13 +0000</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/life/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/life/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>當老師對我們說：「可悲台灣小孩」</title>
-      <link>https://www.wancat.cc/post/poor-taiwanese-kid/</link>
+      <link>https://wancat.cc/post/poor-taiwanese-kid/</link>
       <pubDate>Sun, 14 Oct 2018 08:22:13 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/poor-taiwanese-kid/</guid>
+      <guid>https://wancat.cc/post/poor-taiwanese-kid/</guid>
       <description> 「這句話真是說到心坎裡」，我笑著說 「就只怕過幾年後，他就變『可悲台灣老師』」
  一則笑話 我的朋友有次跟我聊起他的家政老師。
 他的家政老師是一位年輕的新老師，充滿著熱情，似乎希望能在家政課做一些「有意義」的課程。所以他出了很多報告作業，上很多課程，而且從不借課考試，因為他覺得，台灣小孩的綜合、藝文課程被拿去考試，真的很可憐。
@@ -41,10 +41,10 @@
     
     <item>
       <title>2018 暑假回顧</title>
-      <link>https://www.wancat.cc/post/summer-vacation/</link>
+      <link>https://wancat.cc/post/summer-vacation/</link>
       <pubDate>Wed, 29 Aug 2018 07:15:01 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/summer-vacation/</guid>
+      <guid>https://wancat.cc/post/summer-vacation/</guid>
       <description>兩個月(?)的暑假，到底幹了些什麼？ 從七月結束之時，我就開始有了「這個暑假什麼都沒做」的恐懼。明明每一天都過得很充實，但努力回想，卻想不出自己完成些什麼。
 為了幫助我的回想，我要來將它寫成一篇文章，來避免我忘記，同時也是紀念一下今年的暑假。
 日常的規劃 講到這個，我在暑假開始之前，就很興奮的開始規劃一天中的時間表。幫各項活動標上百分比，仔細的計算所需花用的時間。
@@ -76,10 +76,10 @@ Minecraft server的主要需求就是玩minecraft，我開服都是自己架，�
     
     <item>
       <title>二十一天的連續早起</title>
-      <link>https://www.wancat.cc/post/21earlyday/</link>
+      <link>https://wancat.cc/post/21earlyday/</link>
       <pubDate>Mon, 18 Jun 2018 08:42:03 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/21earlyday/</guid>
+      <guid>https://wancat.cc/post/21earlyday/</guid>
       <description>我的21earlyday計畫終於在今天結束了。 這21天，我做了生活中最大的改變，而這21天，我很享受。 所以在這結束之後，我還是會持續下去。
  什麼是21earlyday？ 它是一個Hashtag，連續21天早起的計畫。這個早起不是一般那種7點起床就算早起，而是4點5點那種，異於常人的早起。 那為什麼是21天呢？因為（據說）21天是養成一個習慣的最短時間，所以當初創辦人就選定了這個時間。 之所以有這個活動（而且挺多人響應），是為了改變生活。在我過去的日子，我是很難7點爬起來的，因為我很愛睡，但又捨不得那麼早睡，加上假日都晚睡晚起，所以讓我平常天的起床簡直痛不欲生。 我其實並沒有很在乎這些，讓我真正下定決心的原因是，增加時間。 【TED 有意識週報】連續 21 天四點半起床：我零成本創造了更多時間
 在每天的早起中，無意間增加的時間 我是很熱愛軟體開發的，但讓我很不滿的是時間不足，每天上九小時的義務教育，老實說到家只想休息，大概到了晚上8, 9 點才會有精神起來「開工」（而且還要寫完作業），但是大概用沒多久就得去睡覺了。 這實在很令人洩氣，我有許多想做的事，例如開發專案、寫文章，而且這些我都會做，唯一的問題就是時間不足，因此時間不足這個煩惱蟬聯了兩屆我的輔導手冊（每個學生都有一本，用來應付教育部的謎樣物品）。因此我常常注意一些時間管理方面的文章，希望能從我現有的生活中，再壓縮出一些時間。 但說實話，我通常只能夠往睡眠時間壓縮，結果我變得越來越晚睡，11:30已經變成日常，而且問題是，當我開始工作，我會不想睡，結果在床上躺了半個小時還是睡不著，最後還得拿本書來看逼自己入眠。 再不然，就是下課後已經精神疲累，沒有精力再去忙自己的事，畢竟我的這些工作很多都是很燒腦的，在一天的尾聲，有時候就算想做也提不起勁。

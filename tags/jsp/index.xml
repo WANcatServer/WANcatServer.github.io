@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JSP on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/jsp/</link>
+    <link>https://wancat.cc/tags/jsp/</link>
     <description>Recent content in JSP on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 20 Aug 2019 10:38:52 +0000</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/jsp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/jsp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JSP 第九屆參加心得</title>
-      <link>https://www.wancat.cc/post/jsp-9/</link>
+      <link>https://wancat.cc/post/jsp-9/</link>
       <pubDate>Tue, 20 Aug 2019 10:38:52 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/jsp-9/</guid>
+      <guid>https://wancat.cc/post/jsp-9/</guid>
       <description>JSP——國中科學探究聯合發表會——是一個給學生的派對，讓愛好科學的學生聚在一起互相交流，從 2017 年 JSP７時開始，我已經參加了三屆的 JSP，每次參加，心態都有些不同；每次參加，也都領悟到不一樣的事。
 今年，我已經國中畢業了，抱持著「參加最後一次」的心情來到 JSP，卻發現自己跟過去不一樣了。
 專題演講 自從二年級的科展比完之後，我就沒有再做過科學研究，可以說是有些倦了，這三年來參加 JSP 的作品也都不是比賽作品，而是為了 JSP 而準備的內容。
@@ -36,10 +36,10 @@ Bitmark 很高興有開發者願意加入他們的生態系，所以聽到我在
     
     <item>
       <title>2018 JSP 紀錄與心得 (二)</title>
-      <link>https://www.wancat.cc/post/jsp8-2/</link>
+      <link>https://wancat.cc/post/jsp8-2/</link>
       <pubDate>Thu, 23 Aug 2018 17:43:06 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/jsp8-2/</guid>
+      <guid>https://wancat.cc/post/jsp8-2/</guid>
       <description>參加 JSP 國中科學探究聯合發表會 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。 本次主題的系列文章, 演講影片
  老街解謎 在看了海報發表以及趣味課程後，我們在下午四點即將出發到大溪老街，進行大溪老街實境解謎，要在大溪老街中，找出各個謎題的答案。我將網站的連結放這邊 （抱怨一下，這個網站沒辦法用Firefox開啟！！害我用了55 mb下載 chromium）
 裡面的每一題都十分困難，需要實際到老街裡面走，而且不太可能用搜尋引擎得到答案。
@@ -76,10 +76,10 @@ Bitmark 很高興有開發者願意加入他們的生態系，所以聽到我在
     
     <item>
       <title>2018 JSP 紀錄與心得 (一)</title>
-      <link>https://www.wancat.cc/post/jsp8/</link>
+      <link>https://wancat.cc/post/jsp8/</link>
       <pubDate>Mon, 06 Aug 2018 20:00:00 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/jsp8/</guid>
+      <guid>https://wancat.cc/post/jsp8/</guid>
       <description>參加 JSP 國中科學探究聯合發表會 的所見所得。事前的準備，到結束後的回味，新的故事，至今仍持續發生。 本次主題的系列文章, 演講影片
  JSP 簡介 今年很高興又參加了JSP，自從去年在我的學校 &amp;mdash;福科國中舉辦後，就深深愛上了這個活動。 JSP的全名為 國中科學探究聯合發表會 ， Junior Scientist Party ，是一個非比賽導向，純粹讓學生進行交流與交朋友的科學派對。
 每一位參加的學生，都必須準備一點功課，可能是將你的研究成果做成一張海報，與觀眾們互動；抑或是準備一項科學課程，帶著學員們一起做；或者是在大會議廳中向所有人發表你的研究成果。 不管是哪一種都不簡單，所以參與的學生個個是有行動力、勇敢且努力的人，花了很多時間準備，才能來到這裡的。 而來到了JSP，也並非是跟同校的在一起，所有的學生會被打散到各個小組中，能因此認識不同的人，建立新的人脈。

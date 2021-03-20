@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tops on WANcatServer</title>
-    <link>https://www.wancat.cc/top/</link>
+    <link>https://wancat.cc/top/</link>
     <description>Recent content in Tops on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="https://www.wancat.cc/top/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/top/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>https://www.wancat.cc/top/books/</link>
+      <link>https://wancat.cc/top/books/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/top/books/</guid>
+      <guid>https://wancat.cc/top/books/</guid>
       <description></description>
     </item>
     

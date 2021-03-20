@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bitwarden on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/bitwarden/</link>
+    <link>https://wancat.cc/tags/bitwarden/</link>
     <description>Recent content in Bitwarden on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 21 Feb 2019 20:07:35 +0000</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/bitwarden/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/bitwarden/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>妳該使用密碼管理工具嗎？</title>
-      <link>https://www.wancat.cc/post/should-you-use-password-manager/</link>
+      <link>https://wancat.cc/post/should-you-use-password-manager/</link>
       <pubDate>Thu, 21 Feb 2019 20:07:35 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/should-you-use-password-manager/</guid>
+      <guid>https://wancat.cc/post/should-you-use-password-manager/</guid>
       <description>現代人的密碼危機 如果妳是一位有正常使用網路的現代人，基本上在網路上會有許多的帳號。我算是用量比較高的用戶，我稍微統計了一下：光是記得的我就有 72 個帳號，還有很多早就忘掉的黑數呢！
 過去，帳號被盜或許是件小事，當然如果 LOL 或玩遊戲的帳號被盜會很心痛，但不至於會影響生活。隨著現代我們將生活越來越多部份放入網路，網路身份的重要性已經足以影響生活，因此我們勢必要用一些方法好好管理自己的網路身份。
 重複密碼 密碼的大原則就是不要重複，但哪有辦法呢？我們有那麼多的帳號，如果每個都要背一個密碼哪辦得到？每次在「Sign up」頁面停了很久，最後還是用了以前的密碼。

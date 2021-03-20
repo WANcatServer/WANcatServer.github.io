@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/golang/</link>
+    <link>https://wancat.cc/tags/golang/</link>
     <description>Recent content in Golang on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 29 Mar 2020 19:56:21 +0800</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>專案介紹：Fever Pass 體溫登記系統</title>
-      <link>https://www.wancat.cc/post/fever-pass-intro/</link>
+      <link>https://wancat.cc/post/fever-pass-intro/</link>
       <pubDate>Sun, 29 Mar 2020 19:56:21 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/post/fever-pass-intro/</guid>
+      <guid>https://wancat.cc/post/fever-pass-intro/</guid>
       <description>Fever Pass 是我們團隊 Linchpins 在 2020 年初，為了因應新型冠狀病毒開發的一套體溫登記系統，用於協助各級機關、學校自主登記體溫。
 GitHub Repository。可以在我們的 demo 試用本系統，用以下帳號登入：
  導師 紀體溫 帳號 t101 密碼 10100 學生 梁體溫 帳號 1081201 密碼 10141 護理師 護理師 帳號 nurse 密碼 nurse  歡迎體驗 demo 的各種功能。demo 每日早上八點會幫所有帳號隨機登記體溫。
@@ -28,10 +28,10 @@ Fever Pass 有豐富的權限設計，分為體溫管理權限和帳號管理權
     
     <item>
       <title>ORM 入門：如何區分 ORM 中的關聯</title>
-      <link>https://www.wancat.cc/post/orm/</link>
+      <link>https://wancat.cc/post/orm/</link>
       <pubDate>Fri, 26 Jul 2019 10:49:46 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/orm/</guid>
+      <guid>https://wancat.cc/post/orm/</guid>
       <description>最近初次接觸 ORM——Object-relational mapping——這個強大的工具，但是為其中的關聯而苦惱不已。在仔細研究後終於了解其差異，本篇文章透過一個圖書館專案的實例，使用 Golang + GORM 來實做，並輔以 SQL 做說明，讓已經學會 SQL 而想要了解 ORM 的人真的「懂」如何設計 Relation。
 什麼時候會用到 Relation？ ORM 中的 Relation 就是相當於 SQL 中的各種 Join，用來將不同表格中的資料串起。由於 ORM 是用物件，所以如果未來有關聯到其他表格的需求，必須在物件設計時就包含進來。
 來定義需求吧！我們今天假設情境是要定義一個圖書館的資料庫，那我們會有編目資料 Book（書的資料）、館藏資料 Item（書的實體），作者資料 Author，出版社資料 Publisher。書名、ISBN 等等跟關聯沒有關係的就不放入。

@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Raspberry Pi on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/raspberry-pi/</link>
+    <link>https://wancat.cc/tags/raspberry-pi/</link>
     <description>Recent content in Raspberry Pi on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 17 May 2020 22:17:08 +0800</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Raspberry Pi 安裝 WordPress 教學</title>
-      <link>https://www.wancat.cc/post/wordpress-installation/</link>
+      <link>https://wancat.cc/post/wordpress-installation/</link>
       <pubDate>Sun, 17 May 2020 22:17:08 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/post/wordpress-installation/</guid>
+      <guid>https://wancat.cc/post/wordpress-installation/</guid>
       <description>WordPress 是一套自由的網站系統，可以安裝在自己的伺服器，以下是我在 Raspberry Pi 上安裝 WordPress 的記錄。
 請先安裝好 MariaDB / MySQL、PHP 7.3 以上、Caddy。
 到官網複製壓縮檔連結（我偏好 tar.gz）
@@ -26,10 +26,10 @@ yourhostname.com { root /var/www/wordpress gzip fastcgi / /var/run/php/php7.</de
     
     <item>
       <title>在 Raspberry Pi 安裝 Nextcloud</title>
-      <link>https://www.wancat.cc/post/nextcloud-installation/</link>
+      <link>https://wancat.cc/post/nextcloud-installation/</link>
       <pubDate>Tue, 11 Feb 2020 14:40:06 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/post/nextcloud-installation/</guid>
+      <guid>https://wancat.cc/post/nextcloud-installation/</guid>
       <description>Nextcloud 是一套自由的雲端硬碟系統，可以讓你自己架設像 Google Drive、One Drive 一般的雲端硬碟，將資料掌握在自己手中，本篇紀錄如何在樹梅派安裝 Nextcloud。
 安裝 到官方網站下載壓縮檔
 sudo unzip -d /var/www nextcloud-18.0.0.zip sudo chown www-data:www-data /var/www/nextcloud  PHP 安裝 PHP 依賴模組
@@ -40,10 +40,10 @@ $ sudo mysql &amp;gt; create database nextcloud; &amp;gt; create user &#39;nextc
     
     <item>
       <title>CloudFlare 設定 DDNS 教學</title>
-      <link>https://www.wancat.cc/post/cloudflare-ddns/</link>
+      <link>https://wancat.cc/post/cloudflare-ddns/</link>
       <pubDate>Tue, 04 Feb 2020 10:35:52 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/post/cloudflare-ddns/</guid>
+      <guid>https://wancat.cc/post/cloudflare-ddns/</guid>
       <description>最近剛入手一個 Raspberry Pi，用來作為一個省電的伺服器，本來困擾自己家裡的固定 IP 已經給了其他台伺服器，但找到方法用 CloudFlare 實現 DDNS。
 CloudFlare DDNS CloudFlare 本身沒有官方的 DDNS 支援，但可以用 CloudFlare API 實做，我找了一個別人做好的 CloudFlare-ddns，折騰一會兒就設定好了。
 首先安裝 cloudflare-ddns 和其依賴，然後以我要設定 pi.wancat.cc 為例，建立 site_pi.yaml 設定檔，填入以下內容：

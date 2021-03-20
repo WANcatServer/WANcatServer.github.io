@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>商業模式 on WANcatServer</title>
-    <link>https://www.wancat.cc/tags/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/</link>
+    <link>https://wancat.cc/tags/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/</link>
     <description>Recent content in 商業模式 on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 25 Mar 2019 17:22:22 +0000</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/tags/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/tags/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SITCON 演講：軟體開發的未來，是大斗內時代？</title>
-      <link>https://www.wancat.cc/post/the-programming-future-is-donate/</link>
+      <link>https://wancat.cc/post/the-programming-future-is-donate/</link>
       <pubDate>Mon, 25 Mar 2019 17:22:22 +0000</pubDate>
       
-      <guid>https://www.wancat.cc/post/the-programming-future-is-donate/</guid>
+      <guid>https://wancat.cc/post/the-programming-future-is-donate/</guid>
       <description>2019 SITCON 演講：軟體開發的未來，是大斗內時代？ 前言 我參加了 2019 在中研院舉行的 SITCON 學生計算機年會，並投稿了一篇 Espresso 短講，以下是我的演講稿：
 講者介紹 大家好，我是林宏信，現在是國中三年級。我從小六開始接觸 Scratch，國二開始學習 Python，目前正在學習 Go Web 開發。我的興趣是寫程式、寫音樂、寫文章，經營部落格 WANcatServer 網貓伺服器 ，歡迎大家去看看喔！。
 今天要跟大家分享的是 我們如何靠軟體賺錢，相信在台下的大多數人，包括我，都喜歡寫程式，那你是否思考過，我們該如何靠軟體賺錢呢？畢竟這攸關生計，是個很重要的問題。

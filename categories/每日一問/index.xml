@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>每日一問 on WANcatServer</title>
-    <link>https://www.wancat.cc/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%95%8F/</link>
+    <link>https://wancat.cc/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%95%8F/</link>
     <description>Recent content in 每日一問 on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 07 Mar 2021 21:28:38 +0800</lastBuildDate>
     
-	<atom:link href="https://www.wancat.cc/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%95%8F/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wancat.cc/categories/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%95%8F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>每日一問：如果世界是個函數</title>
-      <link>https://www.wancat.cc/post/if-the-world-is-a-function/</link>
+      <link>https://wancat.cc/post/if-the-world-is-a-function/</link>
       <pubDate>Sun, 07 Mar 2021 21:28:38 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/post/if-the-world-is-a-function/</guid>
+      <guid>https://wancat.cc/post/if-the-world-is-a-function/</guid>
       <description>Photo by JESHOOTS.com from Pexels
 如果今天有位全知的智者，能夠掌握這個世界上所有物質的狀態，並擁有無窮的算力，能夠推導出下一個瞬間嗎？
 假設此推論為真，那代表這個世界可以用一個函數來表示，所有粒子及它們的所有狀態都是這個函數的輸入值，而下一個瞬間的新狀態就是這個函數的輸出值。這個函數的輸出值可以作為下一輪的輸入值，如此重複，我們就可以不停的推算出未來。
@@ -30,10 +30,10 @@
     
     <item>
       <title>每日一問：為什麼新年定在 1/1？</title>
-      <link>https://www.wancat.cc/post/history-of-calendar/</link>
+      <link>https://wancat.cc/post/history-of-calendar/</link>
       <pubDate>Sat, 23 Jan 2021 11:55:47 +0800</pubDate>
       
-      <guid>https://www.wancat.cc/post/history-of-calendar/</guid>
+      <guid>https://wancat.cc/post/history-of-calendar/</guid>
       <description>Photo by Aaditya Arora from Pexels
 這個標題也許令人誤解，1/1 本來就是一年的開始啊？當然，但為什麼我們會選擇一個冬天的日子作為一年的開始，而不是某個春天、夏天、秋天的日子呢？陽曆以地球的公轉為依循，地球每繞太陽一圈就是一年，一年之中所謂「特別」的日子，應該會是春分、夏至、秋分、冬至等等，但 1/1 卻不是什麼特別的日子，甚至以季節來說，我們通常會認為 12、1、2 月是冬天，3 月開始才是春天，為什麼會將新年定在一個季節的「中間」呢？
 下一個猜想：也許是由於某種歐洲世界的歷史因素？直覺會想到的可能是「耶穌誕生」，畢竟西元的紀年「名義上」就是以耶穌誕生為始（儘管這與史實有些差距），但這也有矛盾之處：我們之所以能說「耶穌於 12/25 日出生」，就證明了陽曆是早於耶穌誕生的，否則就應該會是「我們將耶穌誕生之日定為 1/1」。
