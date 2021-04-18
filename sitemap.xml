@@ -3,17 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://wancat.cc/post/</loc>
-    <lastmod>2021-03-19T20:30:53+08:00</lastmod>
+    <loc>https://wancat.cc/categories/</loc>
+    <lastmod>2021-04-18T09:23:46+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://wancat.cc/tags/</loc>
-    <lastmod>2021-03-19T20:30:53+08:00</lastmod>
+    <loc>https://wancat.cc/post/</loc>
+    <lastmod>2021-04-18T09:23:46+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://wancat.cc/</loc>
+    <lastmod>2021-04-18T09:23:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/categories/%E6%95%A3%E6%96%87/</loc>
+    <lastmod>2021-04-18T09:23:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/post/the-art-of-subtraction/</loc>
+    <lastmod>2021-04-18T09:23:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/tags/</loc>
     <lastmod>2021-03-19T20:30:53+08:00</lastmod>
   </url>
   
@@ -25,11 +40,6 @@
   <url>
     <loc>https://wancat.cc/post/native-speaker/</loc>
     <lastmod>2021-03-19T20:30:53+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wancat.cc/categories/</loc>
-    <lastmod>2021-03-07T21:28:38+08:00</lastmod>
   </url>
   
   <url>
@@ -458,19 +468,11 @@
   </url>
   
   <url>
-    <loc>https://wancat.cc/top/books/</loc>
-  </url>
-  
-  <url>
     <loc>https://wancat.cc/archives/</loc>
   </url>
   
   <url>
     <loc>https://wancat.cc/search/</loc>
-  </url>
-  
-  <url>
-    <loc>https://wancat.cc/top/</loc>
   </url>
   
   <url>
