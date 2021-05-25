@@ -11,11 +11,29 @@
     
     
     <item>
+      <title>Django</title>
+      <link>https://wancat.cc/tags/django/</link>
+      <pubDate>Tue, 25 May 2021 11:28:37 +0800</pubDate>
+      
+      <guid>https://wancat.cc/tags/django/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Python</title>
       <link>https://wancat.cc/tags/python/</link>
       <pubDate>Tue, 25 May 2021 11:28:37 +0800</pubDate>
       
       <guid>https://wancat.cc/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Threading</title>
+      <link>https://wancat.cc/tags/threading/</link>
+      <pubDate>Tue, 25 May 2021 11:28:37 +0800</pubDate>
+      
+      <guid>https://wancat.cc/tags/threading/</guid>
       <description></description>
     </item>
     

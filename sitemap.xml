@@ -8,6 +8,16 @@
   </url>
   
   <url>
+    <loc>https://wancat.cc/tags/django/</loc>
+    <lastmod>2021-05-25T11:28:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/post/django-redirect-stdout-to-streaming/</loc>
+    <lastmod>2021-05-25T11:28:37+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wancat.cc/post/</loc>
     <lastmod>2021-05-25T11:28:37+08:00</lastmod>
   </url>
@@ -18,12 +28,12 @@
   </url>
   
   <url>
-    <loc>https://wancat.cc/post/python-streaming-stdout/</loc>
+    <loc>https://wancat.cc/tags/</loc>
     <lastmod>2021-05-25T11:28:37+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://wancat.cc/tags/</loc>
+    <loc>https://wancat.cc/tags/threading/</loc>
     <lastmod>2021-05-25T11:28:37+08:00</lastmod>
   </url>
   
