@@ -4,17 +4,37 @@
   
   <url>
     <loc>https://wancat.cc/categories/</loc>
-    <lastmod>2021-04-18T09:23:46+08:00</lastmod>
+    <lastmod>2021-05-25T11:28:37+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://wancat.cc/post/</loc>
-    <lastmod>2021-04-18T09:23:46+08:00</lastmod>
+    <lastmod>2021-05-25T11:28:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/tags/python/</loc>
+    <lastmod>2021-05-25T11:28:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/post/python-streaming-stdout/</loc>
+    <lastmod>2021-05-25T11:28:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/tags/</loc>
+    <lastmod>2021-05-25T11:28:37+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://wancat.cc/</loc>
-    <lastmod>2021-04-18T09:23:46+08:00</lastmod>
+    <lastmod>2021-05-25T11:28:37+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/categories/%E6%8A%80%E8%A1%93/</loc>
+    <lastmod>2021-05-25T11:28:37+08:00</lastmod>
   </url>
   
   <url>
@@ -25,11 +45,6 @@
   <url>
     <loc>https://wancat.cc/post/the-art-of-subtraction/</loc>
     <lastmod>2021-04-18T09:23:46+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wancat.cc/tags/</loc>
-    <lastmod>2021-03-19T20:30:53+08:00</lastmod>
   </url>
   
   <url>
