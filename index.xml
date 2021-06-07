@@ -25,6 +25,17 @@ StreamingHttpResponse 一般的網頁請求都是一次打包好所有資料，�
     </item>
     
     <item>
+      <title>How to Redirect Stdout to Streaming Response in Django</title>
+      <link>https://wancat.cc/english/post/django-redirect-stdout-to-streaming-eng/</link>
+      <pubDate>Tue, 25 May 2021 11:28:37 +0800</pubDate>
+      
+      <guid>https://wancat.cc/english/post/django-redirect-stdout-to-streaming-eng/</guid>
+      <description>Sometimes we need to execute some long tasks at the backend, and the tasks are complicated and error-prone. So we hope users can see the real-time console log. Thus we need to redirect the stdout in our functions to the user&amp;rsquo;s browser.
+Given a function like the following. How to see the stdout in real-time in the browser?
+import time def job(times): for i in range(times): print(f&amp;#39;Task #{i}&amp;#39;) time.sleep(1) print(&amp;#39;Done&amp;#39;) time.</description>
+    </item>
+    
+    <item>
       <title>減法的藝術</title>
       <link>https://wancat.cc/post/the-art-of-subtraction/</link>
       <pubDate>Sun, 18 Apr 2021 09:23:46 +0800</pubDate>
@@ -938,12 +949,41 @@ Andrea以前沒看過雪，覺得很新奇，就拿著雪球到處亂丟動物�
     </item>
     
     <item>
+      <title>About Me</title>
+      <link>https://wancat.cc/english/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wancat.cc/english/about/</guid>
+      <description>我是 Wancat，就讀五專，從小六開始學習 Scratch，國二開始學習 Python。寫 Go、Python、JavaScript。 我喜歡寫程式、寫文章，從 2017 年 11 月開始經營 WANcatServer，在這裡與人分享我的想法。
+我愛玩 0 A.D.，喜歡推廣 Linux，支持自由軟體。
+我的連結  Matters GitHub email: wancat@wancat.cc  專案  FeverPass 體溫記錄系統 排列組合計算機 股票紅綠燈 Go 寫的股票爬蟲網站 Bitmark Issuer Bitmark 區塊鏈的發禮物系統 FireWheel 火輪手槍 使用 Python + Pygame 製作的原創遊戲 AddPoint 加分程式 老師上課的加分小幫手 P2P Talking 點對點聊天程式 (服務停止) 使用 Python 寫成的點對點通訊軟體 Huffman Coding 霍夫曼編碼器 霍夫曼演算法的實做  Skills  Golang Python JavaScript Linux Hosting  </description>
+    </item>
+    
+    <item>
       <title>Archive</title>
       <link>https://wancat.cc/archives/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wancat.cc/archives/</guid>
       <description>archives</description>
+    </item>
+    
+    <item>
+      <title>Archive</title>
+      <link>https://wancat.cc/en/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wancat.cc/en/archives/</guid>
+      <description>archives</description>
+    </item>
+    
+    <item>
+      <title>Search</title>
+      <link>https://wancat.cc/english/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wancat.cc/english/search/</guid>
+      <description>search</description>
     </item>
     
     <item>

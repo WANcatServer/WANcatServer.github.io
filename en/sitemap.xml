@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://wancat.cc/en/about/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://wancat.cc/about/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://wancat.cc/en/about/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/en/archives/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://wancat.cc/archives/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://wancat.cc/en/archives/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/en/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://wancat.cc/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://wancat.cc/en/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/en/search/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://wancat.cc/search/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://wancat.cc/en/search/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/en/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://wancat.cc/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://wancat.cc/en/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/en/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://wancat.cc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://wancat.cc/en/"
+                />
+  </url>
+  
+</urlset>

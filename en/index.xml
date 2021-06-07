@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WANcatServer</title>
+    <link>https://wancat.cc/en/</link>
+    <description>Recent content on WANcatServer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://wancat.cc/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Me</title>
+      <link>https://wancat.cc/en/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wancat.cc/en/about/</guid>
+      <description>我是 Wancat，就讀五專，從小六開始學習 Scratch，國二開始學習 Python。寫 Go、Python、JavaScript。 我喜歡寫程式、寫文章，從 2017 年 11 月開始經營 WANcatServer，在這裡與人分享我的想法。
+我愛玩 0 A.D.，喜歡推廣 Linux，支持自由軟體。
+我的連結  Matters GitHub email: wancat@wancat.cc  專案  FeverPass 體溫記錄系統 排列組合計算機 股票紅綠燈 Go 寫的股票爬蟲網站 Bitmark Issuer Bitmark 區塊鏈的發禮物系統 FireWheel 火輪手槍 使用 Python + Pygame 製作的原創遊戲 AddPoint 加分程式 老師上課的加分小幫手 P2P Talking 點對點聊天程式 (服務停止) 使用 Python 寫成的點對點通訊軟體 Huffman Coding 霍夫曼編碼器 霍夫曼演算法的實做  Skills  Golang Python JavaScript Linux Hosting  </description>
+    </item>
+    
+    <item>
+      <title>Archive</title>
+      <link>https://wancat.cc/en/archives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wancat.cc/en/archives/</guid>
+      <description>archives</description>
+    </item>
+    
+    <item>
+      <title>Search</title>
+      <link>https://wancat.cc/en/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://wancat.cc/en/search/</guid>
+      <description>search</description>
+    </item>
+    
+  </channel>
+</rss>
