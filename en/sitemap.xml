@@ -3,21 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://wancat.cc/en/categories/</loc>
-    <lastmod>2021-05-25T11:28:37+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://wancat.cc/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://wancat.cc/en/categories/"
-                />
-  </url>
-  
-  <url>
     <loc>https://wancat.cc/en/tags/django/</loc>
     <lastmod>2021-05-25T11:28:37+08:00</lastmod>
     <xhtml:link
@@ -29,21 +14,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://wancat.cc/en/tags/django/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://wancat.cc/en/categories/english/</loc>
-    <lastmod>2021-05-25T11:28:37+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://wancat.cc/categories/english/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://wancat.cc/en/categories/english/"
                 />
   </url>
   
@@ -177,6 +147,20 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://wancat.cc/en/archives/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://wancat.cc/en/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://wancat.cc/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://wancat.cc/en/categories/"
                 />
   </url>
   

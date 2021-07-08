@@ -5,19 +5,9 @@
     <link>https://wancat.cc/en/categories/</link>
     <description>Recent content in Categories on WANcatServer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 25 May 2021 11:28:37 +0800</lastBuildDate>
     
 	<atom:link href="https://wancat.cc/en/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>English</title>
-      <link>https://wancat.cc/en/categories/english/</link>
-      <pubDate>Tue, 25 May 2021 11:28:37 +0800</pubDate>
-      
-      <guid>https://wancat.cc/en/categories/english/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
